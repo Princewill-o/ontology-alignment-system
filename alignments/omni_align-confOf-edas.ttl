@@ -1,0 +1,286 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/confOf.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/edas.owl
+# Total mappings: 237
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://confOf#Administrative_event> rdfs:subClassOf <http://edas#AcademicEvent>,
+        <http://edas#BreakEvent>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#MealEvent>,
+        <http://edas#NonAcademicEvent>,
+        <http://edas#SocialEvent>,
+        <http://edas#TalkEvent>,
+        <http://edas#belongsToEvent>,
+        <http://edas#relatedToEvent> ;
+    owl:equivalentClass <http://edas#forEvent> .
+
+<http://confOf#Author> owl:equivalentClass <http://edas#Author> .
+
+<http://confOf#Camera_Ready_event> rdfs:subClassOf <http://edas#BreakEvent>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#MealEvent>,
+        <http://edas#TalkEvent>,
+        <http://edas#relatedToEvent> ;
+    owl:equivalentClass <http://edas#forEvent> .
+
+<http://confOf#Chair_PC> owl:equivalentClass <http://edas#ConferenceChair>,
+        <http://edas#SessionChair> .
+
+<http://confOf#City> owl:equivalentClass <http://edas#hasCity> .
+
+<http://confOf#Conference> owl:equivalentClass <http://edas#Conference>,
+        <http://edas#ConferenceChair>,
+        <http://edas#ConferenceDinner>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#ConferenceSession>,
+        <http://edas#ConferenceVenuePlace>,
+        <http://edas#SingleLevelConference>,
+        <http://edas#TwoLevelConference> .
+
+<http://confOf#Country> owl:equivalentClass <http://edas#Country>,
+        <http://edas#hasCountry> .
+
+<http://confOf#Event> owl:equivalentClass <http://edas#AcademicEvent>,
+        <http://edas#BreakEvent>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#MealEvent>,
+        <http://edas#NonAcademicEvent>,
+        <http://edas#SocialEvent>,
+        <http://edas#TalkEvent>,
+        <http://edas#belongsToEvent>,
+        <http://edas#forEvent>,
+        <http://edas#relatedToEvent> .
+
+<http://confOf#Member> owl:equivalentClass <http://edas#TPCMember>,
+        <http://edas#hasMember>,
+        <http://edas#isMemberOf> .
+
+<http://confOf#Member_PC> owl:equivalentClass <http://edas#TPCMember>,
+        <http://edas#hasMember>,
+        <http://edas#isMemberOf> .
+
+<http://confOf#Organization> owl:equivalentClass <http://edas#AcademiaOrganization>,
+        <http://edas#GovernmentOrganization>,
+        <http://edas#IndustryOrganization>,
+        <http://edas#Organization> .
+
+<http://confOf#Paper> owl:equivalentClass <http://edas#AcceptedPaper>,
+        <http://edas#ActivePaper>,
+        <http://edas#Paper>,
+        <http://edas#PaperPresentation>,
+        <http://edas#PendingPaper>,
+        <http://edas#PublishedPaper>,
+        <http://edas#RejectedPaper>,
+        <http://edas#WithdrawnPaper>,
+        <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn>,
+        <http://edas#relatedToPaper> .
+
+<http://confOf#Person> owl:equivalentClass <http://edas#Person> .
+
+<http://confOf#Reception> owl:equivalentClass <http://edas#Reception> .
+
+<http://confOf#Registration_of_participants_event> rdfs:subClassOf <http://edas#AcademicEvent>,
+        <http://edas#MealEvent>,
+        <http://edas#SocialEvent>,
+        <http://edas#TalkEvent> ;
+    owl:equivalentClass <http://edas#forEvent>,
+        <http://edas#registrationDueOn> .
+
+<http://confOf#Reviewing_event> rdfs:subClassOf <http://edas#AcademicEvent>,
+        <http://edas#BreakEvent>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#MealEvent>,
+        <http://edas#SocialEvent>,
+        <http://edas#TalkEvent>,
+        <http://edas#relatedToEvent> ;
+    owl:equivalentClass <http://edas#forEvent>,
+        <http://edas#isReviewing> .
+
+<http://confOf#Reviewing_results_event> owl:equivalentClass <http://edas#forEvent>,
+        <http://edas#isReviewing> .
+
+<http://confOf#Short_paper> rdfs:subClassOf <http://edas#AcceptedPaper>,
+        <http://edas#ActivePaper>,
+        <http://edas#PaperPresentation>,
+        <http://edas#PendingPaper>,
+        <http://edas#PublishedPaper>,
+        <http://edas#RejectedPaper>,
+        <http://edas#WithdrawnPaper>,
+        <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn>,
+        <http://edas#relatedToPaper> ;
+    owl:equivalentClass <http://edas#Paper> .
+
+<http://confOf#Social_event> rdfs:subClassOf <http://edas#AcademicEvent>,
+        <http://edas#BreakEvent>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#NonAcademicEvent>,
+        <http://edas#belongsToEvent>,
+        <http://edas#relatedToEvent> ;
+    owl:equivalentClass <http://edas#MealEvent>,
+        <http://edas#SocialEvent>,
+        <http://edas#TalkEvent>,
+        <http://edas#forEvent> .
+
+<http://confOf#Submission_event> rdfs:subClassOf <http://edas#AcademicEvent>,
+        <http://edas#BreakEvent>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#MealEvent>,
+        <http://edas#NonAcademicEvent>,
+        <http://edas#SocialEvent>,
+        <http://edas#TalkEvent>,
+        <http://edas#belongsToEvent>,
+        <http://edas#hasSubmissionDeadline>,
+        <http://edas#relatedToEvent> ;
+    owl:equivalentClass <http://edas#forEvent>,
+        <http://edas#hasSubmissionInstructions> .
+
+<http://confOf#Topic> owl:equivalentClass <http://edas#AntennasTopic>,
+        <http://edas#CADTopic>,
+        <http://edas#CommunicationTheoryTopic>,
+        <http://edas#CommunicationsTopic>,
+        <http://edas#ComputerArchitectureTopic>,
+        <http://edas#ComputerNetworksAapplicationsTopic>,
+        <http://edas#ComputerNetworksEnterpriseTopic>,
+        <http://edas#ComputerNetworksManagementTopic>,
+        <http://edas#ComputerNetworksMeasurementsTopic>,
+        <http://edas#ComputerNetworksOpticalTopic>,
+        <http://edas#ComputerNetworksSecurityTopic>,
+        <http://edas#ComputerNetworksSensorTopic>,
+        <http://edas#ComputerNetworksSwitchingTopic>,
+        <http://edas#ComputerNetworksTopic>,
+        <http://edas#CryptographyTopic>,
+        <http://edas#MedicineTopic>,
+        <http://edas#MicroelectronicsTopic>,
+        <http://edas#MobileComputingTopic>,
+        <http://edas#MultimediaTopic>,
+        <http://edas#ParallelAndDistributedComputingTopic>,
+        <http://edas#PerformanceTopic>,
+        <http://edas#PowerlineTransmissionTopic>,
+        <http://edas#RadioCommunicationsTopic>,
+        <http://edas#SatelliteAndSpaceCommunicationsTopic>,
+        <http://edas#SecurityTopic>,
+        <http://edas#SignalProcessingTopic>,
+        <http://edas#TestOnlyTopic>,
+        <http://edas#Topic>,
+        <http://edas#WirelessCommunicationsTopic>,
+        <http://edas#hasTopic>,
+        <http://edas#isTopicOf> .
+
+<http://confOf#Working_event> rdfs:subClassOf <http://edas#AcademicEvent>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#MealEvent>,
+        <http://edas#NonAcademicEvent>,
+        <http://edas#SocialEvent>,
+        <http://edas#TalkEvent>,
+        <http://edas#belongsToEvent>,
+        <http://edas#relatedToEvent> ;
+    owl:equivalentClass <http://edas#BreakEvent>,
+        <http://edas#forEvent> .
+
+<http://confOf#Workshop> owl:equivalentClass <http://edas#Workshop> .
+
+<http://confOf#contactEmail> owl:equivalentClass <http://edas#ContactInformation>,
+        <http://edas#hasEmail> ;
+    owl:equivalentProperty <http://edas#hasEmail> .
+
+<http://confOf#earlyRegistration> owl:equivalentClass <http://edas#registrationDueOn> ;
+    owl:equivalentProperty <http://edas#registrationDueOn> .
+
+<http://confOf#employedBy> rdfs:subClassOf <http://edas#providedBy> ;
+    rdfs:subPropertyOf <http://edas#providedBy> .
+
+<http://confOf#hasAdministrativeEvent> rdfs:subClassOf <http://edas#AcademicEvent>,
+        <http://edas#BreakEvent>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#MealEvent>,
+        <http://edas#NonAcademicEvent>,
+        <http://edas#SocialEvent>,
+        <http://edas#TalkEvent>,
+        <http://edas#belongsToEvent>,
+        <http://edas#relatedToEvent> ;
+    rdfs:subPropertyOf <http://edas#belongsToEvent>,
+        <http://edas#relatedToEvent> ;
+    owl:equivalentClass <http://edas#forEvent> ;
+    owl:equivalentProperty <http://edas#forEvent> .
+
+<http://confOf#hasCity> owl:equivalentClass <http://edas#hasCity> ;
+    owl:equivalentProperty <http://edas#hasCity> .
+
+<http://confOf#hasCountry> owl:equivalentClass <http://edas#Country>,
+        <http://edas#hasCountry> ;
+    owl:equivalentProperty <http://edas#hasCountry> .
+
+<http://confOf#hasEmail> owl:equivalentClass <http://edas#hasEmail> ;
+    owl:equivalentProperty <http://edas#hasEmail> .
+
+<http://confOf#hasFirstName> owl:equivalentClass <http://edas#hasFirstName>,
+        <http://edas#hasLastName>,
+        <http://edas#hasName> ;
+    owl:equivalentProperty <http://edas#hasFirstName>,
+        <http://edas#hasLastName>,
+        <http://edas#hasName> .
+
+<http://confOf#hasPhone> owl:equivalentClass <http://edas#hasPhone> ;
+    owl:equivalentProperty <http://edas#hasPhone> .
+
+<http://confOf#hasPostalCode> owl:equivalentClass <http://edas#hasPostalCode> ;
+    owl:equivalentProperty <http://edas#hasPostalCode> .
+
+<http://confOf#hasStreet> owl:equivalentClass <http://edas#hasStreet> ;
+    owl:equivalentProperty <http://edas#hasStreet> .
+
+<http://confOf#hasTopic> rdfs:subClassOf <http://edas#ComputerNetworksMeasurementsTopic>,
+        <http://edas#PowerlineTransmissionTopic> ;
+    owl:equivalentClass <http://edas#AntennasTopic>,
+        <http://edas#CADTopic>,
+        <http://edas#CommunicationTheoryTopic>,
+        <http://edas#CommunicationsTopic>,
+        <http://edas#ComputerArchitectureTopic>,
+        <http://edas#ComputerNetworksAapplicationsTopic>,
+        <http://edas#ComputerNetworksEnterpriseTopic>,
+        <http://edas#ComputerNetworksManagementTopic>,
+        <http://edas#ComputerNetworksOpticalTopic>,
+        <http://edas#ComputerNetworksSecurityTopic>,
+        <http://edas#ComputerNetworksSensorTopic>,
+        <http://edas#ComputerNetworksSwitchingTopic>,
+        <http://edas#ComputerNetworksTopic>,
+        <http://edas#CryptographyTopic>,
+        <http://edas#MedicineTopic>,
+        <http://edas#MicroelectronicsTopic>,
+        <http://edas#MobileComputingTopic>,
+        <http://edas#MultimediaTopic>,
+        <http://edas#ParallelAndDistributedComputingTopic>,
+        <http://edas#PerformanceTopic>,
+        <http://edas#RadioCommunicationsTopic>,
+        <http://edas#SatelliteAndSpaceCommunicationsTopic>,
+        <http://edas#SecurityTopic>,
+        <http://edas#SignalProcessingTopic>,
+        <http://edas#TestOnlyTopic>,
+        <http://edas#Topic>,
+        <http://edas#WirelessCommunicationsTopic>,
+        <http://edas#hasTopic>,
+        <http://edas#isTopicOf> ;
+    owl:equivalentProperty <http://edas#hasTopic>,
+        <http://edas#isTopicOf> .
+
+<http://confOf#location> owl:equivalentClass <http://edas#hasLocation>,
+        <http://edas#isLocationOf> ;
+    owl:equivalentProperty <http://edas#hasLocation>,
+        <http://edas#isLocationOf> .
+
+<http://confOf#parallel_with> owl:equivalentClass <http://edas#ParallelAndDistributedComputingTopic> .
+
+<http://confOf#studyAt> rdfs:subClassOf <http://edas#attendeeAt> ;
+    rdfs:subPropertyOf <http://edas#attendeeAt> .
+
+<http://confOf#writtenBy> owl:equivalentClass <http://edas#isWrittenBy> ;
+    owl:equivalentProperty <http://edas#isWrittenBy> .
+
+xsd:string owl:equivalentClass xsd:string .
+

@@ -1,0 +1,62 @@
+═══════════════════════════════════════════════════════════════════
+                    UPLOAD THESE FILES TO MOODLE
+═══════════════════════════════════════════════════════════════════
+
+Student: Princewill Okube
+Module: IN3067/INM713 Semantic Web Technologies
+Deadline: Sunday, 10 May 2026, 5:00 PM
+
+───────────────────────────────────────────────────────────────────
+STEP 1: SELECT THESE 3 FILES
+───────────────────────────────────────────────────────────────────
+
+✓ PrincewillOkube_all_resources.zip      (2.1 MB)
+✓ PrincewillOkube_SourceCode.txt         (79 KB)
+✓ PrincewillOkube_link_to_repository.txt (83 bytes)
+
+───────────────────────────────────────────────────────────────────
+STEP 2: GO TO MOODLE
+───────────────────────────────────────────────────────────────────
+
+1. Open Moodle submission page
+2. Click "Add submission"
+3. Upload all 3 files
+4. Click "Save changes"
+5. Click "Submit assignment"
+
+───────────────────────────────────────────────────────────────────
+STEP 3: VERIFY
+───────────────────────────────────────────────────────────────────
+
+✓ Check all 3 files uploaded
+✓ Verify submission confirmation
+✓ Note submission timestamp
+
+───────────────────────────────────────────────────────────────────
+GITHUB REPOSITORY
+───────────────────────────────────────────────────────────────────
+
+https://github.com/Princewill-o/ontology-alignment-system
+
+✓ Code pushed and updated
+✓ Clean commit history
+✓ All changes saved
+
+───────────────────────────────────────────────────────────────────
+PROJECT SUMMARY
+───────────────────────────────────────────────────────────────────
+
+• Core Modules: 6 (consolidated from 16)
+• Total Code: ~1,130 lines
+• Package Size: 2.1 MB
+• Results: 135 mappings (Part 1), 36 OAEI tasks
+
+───────────────────────────────────────────────────────────────────
+
+✅ EVERYTHING IS READY!
+
+Upload to Moodle before deadline: Sunday, 10 May 2026, 5:00 PM
+
+🎉 GOOD LUCK!
+
+═══════════════════════════════════════════════════════════════════

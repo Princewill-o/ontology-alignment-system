@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Lung">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Lung</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_MuscleTissue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Muscle Tissue</rdfs:label>
+    <skos:altLabel>Muscular Tissue</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Artery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Artery</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_BloodVessel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_SmallBowel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Small Bowel</rdfs:label>
+    <skos:altLabel>Small Intestine</skos:altLabel>
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Intestine"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Stomach">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Stomach</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Brain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Brain</rdfs:label>
+    <skos:altLabel>Encephalon</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_LargeBowel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Large Bowel</rdfs:label>
+    <skos:altLabel>Large Intestine</skos:altLabel>
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Intestine"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_NerveTissue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Nerve Tissue</rdfs:label>
+    <skos:altLabel>Neural Tissue</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Liver">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Liver</rdfs:label>
+    <skos:altLabel>Hepar</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Intestine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Intestine</rdfs:label>
+    <skos:altLabel>Gut</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Kidney">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Kidney</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_SkinTissue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Skin Tissue</rdfs:label>
+    <skos:altLabel>Integument</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Heart">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Heart</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_BloodVessel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Blood Vessel</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_BoneTissue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Bone Tissue</rdfs:label>
+    <skos:altLabel>Osseous Tissue</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Vein">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Vein</rdfs:label>
+    <skos:altLabel>Venous Vessel</skos:altLabel>
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_BloodVessel"/>
+  </rdf:Description>
+</rdf:RDF>

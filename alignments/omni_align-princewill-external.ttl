@@ -1,0 +1,160 @@
+# Alignment produced by OmniAlign
+# Source ontology: data/part1/princewill_ontology.ttl
+# Target ontology: data/part1/external_videogame_ontology.ttl
+# Total mappings: 97
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#ActionGame> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#ActionVideoGame> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#AdventureGame> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#AdventureVideoGame> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#BackwardCompatibility> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#BackwardsCompatibility> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#BandaiNamco> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#BandaiNamcoPublishing> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Console> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#GamingConsole>,
+        <http://www.semanticweb.org/videogame-domain/ontology#HardwareCompany>,
+        <http://www.semanticweb.org/videogame-domain/ontology#HardwareGeneration>,
+        <http://www.semanticweb.org/videogame-domain/ontology#HomeGamingConsole>,
+        <http://www.semanticweb.org/videogame-domain/ontology#PortableHybridConsole> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#ConsoleGeneration> rdfs:subClassOf <http://www.semanticweb.org/videogame-domain/ontology#HomeGamingConsole>,
+        <http://www.semanticweb.org/videogame-domain/ontology#PortableHybridConsole>,
+        <http://www.semanticweb.org/videogame-domain/ontology#partOfGeneration> ;
+    owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#GamingConsole>,
+        <http://www.semanticweb.org/videogame-domain/ontology#HardwareGeneration> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Developer> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#GameDeveloper>,
+        <http://www.semanticweb.org/videogame-domain/ontology#developerOf> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#DigitalProduct> rdfs:subClassOf <http://www.semanticweb.org/videogame-domain/ontology#DigitalContent> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#EA> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#ElectronicArts> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#EldenRing> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#EldenRingGame> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Europe> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#EuropeanMarket> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#EuropeRegion> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#EuropeTerritory> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#FIFA23> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#FIFA23Game> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#FromSoftware> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#FromSoftwareStudio> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Gen9Era> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#Gen9> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Generation9> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#HardwareGeneration>,
+        <http://www.semanticweb.org/videogame-domain/ontology#NinthGeneration>,
+        <http://www.semanticweb.org/videogame-domain/ontology#partOfGeneration> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#GeographicRegion> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#SalesTerritory> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#GodOfWar> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#GodOfWarRagnarok> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#HomeConsole> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#GamingConsole>,
+        <http://www.semanticweb.org/videogame-domain/ontology#HardwareGeneration>,
+        <http://www.semanticweb.org/videogame-domain/ontology#HomeGamingConsole>,
+        <http://www.semanticweb.org/videogame-domain/ontology#PortableHybridConsole> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#HybridConsole> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#GamingConsole>,
+        <http://www.semanticweb.org/videogame-domain/ontology#HomeGamingConsole>,
+        <http://www.semanticweb.org/videogame-domain/ontology#PortableHybridConsole> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Manufacturer> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#HardwareCompany> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Microsoft> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#MicrosoftGaming> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Nintendo> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#NintendoCo> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#NintendoSwitch> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#NintendoSwitch> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#NorthAmerica> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#NorthAmericanMarket> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#NorthAmericaRegion> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#NorthAmericaTerritory> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#PCPlatform> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#GamingPlatform>,
+        <http://www.semanticweb.org/videogame-domain/ontology#PersonalComputerPlatform>,
+        <http://www.semanticweb.org/videogame-domain/ontology#PlatformCapability> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#PS5> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#PlayStation5> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Platform> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#GamingPlatform>,
+        <http://www.semanticweb.org/videogame-domain/ontology#PersonalComputerPlatform>,
+        <http://www.semanticweb.org/videogame-domain/ontology#PlatformCapability> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Publisher> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#GamePublisher>,
+        <http://www.semanticweb.org/videogame-domain/ontology#publisherOf> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#RPGGame> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#RolePlayingGame> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#RayTracingSupport> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#RayTracingCapability> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#SimulationGame> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#ActionVideoGame>,
+        <http://www.semanticweb.org/videogame-domain/ontology#AdventureVideoGame>,
+        <http://www.semanticweb.org/videogame-domain/ontology#ComputerGame>,
+        <http://www.semanticweb.org/videogame-domain/ontology#SimulationVideoGame>,
+        <http://www.semanticweb.org/videogame-domain/ontology#StrategyVideoGame> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Sony> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#SonyPublishing> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#SonyInteractive> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#SonyPublishing> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#SportsGame> rdfs:subClassOf <http://www.semanticweb.org/videogame-domain/ontology#StrategyVideoGame> ;
+    owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#SportsVideoGame> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#StrategyGame> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#StrategyVideoGame> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#TechnicalFeature> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#PlatformCapability>,
+        <http://www.semanticweb.org/videogame-domain/ontology#hasFeature> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#VideoGame> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#ActionVideoGame>,
+        <http://www.semanticweb.org/videogame-domain/ontology#AdventureVideoGame>,
+        <http://www.semanticweb.org/videogame-domain/ontology#ComputerGame>,
+        <http://www.semanticweb.org/videogame-domain/ontology#SimulationVideoGame>,
+        <http://www.semanticweb.org/videogame-domain/ontology#StrategyVideoGame> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#XboxSeriesX> owl:sameAs <http://www.semanticweb.org/videogame-domain/ontology#XboxSeriesX> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#belongsToGeneration> rdfs:subClassOf <http://www.semanticweb.org/videogame-domain/ontology#HardwareGeneration>,
+        <http://www.semanticweb.org/videogame-domain/ontology#NinthGeneration> ;
+    owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#partOfGeneration> ;
+    owl:equivalentProperty <http://www.semanticweb.org/videogame-domain/ontology#partOfGeneration> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#competesWithConsole> rdfs:subClassOf <http://www.semanticweb.org/videogame-domain/ontology#HomeGamingConsole>,
+        <http://www.semanticweb.org/videogame-domain/ontology#PortableHybridConsole> ;
+    owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#GamingConsole> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#globalSales> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#worldwideSales> ;
+    owl:equivalentProperty <http://www.semanticweb.org/videogame-domain/ontology#worldwideSales> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#hasOnlineMultiplayer> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#supportsMultiplayer> ;
+    owl:equivalentProperty <http://www.semanticweb.org/videogame-domain/ontology#supportsMultiplayer> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#hasSalesIn> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#SalesTerritory>,
+        <http://www.semanticweb.org/videogame-domain/ontology#worldwideSales> ;
+    owl:equivalentProperty <http://www.semanticweb.org/videogame-domain/ontology#worldwideSales> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#maxResolution> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#displayResolution> ;
+    owl:equivalentProperty <http://www.semanticweb.org/videogame-domain/ontology#displayResolution> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#releaseYear> owl:equivalentClass xsd:gYear .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#supports> owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#supportsMultiplayer> ;
+    owl:equivalentProperty <http://www.semanticweb.org/videogame-domain/ontology#supportsMultiplayer> .
+
+xsd:boolean owl:equivalentClass xsd:boolean .
+
+xsd:decimal owl:equivalentClass xsd:decimal .
+
+xsd:float owl:equivalentClass xsd:float .
+
+xsd:integer owl:equivalentClass xsd:integer .
+
+xsd:string owl:equivalentClass xsd:string .
+
+xsd:gYear owl:equivalentClass <http://www.semanticweb.org/videogame-domain/ontology#publicationYear>,
+        xsd:gYear .
+

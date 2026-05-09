@@ -1,0 +1,495 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/cmt.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/conference.owl
+# Total mappings: 420
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://cmt#Acceptance> owl:equivalentClass <http://conference#is_a_date_of_acceptance_announcement> .
+
+<http://cmt#AssociatedChair> rdfs:subClassOf <http://conference#Track-workshop_chair>,
+        <http://conference#has_a_committee_chair>,
+        <http://conference#has_a_committee_co-chair>,
+        <http://conference#has_a_track-workshop-tutorial_chair>,
+        <http://conference#was_a_committe_co-chair_of>,
+        <http://conference#was_a_committee_chair_of>,
+        <http://conference#was_a_track-workshop_chair_of> ;
+    owl:equivalentClass <http://conference#Chair>,
+        <http://conference#Co-chair> .
+
+<http://cmt#Author> owl:equivalentClass <http://conference#Contribution_1th-author>,
+        <http://conference#Contribution_co-author>,
+        <http://conference#Regular_author> .
+
+<http://cmt#AuthorNotReviewer> rdfs:subClassOf <http://conference#Contribution_1th-author>,
+        <http://conference#Contribution_co-author>,
+        <http://conference#Regular_author> ;
+    owl:equivalentClass <http://conference#Reviewer> .
+
+<http://cmt#Co-author> rdfs:subClassOf <http://conference#Co-chair> ;
+    owl:equivalentClass <http://conference#Contribution_1th-author>,
+        <http://conference#Contribution_co-author>,
+        <http://conference#Regular_author> .
+
+<http://cmt#Conference> owl:equivalentClass <http://conference#Active_conference_participant>,
+        <http://conference#Conference>,
+        <http://conference#Conference_announcement>,
+        <http://conference#Conference_applicant>,
+        <http://conference#Conference_contribution>,
+        <http://conference#Conference_contributor>,
+        <http://conference#Conference_document>,
+        <http://conference#Conference_fees>,
+        <http://conference#Conference_part>,
+        <http://conference#Conference_participant>,
+        <http://conference#Conference_proceedings>,
+        <http://conference#Conference_volume>,
+        <http://conference#Conference_www>,
+        <http://conference#Passive_conference_participant>,
+        <http://conference#belong_to_a_conference_volume>,
+        <http://conference#is_a_topis_of_conference_parts>,
+        <http://conference#is_part_of_conference_volumes> .
+
+<http://cmt#ConferenceChair> rdfs:subClassOf <http://conference#Conference_document>,
+        <http://conference#Conference_fees>,
+        <http://conference#Conference_volume>,
+        <http://conference#Track-workshop_chair>,
+        <http://conference#belong_to_a_conference_volume>,
+        <http://conference#is_a_topis_of_conference_parts>,
+        <http://conference#is_part_of_conference_volumes>,
+        <http://conference#was_a_committe_co-chair_of>,
+        <http://conference#was_a_track-workshop_chair_of> ;
+    owl:equivalentClass <http://conference#Active_conference_participant>,
+        <http://conference#Chair>,
+        <http://conference#Co-chair>,
+        <http://conference#Conference>,
+        <http://conference#Conference_announcement>,
+        <http://conference#Conference_applicant>,
+        <http://conference#Conference_contribution>,
+        <http://conference#Conference_contributor>,
+        <http://conference#Conference_part>,
+        <http://conference#Conference_participant>,
+        <http://conference#Conference_proceedings>,
+        <http://conference#Conference_www>,
+        <http://conference#Passive_conference_participant>,
+        <http://conference#has_a_committee_chair>,
+        <http://conference#has_a_committee_co-chair>,
+        <http://conference#was_a_committee_chair_of> .
+
+<http://cmt#ConferenceMember> rdfs:subClassOf <http://conference#belong_to_a_conference_volume>,
+        <http://conference#is_a_topis_of_conference_parts>,
+        <http://conference#is_part_of_conference_volumes> ;
+    owl:equivalentClass <http://conference#Active_conference_participant>,
+        <http://conference#Committee_member>,
+        <http://conference#Conference>,
+        <http://conference#Conference_announcement>,
+        <http://conference#Conference_applicant>,
+        <http://conference#Conference_contribution>,
+        <http://conference#Conference_contributor>,
+        <http://conference#Conference_document>,
+        <http://conference#Conference_fees>,
+        <http://conference#Conference_part>,
+        <http://conference#Conference_participant>,
+        <http://conference#Conference_proceedings>,
+        <http://conference#Conference_volume>,
+        <http://conference#Conference_www>,
+        <http://conference#Passive_conference_participant>,
+        <http://conference#was_a_member_of> .
+
+<http://cmt#Document> owl:equivalentClass <http://conference#Conference_document> .
+
+<http://cmt#ExternalReviewer> owl:equivalentClass <http://conference#Reviewer> .
+
+<http://cmt#Meta-Review> rdfs:subClassOf <http://conference#Review_expertise>,
+        <http://conference#Review_preference>,
+        <http://conference#belongs_to_a_review_reference>,
+        <http://conference#has_a_review_expertise>,
+        <http://conference#has_a_review_reference_or_expertise>,
+        <http://conference#has_been_assigned_a_review_reference> ;
+    owl:equivalentClass <http://conference#Review>,
+        <http://conference#has_a_review> .
+
+<http://cmt#Meta-Reviewer> owl:equivalentClass <http://conference#Reviewer> .
+
+<http://cmt#Paper> owl:equivalentClass <http://conference#Call_for_paper>,
+        <http://conference#Paper>,
+        <http://conference#is_a_date_of_camera_ready_paper_submission>,
+        <http://conference#is_a_full_paper_submission_date> .
+
+<http://cmt#PaperAbstract> rdfs:subClassOf <http://conference#Call_for_paper>,
+        <http://conference#is_an_abstract_submission_date> ;
+    owl:equivalentClass <http://conference#Abstract>,
+        <http://conference#Extended_abstract>,
+        <http://conference#Paper>,
+        <http://conference#has_an_abstract> .
+
+<http://cmt#PaperFullVersion> rdfs:subClassOf <http://conference#Call_for_paper>,
+        <http://conference#is_a_full_paper_submission_date> ;
+    owl:equivalentClass <http://conference#Paper> .
+
+<http://cmt#Person> owl:equivalentClass <http://conference#Person> .
+
+<http://cmt#Preference> owl:equivalentClass <http://conference#Review_preference> .
+
+<http://cmt#ProgramCommittee> rdfs:subClassOf <http://conference#has_a_committee_chair>,
+        <http://conference#has_a_committee_co-chair>,
+        <http://conference#has_a_steering_committee>,
+        <http://conference#has_an_organizing_committee>,
+        <http://conference#was_a_committee_chair_of>,
+        <http://conference#was_a_steering_committee_of>,
+        <http://conference#was_an_organizing_committee_of> ;
+    owl:equivalentClass <http://conference#Committee>,
+        <http://conference#Committee_member>,
+        <http://conference#Organizing_committee>,
+        <http://conference#Program_committee>,
+        <http://conference#Steering_committee>,
+        <http://conference#has_a_program_committee>,
+        <http://conference#was_a_committee_of>,
+        <http://conference#was_a_program_committee_of> .
+
+<http://cmt#ProgramCommitteeChair> rdfs:subClassOf <http://conference#Organizing_committee>,
+        <http://conference#Steering_committee>,
+        <http://conference#has_a_steering_committee>,
+        <http://conference#has_an_organizing_committee>,
+        <http://conference#was_a_committe_co-chair_of>,
+        <http://conference#was_a_steering_committee_of>,
+        <http://conference#was_an_organizing_committee_of> ;
+    owl:equivalentClass <http://conference#Chair>,
+        <http://conference#Co-chair>,
+        <http://conference#Committee>,
+        <http://conference#Committee_member>,
+        <http://conference#Program_committee>,
+        <http://conference#has_a_committee_chair>,
+        <http://conference#has_a_committee_co-chair>,
+        <http://conference#has_a_program_committee>,
+        <http://conference#was_a_committee_chair_of>,
+        <http://conference#was_a_committee_of>,
+        <http://conference#was_a_program_committee_of> .
+
+<http://cmt#ProgramCommitteeMember> rdfs:subClassOf <http://conference#Organizing_committee>,
+        <http://conference#Steering_committee>,
+        <http://conference#has_a_committee_co-chair>,
+        <http://conference#has_a_steering_committee>,
+        <http://conference#has_an_organizing_committee>,
+        <http://conference#was_a_steering_committee_of>,
+        <http://conference#was_an_organizing_committee_of> ;
+    owl:equivalentClass <http://conference#Committee>,
+        <http://conference#Committee_member>,
+        <http://conference#Program_committee>,
+        <http://conference#has_a_committee_chair>,
+        <http://conference#has_a_program_committee>,
+        <http://conference#was_a_committee_chair_of>,
+        <http://conference#was_a_committee_of>,
+        <http://conference#was_a_member_of>,
+        <http://conference#was_a_program_committee_of> .
+
+<http://cmt#Review> owl:equivalentClass <http://conference#Review>,
+        <http://conference#Review_expertise>,
+        <http://conference#Review_preference>,
+        <http://conference#belongs_to_a_review_reference>,
+        <http://conference#has_a_review>,
+        <http://conference#has_a_review_expertise>,
+        <http://conference#has_a_review_reference_or_expertise>,
+        <http://conference#has_been_assigned_a_review_reference> .
+
+<http://cmt#Reviewer> owl:equivalentClass <http://conference#Reviewer> .
+
+<http://cmt#acceptPaper> rdfs:subClassOf <http://conference#Call_for_paper> ;
+    owl:equivalentClass <http://conference#Paper> .
+
+<http://cmt#acceptedBy> owl:equivalentClass <http://conference#Accepted_contribution> .
+
+<http://cmt#addProgramCommitteeMember> rdfs:subClassOf <http://conference#Organizing_committee>,
+        <http://conference#Steering_committee> ;
+    rdfs:subPropertyOf <http://conference#has_a_steering_committee>,
+        <http://conference#was_a_committee_chair_of> ;
+    owl:equivalentClass <http://conference#Committee>,
+        <http://conference#Committee_member>,
+        <http://conference#Program_committee>,
+        <http://conference#has_a_committee_chair>,
+        <http://conference#has_a_program_committee>,
+        <http://conference#was_a_committee_of>,
+        <http://conference#was_a_member_of>,
+        <http://conference#was_a_program_committee_of> ;
+    owl:equivalentProperty <http://conference#has_a_committee_chair>,
+        <http://conference#has_a_program_committee>,
+        <http://conference#was_a_committee_of>,
+        <http://conference#was_a_member_of>,
+        <http://conference#was_a_program_committee_of> .
+
+<http://cmt#assignExternalReviewer> owl:equivalentClass <http://conference#Reviewer> .
+
+<http://cmt#assignReviewer> owl:equivalentClass <http://conference#Reviewer> .
+
+<http://cmt#assignedByReviewer> owl:equivalentClass <http://conference#Reviewer>,
+        <http://conference#has_been_assigned_a_review_reference> ;
+    owl:equivalentProperty <http://conference#has_been_assigned_a_review_reference> .
+
+<http://cmt#assignedTo> owl:equivalentClass <http://conference#has_been_assigned_a_review_reference> ;
+    owl:equivalentProperty <http://conference#has_been_assigned_a_review_reference> .
+
+<http://cmt#co-writePaper> rdfs:subClassOf <http://conference#Call_for_paper> ;
+    owl:equivalentClass <http://conference#Paper> .
+
+<http://cmt#date> owl:equivalentClass <http://conference#has_a_date_of_issue>,
+        <http://conference#is_a_date_of_acceptance_announcement>,
+        <http://conference#is_a_date_of_camera_ready_paper_submission>,
+        <http://conference#is_a_full_paper_submission_date>,
+        <http://conference#is_a_starting_date>,
+        <http://conference#is_an_abstract_submission_date>,
+        <http://conference#is_an_ending_date>,
+        xsd:date ;
+    owl:equivalentProperty <http://conference#has_a_date_of_issue>,
+        <http://conference#is_a_date_of_acceptance_announcement>,
+        <http://conference#is_a_date_of_camera_ready_paper_submission>,
+        <http://conference#is_a_full_paper_submission_date>,
+        <http://conference#is_a_starting_date>,
+        <http://conference#is_an_abstract_submission_date>,
+        <http://conference#is_an_ending_date> .
+
+<http://cmt#email> owl:equivalentClass <http://conference#has_an_email> ;
+    owl:equivalentProperty <http://conference#has_an_email> .
+
+<http://cmt#endReview> rdfs:subClassOf <http://conference#Review_preference>,
+        <http://conference#belongs_to_a_review_reference>,
+        <http://conference#has_a_review_expertise>,
+        <http://conference#has_a_review_reference_or_expertise>,
+        <http://conference#has_been_assigned_a_review_reference> ;
+    rdfs:subPropertyOf <http://conference#belongs_to_a_review_reference>,
+        <http://conference#has_a_review_expertise>,
+        <http://conference#has_a_review_reference_or_expertise>,
+        <http://conference#has_been_assigned_a_review_reference> ;
+    owl:equivalentClass <http://conference#Review>,
+        <http://conference#Review_expertise>,
+        <http://conference#has_a_review> ;
+    owl:equivalentProperty <http://conference#has_a_review> .
+
+<http://cmt#enterConferenceDetails> rdfs:subClassOf <http://conference#Conference_contribution> ;
+    rdfs:subPropertyOf <http://conference#belong_to_a_conference_volume>,
+        <http://conference#is_a_topis_of_conference_parts>,
+        <http://conference#is_part_of_conference_volumes> ;
+    owl:equivalentClass <http://conference#Conference>,
+        <http://conference#Conference_announcement>,
+        <http://conference#Conference_applicant>,
+        <http://conference#Conference_contributor>,
+        <http://conference#Conference_document>,
+        <http://conference#Conference_fees>,
+        <http://conference#Conference_part>,
+        <http://conference#Conference_participant>,
+        <http://conference#Conference_proceedings>,
+        <http://conference#Conference_volume>,
+        <http://conference#Conference_www> .
+
+<http://cmt#enterReviewCriteria> rdfs:subClassOf <http://conference#Review_expertise>,
+        <http://conference#Review_preference>,
+        <http://conference#has_a_review_expertise> ;
+    rdfs:subPropertyOf <http://conference#belongs_to_a_review_reference>,
+        <http://conference#has_a_review_expertise>,
+        <http://conference#has_a_review_reference_or_expertise> ;
+    owl:equivalentClass <http://conference#Review>,
+        <http://conference#has_a_review> ;
+    owl:equivalentProperty <http://conference#has_a_review> .
+
+<http://cmt#finalizePaperAssignment> rdfs:subClassOf <http://conference#Call_for_paper> ;
+    owl:equivalentClass <http://conference#Paper> .
+
+<http://cmt#hasAuthor> owl:equivalentClass <http://conference#Contribution_1th-author>,
+        <http://conference#Contribution_co-author>,
+        <http://conference#Regular_author> .
+
+<http://cmt#hasBeenAssigned> owl:equivalentClass <http://conference#has_been_assigned_a_review_reference> ;
+    owl:equivalentProperty <http://conference#has_been_assigned_a_review_reference> .
+
+<http://cmt#hasCo-author> rdfs:subClassOf <http://conference#Contribution_1th-author>,
+        <http://conference#has_a_committee_co-chair> ;
+    rdfs:subPropertyOf <http://conference#has_a_committee_co-chair> ;
+    owl:equivalentClass <http://conference#Contribution_co-author>,
+        <http://conference#Regular_author> .
+
+<http://cmt#hasConferenceMember> rdfs:subClassOf <http://conference#Conference_announcement>,
+        <http://conference#Conference_document>,
+        <http://conference#Conference_fees>,
+        <http://conference#Conference_proceedings>,
+        <http://conference#Conference_volume>,
+        <http://conference#Passive_conference_participant> ;
+    rdfs:subPropertyOf <http://conference#is_a_topis_of_conference_parts>,
+        <http://conference#is_part_of_conference_volumes> ;
+    owl:equivalentClass <http://conference#Active_conference_participant>,
+        <http://conference#Committee_member>,
+        <http://conference#Conference>,
+        <http://conference#Conference_applicant>,
+        <http://conference#Conference_contribution>,
+        <http://conference#Conference_contributor>,
+        <http://conference#Conference_part>,
+        <http://conference#Conference_participant>,
+        <http://conference#Conference_www>,
+        <http://conference#was_a_member_of> ;
+    owl:equivalentProperty <http://conference#belong_to_a_conference_volume>,
+        <http://conference#was_a_member_of> .
+
+<http://cmt#hasProgramCommitteeMember> rdfs:subClassOf <http://conference#Organizing_committee>,
+        <http://conference#Steering_committee>,
+        <http://conference#has_a_steering_committee>,
+        <http://conference#has_an_organizing_committee>,
+        <http://conference#was_a_steering_committee_of> ;
+    rdfs:subPropertyOf <http://conference#has_a_steering_committee>,
+        <http://conference#has_an_organizing_committee>,
+        <http://conference#was_a_steering_committee_of>,
+        <http://conference#was_an_organizing_committee_of> ;
+    owl:equivalentClass <http://conference#Committee>,
+        <http://conference#Committee_member>,
+        <http://conference#Program_committee>,
+        <http://conference#has_a_committee_chair>,
+        <http://conference#has_a_committee_co-chair>,
+        <http://conference#has_a_program_committee>,
+        <http://conference#was_a_committee_chair_of>,
+        <http://conference#was_a_committee_of>,
+        <http://conference#was_a_member_of>,
+        <http://conference#was_a_program_committee_of> ;
+    owl:equivalentProperty <http://conference#has_a_committee_chair>,
+        <http://conference#has_a_committee_co-chair>,
+        <http://conference#has_a_program_committee>,
+        <http://conference#was_a_committee_chair_of>,
+        <http://conference#was_a_committee_of>,
+        <http://conference#was_a_member_of>,
+        <http://conference#was_a_program_committee_of> .
+
+<http://cmt#logoURL> owl:equivalentClass <http://conference#has_a_URL> ;
+    owl:equivalentProperty <http://conference#has_a_URL> .
+
+<http://cmt#memberOfConference> rdfs:subClassOf <http://conference#Conference_document>,
+        <http://conference#Conference_fees>,
+        <http://conference#Conference_volume>,
+        <http://conference#Passive_conference_participant> ;
+    owl:equivalentClass <http://conference#Active_conference_participant>,
+        <http://conference#Committee_member>,
+        <http://conference#Conference>,
+        <http://conference#Conference_announcement>,
+        <http://conference#Conference_applicant>,
+        <http://conference#Conference_contribution>,
+        <http://conference#Conference_contributor>,
+        <http://conference#Conference_part>,
+        <http://conference#Conference_participant>,
+        <http://conference#Conference_proceedings>,
+        <http://conference#Conference_www>,
+        <http://conference#belong_to_a_conference_volume>,
+        <http://conference#is_a_topis_of_conference_parts>,
+        <http://conference#is_part_of_conference_volumes>,
+        <http://conference#was_a_member_of> ;
+    owl:equivalentProperty <http://conference#belong_to_a_conference_volume>,
+        <http://conference#is_a_topis_of_conference_parts>,
+        <http://conference#is_part_of_conference_volumes>,
+        <http://conference#was_a_member_of> .
+
+<http://cmt#memberOfProgramCommittee> rdfs:subClassOf <http://conference#Organizing_committee>,
+        <http://conference#Steering_committee>,
+        <http://conference#has_a_steering_committee>,
+        <http://conference#has_an_organizing_committee>,
+        <http://conference#was_a_steering_committee_of>,
+        <http://conference#was_an_organizing_committee_of> ;
+    rdfs:subPropertyOf <http://conference#has_a_steering_committee>,
+        <http://conference#has_an_organizing_committee>,
+        <http://conference#was_a_steering_committee_of>,
+        <http://conference#was_an_organizing_committee_of> ;
+    owl:equivalentClass <http://conference#Committee>,
+        <http://conference#Committee_member>,
+        <http://conference#Program_committee>,
+        <http://conference#has_a_committee_chair>,
+        <http://conference#has_a_program_committee>,
+        <http://conference#was_a_committee_chair_of>,
+        <http://conference#was_a_committee_of>,
+        <http://conference#was_a_member_of>,
+        <http://conference#was_a_program_committee_of> ;
+    owl:equivalentProperty <http://conference#has_a_committee_chair>,
+        <http://conference#has_a_committee_co-chair>,
+        <http://conference#has_a_program_committee>,
+        <http://conference#was_a_committee_chair_of>,
+        <http://conference#was_a_committee_of>,
+        <http://conference#was_a_member_of>,
+        <http://conference#was_a_program_committee_of> .
+
+<http://cmt#name> owl:equivalentClass <http://conference#has_a_name>,
+        <http://conference#has_the_first_name>,
+        <http://conference#has_the_last_name> ;
+    owl:equivalentProperty <http://conference#has_a_name>,
+        <http://conference#has_the_first_name>,
+        <http://conference#has_the_last_name> .
+
+<http://cmt#paperAssignmentFinalizedBy> owl:equivalentClass <http://conference#Paper> .
+
+<http://cmt#paperAssignmentToolsRunBy> owl:equivalentClass <http://conference#Paper> .
+
+<http://cmt#paperID> owl:equivalentClass <http://conference#Call_for_paper>,
+        <http://conference#Paper> .
+
+<http://cmt#readByMeta-Reviewer> owl:equivalentClass <http://conference#Reviewer> .
+
+<http://cmt#readByReviewer> owl:equivalentClass <http://conference#Reviewer> .
+
+<http://cmt#readPaper> rdfs:subClassOf <http://conference#Call_for_paper> ;
+    owl:equivalentClass <http://conference#Paper> .
+
+<http://cmt#rejectPaper> rdfs:subClassOf <http://conference#Call_for_paper> ;
+    owl:equivalentClass <http://conference#Paper> .
+
+<http://cmt#rejectedBy> owl:equivalentClass <http://conference#Rejected_contribution> .
+
+<http://cmt#reviewCriteriaEnteredBy> rdfs:subClassOf <http://conference#Review_expertise>,
+        <http://conference#Review_preference>,
+        <http://conference#has_a_review_expertise> ;
+    rdfs:subPropertyOf <http://conference#belongs_to_a_review_reference>,
+        <http://conference#has_a_review_expertise> ;
+    owl:equivalentClass <http://conference#Review>,
+        <http://conference#has_a_review> ;
+    owl:equivalentProperty <http://conference#has_a_review> .
+
+<http://cmt#reviewerBiddingStartedBy> owl:equivalentClass <http://conference#Reviewer> .
+
+<http://cmt#reviewsPerPaper> rdfs:subClassOf <http://conference#Call_for_paper> ;
+    owl:equivalentClass <http://conference#Paper>,
+        <http://conference#reviews> ;
+    owl:equivalentProperty <http://conference#reviews> .
+
+<http://cmt#runPaperAssignmentTools> owl:equivalentClass <http://conference#Paper> .
+
+<http://cmt#siteURL> owl:equivalentClass <http://conference#has_a_URL> ;
+    owl:equivalentProperty <http://conference#has_a_URL> .
+
+<http://cmt#startReviewerBidding> owl:equivalentClass <http://conference#Reviewer> .
+
+<http://cmt#submitPaper> rdfs:subClassOf <http://conference#Call_for_paper> ;
+    owl:equivalentClass <http://conference#Paper> .
+
+<http://cmt#writePaper> rdfs:subClassOf <http://conference#Call_for_paper> ;
+    owl:equivalentClass <http://conference#Paper> .
+
+<http://cmt#writeReview> rdfs:subClassOf <http://conference#belongs_to_a_review_reference>,
+        <http://conference#has_a_review_expertise>,
+        <http://conference#has_a_review_reference_or_expertise>,
+        <http://conference#has_been_assigned_a_review_reference> ;
+    rdfs:subPropertyOf <http://conference#belongs_to_a_review_reference>,
+        <http://conference#has_a_review_expertise>,
+        <http://conference#has_a_review_reference_or_expertise>,
+        <http://conference#has_been_assigned_a_review_reference> ;
+    owl:equivalentClass <http://conference#Review>,
+        <http://conference#Review_expertise>,
+        <http://conference#Review_preference>,
+        <http://conference#has_a_review> ;
+    owl:equivalentProperty <http://conference#has_a_review> .
+
+<http://cmt#writtenBy> owl:equivalentClass <http://conference#Written_contribution> .
+
+xsd:int owl:equivalentClass xsd:int .
+
+xsd:string owl:equivalentClass xsd:string .
+
+xsd:date owl:equivalentClass <http://conference#has_a_date_of_issue>,
+        <http://conference#is_a_date_of_acceptance_announcement>,
+        <http://conference#is_a_date_of_camera_ready_paper_submission>,
+        <http://conference#is_a_full_paper_submission_date>,
+        <http://conference#is_a_starting_date>,
+        <http://conference#is_an_abstract_submission_date>,
+        <http://conference#is_an_ending_date>,
+        xsd:date .
+

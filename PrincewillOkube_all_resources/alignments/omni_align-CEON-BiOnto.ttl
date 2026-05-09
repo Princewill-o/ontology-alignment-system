@@ -1,0 +1,1874 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/circular-economy/ontologies/CEON.rdf
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/circular-economy/ontologies/BiOnto.rdf
+# Total mappings: 1571
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://qudt.org/schema/qudt/Quantity> owl:equivalentClass <http://ontorion.com/namespace#Quantity> .
+
+<http://qudt.org/schema/qudt/QuantityKind> owl:equivalentClass <http://ontorion.com/namespace#Quantity> .
+
+<http://qudt.org/schema/qudt/QuantityValue> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Quantity> .
+
+<http://qudt.org/schema/qudt/hasQuantityKind> rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Quantity> .
+
+<http://qudt.org/schema/qudt/hasUnit> owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://qudt.org/schema/qudt/quantityValue> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Quantity> .
+
+<http://w3id.org/CEON/ontology/actor/ActorCVNRole> rdfs:subClassOf <http://ontorion.com/namespace#CircularEconomy>,
+        <http://ontorion.com/namespace#EconomicActor> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Network> .
+
+<http://w3id.org/CEON/ontology/actor/ActorCollaborationRole> rdfs:subClassOf <http://ontorion.com/namespace#EconomicActor> .
+
+<http://w3id.org/CEON/ontology/actor/ActorProcessRole> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicActor>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#MentalProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/actor/ActorResourceRole> rdfs:subClassOf <http://ontorion.com/namespace#EconomicActor>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/BuyingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/CVNParticipation> rdfs:subClassOf <http://ontorion.com/namespace#CircularEconomy> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Network>,
+        <http://ontorion.com/namespace#Participation> .
+
+<http://w3id.org/CEON/ontology/actor/ConsumingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/IssuingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/ManufacturingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Manufacturing>,
+        <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/Organisation> owl:equivalentClass <http://ontorion.com/namespace#OrganisationForEconomicCoOperationAndDevelopment> .
+
+<http://w3id.org/CEON/ontology/actor/OrganisationLocation> rdfs:subClassOf <http://ontorion.com/namespace#OrganisationForEconomicCoOperationAndDevelopment> .
+
+<http://w3id.org/CEON/ontology/actor/OwningResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/Person> owl:equivalentClass <http://ontorion.com/namespace#Person> .
+
+<http://w3id.org/CEON/ontology/actor/ProcessParticipation> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#LearningProcess>,
+        <http://ontorion.com/namespace#MentalProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Participation>,
+        <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/actor/ProducingResource> rdfs:subClassOf <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/ProvidingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/RepairingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource>,
+        <http://ontorion.com/namespace#ResourceDepletion> .
+
+<http://w3id.org/CEON/ontology/actor/ResellingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/SellingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#UniqueSellingPoint>,
+        <http://ontorion.com/namespace#UniqueSellingProposition>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/Stakeholder> rdfs:subClassOf <http://ontorion.com/namespace#BuildingAwarenessAndTrustWithInterestedBusinessAndConsumers> .
+
+<http://w3id.org/CEON/ontology/actor/SupplyingResource> rdfs:subClassOf <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#Resource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> .
+
+<http://w3id.org/CEON/ontology/actor/UpdatingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/UsingResource> rdfs:subClassOf <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#Resource>,
+        <http://ontorion.com/namespace#ResourceDepletion> .
+
+<http://w3id.org/CEON/ontology/actor/ViewingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actor/hasOrganisationLocation> rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#OrganisationForEconomicCoOperationAndDevelopment> .
+
+<http://w3id.org/CEON/ontology/actor/hasOrganisationName> owl:equivalentClass <http://ontorion.com/namespace#OrganisationForEconomicCoOperationAndDevelopment> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasName> .
+
+<http://w3id.org/CEON/ontology/actor/neededResourceRelation> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#SocialRelation>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Relation>,
+        <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actorODP/Actor> owl:equivalentClass <http://ontorion.com/namespace#EconomicActor> .
+
+<http://w3id.org/CEON/ontology/actorODP/ActorType> rdfs:subClassOf <http://ontorion.com/namespace#EconomicActor> .
+
+<http://w3id.org/CEON/ontology/actorODP/CollaborationParticipation> owl:equivalentClass <http://ontorion.com/namespace#Participation> .
+
+<http://w3id.org/CEON/ontology/actorODP/Infrastructure> owl:equivalentClass <http://ontorion.com/namespace#Infrastructure> .
+
+<http://w3id.org/CEON/ontology/actorODP/Participation> owl:equivalentClass <http://ontorion.com/namespace#Participation> .
+
+<http://w3id.org/CEON/ontology/actorODP/ResourceParticipation> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Participation>,
+        <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actorODP/ResourceRelation> rdfs:subClassOf <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#SocialRelation>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#Relation>,
+        <http://ontorion.com/namespace#Resource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> .
+
+<http://w3id.org/CEON/ontology/actorODP/actorType> rdfs:subClassOf <http://ontorion.com/namespace#EconomicActor> .
+
+<http://w3id.org/CEON/ontology/actorODP/participatingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/actorODP/participating_infrastructure> owl:equivalentClass <http://ontorion.com/namespace#Infrastructure> .
+
+<http://w3id.org/CEON/ontology/actorODP/participationEndTime> owl:equivalentClass <http://ontorion.com/namespace#Participation>,
+        <http://ontorion.com/namespace#time> .
+
+<http://w3id.org/CEON/ontology/actorODP/participationIn> rdfs:subPropertyOf <http://ontorion.com/namespace#hasPartIn>,
+        <http://ontorion.com/namespace#isUsedIn> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Participation> .
+
+<http://w3id.org/CEON/ontology/actorODP/participationStartTime> owl:equivalentClass <http://ontorion.com/namespace#Participation>,
+        <http://ontorion.com/namespace#time> .
+
+<http://w3id.org/CEON/ontology/actorODP/participationTimePoint> owl:equivalentClass <http://ontorion.com/namespace#Participation>,
+        <http://ontorion.com/namespace#time> .
+
+<http://w3id.org/CEON/ontology/cvn/CVN> rdfs:subClassOf <http://ontorion.com/namespace#CircularEconomy>,
+        <http://ontorion.com/namespace#ValueChain> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Network> .
+
+<http://w3id.org/CEON/ontology/cvn/CVNBlueprint> rdfs:subClassOf <http://ontorion.com/namespace#CircularEconomy> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Network> .
+
+<http://w3id.org/CEON/ontology/cvn/CircularStrategy> rdfs:subClassOf <http://ontorion.com/namespace#BusinessStrategy> ;
+    owl:equivalentClass <http://ontorion.com/namespace#CircularEconomy>,
+        <http://ontorion.com/namespace#Strategy> .
+
+<http://w3id.org/CEON/ontology/cvn/aimsAtValue> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> .
+
+<http://w3id.org/CEON/ontology/cvn/createsValue> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> .
+
+<http://w3id.org/CEON/ontology/cvn/implementsStrategy> owl:equivalentClass <http://ontorion.com/namespace#BusinessStrategy>,
+        <http://ontorion.com/namespace#Strategy> .
+
+<http://w3id.org/CEON/ontology/cvn/plansToImplementStrategy> rdfs:subClassOf <http://ontorion.com/namespace#BusinessStrategy> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Strategy> .
+
+<http://w3id.org/CEON/ontology/cvn/relatedStrategy> owl:equivalentProperty <http://ontorion.com/namespace#isRelatedTo> .
+
+<http://w3id.org/CEON/ontology/energy/Biofuel> owl:equivalentClass <http://ontorion.com/namespa#SecondGenerationBiofuel>,
+        <http://ontorion.com/namespace#AdvancedBiofuel>,
+        <http://ontorion.com/namespace#Biofuel>,
+        <http://ontorion.com/namespace#FirstGenerationBiofuel> .
+
+<http://w3id.org/CEON/ontology/energy/Biogas> owl:equivalentClass <http://ontorion.com/namespace#Biogas> .
+
+<http://w3id.org/CEON/ontology/energy/Biomass> owl:equivalentClass <http://ontorion.com/namespace#Biomas>,
+        <http://ontorion.com/namespace#LignocellulosicBiomass> .
+
+<http://w3id.org/CEON/ontology/energy/Coal> owl:equivalentClass <http://ontorion.com/namespace#Coal> .
+
+<http://w3id.org/CEON/ontology/energy/Energy> owl:equivalentClass <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#EfficientEnergyUse>,
+        <http://ontorion.com/namespace#ElectricEnergyConsumption>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyPolicyOfTheUnitedStates>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#GravitationalEnergy>,
+        <http://ontorion.com/namespace#InternationalEnergyAgency>,
+        <http://ontorion.com/namespace#IonizationEnergy>,
+        <http://ontorion.com/namespace#KineticEnergy>,
+        <http://ontorion.com/namespace#MagneticEnergy>,
+        <http://ontorion.com/namespace#MechanicalEnergy>,
+        <http://ontorion.com/namespace#NuclearBindingEnergy>,
+        <http://ontorion.com/namespace#PotentialEnergy>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SurfaceEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#ThermalEnergy>,
+        <http://ontorion.com/namespace#WindEnergy>,
+        <http://ontorion.com/namespace#WorldEnergyConsumption> .
+
+<http://w3id.org/CEON/ontology/energy/EnergyComposition> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#EfficientEnergyUse>,
+        <http://ontorion.com/namespace#ElectricEnergyConsumption>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#GravitationalEnergy>,
+        <http://ontorion.com/namespace#KineticEnergy>,
+        <http://ontorion.com/namespace#MagneticEnergy>,
+        <http://ontorion.com/namespace#MechanicalEnergy>,
+        <http://ontorion.com/namespace#PotentialEnergy>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SurfaceEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#ThermalEnergy>,
+        <http://ontorion.com/namespace#WindEnergy>,
+        <http://ontorion.com/namespace#WorldEnergyConsumption> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#IonizationEnergy> .
+
+<http://w3id.org/CEON/ontology/energy/EnergyConversion> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#ElectricEnergyConsumption>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#GravitationalEnergy>,
+        <http://ontorion.com/namespace#KineticEnergy>,
+        <http://ontorion.com/namespace#MagneticEnergy>,
+        <http://ontorion.com/namespace#MechanicalEnergy>,
+        <http://ontorion.com/namespace#PotentialEnergy>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SurfaceEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#ThermalEnergy>,
+        <http://ontorion.com/namespace#WindEnergy>,
+        <http://ontorion.com/namespace#WorldEnergyConsumption> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#IonizationEnergy> .
+
+<http://w3id.org/CEON/ontology/energy/EnergyInfrastructure> rdfs:subClassOf <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#EfficientEnergyUse>,
+        <http://ontorion.com/namespace#ElectricEnergyConsumption>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#InternationalEnergyAgency>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#WindEnergy>,
+        <http://ontorion.com/namespace#WorldEnergyConsumption> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#Infrastructure> .
+
+<http://w3id.org/CEON/ontology/energy/EnergySource> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#EfficientEnergyUse>,
+        <http://ontorion.com/namespace#ElectricEnergyConsumption>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#GravitationalEnergy>,
+        <http://ontorion.com/namespace#InternationalEnergyAgency>,
+        <http://ontorion.com/namespace#IonizationEnergy>,
+        <http://ontorion.com/namespace#KineticEnergy>,
+        <http://ontorion.com/namespace#MagneticEnergy>,
+        <http://ontorion.com/namespace#MechanicalEnergy>,
+        <http://ontorion.com/namespace#NuclearBindingEnergy>,
+        <http://ontorion.com/namespace#PotentialEnergy>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#ThermalEnergy>,
+        <http://ontorion.com/namespace#WorldEnergyConsumption> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SurfaceEnergy>,
+        <http://ontorion.com/namespace#WindEnergy> .
+
+<http://w3id.org/CEON/ontology/energy/FossilFuel> rdfs:subClassOf <http://ontorion.com/namespace#AlternativeFuel>,
+        <http://ontorion.com/namespace#DieselFuel>,
+        <http://ontorion.com/namespace#EthanolFuel>,
+        <http://ontorion.com/namespace#FoodVsFuel>,
+        <http://ontorion.com/namespace#FuelEfficiency>,
+        <http://ontorion.com/namespace#GaseosusFuel>,
+        <http://ontorion.com/namespace#LiquidFuel>,
+        <http://ontorion.com/namespace#MethanolFuel>,
+        <http://ontorion.com/namespace#RenewableFuel>,
+        <http://ontorion.com/namespace#SolidFuel>,
+        <http://ontorion.com/namespace#WoodFuel> ;
+    owl:equivalentClass <http://ontorion.com/namespace#FossilFuel>,
+        <http://ontorion.com/namespace#FossilGas>,
+        <http://ontorion.com/namespace#Fuel>,
+        <http://ontorion.com/namespace#LowFossilFuelEconomy> .
+
+<http://w3id.org/CEON/ontology/energy/GeothermalEnergySource> rdfs:subClassOf <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#ThermalEnergy>,
+        <http://ontorion.com/namespace#WindEnergy> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergySource> .
+
+<http://w3id.org/CEON/ontology/energy/NaturalGas> rdfs:subClassOf <http://ontorion.com/namespace#FossilGas>,
+        <http://ontorion.com/namespace#GreenhouseGas>,
+        <http://ontorion.com/namespace#NaturalEnvironment>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#NaturalOrganicMatter>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NaturalScience> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Gas>,
+        <http://ontorion.com/namespace#NaturalGas>,
+        <http://ontorion.com/namespace#NaturalResource> .
+
+<http://w3id.org/CEON/ontology/energy/NonRenewableEnergy> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#MechanicalEnergy>,
+        <http://ontorion.com/namespace#PotentialEnergy>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#WindEnergy> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RenewableFuel> .
+
+<http://w3id.org/CEON/ontology/energy/Petroleum> owl:equivalentClass <http://ontorion.com/namespace#Petroleum> .
+
+<http://w3id.org/CEON/ontology/energy/RenewableEnergy> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#EfficientEnergyUse>,
+        <http://ontorion.com/namespace#ElectricEnergyConsumption>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#InternationalEnergyAgency>,
+        <http://ontorion.com/namespace#KineticEnergy>,
+        <http://ontorion.com/namespace#MagneticEnergy>,
+        <http://ontorion.com/namespace#MechanicalEnergy>,
+        <http://ontorion.com/namespace#PotentialEnergy>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SurfaceEnergy>,
+        <http://ontorion.com/namespace#ThermalEnergy>,
+        <http://ontorion.com/namespace#WorldEnergyConsumption> ;
+    owl:equivalentClass <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RenewableFuel>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#WindEnergy> .
+
+<http://w3id.org/CEON/ontology/energy/SolarEnergySource> rdfs:subClassOf <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SurfaceEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#ThermalEnergy>,
+        <http://ontorion.com/namespace#WindEnergy> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#SolarEnergy> .
+
+<http://w3id.org/CEON/ontology/energy/WindEnergySource> rdfs:subClassOf <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SurfaceEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#WindEnergy>,
+        <http://ontorion.com/namespace#WindPower> .
+
+<http://w3id.org/CEON/ontology/energy/hasAnergy> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/energy/hasCarbonIntensity> rdfs:subClassOf <http://ontorion.com/namespace#CarbonDioxide>,
+        <http://ontorion.com/namespace#CarbonMonoxide>,
+        <http://ontorion.com/namespace#CarbonNanotube>,
+        <http://ontorion.com/namespace#CarbonSink> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Carbon> .
+
+<http://w3id.org/CEON/ontology/energy/hasConvertedEnergy> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#IonizationEnergy>,
+        <http://ontorion.com/namespace#KineticEnergy>,
+        <http://ontorion.com/namespace#MagneticEnergy>,
+        <http://ontorion.com/namespace#MechanicalEnergy>,
+        <http://ontorion.com/namespace#PotentialEnergy>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SurfaceEnergy>,
+        <http://ontorion.com/namespace#ThermalEnergy>,
+        <http://ontorion.com/namespace#WindEnergy> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy> .
+
+<http://w3id.org/CEON/ontology/energy/hasEnergyComponentPercentage> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy> .
+
+<http://w3id.org/CEON/ontology/energy/hasEnergySource> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#ElectricEnergyConsumption>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#KineticEnergy>,
+        <http://ontorion.com/namespace#MechanicalEnergy>,
+        <http://ontorion.com/namespace#PotentialEnergy>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SurfaceEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#ThermalEnergy>,
+        <http://ontorion.com/namespace#WindEnergy>,
+        <http://ontorion.com/namespace#WorldEnergyConsumption> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySource> .
+
+<http://w3id.org/CEON/ontology/energy/hasExergy> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/energy/hasOriginalEnergy> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#GravitationalEnergy>,
+        <http://ontorion.com/namespace#IonizationEnergy>,
+        <http://ontorion.com/namespace#KineticEnergy>,
+        <http://ontorion.com/namespace#MagneticEnergy>,
+        <http://ontorion.com/namespace#MechanicalEnergy>,
+        <http://ontorion.com/namespace#PotentialEnergy>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SurfaceEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#ThermalEnergy>,
+        <http://ontorion.com/namespace#WindEnergy> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy> .
+
+<http://w3id.org/CEON/ontology/energy/hasSustainability> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#SustainableDevelopment> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#Measure>,
+        <http://ontorion.com/namespace#Sustainability>,
+        <http://ontorion.com/namespace#SustainabilityAndEnvironmentalManagement>,
+        <http://ontorion.com/namespace#SustainabilityBrand>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#UrbanSustainability> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#measures> .
+
+<http://w3id.org/CEON/ontology/location/hasCity> owl:equivalentClass <http://ontorion.com/namespace#City>,
+        <http://ontorion.com/namespace#EcoCity>,
+        <http://ontorion.com/namespace#SustainableCity> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/location/hasCountry> owl:equivalentClass <http://ontorion.com/namespace#Country> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/location/hasCountryCode> rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Country> .
+
+<http://w3id.org/CEON/ontology/location/hasGlobalLocationNumber> rdfs:subPropertyOf <http://ontorion.com/namespace#hasAtomicNumber> .
+
+<http://w3id.org/CEON/ontology/location/hasLocation> owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/material/Cellulose> owl:equivalentClass <http://ontorion.com/namespace#Cellulose> .
+
+<http://w3id.org/CEON/ontology/material/ChemicalElement> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#ChemicalEngineering>,
+        <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#ChemicalTransformation> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalCompound>,
+        <http://ontorion.com/namespace#ChemicalElement>,
+        <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalReaction>,
+        <http://ontorion.com/namespace#ChemicalSubstance>,
+        <http://ontorion.com/namespace#FineChemical> .
+
+<http://w3id.org/CEON/ontology/material/ChemicalEntity> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#ChemicalEngineering>,
+        <http://ontorion.com/namespace#ChemicalTransformation>,
+        <http://ontorion.com/namespace#NonBusinessEntity> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalCompound>,
+        <http://ontorion.com/namespace#ChemicalElement>,
+        <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#ChemicalReaction>,
+        <http://ontorion.com/namespace#ChemicalSubstance>,
+        <http://ontorion.com/namespace#Entity>,
+        <http://ontorion.com/namespace#FineChemical> .
+
+<http://w3id.org/CEON/ontology/material/ChemicalSubstance> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#ChemicalEngineering>,
+        <http://ontorion.com/namespace#ChemicalTransformation> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalCompound>,
+        <http://ontorion.com/namespace#ChemicalElement>,
+        <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#ChemicalReaction>,
+        <http://ontorion.com/namespace#ChemicalSubstance>,
+        <http://ontorion.com/namespace#FineChemical>,
+        <http://ontorion.com/namespace#SimpleSubstance> .
+
+<http://w3id.org/CEON/ontology/material/Iron> owl:equivalentClass <http://ontorion.com/namespace#Iron> .
+
+<http://w3id.org/CEON/ontology/material/Material> owl:equivalentClass <http://ontorion.com/namespace#ArtificialMaterial>,
+        <http://ontorion.com/namespace#BiologicalMaterial>,
+        <http://ontorion.com/namespace#CombustibleMaterial>,
+        <http://ontorion.com/namespace#Material>,
+        <http://ontorion.com/namespace#MaterialEfficiency>,
+        <http://ontorion.com/namespace#NanoMaterial>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#NonCombustibleMaterial>,
+        <http://ontorion.com/namespace#NonOrganicMaterial>,
+        <http://ontorion.com/namespace#OrganicMaterial>,
+        <http://ontorion.com/namespace#ProcessedMaterial> .
+
+<http://w3id.org/CEON/ontology/material/MaterialComponent> rdfs:subClassOf <http://ontorion.com/namespace#ArtificialMaterial>,
+        <http://ontorion.com/namespace#BiologicalMaterial>,
+        <http://ontorion.com/namespace#CombustibleMaterial>,
+        <http://ontorion.com/namespace#MaterialEfficiency>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#NonCombustibleMaterial>,
+        <http://ontorion.com/namespace#NonOrganicMaterial>,
+        <http://ontorion.com/namespace#OrganicMaterial>,
+        <http://ontorion.com/namespace#ProcessedMaterial> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Material>,
+        <http://ontorion.com/namespace#NanoMaterial> .
+
+<http://w3id.org/CEON/ontology/material/MolecularEntity> owl:equivalentClass <http://ontorion.com/namespace#Entity> .
+
+<http://w3id.org/CEON/ontology/material/Nickel> owl:equivalentClass <http://ontorion.com/namespace#Nickel> .
+
+<http://w3id.org/CEON/ontology/material/RareEarthElement> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalElement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Earth> .
+
+<http://w3id.org/CEON/ontology/material/hasChemicalEntity> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalCompound>,
+        <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#ChemicalEngineering>,
+        <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#ChemicalReaction>,
+        <http://ontorion.com/namespace#ChemicalTransformation>,
+        <http://ontorion.com/namespace#FineChemical>,
+        <http://ontorion.com/namespace#NonBusinessEntity> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalElement>,
+        <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalSubstance>,
+        <http://ontorion.com/namespace#Entity> .
+
+<http://w3id.org/CEON/ontology/material/hasMaterialComponent> rdfs:subClassOf <http://ontorion.com/namespace#ArtificialMaterial>,
+        <http://ontorion.com/namespace#BiologicalMaterial>,
+        <http://ontorion.com/namespace#CombustibleMaterial>,
+        <http://ontorion.com/namespace#MaterialEfficiency>,
+        <http://ontorion.com/namespace#NanoMaterial>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#NonCombustibleMaterial>,
+        <http://ontorion.com/namespace#NonOrganicMaterial>,
+        <http://ontorion.com/namespace#OrganicMaterial>,
+        <http://ontorion.com/namespace#ProcessedMaterial> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/process/AssemblingProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#LearningProcess>,
+        <http://ontorion.com/namespace#MentalProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/BuyResourceProcess> rdfs:subClassOf <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#MentalProcess>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces>,
+        <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/process/Catalyst> owl:equivalentClass <http://ontorion.com/namespace#Catalyst>,
+        <http://ontorion.com/namespace#NanomaterialBasedCatalyst> .
+
+<http://w3id.org/CEON/ontology/process/ChangeResourceProcess> rdfs:subClassOf <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Change>,
+        <http://ontorion.com/namespace#Proces>,
+        <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/process/ContactProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#LearningProcess>,
+        <http://ontorion.com/namespace#MentalProcess>,
+        <http://ontorion.com/namespace#SolGelProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/DeconstructionProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#MentalProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/DisassemblingProcess> owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/DismantleProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#MentalProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/EnsureClaimProcess> owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/IssuingCertificateProcess> owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/ManufacturingProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#LearningProcess>,
+        <http://ontorion.com/namespace#MentalProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Manufacturing>,
+        <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/OffsetProcess> owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/ProductionProcess> rdfs:subClassOf <http://ontorion.com/namespace#BiodieselProduction>,
+        <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#LearningProcess>,
+        <http://ontorion.com/namespace#MentalProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#PrimaryProduction>,
+        <http://ontorion.com/namespace#Proces>,
+        <http://ontorion.com/namespace#Production> .
+
+<http://w3id.org/CEON/ontology/process/RecycleProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/RefurbishmentProcess> rdfs:subClassOf <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/RemoveProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#MentalProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/RemoveResourceProcess> rdfs:subClassOf <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces>,
+        <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/process/RepairProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#LearningProcess>,
+        <http://ontorion.com/namespace#MentalProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/ResellProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#LearningProcess>,
+        <http://ontorion.com/namespace#MentalProcess>,
+        <http://ontorion.com/namespace#SolGelProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/ReuseProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#LearningProcess>,
+        <http://ontorion.com/namespace#MentalProcess>,
+        <http://ontorion.com/namespace#SolGelProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces>,
+        <http://ontorion.com/namespace#Reuse> .
+
+<http://w3id.org/CEON/ontology/process/SellResourceProcess> rdfs:subClassOf <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#MentalProcess>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces>,
+        <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/process/ServiceProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EcoSystemService>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#LearningProcess>,
+        <http://ontorion.com/namespace#MentalProcess>,
+        <http://ontorion.com/namespace#ServiceIndustry> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces>,
+        <http://ontorion.com/namespace#Service> .
+
+<http://w3id.org/CEON/ontology/process/ShareResourceProcess> rdfs:subClassOf <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#MentalProcess>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces>,
+        <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/process/TakeBackProcess> rdfs:subClassOf <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#MentalProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/process/needsEnergy> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#ElectricEnergyConsumption>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#GravitationalEnergy>,
+        <http://ontorion.com/namespace#IonizationEnergy>,
+        <http://ontorion.com/namespace#KineticEnergy>,
+        <http://ontorion.com/namespace#MagneticEnergy>,
+        <http://ontorion.com/namespace#MechanicalEnergy>,
+        <http://ontorion.com/namespace#PotentialEnergy>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SurfaceEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#ThermalEnergy>,
+        <http://ontorion.com/namespace#WindEnergy>,
+        <http://ontorion.com/namespace#WorldEnergyConsumption> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#RestEnergy> .
+
+<http://w3id.org/CEON/ontology/process/producesCO2> owl:equivalentProperty <http://ontorion.com/namespace#produces> .
+
+<http://w3id.org/CEON/ontology/process/resultingResource> rdfs:subClassOf <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#Resource>,
+        <http://ontorion.com/namespace#ResourceDepletion> .
+
+<http://w3id.org/CEON/ontology/process/usesCatalyst> owl:equivalentClass <http://ontorion.com/namespace#Catalyst>,
+        <http://ontorion.com/namespace#NanomaterialBasedCatalyst> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#uses> .
+
+<http://w3id.org/CEON/ontology/processODP/Event> owl:equivalentClass <http://ontorion.com/namespace#Event> .
+
+<http://w3id.org/CEON/ontology/processODP/Plan> owl:equivalentClass <http://ontorion.com/namespace#Plan> .
+
+<http://w3id.org/CEON/ontology/processODP/PlanExecution> owl:equivalentClass <http://ontorion.com/namespace#Plan> .
+
+<http://w3id.org/CEON/ontology/processODP/Process> owl:equivalentClass <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#LearningProcess>,
+        <http://ontorion.com/namespace#MentalProcess>,
+        <http://ontorion.com/namespace#Proces>,
+        <http://ontorion.com/namespace#SolGelProcess> .
+
+<http://w3id.org/CEON/ontology/processODP/TimeInterval> owl:equivalentClass <http://ontorion.com/namespace#time> .
+
+<http://w3id.org/CEON/ontology/processODP/TransformationProcess> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#MentalProcess> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalTransformation>,
+        <http://ontorion.com/namespace#Proces> .
+
+<http://w3id.org/CEON/ontology/processODP/duringTime> owl:equivalentClass <http://ontorion.com/namespace#time> .
+
+<http://w3id.org/CEON/ontology/processODP/endTime> owl:equivalentClass <http://ontorion.com/namespace#time> .
+
+<http://w3id.org/CEON/ontology/processODP/hasInput> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/processODP/hasOutput> rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#MeasureOfNationalIncomeAndOutput> .
+
+<http://w3id.org/CEON/ontology/processODP/hasPart> owl:equivalentProperty <http://ontorion.com/namespace#has>,
+        <http://ontorion.com/namespace#hasPart>,
+        <http://ontorion.com/namespace#hasPartIn>,
+        <http://ontorion.com/namespace#isPartOf>,
+        <http://ontorion.com/namespace#isProperPartOf>,
+        <http://ontorion.com/namespace#takesPartIn> .
+
+<http://w3id.org/CEON/ontology/processODP/hasPlanExecution> rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Plan> .
+
+<http://w3id.org/CEON/ontology/processODP/occursAtTime> owl:equivalentClass <http://ontorion.com/namespace#time> .
+
+<http://w3id.org/CEON/ontology/processODP/satisfiesPlan> owl:equivalentClass <http://ontorion.com/namespace#Plan> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#satisfiesNot> .
+
+<http://w3id.org/CEON/ontology/processODP/startTime> owl:equivalentClass <http://ontorion.com/namespace#time> .
+
+<http://w3id.org/CEON/ontology/product/MatterComposition> rdfs:subClassOf <http://ontorion.com/namespace#ImpureMatter>,
+        <http://ontorion.com/namespace#InorganicMatter>,
+        <http://ontorion.com/namespace#NaturalOrganicMatter>,
+        <http://ontorion.com/namespace#OrganicMatter> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Matter>,
+        <http://ontorion.com/namespace#PureMatter> .
+
+<http://w3id.org/CEON/ontology/product/Product> owl:equivalentClass <http://ontorion.com/namespace#BiobaseProduct>,
+        <http://ontorion.com/namespace#BiobasedProduct>,
+        <http://ontorion.com/namespace#BiologicalProduct>,
+        <http://ontorion.com/namespace#GrossDomesticProduct>,
+        <http://ontorion.com/namespace#IntangibleProduct>,
+        <http://ontorion.com/namespace#Product>,
+        <http://ontorion.com/namespace#ProductDesign>,
+        <http://ontorion.com/namespace#TangibleProduct> .
+
+<http://w3id.org/CEON/ontology/product/ProductComposition> rdfs:subClassOf <http://ontorion.com/namespace#BiobaseProduct>,
+        <http://ontorion.com/namespace#BiobasedProduct>,
+        <http://ontorion.com/namespace#BiologicalProduct>,
+        <http://ontorion.com/namespace#GrossDomesticProduct>,
+        <http://ontorion.com/namespace#IntangibleProduct>,
+        <http://ontorion.com/namespace#ProductDesign>,
+        <http://ontorion.com/namespace#TangibleProduct> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/product/ProductObjectComposition> rdfs:subClassOf <http://ontorion.com/namespace#BiobaseProduct>,
+        <http://ontorion.com/namespace#BiobasedProduct>,
+        <http://ontorion.com/namespace#BiologicalProduct>,
+        <http://ontorion.com/namespace#IntangibleProduct>,
+        <http://ontorion.com/namespace#TangibleProduct> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product>,
+        <http://ontorion.com/namespace#ProductDesign> .
+
+<http://w3id.org/CEON/ontology/product/ProductionLocation> rdfs:subClassOf <http://ontorion.com/namespace#BiodieselProduction>,
+        <http://ontorion.com/namespace#EnergyProduction> ;
+    owl:equivalentClass <http://ontorion.com/namespace#PrimaryProduction>,
+        <http://ontorion.com/namespace#Production> .
+
+<http://w3id.org/CEON/ontology/product/Regulation> owl:equivalentClass <http://ontorion.com/namespace#Regulation> .
+
+<http://w3id.org/CEON/ontology/product/associatedWithMatter> rdfs:subClassOf <http://ontorion.com/namespace#ImpureMatter>,
+        <http://ontorion.com/namespace#InorganicMatter>,
+        <http://ontorion.com/namespace#OrganicMatter>,
+        <http://ontorion.com/namespace#PureMatter> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Matter> .
+
+<http://w3id.org/CEON/ontology/product/associatedWithProductModel> rdfs:subClassOf <http://ontorion.com/namespace#BiobaseProduct>,
+        <http://ontorion.com/namespace#BiobasedProduct>,
+        <http://ontorion.com/namespace#BusinessModel>,
+        <http://ontorion.com/namespace#IntangibleProduct>,
+        <http://ontorion.com/namespace#ProductDesign>,
+        <http://ontorion.com/namespace#TangibleProduct> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/product/associatedWithProductObject> rdfs:subClassOf <http://ontorion.com/namespace#BiobaseProduct>,
+        <http://ontorion.com/namespace#BiobasedProduct>,
+        <http://ontorion.com/namespace#BiologicalProduct>,
+        <http://ontorion.com/namespace#IntangibleProduct>,
+        <http://ontorion.com/namespace#ProductDesign>,
+        <http://ontorion.com/namespace#TangibleProduct> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/product/batchOfProduct> rdfs:subClassOf <http://ontorion.com/namespace#ProductDesign>,
+        <http://ontorion.com/namespace#TextileProductsClothingSportsAndToys> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/product/compositionQuantity> owl:equivalentClass <http://ontorion.com/namespace#Quantity> .
+
+<http://w3id.org/CEON/ontology/product/countryOfAssembly> owl:equivalentClass <http://ontorion.com/namespace#Country> .
+
+<http://w3id.org/CEON/ontology/product/countryOfManufacture> owl:equivalentClass <http://ontorion.com/namespace#Country> .
+
+<http://w3id.org/CEON/ontology/product/countryOfOrigin> owl:equivalentClass <http://ontorion.com/namespace#Country> .
+
+<http://w3id.org/CEON/ontology/product/countryOfProduction> rdfs:subClassOf <http://ontorion.com/namespace#BiodieselProduction>,
+        <http://ontorion.com/namespace#EnergyProduction> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Country>,
+        <http://ontorion.com/namespace#PrimaryProduction>,
+        <http://ontorion.com/namespace#Production> .
+
+<http://w3id.org/CEON/ontology/product/hasAssemblyLocation> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/product/hasBrand> owl:equivalentClass <http://ontorion.com/namespace#SustainabilityBrand> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/product/hasCertificate> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/product/hasCompliance> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/product/hasComposition> owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/product/hasGlobalTradeItemNumber> owl:equivalentClass <http://ontorion.com/namespace#Trade> .
+
+<http://w3id.org/CEON/ontology/product/hasManufacturerLocation> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/product/hasOriginLocation> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/product/hasProductComponent> rdfs:subClassOf <http://ontorion.com/namespace#BiobaseProduct>,
+        <http://ontorion.com/namespace#BiobasedProduct>,
+        <http://ontorion.com/namespace#BiologicalProduct>,
+        <http://ontorion.com/namespace#IntangibleProduct>,
+        <http://ontorion.com/namespace#ProductDesign>,
+        <http://ontorion.com/namespace#TangibleProduct> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/product/hasProductName> rdfs:subClassOf <http://ontorion.com/namespace#BiobaseProduct>,
+        <http://ontorion.com/namespace#BiobasedProduct>,
+        <http://ontorion.com/namespace#BiologicalProduct>,
+        <http://ontorion.com/namespace#IntangibleProduct>,
+        <http://ontorion.com/namespace#ProductDesign>,
+        <http://ontorion.com/namespace#TangibleProduct> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasName> .
+
+<http://w3id.org/CEON/ontology/product/hasProductObjectComponent> rdfs:subClassOf <http://ontorion.com/namespace#ProductDesign>,
+        <http://ontorion.com/namespace#TangibleProduct> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/product/productionSite> rdfs:subClassOf <http://ontorion.com/namespace#BiodieselProduction>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#GenerationSite> ;
+    owl:equivalentClass <http://ontorion.com/namespace#PrimaryProduction>,
+        <http://ontorion.com/namespace#Production> .
+
+<http://w3id.org/CEON/ontology/quantity#QuantityInterval> owl:equivalentClass <http://ontorion.com/namespace#Quantity> .
+
+<http://w3id.org/CEON/ontology/quantity/QuantityInterval> owl:equivalentClass <http://ontorion.com/namespace#Quantity> .
+
+<http://w3id.org/CEON/ontology/quantity/hasDimension> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasDismantlingCost> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasHeight> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasLength> owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasMarketValue> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasPrice> owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasProcessCost> rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasProcess> .
+
+<http://w3id.org/CEON/ontology/quantity/hasRecyclingCost> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasRefurbishmentCost> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasTestingCost> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasThickness> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasTransportCost> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasVolume> rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasVolume> .
+
+<http://w3id.org/CEON/ontology/quantity/hasWeight> owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/quantity/hasWidth> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/resourceODP/DigitalObject> rdfs:subClassOf <http://ontorion.com/namespace#DigitalDistribution>,
+        <http://ontorion.com/namespace#DigitalElectronicCircuit>,
+        <http://ontorion.com/namespace#DigitalLibrary>,
+        <http://ontorion.com/namespace#DigitalMedia>,
+        <http://ontorion.com/namespace#DigitalPublishing>,
+        <http://ontorion.com/namespace#DigitalRepository> ;
+    owl:equivalentClass <http://ontorion.com/namespace#DigitalCollection>,
+        <http://ontorion.com/namespace#DigitalElectronic>,
+        <http://ontorion.com/namespace#DigitalTechnology> .
+
+<http://w3id.org/CEON/ontology/resourceODP/Information> owl:equivalentClass <http://ontorion.com/namespace#Information>,
+        <http://ontorion.com/namespace#InformationAge>,
+        <http://ontorion.com/namespace#InformationScience> .
+
+<http://w3id.org/CEON/ontology/resourceODP/Matter> owl:equivalentClass <http://ontorion.com/namespace#ImpureMatter>,
+        <http://ontorion.com/namespace#InorganicMatter>,
+        <http://ontorion.com/namespace#Matter>,
+        <http://ontorion.com/namespace#NaturalOrganicMatter>,
+        <http://ontorion.com/namespace#OrganicMatter>,
+        <http://ontorion.com/namespace#PureMatter> .
+
+<http://w3id.org/CEON/ontology/resourceODP/PhysicalObject> rdfs:subClassOf <http://ontorion.com/namespace#PhysicalChemistry> ;
+    owl:equivalentClass <http://ontorion.com/namespace#PhysicalScience> .
+
+<http://w3id.org/CEON/ontology/resourceODP/Resource> owl:equivalentClass <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#Resource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> .
+
+<http://w3id.org/CEON/ontology/resourceODP/ResourceCondition> rdfs:subClassOf <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#Resource>,
+        <http://ontorion.com/namespace#ResourceDepletion> .
+
+<http://w3id.org/CEON/ontology/resourceODP/ResourceProperty> rdfs:subClassOf <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#Resource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> .
+
+<http://w3id.org/CEON/ontology/resourceODP/ResourceQuality> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Quality>,
+        <http://ontorion.com/namespace#Resource>,
+        <http://ontorion.com/namespace#ResourceDepletion> .
+
+<http://w3id.org/CEON/ontology/resourceODP/containsInformation> rdfs:subClassOf <http://ontorion.com/namespace#InformationAge>,
+        <http://ontorion.com/namespace#InformationScience> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Information> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#contains> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasBatch> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasConstituent> owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasMatter> owl:equivalentClass <http://ontorion.com/namespace#ImpureMatter>,
+        <http://ontorion.com/namespace#InorganicMatter>,
+        <http://ontorion.com/namespace#Matter>,
+        <http://ontorion.com/namespace#NaturalOrganicMatter>,
+        <http://ontorion.com/namespace#OrganicMatter>,
+        <http://ontorion.com/namespace#PureMatter> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasPart> owl:equivalentProperty <http://ontorion.com/namespace#has>,
+        <http://ontorion.com/namespace#hasPart>,
+        <http://ontorion.com/namespace#hasPartIn>,
+        <http://ontorion.com/namespace#isPartOf>,
+        <http://ontorion.com/namespace#isProperPartOf>,
+        <http://ontorion.com/namespace#takesPartIn> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasPhysicalObject> rdfs:subClassOf <http://ontorion.com/namespace#PhysicalChemistry>,
+        <http://ontorion.com/namespace#PhysicalScience> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasResourceCondition> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource>,
+        <http://ontorion.com/namespace#ResourceDepletion> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasResourceLocation> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource>,
+        <http://ontorion.com/namespace#ResourceDepletion> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasResourceProperty> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasResourceQuality> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Quality>,
+        <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/resourceODP/isRealizationOf> rdfs:subPropertyOf <http://ontorion.com/namespace#isMadeOf> .
+
+<http://w3id.org/CEON/ontology/statement/DisclosedChemicalSubtanceStatement> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalCompound>,
+        <http://ontorion.com/namespace#ChemicalElement>,
+        <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalEngineering>,
+        <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#ChemicalReaction>,
+        <http://ontorion.com/namespace#FineChemical>,
+        <http://ontorion.com/namespace#SimpleSubstance> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalSubstance> .
+
+<http://w3id.org/CEON/ontology/statement/DismantlingStatement> rdfs:subClassOf <http://ontorion.com/namespace#ElevatorStatement> .
+
+<http://w3id.org/CEON/ontology/statement/FractionOfRenewableEnergyAvailabilityStatement> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableFuel>,
+        <http://ontorion.com/namespace#RenewableResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#RenewableEnergy> .
+
+<http://w3id.org/CEON/ontology/statement/FractionOfRenewableEnergyStatement> rdfs:subClassOf <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableFuel>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#WindEnergy> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#RenewableEnergy> .
+
+<http://w3id.org/CEON/ontology/statement/HazardousSubstanceDeclarationAvailabiltityStatement> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalSubstance>,
+        <http://ontorion.com/namespace#SimpleSubstance> .
+
+<http://w3id.org/CEON/ontology/statement/HazardousSubstanceStatement> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalSubstance>,
+        <http://ontorion.com/namespace#SimpleSubstance> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfDismantlableComponentForReuseRecycledAvailabilityStatement> owl:equivalentClass <http://ontorion.com/namespace#Reuse> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfDismantlableComponentForReuseRecycledStatement> owl:equivalentClass <http://ontorion.com/namespace#Reuse> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfPostConsumerRecycledMaterialContentAvailabilityStatement> rdfs:subClassOf <http://ontorion.com/namespace#Consumer>,
+        <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfPostConsumerRecycledMaterialContentStatement> rdfs:subClassOf <http://ontorion.com/namespace#Consumer>,
+        <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfPreConsumerRecycledMaterialContentAvailabilityStatement> rdfs:subClassOf <http://ontorion.com/namespace#Consumer>,
+        <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfPreConsumerRecycledMaterialContentStatement> rdfs:subClassOf <http://ontorion.com/namespace#Consumer>,
+        <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductDesignedCleanlyRemovedFromFixedAssemblyAvailabilityStatement> rdfs:subClassOf <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductDesignedCleanlyRemovedFromFixedAssemblyStatement> rdfs:subClassOf <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductDesignedCleanlyRemovedFromProductAssemblyAvailabilittyStatement> rdfs:subClassOf <http://ontorion.com/namespace#ProductDesign> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductDesignedCleanlyRemovedFromProductAssemblyStatement> rdfs:subClassOf <http://ontorion.com/namespace#Product>,
+        <http://ontorion.com/namespace#ProductDesign> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductRecyclingAtSimilarLevelAvailabilityStatement> rdfs:subClassOf <http://ontorion.com/namespace#Level>,
+        <http://ontorion.com/namespace#PlasticRecycling>,
+        <http://ontorion.com/namespace#Product> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Recycling> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductRecyclingAtSimilarLevelStatement> rdfs:subClassOf <http://ontorion.com/namespace#Level>,
+        <http://ontorion.com/namespace#PlasticRecycling> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product>,
+        <http://ontorion.com/namespace#Recycling> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductReleasedToEnvironmentAvailablityStatement> rdfs:subClassOf <http://ontorion.com/namespace#NaturalEnvironment> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Environment>,
+        <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductReleasedToEnvironmentStatement> rdfs:subClassOf <http://ontorion.com/namespace#NaturalEnvironment>,
+        <http://ontorion.com/namespace#ProductDesign> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Environment>,
+        <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfRecycledMaterialContentAvailabilityStatement> rdfs:subClassOf <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfRenewableMaterialAvailabilityStatement> rdfs:subClassOf <http://ontorion.com/namespace#Material>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RenewableFuel>,
+        <http://ontorion.com/namespace#RenewableResource> .
+
+<http://w3id.org/CEON/ontology/statement/MassFractionOfDisclosedChemicalSubstanceStatement> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalCompound>,
+        <http://ontorion.com/namespace#ChemicalElement>,
+        <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#ChemicalReaction>,
+        <http://ontorion.com/namespace#FineChemical>,
+        <http://ontorion.com/namespace#SimpleSubstance> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalSubstance> .
+
+<http://w3id.org/CEON/ontology/statement/MassFractionOfRecycledMaterialStatement> rdfs:subClassOf <http://ontorion.com/namespace#NanoMaterial>,
+        <http://ontorion.com/namespace#OrganicMaterial>,
+        <http://ontorion.com/namespace#ProcessedMaterial> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/MassFractionOfRenewableMaterialStatement> rdfs:subClassOf <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#OrganicMaterial>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RenewableFuel>,
+        <http://ontorion.com/namespace#RenewableResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/PCAvailabilityStatement> owl:equivalentClass <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/statement/PCDSStatement> rdfs:subClassOf <http://ontorion.com/namespace#ElevatorStatement> .
+
+<http://w3id.org/CEON/ontology/statement/PostConsumerRecycledMaterialCompositionAvailabilityStatement> rdfs:subClassOf <http://ontorion.com/namespace#ConsumerBehavior>,
+        <http://ontorion.com/namespace#ConsumerGood>,
+        <http://ontorion.com/namespace#MaterialEfficiency>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#OrganicMaterial> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Consumer>,
+        <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/PostConsumerRecycledMaterialCompositionStatement> rdfs:subClassOf <http://ontorion.com/namespace#ArtificialMaterial>,
+        <http://ontorion.com/namespace#ConsumerBehavior>,
+        <http://ontorion.com/namespace#ConsumerGood>,
+        <http://ontorion.com/namespace#MaterialEfficiency>,
+        <http://ontorion.com/namespace#NanoMaterial>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#OrganicMaterial>,
+        <http://ontorion.com/namespace#ProcessedMaterial> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Consumer>,
+        <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/PreConsumerRecycledMaterialCompositionAvailabilityStatement> rdfs:subClassOf <http://ontorion.com/namespace#ConsumerBehavior>,
+        <http://ontorion.com/namespace#ConsumerGood>,
+        <http://ontorion.com/namespace#MaterialEfficiency>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#OrganicMaterial> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Consumer>,
+        <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/PreConsumerRecycledMaterialCompositionStatement> rdfs:subClassOf <http://ontorion.com/namespace#ArtificialMaterial>,
+        <http://ontorion.com/namespace#ConsumerBehavior>,
+        <http://ontorion.com/namespace#ConsumerGood>,
+        <http://ontorion.com/namespace#MaterialEfficiency>,
+        <http://ontorion.com/namespace#NanoMaterial>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#OrganicMaterial>,
+        <http://ontorion.com/namespace#ProcessedMaterial> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Consumer>,
+        <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/ProductCompositionCertificationStatement> rdfs:subClassOf <http://ontorion.com/namespace#BiobaseProduct>,
+        <http://ontorion.com/namespace#BiobasedProduct>,
+        <http://ontorion.com/namespace#ProductDesign>,
+        <http://ontorion.com/namespace#TangibleProduct> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/statement/ProductCompositionStatement> rdfs:subClassOf <http://ontorion.com/namespace#BiobaseProduct>,
+        <http://ontorion.com/namespace#BiobasedProduct>,
+        <http://ontorion.com/namespace#BiologicalProduct>,
+        <http://ontorion.com/namespace#ElevatorStatement>,
+        <http://ontorion.com/namespace#IntangibleProduct>,
+        <http://ontorion.com/namespace#ProductDesign>,
+        <http://ontorion.com/namespace#TangibleProduct> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/statement/ProductCompositionValidationStatement> rdfs:subClassOf <http://ontorion.com/namespace#ProductDesign>,
+        <http://ontorion.com/namespace#VerificationAndValidation> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product> .
+
+<http://w3id.org/CEON/ontology/statement/RecycledMaterialStatement> rdfs:subClassOf <http://ontorion.com/namespace#ArtificialMaterial>,
+        <http://ontorion.com/namespace#BiologicalMaterial>,
+        <http://ontorion.com/namespace#ElevatorStatement>,
+        <http://ontorion.com/namespace#MaterialEfficiency>,
+        <http://ontorion.com/namespace#NanoMaterial>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#NonOrganicMaterial>,
+        <http://ontorion.com/namespace#OrganicMaterial>,
+        <http://ontorion.com/namespace#ProcessedMaterial> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/RecyclingStatement> rdfs:subClassOf <http://ontorion.com/namespace#ElevatorStatement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#PlasticRecycling>,
+        <http://ontorion.com/namespace#Recycling> .
+
+<http://w3id.org/CEON/ontology/statement/ReleasedIntoEnvironmentStatement> rdfs:subClassOf <http://ontorion.com/namespace#NaturalEnvironment> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Environment> .
+
+<http://w3id.org/CEON/ontology/statement/RenewableEnergyStatement> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalEnergySource>,
+        <http://ontorion.com/namespace#CleanEnergy>,
+        <http://ontorion.com/namespace#ElectricalEnergy>,
+        <http://ontorion.com/namespace#EnergyCrop>,
+        <http://ontorion.com/namespace#EnergyDevelopment>,
+        <http://ontorion.com/namespace#EnergyEfficiency>,
+        <http://ontorion.com/namespace#EnergyIndustry>,
+        <http://ontorion.com/namespace#EnergyPolicy>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#EnergySecurity>,
+        <http://ontorion.com/namespace#EnergySource>,
+        <http://ontorion.com/namespace#EnergyTechnology>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#PrimaryEnergy>,
+        <http://ontorion.com/namespace#RadiantEnergy>,
+        <http://ontorion.com/namespace#RestEnergy>,
+        <http://ontorion.com/namespace#SolarEnergy>,
+        <http://ontorion.com/namespace#SustainableEnergy>,
+        <http://ontorion.com/namespace#WindEnergy> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RenewableFuel>,
+        <http://ontorion.com/namespace#RenewableResource> .
+
+<http://w3id.org/CEON/ontology/statement/ReusedContentStatement> rdfs:subClassOf <http://ontorion.com/namespace#ElevatorStatement> .
+
+<http://w3id.org/CEON/ontology/statement/Statement> owl:equivalentClass <http://ontorion.com/namespace#ElevatorStatement> .
+
+<http://w3id.org/CEON/ontology/statement/SustainablyProducedRenewableMaterialStatement> rdfs:subClassOf <http://ontorion.com/namespace#MaterialEfficiency>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#OrganicMaterial> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Material>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RenewableFuel>,
+        <http://ontorion.com/namespace#RenewableResource> .
+
+<http://w3id.org/CEON/ontology/statement/VFOfReductionDirectWaterAvailabilityStatement> rdfs:subClassOf <http://ontorion.com/namespace#Water> .
+
+<http://w3id.org/CEON/ontology/statement/VFOfReductionDirectWaterStatement> rdfs:subClassOf <http://ontorion.com/namespace#Water> .
+
+<http://w3id.org/CEON/ontology/statement/VFOfReusedRecirculatedWaterAvailabilityStatement> rdfs:subClassOf <http://ontorion.com/namespace#Water> .
+
+<http://w3id.org/CEON/ontology/statement/VFOfReusedRecirculatedWaterStatement> rdfs:subClassOf <http://ontorion.com/namespace#Water> .
+
+<http://w3id.org/CEON/ontology/statement/Validation> owl:equivalentClass <http://ontorion.com/namespace#VerificationAndValidation> .
+
+<http://w3id.org/CEON/ontology/statement/WaterReuseOrRecirculationStatement> rdfs:subClassOf <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Reuse>,
+        <http://ontorion.com/namespace#Water> .
+
+<http://w3id.org/CEON/ontology/statement/hasAvailability> rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/statement/hasChemicalSubstanceThresholdUsedByManufacturer> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalCompound>,
+        <http://ontorion.com/namespace#ChemicalElement>,
+        <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalEngineering>,
+        <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#ChemicalReaction>,
+        <http://ontorion.com/namespace#FineChemical>,
+        <http://ontorion.com/namespace#SimpleSubstance> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalSubstance> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#isUsedIn> .
+
+<http://w3id.org/CEON/ontology/statement/hasFractionOfRenewableEnergyOutOfTheTotalProductionEnergyMix> rdfs:subClassOf <http://ontorion.com/namespace#BiodieselProduction>,
+        <http://ontorion.com/namespace#PrimaryProduction>,
+        <http://ontorion.com/namespace#RenewableFuel>,
+        <http://ontorion.com/namespace#RenewableResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Energy>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#Production>,
+        <http://ontorion.com/namespace#RenewableEnergy> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionForDemounting> owl:equivalentProperty <http://ontorion.com/namespace#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionForDisassembly> owl:equivalentProperty <http://ontorion.com/namespace#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfAllDisclosedChemicalSubstance> rdfs:subClassOf <http://ontorion.com/namespace#ChemicalCompound>,
+        <http://ontorion.com/namespace#ChemicalElement>,
+        <http://ontorion.com/namespace#ChemicalEnergy>,
+        <http://ontorion.com/namespace#ChemicalProcess>,
+        <http://ontorion.com/namespace#ChemicalReaction>,
+        <http://ontorion.com/namespace#FineChemical>,
+        <http://ontorion.com/namespace#SimpleSubstance> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ChemicalSubstance> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfDismantableComponentsForReuseAndRecycle> owl:equivalentClass <http://ontorion.com/namespace#Reuse> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfPostConsumerRecycledMaterialsOutOfTheTotalProductMass> rdfs:subClassOf <http://ontorion.com/namespace#Product> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Consumer> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfPreConsumerRecycledMaterialsOutOfTheTotalProductMass> rdfs:subClassOf <http://ontorion.com/namespace#Product> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Consumer> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfProductDesignedForRecyclingToOriginalInput> rdfs:subClassOf <http://ontorion.com/namespace#PlasticRecycling> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Product>,
+        <http://ontorion.com/namespace#Recycling> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfProductReleasedIntoEnvironment> rdfs:subClassOf <http://ontorion.com/namespace#NaturalEnvironment> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Environment>,
+        <http://ontorion.com/namespace#Product> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfRecycledMaterialsOutOfTheTotalProductMass> rdfs:subClassOf <http://ontorion.com/namespace#Product> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfRenewableMaterialsOutOfTheTotalProductMass> rdfs:subClassOf <http://ontorion.com/namespace#Product>,
+        <http://ontorion.com/namespace#RenewableEnergy>,
+        <http://ontorion.com/namespace#RenewableFuel>,
+        <http://ontorion.com/namespace#RenewableResource> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfReusedPartsOutOfTheTotalProduct> owl:equivalentClass <http://ontorion.com/namespace#Product> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasPostConsumerRecycledMaterialCompositionThreshold> rdfs:subClassOf <http://ontorion.com/namespace#ConsumerBehavior>,
+        <http://ontorion.com/namespace#ConsumerGood>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#OrganicMaterial> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Consumer>,
+        <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/hasPreConsumerRecycledMaterialCompositionThreshold> rdfs:subClassOf <http://ontorion.com/namespace#ConsumerBehavior>,
+        <http://ontorion.com/namespace#ConsumerGood>,
+        <http://ontorion.com/namespace#NaturalMaterial>,
+        <http://ontorion.com/namespace#OrganicMaterial> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Consumer>,
+        <http://ontorion.com/namespace#Material> .
+
+<http://w3id.org/CEON/ontology/statement/hasQuantityInterval> rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Quantity> .
+
+<http://w3id.org/CEON/ontology/statement/hasValidation> rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#VerificationAndValidation> .
+
+<http://w3id.org/CEON/ontology/statement/hasVolumeFractionOfReductionOfDirectWaterConsumptionUsedInProduction> rdfs:subClassOf <http://ontorion.com/namespace#EnergyConsumption>,
+        <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#PrimaryProduction>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Consumption>,
+        <http://ontorion.com/namespace#Production>,
+        <http://ontorion.com/namespace#Water> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasVolume>,
+        <http://ontorion.com/namespace#isUsedIn> .
+
+<http://w3id.org/CEON/ontology/statement/hasVolumeFractionOfReusedOrRecirculatedWaterUsedInProduction> rdfs:subClassOf <http://ontorion.com/namespace#EnergyProduction>,
+        <http://ontorion.com/namespace#Water> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Production> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#hasVolume>,
+        <http://ontorion.com/namespace#isUsedIn> .
+
+<http://w3id.org/CEON/ontology/statement/statementAbout> rdfs:subClassOf <http://ontorion.com/namespace#ElevatorStatement> .
+
+<http://w3id.org/CEON/ontology/statement/statementValue> rdfs:subClassOf <http://ontorion.com/namespace#ElevatorStatement>,
+        <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> .
+
+<http://w3id.org/CEON/ontology/value/EconomicValue> rdfs:subClassOf <http://ontorion.com/namespace#EconomicActor>,
+        <http://ontorion.com/namespace#EconomicProcess>,
+        <http://ontorion.com/namespace#EconomicUnion>,
+        <http://ontorion.com/namespace#OrganisationForEconomicCoOperationAndDevelopment>,
+        <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> ;
+    owl:equivalentClass <http://ontorion.com/namespace#AppliedEconomic>,
+        <http://ontorion.com/namespace#BusinessEconomic>,
+        <http://ontorion.com/namespace#EconomicDevelopment>,
+        <http://ontorion.com/namespace#EconomicGrowth>,
+        <http://ontorion.com/namespace#EconomicModel>,
+        <http://ontorion.com/namespace#EconomicProfit>,
+        <http://ontorion.com/namespace#EconomicSector>,
+        <http://ontorion.com/namespace#EconomicSystem> .
+
+<http://w3id.org/CEON/ontology/value/EnvironmentalValue> rdfs:subClassOf <http://ontorion.com/namespace#NutraceuticalsEnvironmentalBioregulationAndBiologicalSensors>,
+        <http://ontorion.com/namespace#ValueChain> ;
+    owl:equivalentClass <http://ontorion.com/namespace#EnvironmentalDegradation>,
+        <http://ontorion.com/namespace#EnvironmentalEngineering>,
+        <http://ontorion.com/namespace#EnvironmentalGovernance>,
+        <http://ontorion.com/namespace#EnvironmentalImpact>,
+        <http://ontorion.com/namespace#EnvironmentalImpactAssessment>,
+        <http://ontorion.com/namespace#EnvironmentalIssue>,
+        <http://ontorion.com/namespace#EnvironmentalProtection>,
+        <http://ontorion.com/namespace#EnvironmentalProtectionAgency>,
+        <http://ontorion.com/namespace#EnvironmentalRemediation>,
+        <http://ontorion.com/namespace#EnvironmentalScience>,
+        <http://ontorion.com/namespace#EnvironmentalSocialScience>,
+        <http://ontorion.com/namespace#EnvironmentalStandard>,
+        <http://ontorion.com/namespace#EnvironmentalTechnology>,
+        <http://ontorion.com/namespace#GlobalEnvironmentalIssue>,
+        <http://ontorion.com/namespace#SustainabilityAndEnvironmentalManagement> .
+
+<http://w3id.org/CEON/ontology/value/ExchangeValue> owl:equivalentClass <http://ontorion.com/namespace#ValueChain> .
+
+<http://w3id.org/CEON/ontology/value/SocialValue> rdfs:subClassOf <http://ontorion.com/namespace#EnvironmentalSocialScience>,
+        <http://ontorion.com/namespace#SocialGroup>,
+        <http://ontorion.com/namespace#SocialInnovation>,
+        <http://ontorion.com/namespace#SocialInteraction>,
+        <http://ontorion.com/namespace#SocialMovement>,
+        <http://ontorion.com/namespace#SocialRelation>,
+        <http://ontorion.com/namespace#SocialScience>,
+        <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> ;
+    owl:equivalentClass <http://ontorion.com/namespace#SocialIssue>,
+        <http://ontorion.com/namespace#SocialLife> .
+
+<http://w3id.org/CEON/ontology/value/UseValue> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ValueProposition> .
+
+<http://w3id.org/CEON/ontology/value/Value> owl:equivalentClass <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> .
+
+<http://w3id.org/CEON/ontology/value/ValueParticipation> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Participation>,
+        <http://ontorion.com/namespace#ValueProposition> .
+
+<http://w3id.org/CEON/ontology/value/ValueParticipationRole> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Participation> .
+
+<http://w3id.org/CEON/ontology/value/ValuePerception> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ValueProposition> .
+
+<http://w3id.org/CEON/ontology/value/ValueProposition> rdfs:subClassOf <http://ontorion.com/namespace#UniqueSellingProposition>,
+        <http://ontorion.com/namespace#ValueChain> ;
+    owl:equivalentClass <http://ontorion.com/namespace#ValueProposition> .
+
+<http://w3id.org/CEON/ontology/value/hasAimedValue> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> ;
+    owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/value/hasAssociatedValue> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/value/hasPerception> owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/value/hasVPTargets> owl:equivalentProperty <http://ontorion.com/namespace#has> .
+
+<http://w3id.org/CEON/ontology/value/hasValuableResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#NonRenewableResource>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource> ;
+    rdfs:subPropertyOf <http://ontorion.com/namespace#has> ;
+    owl:equivalentClass <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/value/onValueParticipation> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Participation> .
+
+<http://w3id.org/CEON/ontology/value/targettingActor> rdfs:subClassOf <http://ontorion.com/namespace#EconomicActor> .
+
+<http://w3id.org/CEON/ontology/value/targettingResource> rdfs:subClassOf <http://ontorion.com/namespace#EnergyResource>,
+        <http://ontorion.com/namespace#NaturalResource>,
+        <http://ontorion.com/namespace#NaturalResourceManagement>,
+        <http://ontorion.com/namespace#RenewableResource>,
+        <http://ontorion.com/namespace#ResourceDepletion>,
+        <http://ontorion.com/namespace#WaterResource>,
+        <http://ontorion.com/namespace#WaterResourceManagement> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Resource> .
+
+<http://w3id.org/CEON/ontology/value/targettingValueParticipation> rdfs:subClassOf <http://ontorion.com/namespace#ValueChain>,
+        <http://ontorion.com/namespace#ValueProposition> ;
+    owl:equivalentClass <http://ontorion.com/namespace#Participation> .
+
+xsd:dateTime owl:equivalentClass <http://ontorion.com/namespace#time> .
+
+prov:Entity owl:equivalentClass <http://ontorion.com/namespace#Entity>,
+        <http://ontorion.com/namespace#NonBusinessEntity> .
+

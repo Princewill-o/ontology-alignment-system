@@ -1,0 +1,127 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/cmt.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/confOf.owl
+# Total mappings: 77
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://cmt#Administrator> owl:equivalentClass <http://confOf#Administrator> .
+
+<http://cmt#AssociatedChair> owl:equivalentClass <http://confOf#Chair_PC> .
+
+<http://cmt#Author> owl:equivalentClass <http://confOf#Author> .
+
+<http://cmt#AuthorNotReviewer> owl:equivalentClass <http://confOf#Author> .
+
+<http://cmt#Co-author> owl:equivalentClass <http://confOf#Author> .
+
+<http://cmt#Conference> owl:equivalentClass <http://confOf#Conference> .
+
+<http://cmt#ConferenceChair> owl:equivalentClass <http://confOf#Chair_PC>,
+        <http://confOf#Conference> .
+
+<http://cmt#ConferenceMember> owl:equivalentClass <http://confOf#Conference>,
+        <http://confOf#Member>,
+        <http://confOf#Member_PC> .
+
+<http://cmt#Paper> owl:equivalentClass <http://confOf#Paper>,
+        <http://confOf#Short_paper> .
+
+<http://cmt#PaperAbstract> owl:equivalentClass <http://confOf#Paper>,
+        <http://confOf#Short_paper>,
+        <http://confOf#abstract> .
+
+<http://cmt#PaperFullVersion> rdfs:subClassOf <http://confOf#Short_paper> ;
+    owl:equivalentClass <http://confOf#Paper> .
+
+<http://cmt#Person> owl:equivalentClass <http://confOf#Person> .
+
+<http://cmt#ProgramCommitteeChair> rdfs:subClassOf <http://confOf#Chair_PC> .
+
+<http://cmt#ProgramCommitteeMember> owl:equivalentClass <http://confOf#Member>,
+        <http://confOf#Member_PC> .
+
+<http://cmt#acceptPaper> rdfs:subClassOf <http://confOf#Short_paper> ;
+    owl:equivalentClass <http://confOf#Paper> .
+
+<http://cmt#addProgramCommitteeMember> rdfs:subClassOf <http://confOf#Member_PC> ;
+    owl:equivalentClass <http://confOf#Member> .
+
+<http://cmt#assignedByAdministrator> owl:equivalentClass <http://confOf#Administrator> .
+
+<http://cmt#co-writePaper> rdfs:subClassOf <http://confOf#Short_paper> ;
+    owl:equivalentClass <http://confOf#Paper> .
+
+<http://cmt#email> owl:equivalentClass <http://confOf#contactEmail>,
+        <http://confOf#hasEmail> ;
+    owl:equivalentProperty <http://confOf#contactEmail>,
+        <http://confOf#hasEmail> .
+
+<http://cmt#enterConferenceDetails> owl:equivalentClass <http://confOf#Conference> .
+
+<http://cmt#finalizePaperAssignment> rdfs:subClassOf <http://confOf#Short_paper> ;
+    owl:equivalentClass <http://confOf#Paper> .
+
+<http://cmt#hasAuthor> owl:equivalentClass <http://confOf#Author> .
+
+<http://cmt#hasCo-author> owl:equivalentClass <http://confOf#Author> .
+
+<http://cmt#hasConferenceMember> owl:equivalentClass <http://confOf#Conference>,
+        <http://confOf#Member>,
+        <http://confOf#Member_PC> .
+
+<http://cmt#hasProgramCommitteeMember> rdfs:subClassOf <http://confOf#Member_PC> ;
+    owl:equivalentClass <http://confOf#Member> .
+
+<http://cmt#memberOfConference> owl:equivalentClass <http://confOf#Conference>,
+        <http://confOf#Member>,
+        <http://confOf#Member_PC> .
+
+<http://cmt#memberOfProgramCommittee> owl:equivalentClass <http://confOf#Member>,
+        <http://confOf#Member_PC> .
+
+<http://cmt#name> owl:equivalentClass <http://confOf#hasFirstName> ;
+    owl:equivalentProperty <http://confOf#hasFirstName> .
+
+<http://cmt#paperAssignmentFinalizedBy> rdfs:subClassOf <http://confOf#Short_paper> ;
+    owl:equivalentClass <http://confOf#Paper> .
+
+<http://cmt#paperAssignmentToolsRunBy> owl:equivalentClass <http://confOf#Paper> .
+
+<http://cmt#paperID> owl:equivalentClass <http://confOf#Paper>,
+        <http://confOf#Short_paper> .
+
+<http://cmt#readPaper> rdfs:subClassOf <http://confOf#Short_paper> ;
+    owl:equivalentClass <http://confOf#Paper> .
+
+<http://cmt#rejectPaper> rdfs:subClassOf <http://confOf#Short_paper> ;
+    owl:equivalentClass <http://confOf#Paper> .
+
+<http://cmt#reviewsPerPaper> rdfs:subClassOf <http://confOf#Short_paper> ;
+    owl:equivalentClass <http://confOf#Paper> .
+
+<http://cmt#runPaperAssignmentTools> rdfs:subClassOf <http://confOf#Short_paper> ;
+    owl:equivalentClass <http://confOf#Paper> .
+
+<http://cmt#submitPaper> rdfs:subClassOf <http://confOf#Short_paper> ;
+    owl:equivalentClass <http://confOf#Paper> .
+
+<http://cmt#title> owl:equivalentClass <http://confOf#hasTitle>,
+        <http://confOf#has_short_title>,
+        <http://confOf#has_title> ;
+    owl:equivalentProperty <http://confOf#hasTitle>,
+        <http://confOf#has_short_title>,
+        <http://confOf#has_title> .
+
+<http://cmt#writePaper> owl:equivalentClass <http://confOf#Paper>,
+        <http://confOf#Short_paper> .
+
+<http://cmt#writtenBy> owl:equivalentClass <http://confOf#writtenBy> ;
+    owl:equivalentProperty <http://confOf#writtenBy> .
+
+xsd:boolean owl:equivalentClass xsd:boolean .
+
+xsd:string owl:equivalentClass xsd:string .
+

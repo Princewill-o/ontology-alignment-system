@@ -1,0 +1,96 @@
+OmniAlign - Submission Package
+==============================
+
+Student: Princewill Okube
+Module: IN3067/INM713 Semantic Web Technologies
+Year: 2025-2026
+Deadline: Sunday, 10 May 2026, 5:00 PM
+
+Submission Files:
+-----------------
+
+1. PrincewillOkube_all_resources.zip
+   - Complete project with all source code
+   - Data files and test ontologies
+   - Generated alignments
+   - Evaluation results
+   - Configuration files
+   - README documentation
+
+2. PrincewillOkube_SourceCode.txt
+   - All source code compiled into single text file
+   - Includes all Python modules
+   - Configuration files
+   - Total: ~2,484 lines
+
+3. PrincewillOkube_link_to_repository.txt
+   - GitHub repository URL
+   - Repository contains same code as zip file
+
+How to Submit:
+--------------
+
+Upload all three files to Moodle:
+1. PrincewillOkube_all_resources.zip
+2. PrincewillOkube_SourceCode.txt
+3. PrincewillOkube_link_to_repository.txt
+
+How to Run:
+-----------
+
+1. Extract PrincewillOkube_all_resources.zip
+2. Install dependencies:
+   pip install -r requirements.txt
+3. Run Part 1 alignment:
+   python3 subtask_oa2.py
+4. Run OAEI evaluation:
+   python3 run_evaluation.py --dataset /path/to/OAEI --output results/eval.csv
+
+Project Structure:
+------------------
+
+omni_align/                 # Core alignment package (6 modules)
+├── aligner.py              # Main orchestration (~200 lines)
+├── ontology_utils.py       # Loading & preprocessing (~250 lines)
+├── matchers.py             # Matching algorithms (~350 lines)
+├── scoring.py              # Ensemble scoring (~150 lines)
+├── alignment_writer.py     # Output formatting (~100 lines)
+└── evaluator.py            # Evaluation metrics (~80 lines)
+
+Main Scripts:
+├── run_alignment.py        # CLI for alignment
+├── run_evaluation.py       # OAEI evaluation
+├── subtask_oa2.py          # Part 1 alignment (OA.2)
+└── subtask_oa3.py          # SPARQL queries (OA.3)
+
+Features:
+---------
+
+✓ Lexical matching (string similarity)
+✓ Structural matching (hierarchy propagation)
+✓ Semantic embeddings (sentence-transformers)
+✓ Instance matching
+✓ TF-IDF candidate generation
+✓ Ensemble scoring
+✓ Handles 50 to 90,000+ classes
+✓ Turtle format output
+✓ Alignment API compliant
+
+Results:
+--------
+
+Part 1 (OA.2): 135 mappings in 3.2 seconds
+OAEI (OA.4): 36 tasks, 0.636 recall, 0.034 precision
+
+Notes:
+------
+
+- WordNet SSL warnings are expected and handled
+- System works with or without WordNet
+- First run downloads ~200MB embedding model
+- All functionality tested and working
+
+Contact:
+--------
+
+GitHub: https://github.com/Princewill-o/ontology-alignment-system

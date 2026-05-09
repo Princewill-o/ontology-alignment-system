@@ -1,0 +1,83 @@
+═══════════════════════════════════════════════════════════════════
+                    QUICK SUBMISSION REFERENCE
+═══════════════════════════════════════════════════════════════════
+
+STUDENT: Princewill Okube
+MODULE: IN3067/INM713 Semantic Web Technologies
+DEADLINE: Sunday, 10 May 2026, 5:00 PM
+
+───────────────────────────────────────────────────────────────────
+UPLOAD THESE 3 FILES TO MOODLE:
+───────────────────────────────────────────────────────────────────
+
+✓ PrincewillOkube_all_resources.zip      (2.1 MB)
+✓ PrincewillOkube_SourceCode.txt         (79 KB)
+✓ PrincewillOkube_link_to_repository.txt (411 bytes)
+
+───────────────────────────────────────────────────────────────────
+WHAT'S IN THE ZIP FILE:
+───────────────────────────────────────────────────────────────────
+
+omni_align/              6 core modules
+├── aligner.py           Main orchestration
+├── ontology_utils.py    Loading & preprocessing
+├── matchers.py          Matching algorithms
+├── scoring.py           Ensemble scoring
+├── alignment_writer.py  Output formatting
+└── evaluator.py         Evaluation metrics
+
+Main Scripts:
+├── run_alignment.py     CLI for alignment
+├── run_evaluation.py    OAEI evaluation
+├── subtask_oa2.py       Part 1 alignment
+└── subtask_oa3.py       SPARQL queries
+
+Data & Results:
+├── data/                Input ontologies
+├── alignments/          36 output files
+└── results/             Evaluation results
+
+───────────────────────────────────────────────────────────────────
+HOW TO TEST (AFTER EXTRACTION):
+───────────────────────────────────────────────────────────────────
+
+1. Extract: unzip PrincewillOkube_all_resources.zip
+2. Install: pip install -r requirements.txt
+3. Test: python3 subtask_oa2.py
+
+───────────────────────────────────────────────────────────────────
+PROJECT STATS:
+───────────────────────────────────────────────────────────────────
+
+• Core Modules: 6 (down from 16)
+• Total Code: ~1,130 lines
+• Compiled Source: 2,484 lines
+• Package Size: 2.1 MB
+• Results: 135 mappings (Part 1), 36 OAEI tasks
+
+───────────────────────────────────────────────────────────────────
+FEATURES:
+───────────────────────────────────────────────────────────────────
+
+✓ Lexical matching
+✓ Structural matching
+✓ Semantic embeddings
+✓ Instance matching
+✓ TF-IDF blocking
+✓ Ensemble scoring
+✓ Turtle output
+
+───────────────────────────────────────────────────────────────────
+GITHUB REPOSITORY:
+───────────────────────────────────────────────────────────────────
+
+https://github.com/Princewill-o/ontology-alignment-system
+
+───────────────────────────────────────────────────────────────────
+STATUS: ✅ READY TO SUBMIT
+───────────────────────────────────────────────────────────────────
+
+All files tested and verified.
+Upload to Moodle before deadline.
+
+═══════════════════════════════════════════════════════════════════

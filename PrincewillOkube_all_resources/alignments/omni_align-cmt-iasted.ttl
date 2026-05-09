@@ -1,0 +1,207 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/cmt.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/iasted.owl
+# Total mappings: 152
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://cmt#Acceptance> owl:equivalentClass <http://iasted#Deadline_for_notification_of_acceptance> .
+
+<http://cmt#AssociatedChair> rdfs:subClassOf <http://iasted#Brief_introduction_for_Session_chair> ;
+    owl:equivalentClass <http://iasted#Session_chair> .
+
+<http://cmt#Author> owl:equivalentClass <http://iasted#Author>,
+        <http://iasted#Author_attendee_book_registration_fee>,
+        <http://iasted#Author_attendee_cd_registration_fee>,
+        <http://iasted#Author_book_proceedings_included>,
+        <http://iasted#Author_cd_proceedings_included>,
+        <http://iasted#Author_information_form> .
+
+<http://cmt#AuthorNotReviewer> owl:equivalentClass <http://iasted#Author>,
+        <http://iasted#Reviewer> .
+
+<http://cmt#Co-author> rdfs:subClassOf <http://iasted#Author_attendee_book_registration_fee>,
+        <http://iasted#Author_attendee_cd_registration_fee>,
+        <http://iasted#Author_book_proceedings_included>,
+        <http://iasted#Author_cd_proceedings_included>,
+        <http://iasted#Author_information_form> ;
+    owl:equivalentClass <http://iasted#Author> .
+
+<http://cmt#Conference> owl:equivalentClass <http://iasted#Activity_after_conference>,
+        <http://iasted#Activity_before_conference>,
+        <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_activity>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#Conference_state>,
+        <http://iasted#One_conference_day> .
+
+<http://cmt#ConferenceChair> rdfs:subClassOf <http://iasted#Activity_before_conference>,
+        <http://iasted#Brief_introduction_for_Session_chair>,
+        <http://iasted#One_conference_day>,
+        <http://iasted#Session_chair> ;
+    owl:equivalentClass <http://iasted#Activity_after_conference>,
+        <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_activity>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#Conference_state> .
+
+<http://cmt#ConferenceMember> rdfs:subClassOf <http://iasted#Activity_before_conference>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#IASTED_member> ;
+    owl:equivalentClass <http://iasted#Activity_after_conference>,
+        <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_activity>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#Conference_state>,
+        <http://iasted#One_conference_day> .
+
+<http://cmt#Document> owl:equivalentClass <http://iasted#Document>,
+        <http://iasted#Payment_document> .
+
+<http://cmt#ExternalReviewer> owl:equivalentClass <http://iasted#Reviewer> .
+
+<http://cmt#Meta-Review> owl:equivalentClass <http://iasted#Review> .
+
+<http://cmt#Meta-Reviewer> owl:equivalentClass <http://iasted#Reviewer> .
+
+<http://cmt#Person> owl:equivalentClass <http://iasted#Person> .
+
+<http://cmt#ProgramCommittee> rdfs:subClassOf <http://iasted#Social_program> .
+
+<http://cmt#ProgramCommitteeChair> rdfs:subClassOf <http://iasted#Session_chair> .
+
+<http://cmt#ProgramCommitteeMember> rdfs:subClassOf <http://iasted#IASTED_member>,
+        <http://iasted#Social_program> .
+
+<http://cmt#Review> owl:equivalentClass <http://iasted#Review> .
+
+<http://cmt#Reviewer> owl:equivalentClass <http://iasted#Reviewer> .
+
+<http://cmt#acceptsHardcopySubmissions> rdfs:subClassOf <http://iasted#Submissions_deadline> .
+
+<http://cmt#addProgramCommitteeMember> rdfs:subClassOf <http://iasted#IASTED_member> .
+
+<http://cmt#addedBy> rdfs:subClassOf <http://iasted#Value_added_tax> .
+
+<http://cmt#assignExternalReviewer> owl:equivalentClass <http://iasted#Reviewer> .
+
+<http://cmt#assignReviewer> owl:equivalentClass <http://iasted#Reviewer> .
+
+<http://cmt#assignedByReviewer> owl:equivalentClass <http://iasted#Reviewer> .
+
+<http://cmt#co-writePaper> owl:equivalentClass <http://iasted#write> ;
+    owl:equivalentProperty <http://iasted#write> .
+
+<http://cmt#date> owl:equivalentClass xsd:date,
+        xsd:dateTime .
+
+<http://cmt#endReview> owl:equivalentClass <http://iasted#Review> .
+
+<http://cmt#enterConferenceDetails> rdfs:subClassOf <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_restaurant> ;
+    owl:equivalentClass <http://iasted#Conference_activity>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_state> .
+
+<http://cmt#enterReviewCriteria> owl:equivalentClass <http://iasted#Review> .
+
+<http://cmt#hardcopyMailingManifestsPrintedBy> rdfs:subClassOf <http://iasted#Mailing_list> .
+
+<http://cmt#hasAuthor> owl:equivalentClass <http://iasted#Author>,
+        <http://iasted#Author_attendee_book_registration_fee>,
+        <http://iasted#Author_attendee_cd_registration_fee>,
+        <http://iasted#Author_book_proceedings_included>,
+        <http://iasted#Author_cd_proceedings_included>,
+        <http://iasted#Author_information_form> .
+
+<http://cmt#hasCo-author> rdfs:subClassOf <http://iasted#Author_attendee_book_registration_fee>,
+        <http://iasted#Author_attendee_cd_registration_fee> ;
+    owl:equivalentClass <http://iasted#Author>,
+        <http://iasted#Author_book_proceedings_included>,
+        <http://iasted#Author_cd_proceedings_included>,
+        <http://iasted#Author_information_form> .
+
+<http://cmt#hasConferenceMember> rdfs:subClassOf <http://iasted#Activity_after_conference>,
+        <http://iasted#Activity_before_conference>,
+        <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#IASTED_member>,
+        <http://iasted#IASTED_non_member>,
+        <http://iasted#One_conference_day> ;
+    owl:equivalentClass <http://iasted#Conference_activity>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_state> .
+
+<http://cmt#hasProgramCommitteeMember> rdfs:subClassOf <http://iasted#IASTED_member> .
+
+<http://cmt#memberOfConference> rdfs:subClassOf <http://iasted#Activity_after_conference>,
+        <http://iasted#Activity_before_conference>,
+        <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#IASTED_member>,
+        <http://iasted#One_conference_day> ;
+    owl:equivalentClass <http://iasted#Conference_activity>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_state> .
+
+<http://cmt#memberOfProgramCommittee> rdfs:subClassOf <http://iasted#IASTED_member>,
+        <http://iasted#Social_program> .
+
+<http://cmt#printHardcopyMailingManifests> rdfs:subClassOf <http://iasted#Mailing_list> .
+
+<http://cmt#readByMeta-Reviewer> owl:equivalentClass <http://iasted#Reviewer> .
+
+<http://cmt#readByReviewer> owl:equivalentClass <http://iasted#Reviewer> .
+
+<http://cmt#reviewCriteriaEnteredBy> owl:equivalentClass <http://iasted#Review> .
+
+<http://cmt#reviewerBiddingStartedBy> owl:equivalentClass <http://iasted#Reviewer> .
+
+<http://cmt#startReviewerBidding> owl:equivalentClass <http://iasted#Reviewer> .
+
+<http://cmt#writePaper> owl:equivalentClass <http://iasted#write> ;
+    owl:equivalentProperty <http://iasted#write> .
+
+<http://cmt#writeReview> owl:equivalentClass <http://iasted#Review>,
+        <http://iasted#write> ;
+    owl:equivalentProperty <http://iasted#write> .
+
+xsd:int owl:equivalentClass xsd:int .
+
+xsd:date owl:equivalentClass xsd:date,
+        xsd:dateTime .
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Nerve">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Nerve</rdfs:label>
+    <skos:altLabel>Neural Tissue</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_SmallIntestine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Small Intestine</rdfs:label>
+    <skos:altLabel>SI</skos:altLabel>
+    <rdfs:subClassOf rdf:resource="http://mouse.owl#MA_Intestine"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Heart">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Heart</rdfs:label>
+    <skos:altLabel>Cardiac Muscle</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Liver">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Liver</rdfs:label>
+    <skos:altLabel>Hepatic Organ</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_LargeIntestine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Large Intestine</rdfs:label>
+    <skos:altLabel>Colon</skos:altLabel>
+    <rdfs:subClassOf rdf:resource="http://mouse.owl#MA_Intestine"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Muscle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Muscle</rdfs:label>
+    <skos:altLabel>Muscular Tissue</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Stomach">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Stomach</rdfs:label>
+    <skos:altLabel>Gastric Organ</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_BloodVessel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Blood Vessel</rdfs:label>
+    <skos:altLabel>Vascular Structure</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Skin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Skin</rdfs:label>
+    <skos:altLabel>Cutaneous Tissue</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Brain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Brain</rdfs:label>
+    <skos:altLabel>Cerebrum</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Intestine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Intestine</rdfs:label>
+    <skos:altLabel>Bowel</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Kidney">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Kidney</rdfs:label>
+    <skos:altLabel>Renal Organ</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Lung">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Lung</rdfs:label>
+    <skos:altLabel>Pulmonary Organ</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Artery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Artery</rdfs:label>
+    <skos:altLabel>Arterial Vessel</skos:altLabel>
+    <rdfs:subClassOf rdf:resource="http://mouse.owl#MA_BloodVessel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mouse.owl#MA_Bone">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Bone</rdfs:label>
+    <skos:altLabel>Osseous Tissue</skos:altLabel>
+  </rdf:Description>
+</rdf:RDF>

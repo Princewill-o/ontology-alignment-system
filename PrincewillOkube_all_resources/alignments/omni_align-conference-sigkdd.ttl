@@ -1,0 +1,381 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/conference.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/sigkdd.owl
+# Total mappings: 299
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://conference#Abstract> owl:equivalentClass <http://sigkdd#Abstract>,
+        <http://sigkdd#Deadline_Abstract_Submission> .
+
+<http://conference#Active_conference_participant> owl:equivalentClass <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#Name_of_conference> .
+
+<http://conference#Call_for_paper> rdfs:subClassOf <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Author_of_paper_student>,
+        <http://sigkdd#Best_Applications_Paper_Award>,
+        <http://sigkdd#Best_Student_Paper_Award>,
+        <http://sigkdd#Best_Student_Paper_Supporter>,
+        <http://sigkdd#Deadline_Paper_Submission> ;
+    owl:equivalentClass <http://sigkdd#Paper> .
+
+<http://conference#Chair> owl:equivalentClass <http://sigkdd#General_Chair>,
+        <http://sigkdd#Program_Chair> .
+
+<http://conference#Co-chair> owl:equivalentClass <http://sigkdd#General_Chair>,
+        <http://sigkdd#Program_Chair> .
+
+<http://conference#Committee> owl:equivalentClass <http://sigkdd#Best_Paper_Awards_Committee>,
+        <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee>,
+        <http://sigkdd#Program_Committee_member> .
+
+<http://conference#Committee_member> rdfs:subClassOf <http://sigkdd#Best_Paper_Awards_Committee>,
+        <http://sigkdd#Registration_Non-Member> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee>,
+        <http://sigkdd#Program_Committee_member> .
+
+<http://conference#Conference> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://conference#Conference_announcement> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://conference#Conference_applicant> rdfs:subClassOf <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference> .
+
+<http://conference#Conference_contribution> rdfs:subClassOf <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference> .
+
+<http://conference#Conference_contributor> rdfs:subClassOf <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference> .
+
+<http://conference#Conference_document> rdfs:subClassOf <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#Document>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference> .
+
+<http://conference#Conference_fees> rdfs:subClassOf <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#Conference> .
+
+<http://conference#Conference_part> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://conference#Conference_participant> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://conference#Conference_proceedings> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://conference#Conference_volume> rdfs:subClassOf <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference> .
+
+<http://conference#Conference_www> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://conference#Contribution_1th-author> rdfs:subClassOf <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Deadline_Author_notification> ;
+    owl:equivalentClass <http://sigkdd#Author> .
+
+<http://conference#Contribution_co-author> rdfs:subClassOf <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Deadline_Author_notification> ;
+    owl:equivalentClass <http://sigkdd#Author> .
+
+<http://conference#Extended_abstract> rdfs:subClassOf <http://sigkdd#Deadline_Abstract_Submission> ;
+    owl:equivalentClass <http://sigkdd#Abstract> .
+
+<http://conference#Invited_speaker> owl:equivalentClass <http://sigkdd#Invited_Speaker>,
+        <http://sigkdd#Speaker> .
+
+<http://conference#Invited_talk> owl:equivalentClass <http://sigkdd#Invited_Speaker> .
+
+<http://conference#Organizing_committee> rdfs:subClassOf <http://sigkdd#Best_Paper_Awards_Committee>,
+        <http://sigkdd#Program_Committee_member> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee> .
+
+<http://conference#Paper> owl:equivalentClass <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Author_of_paper_student>,
+        <http://sigkdd#Best_Applications_Paper_Award>,
+        <http://sigkdd#Best_Paper_Awards_Committee>,
+        <http://sigkdd#Best_Research_Paper_Award>,
+        <http://sigkdd#Best_Student_Paper_Award>,
+        <http://sigkdd#Best_Student_Paper_Supporter>,
+        <http://sigkdd#Deadline_Paper_Submission>,
+        <http://sigkdd#Paper> .
+
+<http://conference#Passive_conference_participant> rdfs:subClassOf <http://sigkdd#Name_of_conference> ;
+    owl:equivalentClass <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall> .
+
+<http://conference#Person> owl:equivalentClass <http://sigkdd#Person> .
+
+<http://conference#Presentation> owl:equivalentClass <http://sigkdd#presentation> .
+
+<http://conference#Program_committee> rdfs:subClassOf <http://sigkdd#Best_Paper_Awards_Committee>,
+        <http://sigkdd#Program_Chair> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee>,
+        <http://sigkdd#Program_Committee_member> .
+
+<http://conference#Regular_author> rdfs:subClassOf <http://sigkdd#Author_of_paper_student> ;
+    owl:equivalentClass <http://sigkdd#Author>,
+        <http://sigkdd#Author_of_paper> .
+
+<http://conference#Review> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://conference#Review_expertise> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://conference#Review_preference> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://conference#Steering_committee> rdfs:subClassOf <http://sigkdd#Best_Paper_Awards_Committee>,
+        <http://sigkdd#Program_Committee_member> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee> .
+
+<http://conference#Track-workshop_chair> rdfs:subClassOf <http://sigkdd#General_Chair>,
+        <http://sigkdd#Program_Chair> .
+
+<http://conference#belong_to_a_conference_volume> rdfs:subPropertyOf <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#Conference> ;
+    owl:equivalentProperty <http://sigkdd#City_of_conference>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference> .
+
+<http://conference#belongs_to_a_review_reference> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://conference#has_a_committee_chair> rdfs:subClassOf <http://sigkdd#General_Chair>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Program_Chair>,
+        <http://sigkdd#Program_Committee> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee_member> .
+
+<http://conference#has_a_committee_co-chair> rdfs:subClassOf <http://sigkdd#General_Chair>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Program_Committee> ;
+    owl:equivalentClass <http://sigkdd#Committee> .
+
+<http://conference#has_a_date_of_issue> rdfs:subClassOf xsd:dateTime ;
+    owl:equivalentClass <http://sigkdd#Date> ;
+    owl:equivalentProperty <http://sigkdd#Date> .
+
+<http://conference#has_a_name> owl:equivalentClass <http://sigkdd#Name>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Name_of_sponsor> ;
+    owl:equivalentProperty <http://sigkdd#Name>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Name_of_sponsor> .
+
+<http://conference#has_a_program_committee> rdfs:subClassOf <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Chair> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Program_Committee>,
+        <http://sigkdd#Program_Committee_member> .
+
+<http://conference#has_a_review> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://conference#has_a_review_expertise> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://conference#has_a_review_reference_or_expertise> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://conference#has_a_steering_committee> rdfs:subClassOf <http://sigkdd#Program_Committee>,
+        <http://sigkdd#Program_Committee_member> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Organizing_Committee_member> .
+
+<http://conference#has_a_track-workshop-tutorial_chair> rdfs:subClassOf <http://sigkdd#Program_Chair> .
+
+<http://conference#has_an_abstract> owl:equivalentClass <http://sigkdd#Abstract>,
+        <http://sigkdd#Deadline_Abstract_Submission> .
+
+<http://conference#has_an_organizing_committee> rdfs:subClassOf <http://sigkdd#Program_Committee>,
+        <http://sigkdd#Program_Committee_member> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Organizing_Committee_member> .
+
+<http://conference#has_been_assigned_a_review_reference> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://conference#has_the_first_name> rdfs:subClassOf <http://sigkdd#Name_of_sponsor> ;
+    rdfs:subPropertyOf <http://sigkdd#Name_of_sponsor> ;
+    owl:equivalentClass <http://sigkdd#Name> ;
+    owl:equivalentProperty <http://sigkdd#Name> .
+
+<http://conference#has_the_last_name> rdfs:subClassOf <http://sigkdd#Name_of_sponsor> ;
+    rdfs:subPropertyOf <http://sigkdd#Name_of_sponsor> ;
+    owl:equivalentClass <http://sigkdd#Name> ;
+    owl:equivalentProperty <http://sigkdd#Name> .
+
+<http://conference#invited_by> owl:equivalentClass <http://sigkdd#Invited_Speaker> .
+
+<http://conference#is_a_date_of_acceptance_announcement> rdfs:subClassOf xsd:dateTime ;
+    owl:equivalentClass <http://sigkdd#Date> ;
+    owl:equivalentProperty <http://sigkdd#Date> .
+
+<http://conference#is_a_date_of_camera_ready_paper_submission> rdfs:subClassOf <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Deadline_Abstract_Submission>,
+        <http://sigkdd#Deadline_Paper_Submission>,
+        xsd:dateTime ;
+    owl:equivalentClass <http://sigkdd#Date>,
+        <http://sigkdd#Paper> ;
+    owl:equivalentProperty <http://sigkdd#Date> .
+
+<http://conference#is_a_full_paper_submission_date> rdfs:subClassOf <http://sigkdd#Deadline_Abstract_Submission>,
+        xsd:dateTime ;
+    owl:equivalentClass <http://sigkdd#Date>,
+        <http://sigkdd#Deadline_Paper_Submission>,
+        <http://sigkdd#Paper> ;
+    owl:equivalentProperty <http://sigkdd#Date> .
+
+<http://conference#is_a_starting_date> rdfs:subClassOf xsd:dateTime ;
+    owl:equivalentClass <http://sigkdd#Date> ;
+    owl:equivalentProperty <http://sigkdd#Date> .
+
+<http://conference#is_a_topis_of_conference_parts> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> ;
+    owl:equivalentProperty <http://sigkdd#City_of_conference>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://conference#is_an_abstract_submission_date> rdfs:subClassOf <http://sigkdd#Deadline_Paper_Submission>,
+        xsd:dateTime ;
+    owl:equivalentClass <http://sigkdd#Abstract>,
+        <http://sigkdd#Date>,
+        <http://sigkdd#Deadline_Abstract_Submission> ;
+    owl:equivalentProperty <http://sigkdd#Date> .
+
+<http://conference#is_an_ending_date> rdfs:subClassOf xsd:dateTime ;
+    owl:equivalentClass <http://sigkdd#Date> ;
+    owl:equivalentProperty <http://sigkdd#Date> .
+
+<http://conference#is_part_of_conference_volumes> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> ;
+    owl:equivalentProperty <http://sigkdd#City_of_conference>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://conference#was_a_committe_co-chair_of> rdfs:subClassOf <http://sigkdd#General_Chair> .
+
+<http://conference#was_a_committee_chair_of> rdfs:subClassOf <http://sigkdd#General_Chair>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Program_Chair>,
+        <http://sigkdd#Program_Committee> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee_member> .
+
+<http://conference#was_a_committee_of> owl:equivalentClass <http://sigkdd#Best_Paper_Awards_Committee>,
+        <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee>,
+        <http://sigkdd#Program_Committee_member> .
+
+<http://conference#was_a_member_of> owl:equivalentClass <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee_member>,
+        <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member> .
+
+<http://conference#was_a_program_committee_of> rdfs:subClassOf <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Chair> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Program_Committee>,
+        <http://sigkdd#Program_Committee_member> .
+
+<http://conference#was_a_steering_committee_of> rdfs:subClassOf <http://sigkdd#Program_Committee>,
+        <http://sigkdd#Program_Committee_member> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Organizing_Committee_member> .
+
+<http://conference#was_a_track-workshop_chair_of> rdfs:subClassOf <http://sigkdd#General_Chair>,
+        <http://sigkdd#Program_Chair> .
+
+<http://conference#was_an_organizing_committee_of> rdfs:subClassOf <http://sigkdd#Program_Committee>,
+        <http://sigkdd#Program_Committee_member> ;
+    owl:equivalentClass <http://sigkdd#Committee>,
+        <http://sigkdd#Organizing_Committee>,
+        <http://sigkdd#Organizing_Committee_member> .
+
+xsd:date owl:equivalentClass <http://sigkdd#Date>,
+        xsd:dateTime .
+
+xsd:int owl:equivalentClass xsd:int .
+
+xsd:string owl:equivalentClass xsd:string .
+

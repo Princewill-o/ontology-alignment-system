@@ -1,0 +1,44 @@
+# Alignment produced by OmniAlign
+# Source ontology: data/anatomy/ontologies/mouse.owl
+# Target ontology: data/anatomy/ontologies/human.owl
+# Total mappings: 21
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://mouse.owl#MA_Artery> rdfs:subClassOf <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_BloodVessel> ;
+    owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Artery> .
+
+<http://mouse.owl#MA_BloodVessel> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_BloodVessel> .
+
+<http://mouse.owl#MA_Bone> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_BoneTissue> .
+
+<http://mouse.owl#MA_Brain> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Brain> .
+
+<http://mouse.owl#MA_Heart> rdfs:subClassOf <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_MuscleTissue> ;
+    owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Heart> .
+
+<http://mouse.owl#MA_Intestine> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Intestine>,
+        <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_LargeBowel>,
+        <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_SmallBowel> .
+
+<http://mouse.owl#MA_Kidney> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Kidney> .
+
+<http://mouse.owl#MA_LargeIntestine> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Intestine>,
+        <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_LargeBowel> .
+
+<http://mouse.owl#MA_Liver> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Liver> .
+
+<http://mouse.owl#MA_Lung> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Lung> .
+
+<http://mouse.owl#MA_Muscle> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_MuscleTissue> .
+
+<http://mouse.owl#MA_Nerve> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_NerveTissue> .
+
+<http://mouse.owl#MA_Skin> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_SkinTissue> .
+
+<http://mouse.owl#MA_SmallIntestine> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Intestine>,
+        <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_SmallBowel> .
+
+<http://mouse.owl#MA_Stomach> owl:equivalentClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NCI_Stomach> .
+

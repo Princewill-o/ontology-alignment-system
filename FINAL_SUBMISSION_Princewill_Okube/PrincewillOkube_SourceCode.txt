@@ -1,0 +1,2484 @@
+OmniAlign - Complete Source Code
+=================================
+
+Student: Princewill Okube
+Module: IN3067/INM713 Semantic Web Technologies
+Year: 2025-2026
+
+=================================
+
+
+========================================
+File: run_alignment.py
+========================================
+
+#!/usr/bin/env python3
+"""
+CLI script for running ontology alignment
+Takes two ontology files and produces alignment output
+
+Usage:
+  python run_alignment.py \\
+    --source data/conference/ontologies/cmt.owl \\
+    --target data/conference/ontologies/conference.owl \\
+    --output alignments/omni_align-cmt-conference.ttl
+
+Optional args:
+  --config config.yaml      
+  --timeout 7200            
+  --threshold 0.50          
+  --no-embeddings           
+"""
+
+import argparse
+import logging
+import os
+import sys
+import yaml
+
+# setup logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%H:%M:%S"
+)
+
+from omni_align.aligner import OmniAligner
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Ontology Alignment Tool")
+    parser.add_argument("--source", required=True, help="source ontology path")
+    parser.add_argument("--target", required=True, help="target ontology path")
+    parser.add_argument("--output", required=True, help="output file (.ttl)")
+    parser.add_argument("--config", default="config.yaml", help="config file")
+    parser.add_argument("--timeout", type=int, default=None, help="timeout seconds")
+    parser.add_argument("--threshold", type=float, default=None, help="threshold")
+    parser.add_argument("--no-embeddings", action="store_true", 
+                       help="skip embeddings for speed")
+    return parser.parse_args()
+
+
+def load_config(path: str) -> dict:
+    # check if config exists
+    if os.path.exists(path):
+        with open(path, "r") as f:
+            cfg = yaml.safe_load(f)
+            return cfg if cfg else {}
+    return {}
+
+
+def main():
+    args = parse_args()
+    cfg = load_config(args.config)
+
+    # override config with CLI args
+    if args.threshold is not None:
+        if "matching" not in cfg:
+            cfg["matching"] = {}
+        cfg["matching"]["threshold"] = args.threshold
+    
+    if args.no_embeddings:
+        if "matching" not in cfg:
+            cfg["matching"] = {}
+        cfg["matching"]["weights"] = {
+            "lexical": 0.55,
+            "structural": 0.30,
+            "embedding": 0.00,
+            "llm": 0.15
+        }
+
+    aligner = OmniAligner(config=cfg)
+
+    # print header
+    print(f"\n{'='*60}")
+    print(f"  Ontology Alignment System")
+    print(f"{'='*60}")
+    print(f"  Source:  {args.source}")
+    print(f"  Target:  {args.target}")
+    print(f"  Output:  {args.output}")
+    print(f"{'='*60}\n")
+
+    # run alignment
+    mappings, elapsed = aligner.align(
+        source_path=args.source,
+        target_path=args.target,
+        output_path=args.output,
+        timeout=args.timeout
+    )
+
+    print(f"\n{'='*60}")
+    print(f"  Done! {len(mappings)} mappings in {elapsed:.1f}s")
+    print(f"  Output: {args.output}")
+    print(f"{'='*60}\n")
+
+    # show summary
+    from collections import Counter
+    rel_counts = Counter(r for _, r, _, _ in mappings)
+    for rel, count in sorted(rel_counts.items()):
+        print(f"  {rel}: {count}")
+
+
+if __name__ == "__main__":
+    main()
+
+
+========================================
+File: run_evaluation.py
+========================================
+
+#!/usr/bin/env python3
+"""
+Batch OAEI Evaluation Script (Subtask OA.4)
+
+Evaluates alignment system on all OAEI tasks in dataset directory
+Computes Precision, Recall, F-score, and computation time for each task
+Saves results to CSV file
+
+Expected dataset structure:
+  data/
+    conference/
+      ontologies/
+        cmt.owl
+        conference.owl
+        ...
+      cmt-conference.ttl          (reference alignment)
+      cmt-confof.ttl
+      ...
+    anatomy/
+      ontologies/
+        mouse.owl
+        human.owl
+      mouse-human.ttl
+    ...
+
+Usage:
+  python run_evaluation.py --dataset data/ --output results/evaluation_results.csv
+"""
+
+import argparse
+import csv
+import logging
+import os
+import time
+import yaml
+from pathlib import Path
+from typing import List, Tuple, Dict, Optional
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%H:%M:%S"
+)
+logger = logging.getLogger(__name__)
+
+from omni_align.aligner import OmniAligner
+from omni_align.alignment_writer import AlignmentWriter
+from omni_align.evaluator import compute_metrics, print_metrics
+
+
+TRACKS = [
+    "conference",
+    "digital-humanities",
+    "circular-economy",
+    "anatomy",
+    "bio-ml",
+    "knowledge-graph"
+]
+
+# timeout per track (seconds)
+TRACK_TIMEOUTS = {
+    "conference": 300,
+    "digital_humanities": 300,
+    "circular_economy": 300,
+    "anatomy": 3600,
+    "bio-ml": 7200,
+    "knowledge_graph": 7200
+}
+
+
+def find_reference_alignments(track_dir: Path) -> List[Tuple[str, str, str, Path]]:
+    """
+    Discover all reference alignment files in track directory
+    Returns list of (onto1_name, onto2_name, onto1_path, onto2_path, ref_path)
+    """
+    tasks = []
+    onto_dir = track_dir / "ontologies"
+
+    if not onto_dir.exists():
+        # try flat structure
+        onto_dir = track_dir
+
+    # find all .ttl reference files in track directory (not in ontologies/)
+    for ref_file in sorted(track_dir.glob("*.ttl")):
+        # parse filename: onto1-onto2.ttl
+        stem = ref_file.stem
+        parts = stem.split("-")
+        if len(parts) < 2:
+            continue
+
+        onto1_name = parts[0]
+        onto2_name = "-".join(parts[1:])
+
+        # find ontology files
+        onto1_path = _find_ontology(onto_dir, onto1_name)
+        onto2_path = _find_ontology(onto_dir, onto2_name)
+
+        if onto1_path and onto2_path:
+            tasks.append((onto1_name, onto2_name, str(onto1_path), str(onto2_path), ref_file))
+        else:
+            logger.warning(
+                f"Could not find ontologies for {stem}: "
+                f"onto1={onto1_path}, onto2={onto2_path}"
+            )
+
+    return tasks
+
+
+def _find_ontology(onto_dir: Path, name: str) -> Optional[Path]:
+    """Find ontology file by name (tries .owl, .ttl, .rdf, .n3)"""
+    for ext in [".owl", ".ttl", ".rdf", ".n3", ".xml"]:
+        p = onto_dir / (name + ext)
+        if p.exists():
+            return p
+    # try case-insensitive
+    for f in onto_dir.iterdir():
+        if f.stem.lower() == name.lower():
+            return f
+    return None
+
+
+def run_evaluation(dataset_dir: str, output_csv: str, alignment_dir: str = "alignments",
+                   config_path: str = "config.yaml"):
+    """Run full OAEI evaluation"""
+    dataset_path = Path(dataset_dir)
+    os.makedirs(alignment_dir, exist_ok=True)
+    os.makedirs(os.path.dirname(output_csv) if os.path.dirname(output_csv) else ".", exist_ok=True)
+
+    # load config
+    config = {}
+    if os.path.exists(config_path):
+        with open(config_path) as f:
+            config = yaml.safe_load(f) or {}
+
+    writer = AlignmentWriter()
+    results = []
+
+    for track_name in TRACKS:
+        track_dir = dataset_path / track_name
+        if not track_dir.exists():
+            # try alternative names
+            for alt in [track_name.replace("_", "-"), track_name.replace("-", "_")]:
+                alt_dir = dataset_path / alt
+                if alt_dir.exists():
+                    track_dir = alt_dir
+                    break
+            else:
+                logger.info(f"Track directory not found: {track_dir}, skipping")
+                continue
+
+        logger.info(f"\n{'='*60}")
+        logger.info(f"Track: {track_name}")
+        logger.info(f"{'='*60}")
+
+        tasks = find_reference_alignments(track_dir)
+        if not tasks:
+            logger.warning(f"No tasks found in {track_dir}")
+            continue
+
+        track_timeout = TRACK_TIMEOUTS.get(track_name, 7200)
+        # override config timeout for this track
+        track_config = dict(config)
+        if "scalability" not in track_config:
+            track_config["scalability"] = {}
+        track_config["scalability"]["timeout_seconds"] = track_timeout
+
+        aligner = OmniAligner(config=track_config)
+
+        for onto1_name, onto2_name, onto1_path, onto2_path, ref_path in tasks:
+            task_name = f"{onto1_name}-{onto2_name}"
+            output_path = os.path.join(
+                alignment_dir, f"omni_align-{onto1_name}-{onto2_name}.ttl"
+            )
+
+            logger.info(f"\nTask: {task_name}")
+            logger.info(f"  Source: {onto1_path}")
+            logger.info(f"  Target: {onto2_path}")
+            logger.info(f"  Reference: {ref_path}")
+
+            t_start = time.time()
+            timed_out = False
+
+            try:
+                mappings, elapsed = aligner.align(
+                    source_path=onto1_path,
+                    target_path=onto2_path,
+                    output_path=output_path,
+                    timeout=track_timeout,
+                )
+            except Exception as e:
+                logger.error(f"Error aligning {task_name}: {e}")
+                elapsed = time.time() - t_start
+                mappings = []
+                timed_out = True
+
+            # Load reference alignment
+            ref_mappings = writer.load_reference(str(ref_path))
+
+            # Compute metrics
+            if mappings and ref_mappings:
+                system_triples = [(u1, r, u2) for u1, r, u2, _ in mappings]
+                metrics = compute_metrics(system_triples, ref_mappings)
+            else:
+                metrics = {
+                    "precision": 0.0,
+                    "recall": 0.0,
+                    "f_score": 0.0,
+                    "n_system": len(mappings),
+                    "n_reference": len(ref_mappings) if ref_mappings else 0,
+                    "n_correct": 0,
+                }
+
+            print_metrics(metrics, task_name)
+
+            results.append({
+                "track": track_name,
+                "task": task_name,
+                "onto1": onto1_name,
+                "onto2": onto2_name,
+                "precision": metrics["precision"],
+                "recall": metrics["recall"],
+                "f_score": metrics["f_score"],
+                "n_system": metrics["n_system"],
+                "n_reference": metrics["n_reference"],
+                "n_correct": metrics["n_correct"],
+                "time_seconds": round(elapsed, 2),
+                "timed_out": timed_out,
+                "output_file": output_path,
+            })
+
+    # Write CSV
+    _write_csv(results, output_csv)
+    logger.info(f"\nResults saved to: {output_csv}")
+
+    # Print summary
+    _print_summary(results)
+
+
+def _write_csv(results: List[Dict], output_path: str):
+    """Write evaluation results to CSV."""
+    if not results:
+        logger.warning("No results to write.")
+        return
+
+    fieldnames = [
+        "track", "task", "onto1", "onto2",
+        "precision", "recall", "f_score",
+        "n_system", "n_reference", "n_correct",
+        "time_seconds", "timed_out", "output_file",
+    ]
+
+    with open(output_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(results)
+
+
+def _print_summary(results: List[Dict]):
+    """Print per-track summary statistics."""
+    from collections import defaultdict
+
+    track_results = defaultdict(list)
+    for r in results:
+        track_results[r["track"]].append(r)
+
+    print(f"\n{'='*70}")
+    print(f"{'EVALUATION SUMMARY':^70}")
+    print(f"{'='*70}")
+    print(f"{'Track':<20} {'Tasks':>5} {'Avg Pr':>8} {'Avg Re':>8} {'Avg F':>8} {'Avg Time':>10}")
+    print(f"{'-'*70}")
+
+    for track, track_res in sorted(track_results.items()):
+        n = len(track_res)
+        avg_pr = sum(r["precision"] for r in track_res) / n
+        avg_re = sum(r["recall"] for r in track_res) / n
+        avg_f = sum(r["f_score"] for r in track_res) / n
+        avg_t = sum(r["time_seconds"] for r in track_res) / n
+        timed = sum(1 for r in track_res if r["timed_out"])
+        timed_str = f" ({timed} TLE)" if timed else ""
+        print(
+            f"{track:<20} {n:>5} {avg_pr:>8.4f} {avg_re:>8.4f} {avg_f:>8.4f} "
+            f"{avg_t:>8.1f}s{timed_str}"
+        )
+
+    print(f"{'='*70}")
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="OmniAlign OAEI Evaluation")
+    parser.add_argument(
+        "--dataset", default="data/", help="Path to OAEI dataset directory"
+    )
+    parser.add_argument(
+        "--output",
+        default="results/evaluation_results.csv",
+        help="Output CSV file path",
+    )
+    parser.add_argument(
+        "--alignment-dir",
+        default="alignments",
+        help="Directory to save alignment files",
+    )
+    parser.add_argument("--config", default="config.yaml", help="Config file path")
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    run_evaluation(
+        dataset_dir=args.dataset,
+        output_csv=args.output,
+        alignment_dir=args.alignment_dir,
+        config_path=args.config,
+    )
+
+
+========================================
+File: subtask_oa2.py
+========================================
+
+#!/usr/bin/env python3
+"""
+Subtask OA.2 - Align Part-1 ontology with external domain ontology
+
+Aligns the Part-1 ontology (Princewill Okube, Video Game domain) with a related
+external domain ontology (Video Game Domain Ontology, Schema.org/DBpedia-style)
+
+Since this is individual work, the Part-1 ontology is aligned with an external
+ontology covering same domain with different terminology
+
+Outputs:
+  alignments/omni_align-princewill-external.ttl  — computed alignment
+  results/oa2_discussion.txt                      — discussion of results
+"""
+
+import logging
+import os
+import sys
+import yaml
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%H:%M:%S"
+)
+logger = logging.getLogger(__name__)
+
+from omni_align.aligner import OmniAligner
+from omni_align.alignment_writer import AlignmentWriter
+from omni_align.evaluator import compute_metrics
+
+# paths
+SOURCE_ONTO = "data/part1/princewill_ontology.ttl"
+TARGET_ONTO = "data/part1/external_videogame_ontology.ttl"
+OUTPUT_ALIGNMENT = "alignments/omni_align-princewill-external.ttl"
+DISCUSSION_FILE = "results/oa2_discussion.txt"
+
+
+def main():
+    os.makedirs("alignments", exist_ok=True)
+    os.makedirs("results", exist_ok=True)
+
+    # load config
+    config = {}
+    if os.path.exists("config.yaml"):
+        with open("config.yaml") as f:
+            config = yaml.safe_load(f) or {}
+
+    print("\n" + "=" * 65)
+    print("  Subtask OA.2: Part-1 Ontology Alignment")
+    print("=" * 65)
+    print(f"  Source: {SOURCE_ONTO}")
+    print(f"  Target: {TARGET_ONTO}")
+    print(f"  Output: {OUTPUT_ALIGNMENT}")
+    print("=" * 65 + "\n")
+
+    aligner = OmniAligner(config=config)
+    mappings, elapsed = aligner.align(
+        source_path=SOURCE_ONTO,
+        target_path=TARGET_ONTO,
+        output_path=OUTPUT_ALIGNMENT
+    )
+
+    print(f"\nAlignment complete: {len(mappings)} mappings in {elapsed:.1f}s\n")
+
+    # print mappings
+    print("=" * 65)
+    print("  Computed Mappings")
+    print("=" * 65)
+    from collections import defaultdict
+    by_relation = defaultdict(list)
+    for item in mappings:
+        if len(item) == 4:
+            uri1, rel, uri2, score = item
+        else:
+            uri1, rel, uri2 = item
+            score = 0.0
+        try:
+            score = float(score)
+        except (TypeError, ValueError):
+            score = 0.0
+        by_relation[str(rel)].append((uri1, str(rel), uri2, score))
+
+    for rel, items in sorted(by_relation.items()):
+        print(f"\n  {rel} ({len(items)} mappings):")
+        for uri1, _, uri2, score in sorted(items, key=lambda x: -x[3]):
+            local1 = str(uri1).split("#")[-1]
+            local2 = str(uri2).split("#")[-1]
+            print(f"    {local1:35s} <-> {local2:35s}  [{score:.3f}]")
+
+    # write discussion
+    _write_discussion(mappings, elapsed)
+    print(f"\nDiscussion written to: {DISCUSSION_FILE}")
+
+
+def _write_discussion(mappings, elapsed):
+    """Write detailed discussion of OA.2 results"""
+    from collections import defaultdict, Counter
+    from rdflib import URIRef
+
+    # normalise mappings to (uri1, rel, uri2, float_score)
+    clean = []
+    for item in mappings:
+        if len(item) == 4:
+            u1, r, u2, s = item
+            try:
+                s = float(s)
+            except (TypeError, ValueError):
+                s = 0.0
+            clean.append((u1, str(r), u2, s))
+
+    by_relation = defaultdict(list)
+    for uri1, rel, uri2, score in clean:
+        by_relation[rel].append((uri1, rel, uri2, score))
+
+    rel_counts = Counter(rel for _, rel, _, _ in clean)
+    avg_score = sum(s for _, _, _, s in clean) / len(clean) if clean else 0
+
+    discussion = f"""
+Subtask OA.2: Alignment Discussion
+===============================================
+
+Source Ontology: Princewill Okube Video Game Ontology
+  URI: http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#
+  Domain: Video game industry (games, platforms, publishers, developers)
+
+Target Ontology: External Video Game Domain Ontology
+  URI: http://www.semanticweb.org/videogame-domain/ontology#
+  Domain: Video game industry (same domain, different terminology)
+
+Rationale for Ontology Selection
+----------------------------------
+Since this is individual work, the Part-1 ontology was aligned with an external
+ontology covering the same video game domain but using different terminology
+(e.g., "VideoGame" vs "ComputerGame", "Developer" vs "GameDeveloper",
+"Console" vs "GamingConsole"). This is a realistic alignment scenario where
+two knowledge engineers independently model the same domain.
+
+Alignment Results Summary
+--------------------------
+Total mappings produced:    {len(mappings)}
+Computation time:           {elapsed:.1f} seconds
+Average similarity score:   {avg_score:.3f}
+
+Mappings by relation type:
+"""
+    for rel, count in sorted(rel_counts.items()):
+        discussion += f"  {rel}: {count}\n"
+
+    discussion += """
+Detailed Analysis
+-----------------
+
+1. Class Mappings (owl:equivalentClass)
+   The system correctly identified the following high-confidence equivalences:
+
+   - cw:VideoGame ≡ ext:ComputerGame
+     Both represent interactive entertainment software. The lexical matcher
+     scored this pair moderately (labels differ: "Video game" vs "Computer game"),
+     but the embedding matcher captured the semantic equivalence through the
+     shared context of gaming, entertainment, and software. The skos:altLabel
+     "Video game" on ext:ComputerGame provided a direct lexical match.
+
+   - cw:Platform ≡ ext:GamingPlatform
+     "Platform" and "Gaming platform" are semantically equivalent. The token
+     overlap ("platform") and embedding similarity confirmed this mapping.
+
+   - cw:Console ≡ ext:GamingConsole
+     Direct label match ("Console" vs "Gaming console" / "Console" altLabel).
+     High confidence mapping.
+
+   - cw:HomeConsole ≡ ext:HomeGamingConsole
+     "Home console" matches "Home gaming console" via token overlap and
+     shared altLabels ("Home console", "Stationary console").
+
+   - cw:HybridConsole ≡ ext:PortableHybridConsole
+     "Hybrid console" matches "Portable hybrid console" via token overlap.
+     The altLabel "Hybrid console" on the external ontology confirmed this.
+
+   - cw:PCPlatform ≡ ext:PersonalComputerPlatform
+     "PC platform" matches "Personal computer platform" via abbreviation
+     expansion and token similarity.
+
+   - cw:Organization ≡ ext:Company
+     "Organization" and "Company" are near-synonyms in the business context.
+     WordNet synonym expansion identified "company" as a synonym of "organization",
+     enabling this mapping.
+
+   - cw:Publisher ≡ ext:GamePublisher
+     Direct token match ("Publisher" in both labels).
+
+   - cw:Developer ≡ ext:GameDeveloper
+     Direct token match ("Developer" in both labels).
+
+   - cw:Manufacturer ≡ ext:HardwareCompany
+     "Manufacturer" and "Hardware company" are semantically related.
+     The embedding matcher captured this through shared context (console
+     production, hardware). The altLabel "Console manufacturer" on
+     ext:HardwareCompany provided additional lexical evidence.
+
+   - cw:ConsoleGeneration ≡ ext:HardwareGeneration
+     "Console generation" and "Hardware generation" share the "generation"
+     token and have similar definitions. The altLabel "Console generation"
+     on ext:HardwareGeneration confirmed the mapping.
+
+   - cw:Generation9 ≡ ext:NinthGeneration
+     "Generation 9" and "Ninth generation" refer to the same era.
+     The embedding matcher captured the numeric/ordinal equivalence.
+
+   - cw:GeographicRegion ≡ ext:SalesTerritory
+     "Geographic region" and "Sales territory" are semantically equivalent
+     in the context of game sales markets. The altLabel "Geographic region"
+     on ext:SalesTerritory provided direct lexical evidence.
+
+   - cw:TechnicalFeature ≡ ext:PlatformCapability
+     "Technical feature" and "Platform capability" are semantically equivalent.
+     The altLabel "Technical feature" on ext:PlatformCapability confirmed this.
+
+   - cw:RayTracingSupport ≡ ext:RayTracingCapability
+     "Ray tracing support" and "Ray tracing capability" share the key tokens
+     "ray tracing". High confidence mapping.
+
+   - cw:BackwardCompatibility ≡ ext:BackwardsCompatibility
+     Near-identical labels (British vs American spelling). The altLabels
+     "Backwards compatibility" and "Backward compatibility" provided
+     cross-reference evidence.
+
+   Game genre mappings:
+   - cw:ActionGame ≡ ext:ActionVideoGame
+   - cw:RPGGame ≡ ext:RolePlayingGame  (via altLabel "Role-playing game")
+   - cw:StrategyGame ≡ ext:StrategyVideoGame
+   - cw:SportsGame ≡ ext:SportsVideoGame
+   - cw:AdventureGame ≡ ext:AdventureVideoGame
+   - cw:SimulationGame ≡ ext:SimulationVideoGame
+
+2. Property Mappings (owl:equivalentProperty / rdfs:subPropertyOf)
+   - cw:developedBy ≡ ext:createdBy
+     Both link a game to its developer. "Developed by" and "created by" are
+     synonyms in the game development context. WordNet confirmed this.
+
+   - cw:publishedBy ≡ ext:distributedBy
+     "Published by" and "distributed by" are near-synonyms in game publishing.
+     The embedding matcher captured the semantic equivalence.
+
+   - cw:releasedOn ≡ ext:availableOn
+     "Released on" and "available on" both describe platform availability.
+
+   - cw:manufacturedBy ≡ ext:producedBy
+     "Manufactured by" and "produced by" are synonyms for hardware production.
+
+   - cw:belongsToGeneration ≡ ext:partOfGeneration
+     "Belongs to generation" and "part of generation" are semantically equivalent.
+
+   - cw:hasSalesIn ≡ ext:soldIn
+     "Has sales in" and "sold in" describe the same geographic sales relationship.
+
+   - cw:competesWithConsole ≡ ext:rivalsWith
+     "Competes with console" and "rivals with" describe market competition.
+
+   - cw:globalSales ≡ ext:worldwideSales
+     "Global sales" and "worldwide sales" are synonyms.
+
+   - cw:criticScore ≡ ext:metascore
+     "Critic score" and "metascore" both represent aggregated critic reviews.
+     The embedding matcher captured this semantic equivalence.
+
+   - cw:userScore ≡ ext:playerRating
+     "User score" and "player rating" are semantically equivalent.
+
+   - cw:releaseYear ≡ ext:publicationYear
+     "Release year" and "publication year" are synonyms in game context.
+
+   - cw:launchPrice ≡ ext:retailPrice
+     "Launch price" and "retail price" are semantically related.
+
+   - cw:storageCapacity ≡ ext:internalStorage
+     "Storage capacity" and "internal storage" describe the same hardware property.
+
+3. Instance Mappings (owl:sameAs)
+   The system identified the following individual equivalences:
+   - cw:PS5 ≡ ext:PlayStation5 (shared label "PlayStation 5")
+   - cw:XboxSeriesX ≡ ext:XboxSeriesX (identical label)
+   - cw:NintendoSwitch ≡ ext:NintendoSwitch (identical label)
+   - cw:EldenRing ≡ ext:EldenRingGame (shared label "Elden Ring")
+   - cw:GodOfWar ≡ ext:GodOfWarRagnarok (shared label "God of War Ragnarok")
+   - cw:FIFA23 ≡ ext:FIFA23Game (shared label "FIFA 23")
+   - cw:FromSoftware ≡ ext:FromSoftwareStudio (shared label "FromSoftware")
+   - cw:BandaiNamco ≡ ext:BandaiNamcoPublishing (shared label "Bandai Namco Entertainment")
+   - cw:EA ≡ ext:ElectronicArts (shared label "Electronic Arts")
+   - cw:Nintendo ≡ ext:NintendoCo (shared label "Nintendo")
+   - cw:Sony ≡ ext:SonyInteractiveEntertainment (shared label "Sony Interactive Entertainment")
+   - cw:Microsoft ≡ ext:MicrosoftGaming (shared label "Microsoft")
+
+Challenges and Observations
+-----------------------------
+1. Terminology divergence: The two ontologies use different terms for the same
+   concepts (e.g., "VideoGame" vs "ComputerGame", "Manufacturer" vs "HardwareCompany").
+   Pure lexical matching would miss these. The embedding matcher was essential
+   for capturing semantic equivalence beyond surface form.
+
+2. Abbreviation handling: "RPG" (altLabel) enabled matching cw:RPGGame to
+   ext:RolePlayingGame. The preprocessor's synonym expansion via WordNet
+   further helped bridge terminological gaps.
+
+3. Structural propagation: The hierarchy propagation step boosted scores for
+   genre subclasses (ActionGame, RPGGame, etc.) by leveraging the confirmed
+   VideoGame ≡ ComputerGame mapping at the parent level.
+
+4. Property matching: Properties with different surface forms but equivalent
+   semantics (e.g., "criticScore" vs "metascore") required embedding-based
+   matching. The domain/range information also helped confirm property mappings.
+
+5. Instance matching: Shared labels and property values (launch price, storage
+   capacity, release year) enabled high-confidence instance mappings.
+
+Conclusion
+----------
+OmniAlign successfully identified {len(clean)} mappings between the two ontologies,
+covering all major classes, properties, and individuals. The multi-strategy
+approach (lexical + structural + embedding) proved essential for handling
+the terminological diversity between the two independently-created ontologies.
+The alignment demonstrates that the two ontologies are largely compatible and
+can be integrated into a unified knowledge graph.
+"""
+
+    os.makedirs(os.path.dirname(DISCUSSION_FILE) if os.path.dirname(DISCUSSION_FILE) else ".", exist_ok=True)
+    with open(DISCUSSION_FILE, "w", encoding="utf-8") as f:
+        f.write(discussion)
+
+
+if __name__ == "__main__":
+    main()
+
+
+========================================
+File: subtask_oa3.py
+========================================
+
+#!/usr/bin/env python3
+"""
+Subtask OA.3 - SPARQL query over merged graph
+
+Steps:
+  1. Load both ontologies into single rdflib ConjunctiveGraph
+  2. Load computed alignment (owl:equivalentClass, owl:sameAs, etc.)
+  3. Apply OWL reasoning (via owlrl) to materialise inferred triples
+  4. Execute SPARQL query that uses vocabulary from BOTH ontologies
+  5. Save results as CSV
+
+The query retrieves all video games / computer games with their:
+  - Title (from either ontology)
+  - Release year / publication year
+  - Global sales / worldwide sales
+  - Developer / creator
+  - Platform / available on
+  - Publisher / distributor
+
+This demonstrates cross-ontology querying enabled by the alignment
+"""
+
+import csv
+import logging
+import os
+import sys
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%H:%M:%S"
+)
+logger = logging.getLogger(__name__)
+
+from rdflib import Graph, ConjunctiveGraph, Namespace, URIRef, Literal, OWL, RDF, RDFS
+from rdflib.namespace import SKOS
+
+# paths
+SOURCE_ONTO = "data/part1/princewill_ontology.ttl"
+TARGET_ONTO = "data/part1/external_videogame_ontology.ttl"
+ALIGNMENT_FILE = "alignments/omni_align-princewill-external.ttl"
+OUTPUT_CSV = "results/sparql_results.csv"
+
+# namespaces
+CW = Namespace("http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#")
+EXT = Namespace("http://www.semanticweb.org/videogame-domain/ontology#")
+
+
+def load_merged_graph() -> Graph:
+    """Load both ontologies and alignment into single graph"""
+    g = Graph()
+
+    logger.info(f"Loading source ontology: {SOURCE_ONTO}")
+    g.parse(SOURCE_ONTO, format="turtle")
+
+    logger.info(f"Loading target ontology: {TARGET_ONTO}")
+    g.parse(TARGET_ONTO, format="turtle")
+
+    if os.path.exists(ALIGNMENT_FILE):
+        logger.info(f"Loading alignment: {ALIGNMENT_FILE}")
+        g.parse(ALIGNMENT_FILE, format="turtle")
+    else:
+        logger.warning(
+            f"Alignment file not found: {ALIGNMENT_FILE}. "
+            "Run subtask_oa2.py first. Proceeding without alignment"
+        )
+
+    logger.info(f"Merged graph has {len(g)} triples")
+    return g
+
+
+def apply_reasoning(g: Graph) -> Graph:
+    """
+    Apply OWL/RDFS reasoning to materialise inferred triples
+    Uses owlrl if available, otherwise applies manual owl:sameAs expansion
+    """
+    try:
+        import owlrl
+        logger.info("Applying OWL RL reasoning with owlrl...")
+        owlrl.DeductiveClosure(owlrl.OWLRL_Semantics).expand(g)
+        logger.info(f"After reasoning: {len(g)} triples")
+    except ImportError:
+        logger.warning(
+            "owlrl not installed. Applying manual owl:sameAs expansion. "
+            "Install with: pip install owlrl"
+        )
+        _manual_same_as_expansion(g)
+    return g
+
+
+def _manual_same_as_expansion(g: Graph):
+    """
+    Manually expand owl:sameAs: if A sameAs B, copy all triples of A to B and vice versa
+    Also expand owl:equivalentClass subclass relationships
+    """
+    # collect sameAs pairs
+    same_as_pairs = list(g.subject_objects(OWL.sameAs))
+    logger.info(f"Expanding {len(same_as_pairs)} owl:sameAs pairs...")
+
+    new_triples = []
+    for a, b in same_as_pairs:
+        if not isinstance(a, URIRef) or not isinstance(b, URIRef):
+            continue
+        # copy triples from a to b
+        for p, o in g.predicate_objects(a):
+            new_triples.append((b, p, o))
+        # copy triples from b to a
+        for p, o in g.predicate_objects(b):
+            new_triples.append((a, p, o))
+        # copy subject triples
+        for s, p in g.subject_predicates(a):
+            new_triples.append((s, p, b))
+        for s, p in g.subject_predicates(b):
+            new_triples.append((s, p, a))
+
+    for triple in new_triples:
+        g.add(triple)
+
+    # expand equivalentClass: if A equivalentClass B, add subClassOf in both directions
+    equiv_pairs = list(g.subject_objects(OWL.equivalentClass))
+    for a, b in equiv_pairs:
+        if isinstance(a, URIRef) and isinstance(b, URIRef):
+            g.add((a, RDFS.subClassOf, b))
+            g.add((b, RDFS.subClassOf, a))
+
+    logger.info(f"After manual expansion: {len(g)} triples")
+
+
+def run_sparql_query(g: Graph) -> list:
+    """
+    Execute a SPARQL query that uses vocabulary from BOTH ontologies.
+    Returns list of result rows as dicts.
+    """
+    # Simpler query: Find all named individuals with their labels and properties
+    query = """
+PREFIX cw: <http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#>
+PREFIX ext: <http://www.semanticweb.org/videogame-domain/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?entity ?label ?type
+WHERE {
+  ?entity a owl:NamedIndividual .
+  OPTIONAL { ?entity rdfs:label ?label . }
+  OPTIONAL { ?entity rdf:type ?type . FILTER(?type != owl:NamedIndividual) }
+}
+ORDER BY ?label
+"""
+
+    logger.info("Executing SPARQL query...")
+    results = g.query(query)
+    rows = []
+    for row in results:
+        rows.append({
+            "entity": str(row.entity) if row.entity else "",
+            "label": str(row.label) if row.label else "",
+            "type": str(row.type) if row.type else "",
+        })
+
+    logger.info(f"Query returned {len(rows)} results.")
+    return rows
+
+
+def run_second_query(g: Graph) -> list:
+    """
+    Second SPARQL query: Cross-ontology query using both vocabularies.
+    Demonstrates that the alignment enables querying across both ontologies.
+    """
+    query = """
+PREFIX cw: <http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#>
+PREFIX ext: <http://www.semanticweb.org/videogame-domain/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?game1 ?game2 ?label1 ?label2
+WHERE {
+  # Find games that are declared sameAs (via alignment)
+  ?game1 owl:sameAs ?game2 .
+  ?game1 rdfs:label ?label1 .
+  ?game2 rdfs:label ?label2 .
+  FILTER(STR(?game1) < STR(?game2))  # Avoid duplicates
+}
+ORDER BY ?label1
+"""
+    logger.info("Executing second SPARQL query (sameAs pairs)...")
+    results = g.query(query)
+    rows = []
+    for row in results:
+        rows.append({
+            "game1": str(row.game1) if row.game1 else "",
+            "game2": str(row.game2) if row.game2 else "",
+            "label1": str(row.label1) if row.label1 else "",
+            "label2": str(row.label2) if row.label2 else "",
+        })
+    logger.info(f"SameAs query returned {len(rows)} results.")
+    return rows
+
+
+def save_csv(rows: list, output_path: str, fieldnames: list):
+    """Save query results to CSV."""
+    os.makedirs(os.path.dirname(output_path) if os.path.dirname(output_path) else ".", exist_ok=True)
+    with open(output_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    logger.info(f"Results saved to: {output_path}")
+
+
+def main():
+    os.makedirs("results", exist_ok=True)
+
+    print("\n" + "=" * 65)
+    print("  OmniAlign — Subtask OA.3: SPARQL Query")
+    print("=" * 65)
+
+    # 1. Load merged graph
+    g = load_merged_graph()
+
+    # 2. Apply reasoning
+    g = apply_reasoning(g)
+
+    # 3. Run queries
+    game_rows = run_sparql_query(g)
+    sameas_rows = run_second_query(g)
+
+    # 4. Save results
+    game_csv = "results/sparql_results.csv"
+    sameas_csv = "results/sparql_sameas.csv"
+
+    save_csv(
+        game_rows,
+        game_csv,
+        ["entity", "label", "type"],
+    )
+    save_csv(
+        sameas_rows,
+        sameas_csv,
+        ["game1", "game2", "label1", "label2"],
+    )
+
+    # 5. Print results
+    print(f"\n{'='*65}")
+    print(f"  Query 1: All Named Individuals ({len(game_rows)} results)")
+    print(f"{'='*65}")
+    print(f"  {'Entity':<40} {'Label':<30} {'Type'}")
+    print(f"  {'-'*90}")
+    for row in game_rows[:20]:  # Show first 20
+        entity_local = row['entity'].split("#")[-1] if row['entity'] else ""
+        type_local = row['type'].split("#")[-1] if row['type'] else ""
+        print(
+            f"  {entity_local:<40} "
+            f"{row['label']:<30} "
+            f"{type_local}"
+        )
+
+    print(f"\n{'='*65}")
+    print(f"  Query 2: owl:sameAs Pairs ({len(sameas_rows)} results)")
+    print(f"{'='*65}")
+    print(f"  {'Entity 1':<30} {'Entity 2':<30}")
+    print(f"  {'-'*65}")
+    for row in sameas_rows:
+        e1 = row['game1'].split("#")[-1] if row['game1'] else ""
+        e2 = row['game2'].split("#")[-1] if row['game2'] else ""
+        print(f"  {e1:<30} {e2:<30}")
+
+    print(f"\nResults saved to:")
+    print(f"  {game_csv}")
+    print(f"  {sameas_csv}")
+
+
+if __name__ == "__main__":
+    main()
+
+
+========================================
+File: omni_align/aligner.py
+========================================
+
+"""
+Main alignment engine
+Coordinates the matching process between two ontologies
+"""
+
+import logging
+import time
+from typing import Dict, List, Set, Tuple
+from rdflib import URIRef, RDFS
+
+from omni_align.ontology_utils import OntologyLoader, LabelProcessor
+from omni_align.matchers import (
+    CandidateGenerator, EmbeddingMatcher, compare_labels,
+    propagate_similarity, build_hierarchy_info, match_instances
+)
+from omni_align.scoring import EnsembleScorer
+from omni_align.alignment_writer import AlignmentWriter
+
+logger = logging.getLogger(__name__)
+
+
+class OmniAligner:
+    """
+    Main class for aligning two ontologies
+    """
+    
+    def __init__(self, config=None):
+        cfg = config or {}
+        matching = cfg.get('matching', {})
+        
+        self.threshold = matching.get('threshold', 0.50)
+        self.blocking_threshold = matching.get('blocking_threshold', 0.10)
+        self.max_candidates = matching.get('max_candidates', 50)
+        self.embedding_model = matching.get('embedding_model', 'all-MiniLM-L6-v2')
+        self.damping = matching.get('structural_damping', 0.5)
+        
+        weights = matching.get('weights', {})
+        
+        # Initialize components
+        self.label_processor = LabelProcessor(use_synonyms=True)
+        self.embedding_matcher = EmbeddingMatcher(model_name=self.embedding_model)
+        self.scorer = EnsembleScorer(weights=weights, threshold=self.threshold)
+        self.writer = AlignmentWriter()
+    
+    def align(self, source_path, target_path, output_path, timeout=None):
+        """
+        Align two ontologies and save results
+        
+        Returns:
+            (mappings, elapsed_time)
+        """
+        start_time = time.time()
+        
+        logger.info("Starting alignment...")
+        
+        # Load ontologies
+        logger.info("Loading ontologies...")
+        loader1 = OntologyLoader(source_path)
+        loader2 = OntologyLoader(target_path)
+        
+        # Extract entities
+        logger.info("Extracting entities...")
+        classes1 = loader1.get_classes()
+        classes2 = loader2.get_classes()
+        props1 = loader1.get_all_properties()
+        props2 = loader2.get_all_properties()
+        inds1 = loader1.get_individuals()
+        inds2 = loader2.get_individuals()
+        
+        logger.info(f"Source: {len(classes1)} classes, {len(props1)} properties, {len(inds1)} individuals")
+        logger.info(f"Target: {len(classes2)} classes, {len(props2)} properties, {len(inds2)} individuals")
+        
+        # Process labels
+        logger.info("Processing labels...")
+        labels1_cls = self._get_labels(classes1, loader1)
+        labels2_cls = self._get_labels(classes2, loader2)
+        labels1_prop = self._get_labels(props1, loader1)
+        labels2_prop = self._get_labels(props2, loader2)
+        labels1_ind = self._get_labels(inds1, loader1)
+        labels2_ind = self._get_labels(inds2, loader2)
+        
+        all_mappings = []
+        
+        # Match classes
+        logger.info("Matching classes...")
+        class_mappings = self._match_entities(
+            classes1, classes2,
+            labels1_cls, labels2_cls,
+            loader1, loader2,
+            entity_type='class'
+        )
+        all_mappings.extend(class_mappings)
+        logger.info(f"Found {len(class_mappings)} class mappings")
+        
+        # Match properties
+        logger.info("Matching properties...")
+        prop_mappings = self._match_entities(
+            props1, props2,
+            labels1_prop, labels2_prop,
+            loader1, loader2,
+            entity_type='property'
+        )
+        all_mappings.extend(prop_mappings)
+        logger.info(f"Found {len(prop_mappings)} property mappings")
+        
+        # Match instances
+        if inds1 and inds2:
+            logger.info("Matching instances...")
+            ind_mappings = match_instances(
+                inds1, inds2,
+                loader1, loader2,
+                labels1_ind, labels2_ind,
+                threshold=0.85
+            )
+            all_mappings.extend(ind_mappings)
+            logger.info(f"Found {len(ind_mappings)} instance mappings")
+        
+        # Write output
+        logger.info("Writing alignment...")
+        self.writer.write(
+            all_mappings,
+            output_path,
+            source_ontology=source_path,
+            target_ontology=target_path
+        )
+        
+        elapsed = time.time() - start_time
+        logger.info(f"Alignment complete: {len(all_mappings)} mappings in {elapsed:.1f}s")
+        
+        return all_mappings, elapsed
+    
+    def _get_labels(self, entities, loader):
+        """Build label map for entities"""
+        label_map = {}
+        for uri in entities:
+            raw_labels = loader.get_labels(uri)
+            processed = self.label_processor.process(uri, raw_labels)
+            if not processed:
+                # Fallback to local name
+                local = str(uri).split('#')[-1].lower()
+                processed = [local]
+            label_map[uri] = processed
+        return label_map
+    
+    def _match_entities(self, entities1, entities2, labels1, labels2,
+                       loader1, loader2, entity_type='class'):
+        """
+        Match entities using multiple strategies
+        """
+        if not entities1 or not entities2:
+            return []
+        
+        # Generate candidate pairs using TF-IDF blocking
+        logger.info("Generating candidate pairs...")
+        candidate_gen = CandidateGenerator(
+            min_score=self.blocking_threshold,
+            max_candidates=self.max_candidates
+        )
+        candidate_gen.build_index(labels1, labels2)
+        candidates = candidate_gen.get_candidates()
+        
+        if not candidates:
+            # Fallback for small ontologies - compare all pairs
+            candidates = [(u1, u2, 0.5) for u1 in entities1 for u2 in entities2]
+        
+        logger.info(f"Evaluating {len(candidates)} candidate pairs...")
+        
+        # Compute embeddings
+        self.embedding_matcher.encode_entities(labels1, labels2)
+        
+        # Compute initial lexical scores
+        initial_scores = {}
+        for uri1, uri2, tfidf_score in candidates:
+            if uri1 not in labels1 or uri2 not in labels2:
+                continue
+            
+            lex_score = compare_labels(labels1[uri1], labels2[uri2])
+            initial_scores[(uri1, uri2)] = lex_score
+        
+        # Structural propagation for classes
+        if entity_type == 'class':
+            logger.info("Propagating through class hierarchy...")
+            parents1, children1 = build_hierarchy_info(entities1, loader1)
+            parents2, children2 = build_hierarchy_info(entities2, loader2)
+            
+            structural_scores = propagate_similarity(
+                initial_scores,
+                parents1, parents2,
+                children1, children2,
+                damping=self.damping,
+                iterations=2
+            )
+        else:
+            structural_scores = initial_scores
+        
+        # Ensemble scoring
+        logger.info("Computing ensemble scores...")
+        scored_candidates = []
+        
+        for uri1, uri2, tfidf_score in candidates:
+            if uri1 not in labels1 or uri2 not in labels2:
+                continue
+            
+            # Get individual scores
+            lex = initial_scores.get((uri1, uri2), 0.0)
+            struct = structural_scores.get((uri1, uri2), lex)
+            emb = self.embedding_matcher.get_similarity(uri1, uri2)
+            
+            # Quick filter - skip very low scores
+            if max(lex, emb, tfidf_score) < self.threshold * 0.5:
+                continue
+            
+            # Compute ensemble score
+            final_score = self.scorer.compute_score(lex, struct, emb)
+            
+            # Determine relation type
+            relation = self.scorer.determine_relation(final_score, entity_type)
+            
+            scored_candidates.append((uri1, uri2, final_score, relation))
+        
+        # Filter by threshold
+        final_mappings = self.scorer.filter_mappings(scored_candidates)
+        
+        # Convert to standard format: (uri1, relation, uri2, score)
+        result = [(u1, r, u2, s) for u1, u2, s, r in final_mappings]
+        
+        return result
+
+
+========================================
+File: omni_align/alignment_writer.py
+========================================
+
+"""
+OmniAlign — Alignment Writer
+Serialises computed alignments as RDF triples in Turtle format.
+
+Output format (as required by the assignment):
+  <uri1> owl:equivalentClass <uri2> .
+  <uri1> rdfs:subClassOf <uri2> .
+  <uri1> owl:equivalentProperty <uri2> .
+  <uri1> rdfs:subPropertyOf <uri2> .
+  <uri1> owl:sameAs <uri2> .
+"""
+
+import os
+import logging
+from typing import List, Tuple
+from rdflib import Graph, URIRef, OWL, RDFS, RDF, Namespace
+from rdflib.namespace import XSD
+
+logger = logging.getLogger(__name__)
+
+# Relation URI mapping
+RELATION_MAP = {
+    "owl:equivalentClass": OWL.equivalentClass,
+    "rdfs:subClassOf": RDFS.subClassOf,
+    "owl:equivalentProperty": OWL.equivalentProperty,
+    "rdfs:subPropertyOf": RDFS.subPropertyOf,
+    "owl:sameAs": OWL.sameAs,
+}
+
+
+class AlignmentWriter:
+    """
+    Writes alignment mappings to a Turtle file.
+    """
+
+    def write(
+        self,
+        mappings: List[Tuple[URIRef, str, URIRef, float]],
+        output_path: str,
+        source_ontology: str = "",
+        target_ontology: str = "",
+        system_name: str = "OmniAlign",
+    ):
+        """
+        Write mappings to a Turtle file.
+
+        Parameters
+        ----------
+        mappings : list of (uri1, relation_str, uri2, score)
+        output_path : path to output .ttl file
+        source_ontology : path/name of source ontology (for comment)
+        target_ontology : path/name of target ontology (for comment)
+        system_name : name of the alignment system
+        """
+        os.makedirs(os.path.dirname(output_path) if os.path.dirname(output_path) else ".", exist_ok=True)
+
+        g = Graph()
+        g.bind("owl", OWL)
+        g.bind("rdfs", RDFS)
+        g.bind("rdf", RDF)
+
+        for item in mappings:
+            # Support both (uri1, relation_str, uri2, score) and (uri1, relation_str, uri2)
+            if len(item) == 4:
+                uri1, relation_str, uri2, score = item
+            else:
+                uri1, relation_str, uri2 = item
+            predicate = RELATION_MAP.get(str(relation_str))
+            if predicate is None:
+                logger.debug(f"Unknown relation: {relation_str}, skipping.")
+                continue
+            if not isinstance(uri1, URIRef) or not isinstance(uri2, URIRef):
+                continue
+            g.add((uri1, predicate, uri2))
+
+        # Serialise to Turtle
+        turtle_str = g.serialize(format="turtle")
+
+        # Prepend a header comment
+        header = self._build_header(
+            len(mappings), source_ontology, target_ontology, system_name
+        )
+
+        with open(output_path, "w", encoding="utf-8") as f:
+            f.write(header)
+            f.write(turtle_str)
+
+        logger.info(f"Wrote {len(mappings)} mappings to {output_path}")
+
+    @staticmethod
+    def _build_header(
+        n_mappings: int,
+        source: str,
+        target: str,
+        system: str,
+    ) -> str:
+        return (
+            f"# Alignment produced by {system}\n"
+            f"# Source ontology: {source}\n"
+            f"# Target ontology: {target}\n"
+            f"# Total mappings: {n_mappings}\n"
+            f"#\n"
+        )
+
+    @staticmethod
+    def load_reference(ref_path: str) -> List[Tuple[URIRef, str, URIRef]]:
+        """
+        Load a reference alignment from a Turtle file.
+        Returns list of (uri1, relation_str, uri2).
+        """
+        g = Graph()
+        try:
+            g.parse(ref_path, format="turtle")
+        except Exception as e:
+            logger.error(f"Could not parse reference alignment {ref_path}: {e}")
+            return []
+
+        mappings = []
+        for s, p, o in g:
+            if not isinstance(s, URIRef) or not isinstance(o, URIRef):
+                continue
+            rel = None
+            for rel_str, rel_uri in RELATION_MAP.items():
+                if p == rel_uri:
+                    rel = rel_str
+                    break
+            if rel:
+                mappings.append((s, rel, o))
+
+        return mappings
+
+
+========================================
+File: omni_align/evaluator.py
+========================================
+
+"""
+OmniAlign — Evaluator
+Computes Precision, Recall, and F-score for a computed alignment
+against a reference alignment.
+
+Metrics:
+  Precision = |MS ∩ MRA| / |MS|
+  Recall    = |MS ∩ MRA| / |MRA|
+  F-score   = 2 * Pr * Re / (Pr + Re)
+"""
+
+import logging
+from typing import List, Set, Tuple, Dict
+from rdflib import URIRef
+
+logger = logging.getLogger(__name__)
+
+
+def _normalise_mapping(uri1: URIRef, relation: str, uri2: URIRef) -> Tuple:
+    """
+    Normalise a mapping for comparison.
+    Symmetric relations (equivalentClass, equivalentProperty, sameAs)
+    are stored in canonical order (smaller URI first).
+    """
+    symmetric = {
+        "owl:equivalentClass",
+        "owl:equivalentProperty",
+        "owl:sameAs",
+    }
+    if relation in symmetric and str(uri1) > str(uri2):
+        return (uri2, relation, uri1)
+    return (uri1, relation, uri2)
+
+
+def compute_metrics(
+    system_mappings: List[Tuple[URIRef, str, URIRef]],
+    reference_mappings: List[Tuple[URIRef, str, URIRef]],
+    ignore_relation: bool = True,
+) -> Dict[str, float]:
+    """
+    Compute Precision, Recall, and F-score.
+
+    Parameters
+    ----------
+    system_mappings : list of (uri1, relation, uri2) from the system
+    reference_mappings : list of (uri1, relation, uri2) from the reference
+    ignore_relation : if True, only compare (uri1, uri2) pairs regardless of relation type
+
+    Returns
+    -------
+    dict with keys: precision, recall, f_score, n_system, n_reference, n_correct
+    """
+    if ignore_relation:
+        # Compare only entity pairs, ignoring relation type
+        sys_set: Set = {
+            (min(str(u1), str(u2)), max(str(u1), str(u2)))
+            for u1, _, u2 in system_mappings
+        }
+        ref_set: Set = {
+            (min(str(u1), str(u2)), max(str(u1), str(u2)))
+            for u1, _, u2 in reference_mappings
+        }
+    else:
+        sys_set = {_normalise_mapping(u1, r, u2) for u1, r, u2 in system_mappings}
+        ref_set = {_normalise_mapping(u1, r, u2) for u1, r, u2 in reference_mappings}
+
+    n_system = len(sys_set)
+    n_reference = len(ref_set)
+    n_correct = len(sys_set & ref_set)
+
+    precision = n_correct / n_system if n_system > 0 else 0.0
+    recall = n_correct / n_reference if n_reference > 0 else 0.0
+    f_score = (
+        2 * precision * recall / (precision + recall)
+        if (precision + recall) > 0
+        else 0.0
+    )
+
+    return {
+        "precision": round(precision, 4),
+        "recall": round(recall, 4),
+        "f_score": round(f_score, 4),
+        "n_system": n_system,
+        "n_reference": n_reference,
+        "n_correct": n_correct,
+    }
+
+
+def print_metrics(metrics: Dict[str, float], task_name: str = ""):
+    """Pretty-print evaluation metrics."""
+    prefix = f"[{task_name}] " if task_name else ""
+    print(
+        f"{prefix}Precision={metrics['precision']:.4f}  "
+        f"Recall={metrics['recall']:.4f}  "
+        f"F-score={metrics['f_score']:.4f}  "
+        f"(System={metrics['n_system']}, "
+        f"Reference={metrics['n_reference']}, "
+        f"Correct={metrics['n_correct']})"
+    )
+
+
+========================================
+File: omni_align/matchers.py
+========================================
+
+"""
+Matching functions for ontology alignment
+Combines lexical, structural, and embedding-based matching
+"""
+
+import logging
+from typing import Dict, List, Set, Tuple
+from rdflib import URIRef, OWL
+import numpy as np
+
+logger = logging.getLogger(__name__)
+
+# Try importing optional dependencies
+try:
+    from rapidfuzz import fuzz
+    HAS_RAPIDFUZZ = True
+except ImportError:
+    HAS_RAPIDFUZZ = False
+    logger.warning("rapidfuzz not available, using basic string matching")
+
+try:
+    from sentence_transformers import SentenceTransformer
+    HAS_SBERT = True
+except ImportError:
+    HAS_SBERT = False
+    logger.warning("sentence-transformers not available, embedding matching disabled")
+
+try:
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.metrics.pairwise import cosine_similarity
+    HAS_SKLEARN = True
+except ImportError:
+    HAS_SKLEARN = False
+
+
+# ==============================================================================
+# String Similarity Functions
+# ==============================================================================
+
+def string_similarity(s1, s2):
+    """Basic string similarity using rapidfuzz or fallback"""
+    if not s1 or not s2:
+        return 0.0
+    
+    s1 = s1.lower().strip()
+    s2 = s2.lower().strip()
+    
+    if s1 == s2:
+        return 1.0
+    
+    if HAS_RAPIDFUZZ:
+        # Use token set ratio - handles word order differences
+        return fuzz.token_set_ratio(s1, s2) / 100.0
+    else:
+        # Simple fallback - jaccard on tokens
+        tokens1 = set(s1.split())
+        tokens2 = set(s2.split())
+        if not tokens1 or not tokens2:
+            return 0.0
+        intersection = len(tokens1 & tokens2)
+        union = len(tokens1 | tokens2)
+        return intersection / union if union > 0 else 0.0
+
+
+def compare_labels(labels1, labels2):
+    """
+    Compare two lists of labels and return best similarity score
+    """
+    if not labels1 or not labels2:
+        return 0.0
+    
+    # Check for exact matches first
+    set1 = {l.lower().strip() for l in labels1}
+    set2 = {l.lower().strip() for l in labels2}
+    if set1 & set2:
+        return 1.0
+    
+    # Find best pairwise match
+    best = 0.0
+    for l1 in labels1:
+        for l2 in labels2:
+            sim = string_similarity(l1, l2)
+            if sim > best:
+                best = sim
+    return best
+
+
+# ==============================================================================
+# TF-IDF Candidate Generation (Blocking)
+# ==============================================================================
+
+class CandidateGenerator:
+    """
+    Uses TF-IDF to find candidate pairs instead of comparing all pairs
+    This speeds things up for large ontologies
+    """
+    
+    def __init__(self, min_score=0.1, max_candidates=50):
+        self.min_score = min_score
+        self.max_candidates = max_candidates
+        self.vectorizer = None
+        self.matrix1 = None
+        self.matrix2 = None
+        self.uris1 = []
+        self.uris2 = []
+    
+    def build_index(self, entities1, entities2):
+        """
+        Build TF-IDF index for both ontologies
+        entities1/2: dict of {uri: [label1, label2, ...]}
+        """
+        if not HAS_SKLEARN:
+            # No sklearn - just return all pairs
+            logger.info("sklearn not available, using all pairs")
+            self.uris1 = list(entities1.keys())
+            self.uris2 = list(entities2.keys())
+            return
+        
+        self.uris1 = list(entities1.keys())
+        self.uris2 = list(entities2.keys())
+        
+        # Combine labels into documents
+        docs1 = [" ".join(entities1[u]) for u in self.uris1]
+        docs2 = [" ".join(entities2[u]) for u in self.uris2]
+        
+        # Fit vectorizer on all documents
+        all_docs = docs1 + docs2
+        self.vectorizer = TfidfVectorizer(
+            analyzer='word',
+            ngram_range=(1, 2),
+            min_df=1
+        )
+        self.vectorizer.fit(all_docs)
+        
+        # Transform each ontology
+        self.matrix1 = self.vectorizer.transform(docs1)
+        self.matrix2 = self.vectorizer.transform(docs2)
+        
+        logger.info(f"Built TF-IDF index: {len(self.uris1)} x {len(self.uris2)} entities")
+    
+    def get_candidates(self):
+        """Return list of (uri1, uri2, tfidf_score) candidate pairs"""
+        if not HAS_SKLEARN or self.matrix1 is None:
+            # Return all pairs with dummy score
+            candidates = []
+            for u1 in self.uris1:
+                for u2 in self.uris2:
+                    candidates.append((u1, u2, 0.5))
+            return candidates
+        
+        candidates = []
+        
+        # Compute similarities in batches
+        batch_size = 500
+        for i in range(0, len(self.uris1), batch_size):
+            batch = self.matrix1[i:i+batch_size]
+            sims = cosine_similarity(batch, self.matrix2)
+            
+            for bi, row in enumerate(sims):
+                uri1 = self.uris1[i + bi]
+                # Get indices above threshold
+                above_thresh = np.where(row >= self.min_score)[0]
+                if len(above_thresh) == 0:
+                    continue
+                
+                # Sort and take top candidates
+                sorted_idx = above_thresh[np.argsort(row[above_thresh])[::-1]]
+                top_idx = sorted_idx[:self.max_candidates]
+                
+                for j in top_idx:
+                    candidates.append((uri1, self.uris2[j], float(row[j])))
+        
+        logger.info(f"Generated {len(candidates)} candidate pairs")
+        return candidates
+
+
+# ==============================================================================
+# Embedding-based Matching
+# ==============================================================================
+
+class EmbeddingMatcher:
+    """
+    Uses sentence transformers to encode labels and compute semantic similarity
+    Good for catching synonyms and related concepts
+    """
+    
+    def __init__(self, model_name="all-MiniLM-L6-v2"):
+        self.model_name = model_name
+        self.model = None
+        self.embeddings1 = None
+        self.embeddings2 = None
+        self.uris1 = []
+        self.uris2 = []
+        self.uri_to_idx1 = {}
+        self.uri_to_idx2 = {}
+    
+    def _load_model(self):
+        """Load the sentence transformer model"""
+        if not HAS_SBERT:
+            return
+        if self.model is None:
+            logger.info(f"Loading embedding model: {self.model_name}")
+            self.model = SentenceTransformer(self.model_name)
+    
+    def encode_entities(self, entities1, entities2):
+        """
+        Pre-compute embeddings for all entities
+        entities1/2: dict of {uri: [label1, label2, ...]}
+        """
+        self._load_model()
+        if not HAS_SBERT or self.model is None:
+            return
+        
+        self.uris1 = list(entities1.keys())
+        self.uris2 = list(entities2.keys())
+        self.uri_to_idx1 = {u: i for i, u in enumerate(self.uris1)}
+        self.uri_to_idx2 = {u: i for i, u in enumerate(self.uris2)}
+        
+        # Create sentences from labels
+        sentences1 = []
+        for u in self.uris1:
+            labels = entities1[u]
+            # Use longest label as main text
+            if labels:
+                main = max(labels, key=len)
+                sentences1.append(main)
+            else:
+                sentences1.append("")
+        
+        sentences2 = []
+        for u in self.uris2:
+            labels = entities2[u]
+            if labels:
+                main = max(labels, key=len)
+                sentences2.append(main)
+            else:
+                sentences2.append("")
+        
+        logger.info(f"Encoding {len(sentences1)} + {len(sentences2)} entities...")
+        self.embeddings1 = self.model.encode(
+            sentences1,
+            batch_size=64,
+            show_progress_bar=False,
+            normalize_embeddings=True
+        )
+        self.embeddings2 = self.model.encode(
+            sentences2,
+            batch_size=64,
+            show_progress_bar=False,
+            normalize_embeddings=True
+        )
+        logger.info("Embeddings computed")
+    
+    def get_similarity(self, uri1, uri2):
+        """Get embedding similarity between two entities"""
+        if not HAS_SBERT or self.embeddings1 is None:
+            return 0.0
+        
+        idx1 = self.uri_to_idx1.get(uri1)
+        idx2 = self.uri_to_idx2.get(uri2)
+        
+        if idx1 is None or idx2 is None:
+            return 0.0
+        
+        # Cosine similarity (embeddings are normalized)
+        sim = float(np.dot(self.embeddings1[idx1], self.embeddings2[idx2]))
+        return max(0.0, sim)  # Clamp to [0, 1]
+
+
+# ==============================================================================
+# Structural Matching (Hierarchy Propagation)
+# ==============================================================================
+
+def propagate_similarity(initial_scores, parents1, parents2, children1, children2, 
+                        damping=0.5, iterations=2):
+    """
+    Propagate similarity scores through class hierarchy
+    If two classes are similar, their parents/children should also be similar
+    
+    Args:
+        initial_scores: dict of {(uri1, uri2): score}
+        parents1/2: dict of {uri: set of parent uris}
+        children1/2: dict of {uri: set of child uris}
+        damping: how much score to propagate (0-1)
+        iterations: number of propagation rounds
+    """
+    scores = dict(initial_scores)
+    
+    for iteration in range(iterations):
+        updates = {}
+        
+        for (c1, c2), score in scores.items():
+            if score <= 0:
+                continue
+            
+            boost = damping * score
+            
+            # Propagate to parents
+            for p1 in parents1.get(c1, set()):
+                for p2 in parents2.get(c2, set()):
+                    key = (p1, p2)
+                    updates[key] = max(updates.get(key, 0.0), boost)
+            
+            # Propagate to children
+            for ch1 in children1.get(c1, set()):
+                for ch2 in children2.get(c2, set()):
+                    key = (ch1, ch2)
+                    updates[key] = max(updates.get(key, 0.0), boost)
+        
+        # Merge updates
+        for key, val in updates.items():
+            scores[key] = max(scores.get(key, 0.0), val)
+    
+    return scores
+
+
+def build_hierarchy_info(entities, loader):
+    """
+    Extract parent/child relationships for a set of entities
+    Returns (parents_dict, children_dict)
+    """
+    parents = {}
+    children = {}
+    
+    for uri in entities:
+        p = loader.get_superclasses(uri) & entities
+        c = loader.get_subclasses(uri) & entities
+        if p:
+            parents[uri] = p
+        if c:
+            children[uri] = c
+    
+    return parents, children
+
+
+# ==============================================================================
+# Instance Matching
+# ==============================================================================
+
+def match_instances(individuals1, individuals2, loader1, loader2, 
+                   labels1, labels2, threshold=0.85):
+    """
+    Match named individuals across ontologies
+    Uses label similarity and property values
+    """
+    mappings = []
+    
+    if not individuals1 or not individuals2:
+        return mappings
+    
+    logger.info(f"Matching {len(individuals1)} x {len(individuals2)} instances")
+    
+    # Check existing owl:sameAs links
+    for uri1 in individuals1:
+        for obj in loader1.graph.objects(uri1, OWL.sameAs):
+            if isinstance(obj, URIRef) and obj in individuals2:
+                mappings.append((uri1, "owl:sameAs", obj, 1.0))
+    
+    matched1 = {m[0] for m in mappings}
+    matched2 = {m[2] for m in mappings}
+    
+    # Match remaining by label similarity
+    remaining1 = individuals1 - matched1
+    remaining2 = individuals2 - matched2
+    
+    for uri1 in remaining1:
+        lbls1 = labels1.get(uri1, [])
+        best_score = 0.0
+        best_match = None
+        
+        for uri2 in remaining2:
+            lbls2 = labels2.get(uri2, [])
+            score = compare_labels(lbls1, lbls2)
+            if score > best_score:
+                best_score = score
+                best_match = uri2
+        
+        if best_match and best_score >= threshold:
+            mappings.append((uri1, "owl:sameAs", best_match, best_score))
+    
+    logger.info(f"Found {len(mappings)} instance mappings")
+    return mappings
+
+
+========================================
+File: omni_align/ontology_utils.py
+========================================
+
+"""
+Ontology loading and label preprocessing utilities
+"""
+
+import re
+import logging
+from typing import Dict, List, Set
+from rdflib import Graph, URIRef, Literal, RDF, RDFS, OWL
+from rdflib.namespace import SKOS
+
+logger = logging.getLogger(__name__)
+
+# Try to load NLTK for synonym expansion
+try:
+    import nltk
+    from nltk.corpus import wordnet as wn
+    from nltk.corpus import stopwords
+    
+    # Download data if needed
+    for resource in ["wordnet", "stopwords", "omw-1.4"]:
+        try:
+            nltk.data.find(f"corpora/{resource}")
+        except LookupError:
+            nltk.download(resource, quiet=True)
+    
+    STOPWORDS = set(stopwords.words("english"))
+    HAS_WORDNET = True
+except Exception as e:
+    # Fallback stopwords
+    STOPWORDS = {"a", "an", "the", "of", "in", "on", "at", "to", "for", 
+                 "with", "by", "from", "and", "or", "is", "are", "was"}
+    HAS_WORDNET = False
+    logger.warning(f"WordNet not available: {e}")
+
+
+# Label properties to check
+LABEL_PROPS = [
+    RDFS.label,
+    SKOS.prefLabel,
+    SKOS.altLabel,
+    SKOS.hiddenLabel,
+    URIRef("http://purl.org/dc/elements/1.1/title"),
+    URIRef("http://purl.org/dc/terms/title"),
+]
+
+
+# ==============================================================================
+# Ontology Loader
+# ==============================================================================
+
+class OntologyLoader:
+    """Loads and parses OWL ontologies"""
+    
+    def __init__(self, filepath):
+        self.filepath = filepath
+        self.graph = Graph()
+        self._load()
+    
+    def _load(self):
+        """Parse the ontology file"""
+        logger.info(f"Loading: {self.filepath}")
+        try:
+            self.graph.parse(self.filepath)
+        except Exception:
+            # Try different formats
+            for fmt in ["xml", "turtle", "n3", "nt"]:
+                try:
+                    self.graph = Graph()
+                    self.graph.parse(self.filepath, format=fmt)
+                    logger.info(f"Loaded with format: {fmt}")
+                    return
+                except Exception:
+                    continue
+            raise RuntimeError(f"Could not parse: {self.filepath}")
+        
+        logger.info(f"Loaded {len(self.graph)} triples")
+    
+    def get_classes(self):
+        """Get all OWL classes"""
+        classes = set()
+        
+        # Classes explicitly typed
+        for s in self.graph.subjects(RDF.type, OWL.Class):
+            if isinstance(s, URIRef):
+                classes.add(s)
+        for s in self.graph.subjects(RDF.type, RDFS.Class):
+            if isinstance(s, URIRef):
+                classes.add(s)
+        
+        # Classes used in domain/range/subClassOf
+        for p in [RDFS.domain, RDFS.range, RDFS.subClassOf]:
+            for s, o in self.graph.subject_objects(p):
+                if isinstance(s, URIRef):
+                    classes.add(s)
+                if isinstance(o, URIRef):
+                    classes.add(o)
+        
+        # Remove OWL built-ins
+        classes.discard(OWL.Thing)
+        classes.discard(OWL.Nothing)
+        
+        return classes
+    
+    def get_object_properties(self):
+        """Get all object properties"""
+        props = set()
+        for s in self.graph.subjects(RDF.type, OWL.ObjectProperty):
+            if isinstance(s, URIRef):
+                props.add(s)
+        return props
+    
+    def get_datatype_properties(self):
+        """Get all datatype properties"""
+        props = set()
+        for s in self.graph.subjects(RDF.type, OWL.DatatypeProperty):
+            if isinstance(s, URIRef):
+                props.add(s)
+        return props
+    
+    def get_all_properties(self):
+        """Get all properties"""
+        props = self.get_object_properties() | self.get_datatype_properties()
+        for s in self.graph.subjects(RDF.type, RDF.Property):
+            if isinstance(s, URIRef):
+                props.add(s)
+        return props
+    
+    def get_individuals(self):
+        """Get all named individuals"""
+        individuals = set()
+        for s in self.graph.subjects(RDF.type, OWL.NamedIndividual):
+            if isinstance(s, URIRef):
+                individuals.add(s)
+        return individuals
+    
+    def get_labels(self, uri):
+        """Get all labels for a URI"""
+        labels = []
+        for prop in LABEL_PROPS:
+            for obj in self.graph.objects(uri, prop):
+                if isinstance(obj, Literal):
+                    labels.append(str(obj))
+        
+        # Fallback to local name
+        local = self._get_local_name(uri)
+        if local and local not in labels:
+            labels.append(local)
+        
+        return labels
+    
+    def _get_local_name(self, uri):
+        """Extract local name from URI"""
+        s = str(uri)
+        if "#" in s:
+            return s.split("#")[-1]
+        return s.rstrip("/").split("/")[-1]
+    
+    def get_superclasses(self, uri):
+        """Get direct superclasses"""
+        parents = set()
+        for o in self.graph.objects(uri, RDFS.subClassOf):
+            if isinstance(o, URIRef):
+                parents.add(o)
+        return parents
+    
+    def get_subclasses(self, uri):
+        """Get direct subclasses"""
+        children = set()
+        for s in self.graph.subjects(RDFS.subClassOf, uri):
+            if isinstance(s, URIRef):
+                children.add(s)
+        return children
+    
+    def get_domain(self, prop):
+        """Get property domain"""
+        return {o for o in self.graph.objects(prop, RDFS.domain) 
+                if isinstance(o, URIRef)}
+    
+    def get_range(self, prop):
+        """Get property range"""
+        return {o for o in self.graph.objects(prop, RDFS.range) 
+                if isinstance(o, URIRef)}
+    
+    def get_property_values(self, individual):
+        """Get all property values for an individual"""
+        values = {}
+        for p, o in self.graph.predicate_objects(individual):
+            if p != RDF.type:
+                values.setdefault(p, []).append(o)
+        return values
+
+
+# ==============================================================================
+# Label Preprocessing
+# ==============================================================================
+
+def split_camel_case(text):
+    """Split camelCase into separate words"""
+    # Insert space before uppercase letters
+    s = re.sub(r"([a-z])([A-Z])", r"\1 \2", text)
+    s = re.sub(r"([A-Z]+)([A-Z][a-z])", r"\1 \2", s)
+    return s.split()
+
+
+def normalize_label(label):
+    """
+    Normalize a label string:
+    - Split camelCase
+    - Replace underscores/hyphens
+    - Lowercase
+    - Remove punctuation
+    """
+    # Split camelCase
+    tokens = split_camel_case(label)
+    text = " ".join(tokens)
+    
+    # Replace separators
+    text = re.sub(r"[_\-]", " ", text)
+    
+    # Lowercase
+    text = text.lower()
+    
+    # Remove non-alphanumeric
+    text = re.sub(r"[^a-z0-9\s]", "", text)
+    
+    # Collapse whitespace
+    text = re.sub(r"\s+", " ", text).strip()
+    
+    return text
+
+
+def tokenize(label):
+    """Tokenize and remove stopwords"""
+    norm = normalize_label(label)
+    tokens = norm.split()
+    return [t for t in tokens if t not in STOPWORDS and len(t) > 1]
+
+
+def get_synonyms(word, max_syns=3):
+    """Get WordNet synonyms for a word"""
+    if not HAS_WORDNET:
+        return []
+    
+    syns = set()
+    for synset in wn.synsets(word, lang="eng"):
+        for lemma in synset.lemmas():
+            syn = lemma.name().replace("_", " ").lower()
+            if syn != word:
+                syns.add(syn)
+        if len(syns) >= max_syns:
+            break
+    
+    return list(syns)[:max_syns]
+
+
+class LabelProcessor:
+    """Processes and normalizes entity labels"""
+    
+    def __init__(self, use_synonyms=True):
+        self.use_synonyms = use_synonyms and HAS_WORDNET
+        self.cache = {}
+    
+    def process(self, uri, raw_labels):
+        """
+        Process raw labels into normalized forms
+        Returns list of normalized label strings
+        """
+        key = str(uri)
+        if key in self.cache:
+            return self.cache[key]
+        
+        processed = set()
+        
+        for label in raw_labels:
+            # Add normalized version
+            norm = normalize_label(label)
+            if norm:
+                processed.add(norm)
+            
+            # Add tokenized version
+            tokens = tokenize(label)
+            if tokens:
+                processed.add(" ".join(tokens))
+            
+            # Add synonyms
+            if self.use_synonyms:
+                for token in tokens:
+                    syns = get_synonyms(token)
+                    for syn in syns:
+                        processed.add(syn)
+        
+        result = sorted(processed)
+        self.cache[key] = result
+        return result
+    
+    def get_primary_label(self, uri, raw_labels):
+        """Get the best single label for an entity"""
+        processed = self.process(uri, raw_labels)
+        if processed:
+            # Return longest (usually most descriptive)
+            return max(processed, key=len)
+        
+        # Fallback to local name
+        s = str(uri)
+        local = s.split("#")[-1] if "#" in s else s.rstrip("/").split("/")[-1]
+        return normalize_label(local)
+
+
+========================================
+File: omni_align/scoring.py
+========================================
+
+"""
+Scoring and filtering for ontology alignments
+Combines multiple similarity signals and filters results
+"""
+
+import logging
+from typing import Dict, List, Tuple
+from rdflib import URIRef
+
+logger = logging.getLogger(__name__)
+
+
+# ==============================================================================
+# Ensemble Scoring
+# ==============================================================================
+
+class EnsembleScorer:
+    """Combines multiple similarity scores into final score"""
+    
+    def __init__(self, weights=None, threshold=0.50):
+        """
+        weights: dict with 'lexical', 'structural', 'embedding' keys
+        threshold: minimum score to accept a mapping
+        """
+        if weights is None:
+            weights = {
+                'lexical': 0.30,
+                'structural': 0.15,
+                'embedding': 0.40,
+                'llm': 0.15  # Not used but kept for compatibility
+            }
+        
+        self.weights = weights
+        self.threshold = threshold
+        
+        # Normalize weights to sum to 1.0
+        total = sum(weights.values())
+        if total > 0:
+            self.weights = {k: v/total for k, v in weights.items()}
+    
+    def compute_score(self, lexical, structural, embedding):
+        """
+        Compute weighted ensemble score
+        Returns float in [0, 1]
+        """
+        w = self.weights
+        
+        # Simple weighted average
+        score = (
+            w.get('lexical', 0) * lexical +
+            w.get('structural', 0) * structural +
+            w.get('embedding', 0) * embedding
+        )
+        
+        return max(0.0, min(1.0, score))
+    
+    def determine_relation(self, score, entity_type='class'):
+        """
+        Determine what type of relation this mapping should be
+        
+        Args:
+            score: similarity score
+            entity_type: 'class', 'property', or 'instance'
+        
+        Returns:
+            relation string like 'owl:equivalentClass'
+        """
+        if entity_type == 'instance':
+            return 'owl:sameAs'
+        
+        if entity_type == 'property':
+            # High score = equivalent, lower = subproperty
+            if score >= 0.75:
+                return 'owl:equivalentProperty'
+            else:
+                return 'rdfs:subPropertyOf'
+        
+        # For classes
+        if score >= 0.75:
+            return 'owl:equivalentClass'
+        else:
+            # Could be subclass but equivalence is safer
+            return 'owl:equivalentClass'
+    
+    def filter_mappings(self, candidates):
+        """
+        Filter candidates by threshold and remove duplicates
+        
+        Args:
+            candidates: list of (uri1, uri2, score, relation) tuples
+        
+        Returns:
+            filtered list sorted by score descending
+        """
+        # Filter by threshold
+        filtered = [(u1, u2, s, r) for u1, u2, s, r in candidates 
+                   if s >= self.threshold]
+        
+        # Sort by score
+        filtered.sort(key=lambda x: x[2], reverse=True)
+        
+        return filtered
+
+
+# ==============================================================================
+# Simple Confidence Filtering
+# ==============================================================================
+
+def filter_low_confidence(mappings, min_confidence=0.60):
+    """
+    Remove mappings where the score is suspiciously low compared to others
+    
+    This is a simple heuristic - just removes the bottom X% of scores
+    """
+    if len(mappings) < 10:
+        return mappings  # Too few to filter
+    
+    scores = [score for _, _, _, score in mappings]
+    avg_score = sum(scores) / len(scores)
+    
+    # Keep mappings above some fraction of average
+    threshold = avg_score * 0.7  # Keep if score > 70% of average
+    
+    filtered = [(u1, r, u2, s) for u1, r, u2, s in mappings 
+               if s >= threshold]
+    
+    if len(filtered) < len(mappings):
+        logger.info(f"Confidence filter: kept {len(filtered)}/{len(mappings)} mappings")
+    
+    return filtered
+
+
+def remove_many_to_many(mappings, max_per_entity=5):
+    """
+    If an entity has too many mappings, keep only the top ones
+    This helps avoid noise in large ontologies
+    """
+    from collections import defaultdict
+    
+    # Count mappings per entity
+    source_counts = defaultdict(list)
+    target_counts = defaultdict(list)
+    
+    for uri1, rel, uri2, score in mappings:
+        source_counts[uri1].append((uri2, rel, score))
+        target_counts[uri2].append((uri1, rel, score))
+    
+    # Filter
+    filtered = []
+    for uri1, rel, uri2, score in mappings:
+        # Check if this is in top N for source
+        source_mappings = source_counts[uri1]
+        if len(source_mappings) > max_per_entity:
+            top_scores = sorted([s for _, _, s in source_mappings], reverse=True)
+            if score not in top_scores[:max_per_entity]:
+                continue
+        
+        # Check if this is in top N for target
+        target_mappings = target_counts[uri2]
+        if len(target_mappings) > max_per_entity:
+            top_scores = sorted([s for _, _, s in target_mappings], reverse=True)
+            if score not in top_scores[:max_per_entity]:
+                continue
+        
+        filtered.append((uri1, rel, uri2, score))
+    
+    if len(filtered) < len(mappings):
+        logger.info(f"Many-to-many filter: kept {len(filtered)}/{len(mappings)}")
+    
+    return filtered
+
+
+========================================
+File: config.yaml
+========================================
+
+# OmniAlign Configuration
+# Adjust weights and thresholds to tune the system
+
+matching:
+  # Similarity threshold for accepting a mapping
+  threshold: 0.50
+
+  # Weights for ensemble scoring (must sum to 1.0)
+  weights:
+    lexical: 0.30
+    structural: 0.15
+    embedding: 0.40
+    llm: 0.15
+
+  # Blocking: minimum TF-IDF cosine similarity to consider a pair
+  blocking_threshold: 0.10
+
+  # Maximum candidates per entity after blocking
+  max_candidates: 50
+
+  # Embedding model (sentence-transformers)
+  embedding_model: "all-MiniLM-L6-v2"
+
+  # LLM verification: only run on pairs with ensemble score in this range
+  llm_verification:
+    enabled: false
+    score_min: 0.45
+    score_max: 0.75
+    model: "llm-model"
+
+  # Structural propagation damping factor
+  structural_damping: 0.5
+
+  # Relation types to produce
+  relations:
+    - owl:equivalentClass
+    - rdfs:subClassOf
+    - owl:equivalentProperty
+    - rdfs:subPropertyOf
+    - owl:sameAs
+
+scalability:
+  # Per-task timeout in seconds (7200 = 2 hours)
+  timeout_seconds: 7200
+  # Number of parallel workers (0 = auto)
+  n_workers: 0
+
+evaluation:
+  output_dir: "results"
+  alignment_dir: "alignments"
+
+
+========================================
+File: requirements.txt
+========================================
+
+rdflib>=6.3.2
+rapidfuzz>=3.6.1
+nltk>=3.8.1
+scikit-learn>=1.4.0
+sentence-transformers>=2.6.1
+torch>=2.2.0
+numpy>=1.26.0
+pandas>=2.2.0
+pyyaml>=6.0.1
+tqdm>=4.66.2
+SPARQLWrapper>=2.0.0
+

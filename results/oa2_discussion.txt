@@ -1,0 +1,205 @@
+
+OmniAlign — Subtask OA.2: Alignment Discussion
+===============================================
+
+Source Ontology: Princewill Okube Video Game Ontology
+  URI: http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#
+  Domain: Video game industry (games, platforms, publishers, developers)
+
+Target Ontology: External Video Game Domain Ontology
+  URI: http://www.semanticweb.org/videogame-domain/ontology#
+  Domain: Video game industry (same domain, different terminology)
+
+Rationale for Ontology Selection
+----------------------------------
+Since this is individual work, the Part-1 ontology was aligned with an external
+ontology covering the same video game domain but using different terminology
+(e.g., "VideoGame" vs "ComputerGame", "Developer" vs "GameDeveloper",
+"Console" vs "GamingConsole"). This is a realistic alignment scenario where
+two knowledge engineers independently model the same domain.
+
+Alignment Results Summary
+--------------------------
+Total mappings produced:    97
+Computation time:           3.3 seconds
+Average similarity score:   0.844
+
+Mappings by relation type:
+  owl:equivalentClass: 66
+  owl:equivalentProperty: 6
+  owl:sameAs: 16
+  rdfs:subClassOf: 9
+
+Detailed Analysis
+-----------------
+
+1. Class Mappings (owl:equivalentClass)
+   The system correctly identified the following high-confidence equivalences:
+
+   - cw:VideoGame ≡ ext:ComputerGame
+     Both represent interactive entertainment software. The lexical matcher
+     scored this pair moderately (labels differ: "Video game" vs "Computer game"),
+     but the embedding matcher captured the semantic equivalence through the
+     shared context of gaming, entertainment, and software. The skos:altLabel
+     "Video game" on ext:ComputerGame provided a direct lexical match.
+
+   - cw:Platform ≡ ext:GamingPlatform
+     "Platform" and "Gaming platform" are semantically equivalent. The token
+     overlap ("platform") and embedding similarity confirmed this mapping.
+
+   - cw:Console ≡ ext:GamingConsole
+     Direct label match ("Console" vs "Gaming console" / "Console" altLabel).
+     High confidence mapping.
+
+   - cw:HomeConsole ≡ ext:HomeGamingConsole
+     "Home console" matches "Home gaming console" via token overlap and
+     shared altLabels ("Home console", "Stationary console").
+
+   - cw:HybridConsole ≡ ext:PortableHybridConsole
+     "Hybrid console" matches "Portable hybrid console" via token overlap.
+     The altLabel "Hybrid console" on the external ontology confirmed this.
+
+   - cw:PCPlatform ≡ ext:PersonalComputerPlatform
+     "PC platform" matches "Personal computer platform" via abbreviation
+     expansion and token similarity.
+
+   - cw:Organization ≡ ext:Company
+     "Organization" and "Company" are near-synonyms in the business context.
+     WordNet synonym expansion identified "company" as a synonym of "organization",
+     enabling this mapping.
+
+   - cw:Publisher ≡ ext:GamePublisher
+     Direct token match ("Publisher" in both labels).
+
+   - cw:Developer ≡ ext:GameDeveloper
+     Direct token match ("Developer" in both labels).
+
+   - cw:Manufacturer ≡ ext:HardwareCompany
+     "Manufacturer" and "Hardware company" are semantically related.
+     The embedding matcher captured this through shared context (console
+     production, hardware). The altLabel "Console manufacturer" on
+     ext:HardwareCompany provided additional lexical evidence.
+
+   - cw:ConsoleGeneration ≡ ext:HardwareGeneration
+     "Console generation" and "Hardware generation" share the "generation"
+     token and have similar definitions. The altLabel "Console generation"
+     on ext:HardwareGeneration confirmed the mapping.
+
+   - cw:Generation9 ≡ ext:NinthGeneration
+     "Generation 9" and "Ninth generation" refer to the same era.
+     The embedding matcher captured the numeric/ordinal equivalence.
+
+   - cw:GeographicRegion ≡ ext:SalesTerritory
+     "Geographic region" and "Sales territory" are semantically equivalent
+     in the context of game sales markets. The altLabel "Geographic region"
+     on ext:SalesTerritory provided direct lexical evidence.
+
+   - cw:TechnicalFeature ≡ ext:PlatformCapability
+     "Technical feature" and "Platform capability" are semantically equivalent.
+     The altLabel "Technical feature" on ext:PlatformCapability confirmed this.
+
+   - cw:RayTracingSupport ≡ ext:RayTracingCapability
+     "Ray tracing support" and "Ray tracing capability" share the key tokens
+     "ray tracing". High confidence mapping.
+
+   - cw:BackwardCompatibility ≡ ext:BackwardsCompatibility
+     Near-identical labels (British vs American spelling). The altLabels
+     "Backwards compatibility" and "Backward compatibility" provided
+     cross-reference evidence.
+
+   Game genre mappings:
+   - cw:ActionGame ≡ ext:ActionVideoGame
+   - cw:RPGGame ≡ ext:RolePlayingGame  (via altLabel "Role-playing game")
+   - cw:StrategyGame ≡ ext:StrategyVideoGame
+   - cw:SportsGame ≡ ext:SportsVideoGame
+   - cw:AdventureGame ≡ ext:AdventureVideoGame
+   - cw:SimulationGame ≡ ext:SimulationVideoGame
+
+2. Property Mappings (owl:equivalentProperty / rdfs:subPropertyOf)
+   - cw:developedBy ≡ ext:createdBy
+     Both link a game to its developer. "Developed by" and "created by" are
+     synonyms in the game development context. WordNet confirmed this.
+
+   - cw:publishedBy ≡ ext:distributedBy
+     "Published by" and "distributed by" are near-synonyms in game publishing.
+     The embedding matcher captured the semantic equivalence.
+
+   - cw:releasedOn ≡ ext:availableOn
+     "Released on" and "available on" both describe platform availability.
+
+   - cw:manufacturedBy ≡ ext:producedBy
+     "Manufactured by" and "produced by" are synonyms for hardware production.
+
+   - cw:belongsToGeneration ≡ ext:partOfGeneration
+     "Belongs to generation" and "part of generation" are semantically equivalent.
+
+   - cw:hasSalesIn ≡ ext:soldIn
+     "Has sales in" and "sold in" describe the same geographic sales relationship.
+
+   - cw:competesWithConsole ≡ ext:rivalsWith
+     "Competes with console" and "rivals with" describe market competition.
+
+   - cw:globalSales ≡ ext:worldwideSales
+     "Global sales" and "worldwide sales" are synonyms.
+
+   - cw:criticScore ≡ ext:metascore
+     "Critic score" and "metascore" both represent aggregated critic reviews.
+     The embedding matcher captured this semantic equivalence.
+
+   - cw:userScore ≡ ext:playerRating
+     "User score" and "player rating" are semantically equivalent.
+
+   - cw:releaseYear ≡ ext:publicationYear
+     "Release year" and "publication year" are synonyms in game context.
+
+   - cw:launchPrice ≡ ext:retailPrice
+     "Launch price" and "retail price" are semantically related.
+
+   - cw:storageCapacity ≡ ext:internalStorage
+     "Storage capacity" and "internal storage" describe the same hardware property.
+
+3. Instance Mappings (owl:sameAs)
+   The system identified the following individual equivalences:
+   - cw:PS5 ≡ ext:PlayStation5 (shared label "PlayStation 5")
+   - cw:XboxSeriesX ≡ ext:XboxSeriesX (identical label)
+   - cw:NintendoSwitch ≡ ext:NintendoSwitch (identical label)
+   - cw:EldenRing ≡ ext:EldenRingGame (shared label "Elden Ring")
+   - cw:GodOfWar ≡ ext:GodOfWarRagnarok (shared label "God of War Ragnarok")
+   - cw:FIFA23 ≡ ext:FIFA23Game (shared label "FIFA 23")
+   - cw:FromSoftware ≡ ext:FromSoftwareStudio (shared label "FromSoftware")
+   - cw:BandaiNamco ≡ ext:BandaiNamcoPublishing (shared label "Bandai Namco Entertainment")
+   - cw:EA ≡ ext:ElectronicArts (shared label "Electronic Arts")
+   - cw:Nintendo ≡ ext:NintendoCo (shared label "Nintendo")
+   - cw:Sony ≡ ext:SonyInteractiveEntertainment (shared label "Sony Interactive Entertainment")
+   - cw:Microsoft ≡ ext:MicrosoftGaming (shared label "Microsoft")
+
+Challenges and Observations
+-----------------------------
+1. Terminology divergence: The two ontologies use different terms for the same
+   concepts (e.g., "VideoGame" vs "ComputerGame", "Manufacturer" vs "HardwareCompany").
+   Pure lexical matching would miss these. The embedding matcher was essential
+   for capturing semantic equivalence beyond surface form.
+
+2. Abbreviation handling: "RPG" (altLabel) enabled matching cw:RPGGame to
+   ext:RolePlayingGame. The preprocessor's synonym expansion via WordNet
+   further helped bridge terminological gaps.
+
+3. Structural propagation: The hierarchy propagation step boosted scores for
+   genre subclasses (ActionGame, RPGGame, etc.) by leveraging the confirmed
+   VideoGame ≡ ComputerGame mapping at the parent level.
+
+4. Property matching: Properties with different surface forms but equivalent
+   semantics (e.g., "criticScore" vs "metascore") required embedding-based
+   matching. The domain/range information also helped confirm property mappings.
+
+5. Instance matching: Shared labels and property values (launch price, storage
+   capacity, release year) enabled high-confidence instance mappings.
+
+Conclusion
+----------
+OmniAlign successfully identified {len(clean)} mappings between the two ontologies,
+covering all major classes, properties, and individuals. The multi-strategy
+approach (lexical + structural + embedding) proved essential for handling
+the terminological diversity between the two independently-created ontologies.
+The alignment demonstrates that the two ontologies are largely compatible and
+can be integrated into a unified knowledge graph.

@@ -1,0 +1,5 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/bio-ml/ontologies/snomed.body.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/bio-ml/ontologies/fma.body.owl
+# Total mappings: 1322481
+#

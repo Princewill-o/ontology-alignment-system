@@ -1,0 +1,50 @@
+# OmniAlign Configuration
+# Adjust weights and thresholds to tune the system
+
+matching:
+  # Similarity threshold for accepting a mapping
+  threshold: 0.50
+
+  # Weights for ensemble scoring (must sum to 1.0)
+  weights:
+    lexical: 0.30
+    structural: 0.15
+    embedding: 0.40
+    llm: 0.15
+
+  # Blocking: minimum TF-IDF cosine similarity to consider a pair
+  blocking_threshold: 0.10
+
+  # Maximum candidates per entity after blocking
+  max_candidates: 50
+
+  # Embedding model (sentence-transformers)
+  embedding_model: "all-MiniLM-L6-v2"
+
+  # LLM verification: only run on pairs with ensemble score in this range
+  llm_verification:
+    enabled: false
+    score_min: 0.45
+    score_max: 0.75
+    model: "llm-model"
+
+  # Structural propagation damping factor
+  structural_damping: 0.5
+
+  # Relation types to produce
+  relations:
+    - owl:equivalentClass
+    - rdfs:subClassOf
+    - owl:equivalentProperty
+    - rdfs:subPropertyOf
+    - owl:sameAs
+
+scalability:
+  # Per-task timeout in seconds (7200 = 2 hours)
+  timeout_seconds: 7200
+  # Number of parallel workers (0 = auto)
+  n_workers: 0
+
+evaluation:
+  output_dir: "results"
+  alignment_dir: "alignments"

@@ -1,0 +1,331 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/edas.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/iasted.owl
+# Total mappings: 250
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edas#AccommodationPlace> owl:equivalentClass <http://iasted#Place> .
+
+<http://edas#AccpetIfRoomRating> rdfs:subClassOf <http://iasted#Hotel_room> .
+
+<http://edas#Attendee> owl:equivalentClass <http://iasted#Author_attendee_book_registration_fee>,
+        <http://iasted#Author_attendee_cd_registration_fee> .
+
+<http://edas#Author> owl:equivalentClass <http://iasted#Author>,
+        <http://iasted#Author_attendee_book_registration_fee>,
+        <http://iasted#Author_attendee_cd_registration_fee>,
+        <http://iasted#Author_book_proceedings_included>,
+        <http://iasted#Author_cd_proceedings_included>,
+        <http://iasted#Author_information_form> .
+
+<http://edas#BreakEvent> rdfs:subClassOf <http://iasted#Coffee_break> .
+
+<http://edas#CoffeeBreak> owl:equivalentClass <http://iasted#Coffee_break> .
+
+<http://edas#ComputerArchitectureTopic> owl:equivalentClass <http://iasted#Computer> .
+
+<http://edas#ComputerNetworksAapplicationsTopic> owl:equivalentClass <http://iasted#Computer> .
+
+<http://edas#ComputerNetworksEnterpriseTopic> owl:equivalentClass <http://iasted#Computer> .
+
+<http://edas#ComputerNetworksManagementTopic> owl:equivalentClass <http://iasted#Computer> .
+
+<http://edas#ComputerNetworksMeasurementsTopic> owl:equivalentClass <http://iasted#Computer> .
+
+<http://edas#ComputerNetworksOpticalTopic> owl:equivalentClass <http://iasted#Computer> .
+
+<http://edas#ComputerNetworksSecurityTopic> owl:equivalentClass <http://iasted#Computer> .
+
+<http://edas#ComputerNetworksSensorTopic> owl:equivalentClass <http://iasted#Computer> .
+
+<http://edas#ComputerNetworksSwitchingTopic> owl:equivalentClass <http://iasted#Computer> .
+
+<http://edas#ComputerNetworksTopic> owl:equivalentClass <http://iasted#Computer> .
+
+<http://edas#Conference> owl:equivalentClass <http://iasted#Activity_after_conference>,
+        <http://iasted#Activity_before_conference>,
+        <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_activity>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#Conference_state>,
+        <http://iasted#One_conference_day> .
+
+<http://edas#ConferenceChair> rdfs:subClassOf <http://iasted#Activity_before_conference>,
+        <http://iasted#Brief_introduction_for_Session_chair>,
+        <http://iasted#One_conference_day>,
+        <http://iasted#Session_chair> ;
+    owl:equivalentClass <http://iasted#Activity_after_conference>,
+        <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_activity>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#Conference_state> .
+
+<http://edas#ConferenceDinner> rdfs:subClassOf <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_airport> ;
+    owl:equivalentClass <http://iasted#Activity_after_conference>,
+        <http://iasted#Activity_before_conference>,
+        <http://iasted#Conference_activity>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#Conference_state>,
+        <http://iasted#Dinner_banquet>,
+        <http://iasted#One_conference_day> .
+
+<http://edas#ConferenceEvent> owl:equivalentClass <http://iasted#Activity_after_conference>,
+        <http://iasted#Activity_before_conference>,
+        <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_activity>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#Conference_state>,
+        <http://iasted#One_conference_day> .
+
+<http://edas#ConferenceSession> rdfs:subClassOf <http://iasted#Brief_introduction_for_Session_chair>,
+        <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Session_chair> ;
+    owl:equivalentClass <http://iasted#Activity_after_conference>,
+        <http://iasted#Activity_before_conference>,
+        <http://iasted#Conference_activity>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#Conference_state>,
+        <http://iasted#One_conference_day>,
+        <http://iasted#Session>,
+        <http://iasted#Session_room> .
+
+<http://edas#ConferenceVenuePlace> rdfs:subClassOf <http://iasted#Conference_Hiker> ;
+    owl:equivalentClass <http://iasted#Conference_activity>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#Conference_state>,
+        <http://iasted#Place> .
+
+<http://edas#ContactInformation> rdfs:subClassOf <http://iasted#Author_information_form> .
+
+<http://edas#DiningPlace> owl:equivalentClass <http://iasted#Place> .
+
+<http://edas#Document> owl:equivalentClass <http://iasted#Document>,
+        <http://iasted#Payment_document> .
+
+<http://edas#FreeTimeBreak> rdfs:subClassOf <http://iasted#Coffee_break>,
+        <http://iasted#Time_zone>,
+        xsd:dateTime ;
+    owl:equivalentClass <http://iasted#Time> .
+
+<http://edas#MealBreak> rdfs:subClassOf <http://iasted#Coffee_break> .
+
+<http://edas#MeetingRoomPlace> rdfs:subClassOf <http://iasted#Double_hotel_room>,
+        <http://iasted#Hotel_room>,
+        <http://iasted#Session_room>,
+        <http://iasted#Single_hotel_room> ;
+    owl:equivalentClass <http://iasted#Place> .
+
+<http://edas#NumericalReviewQuestion> owl:equivalentClass <http://iasted#Review> .
+
+<http://edas#PaperPresentation> owl:equivalentClass <http://iasted#PowerPoint_presentation>,
+        <http://iasted#Presentation>,
+        <http://iasted#Video_presentation> .
+
+<http://edas#Person> owl:equivalentClass <http://iasted#Person> .
+
+<http://edas#PersonalPublicationHistory> owl:equivalentClass <http://iasted#Publication> .
+
+<http://edas#PersonalReviewHistory> owl:equivalentClass <http://iasted#Review> .
+
+<http://edas#Place> owl:equivalentClass <http://iasted#Place> .
+
+<http://edas#Presenter> owl:equivalentClass <http://iasted#Hotel_presenter>,
+        <http://iasted#One_day_presenter>,
+        <http://iasted#Presenter_city>,
+        <http://iasted#Presenter_house>,
+        <http://iasted#Presenter_state>,
+        <http://iasted#Presenter_university> .
+
+<http://edas#Reception> owl:equivalentClass <http://iasted#Coctail_reception> .
+
+<http://edas#Review> owl:equivalentClass <http://iasted#Review> .
+
+<http://edas#ReviewForm> rdfs:subClassOf <http://iasted#Registration_form> ;
+    owl:equivalentClass <http://iasted#Form>,
+        <http://iasted#Review> .
+
+<http://edas#ReviewQuestion> owl:equivalentClass <http://iasted#Review> .
+
+<http://edas#ReviewRating> owl:equivalentClass <http://iasted#Review> .
+
+<http://edas#Reviewer> owl:equivalentClass <http://iasted#Reviewer> .
+
+<http://edas#SessionChair> owl:equivalentClass <http://iasted#Brief_introduction_for_Session_chair>,
+        <http://iasted#Session>,
+        <http://iasted#Session_chair>,
+        <http://iasted#Session_room> .
+
+<http://edas#SingleLevelConference> rdfs:subClassOf <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant> ;
+    owl:equivalentClass <http://iasted#Conference_activity>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_state> .
+
+<http://edas#SocialEvent> rdfs:subClassOf <http://iasted#Social_program> .
+
+<http://edas#TPCMember> rdfs:subClassOf <http://iasted#IASTED_member>,
+        <http://iasted#IASTED_non_member> .
+
+<http://edas#TextualReviewQuestion> owl:equivalentClass <http://iasted#Review> .
+
+<http://edas#TwoLevelConference> rdfs:subClassOf <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant> ;
+    owl:equivalentClass <http://iasted#Conference_activity>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_state> .
+
+<http://edas#WelcomeTalk> rdfs:subClassOf <http://iasted#Welcome_address> .
+
+<http://edas#attendeeAt> owl:equivalentClass <http://iasted#Author_attendee_book_registration_fee>,
+        <http://iasted#Author_attendee_cd_registration_fee> .
+
+<http://edas#endDate> owl:equivalentClass xsd:date,
+        xsd:dateTime .
+
+<http://edas#forEvent> rdfs:subClassOf <http://iasted#is_used_for> ;
+    rdfs:subPropertyOf <http://iasted#is_used_for> .
+
+<http://edas#hasAttendee> owl:equivalentClass <http://iasted#Author_attendee_book_registration_fee>,
+        <http://iasted#Author_attendee_cd_registration_fee> .
+
+<http://edas#hasCity> owl:equivalentClass <http://iasted#City>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Presenter_city>,
+        <http://iasted#Sponsor_city>,
+        <http://iasted#Trip_city> .
+
+<http://edas#hasCostAmount> owl:equivalentClass <http://iasted#has_amount_of> ;
+    owl:equivalentProperty <http://iasted#has_amount_of> .
+
+<http://edas#hasCostCurrency> owl:equivalentClass <http://iasted#Currency> .
+
+<http://edas#hasEndDateTime> rdfs:subClassOf <http://iasted#Time_zone> ;
+    owl:equivalentClass <http://iasted#Time>,
+        xsd:date,
+        xsd:dateTime .
+
+<http://edas#hasMember> owl:equivalentClass <http://iasted#IASTED_member>,
+        <http://iasted#IASTED_non_member> .
+
+<http://edas#hasRelatedDocument> rdfs:subClassOf <http://iasted#Payment_document> ;
+    owl:equivalentClass <http://iasted#Document> .
+
+<http://edas#hasReviewHistory> owl:equivalentClass <http://iasted#Review> .
+
+<http://edas#hasStartDateTime> rdfs:subClassOf <http://iasted#Time_zone> ;
+    owl:equivalentClass <http://iasted#Time>,
+        xsd:date,
+        xsd:dateTime .
+
+<http://edas#hasSubmissionDeadline> rdfs:subClassOf <http://iasted#Camera_ready_manuscript_deadline>,
+        <http://iasted#Deadline_for_notification_of_acceptance>,
+        <http://iasted#Deadline_hotel_reservation>,
+        <http://iasted#Registation_deadline> ;
+    owl:equivalentClass <http://iasted#Deadline>,
+        <http://iasted#Submission>,
+        <http://iasted#Submissions_deadline> .
+
+<http://edas#hasSubmissionInstructions> owl:equivalentClass <http://iasted#Submission> .
+
+<http://edas#isInitiatedBy> rdfs:subClassOf <http://iasted#is_sent_by>,
+        <http://iasted#is_signed_by>,
+        <http://iasted#is_used_by>,
+        <http://iasted#is_visited_by> .
+
+<http://edas#isMemberOf> owl:equivalentClass <http://iasted#IASTED_member>,
+        <http://iasted#IASTED_non_member> .
+
+<http://edas#isReviewHistoryOf> owl:equivalentClass <http://iasted#Review> .
+
+<http://edas#isReviewedBy> rdfs:subClassOf <http://iasted#is_given_by>,
+        <http://iasted#is_paid_by>,
+        <http://iasted#is_prepared_by>,
+        <http://iasted#is_sent_by>,
+        <http://iasted#is_signed_by>,
+        <http://iasted#is_used_by>,
+        <http://iasted#is_visited_by>,
+        <http://iasted#is_writen_by> .
+
+<http://edas#isWrittenBy> rdfs:subClassOf <http://iasted#is_given_by>,
+        <http://iasted#is_paid_by>,
+        <http://iasted#is_sent_by>,
+        <http://iasted#is_signed_by>,
+        <http://iasted#is_used_by> ;
+    owl:equivalentClass <http://iasted#is_writen_by> .
+
+<http://edas#manuscriptDueOn> owl:equivalentClass <http://iasted#Accepting_manuscript>,
+        <http://iasted#Camera_ready_manuscript_deadline>,
+        <http://iasted#Final_manuscript>,
+        <http://iasted#Receiving_manuscript>,
+        <http://iasted#Refusing_manuscript> .
+
+<http://edas#registrationDueOn> rdfs:subClassOf <http://iasted#Author_attendee_book_registration_fee>,
+        <http://iasted#Author_attendee_cd_registration_fee>,
+        <http://iasted#Hotel_registration_form>,
+        <http://iasted#Memeber_registration_fee>,
+        <http://iasted#Nonauthor_registration_fee>,
+        <http://iasted#Nonmember_registration_fee>,
+        <http://iasted#Student_registration_fee> ;
+    owl:equivalentClass <http://iasted#Registration>,
+        <http://iasted#Registration_fee>,
+        <http://iasted#Registration_form> .
+
+<http://edas#startDate> rdfs:subClassOf xsd:dateTime ;
+    owl:equivalentClass xsd:date .
+
+xsd:int owl:equivalentClass xsd:int .
+
+xsd:dateTime owl:equivalentClass <http://iasted#Time>,
+        <http://iasted#Time_zone>,
+        xsd:date,
+        xsd:dateTime .
+

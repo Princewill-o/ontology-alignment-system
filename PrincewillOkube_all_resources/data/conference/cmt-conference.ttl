@@ -1,0 +1,21 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://cmt#AcceptedPaper> owl:equivalentClass <http://conference#AcceptedContribution> .
+
+<http://cmt#Author> rdfs:subClassOf <http://conference#Person> .
+
+<http://cmt#Conference> owl:equivalentClass <http://conference#Conference> .
+
+<http://cmt#Paper> owl:equivalentClass <http://conference#Contribution> .
+
+<http://cmt#ProgramCommitteeMember> owl:equivalentClass <http://conference#ProgramCommitteeMember> .
+
+<http://cmt#Review> owl:equivalentClass <http://conference#Review> .
+
+<http://cmt#Reviewer> owl:equivalentClass <http://conference#Reviewer> .
+
+<http://cmt#hasReview> owl:equivalentProperty <http://conference#hasReview> .
+
+<http://cmt#writtenBy> owl:equivalentProperty <http://conference#writtenBy> .
+

@@ -1,0 +1,1333 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/circular-economy/ontologies/CEON.rdf
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/circular-economy/ontologies/MATONTO.rdf
+# Total mappings: 1057
+#
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://qudt.org/schema/qudt/Unit> owl:equivalentClass <http://matonto.org/ontologies/matonto#EnthalpyUnit>,
+        <http://ontology.dumontierlab.com/AccelerationUnit>,
+        <http://ontology.dumontierlab.com/AngleUnit>,
+        <http://ontology.dumontierlab.com/AreaDensityUnit>,
+        <http://ontology.dumontierlab.com/AreaUnit>,
+        <http://ontology.dumontierlab.com/CapacitanceUnit>,
+        <http://ontology.dumontierlab.com/CentiScaledUnit>,
+        <http://ontology.dumontierlab.com/ConcentrationUnit>,
+        <http://ontology.dumontierlab.com/ConductionUnit>,
+        <http://ontology.dumontierlab.com/CurrencyUnit>,
+        <http://ontology.dumontierlab.com/DensityUnit>,
+        <http://ontology.dumontierlab.com/DerivedUnit>,
+        <http://ontology.dumontierlab.com/ElectricChargeUnit>,
+        <http://ontology.dumontierlab.com/EnergyDensityUnit>,
+        <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/EntropyUnit>,
+        <http://ontology.dumontierlab.com/ExposureUnit>,
+        <http://ontology.dumontierlab.com/ForceUnit>,
+        <http://ontology.dumontierlab.com/FrequencyUnit>,
+        <http://ontology.dumontierlab.com/IlluminanceUnit>,
+        <http://ontology.dumontierlab.com/InductanceUnit>,
+        <http://ontology.dumontierlab.com/InformationUnit>,
+        <http://ontology.dumontierlab.com/IrradianceUnit>,
+        <http://ontology.dumontierlab.com/LengthUnit>,
+        <http://ontology.dumontierlab.com/LinearDensityUnit>,
+        <http://ontology.dumontierlab.com/LuminanceUnit>,
+        <http://ontology.dumontierlab.com/MassUnit>,
+        <http://ontology.dumontierlab.com/MolalityUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergyUnit>,
+        <http://ontology.dumontierlab.com/MolarMassUnit>,
+        <http://ontology.dumontierlab.com/MolecularMassUnit>,
+        <http://ontology.dumontierlab.com/PermeabilityUnit>,
+        <http://ontology.dumontierlab.com/PermittivityUnit>,
+        <http://ontology.dumontierlab.com/PowerUnit>,
+        <http://ontology.dumontierlab.com/PressureUnit>,
+        <http://ontology.dumontierlab.com/RadianceUnit>,
+        <http://ontology.dumontierlab.com/RadiationUnit>,
+        <http://ontology.dumontierlab.com/ScaledUnit>,
+        <http://ontology.dumontierlab.com/ShiftedUnit>,
+        <http://ontology.dumontierlab.com/SpecificEnergyUnit>,
+        <http://ontology.dumontierlab.com/TemperatureUnit>,
+        <http://ontology.dumontierlab.com/TimeUnit>,
+        <http://ontology.dumontierlab.com/Unit>,
+        <http://ontology.dumontierlab.com/VelocityUnit>,
+        <http://ontology.dumontierlab.com/VolumeDensityUnit>,
+        <http://ontology.dumontierlab.com/VolumeUnit>,
+        <http://ontology.dumontierlab.com/WavenumberUnit>,
+        <http://ontology.dumontierlab.com/hasUnit>,
+        <http://ontology.dumontierlab.com/isUnitOf>,
+        <http://ontology.dumontierlab.com/pHUnit> .
+
+<http://qudt.org/schema/qudt/hasUnit> owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasSISymbol>,
+        <http://ontology.dumontierlab.com/hasUnit>,
+        <http://ontology.dumontierlab.com/isUnitOf> .
+
+<http://qudt.org/schema/qudt/numericValue> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://qudt.org/schema/qudt/quantityValue> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://qudt.org/vocab/unit/CentiM> owl:sameAs <http://matonto.org/ontologies/matonto#unit_centimeter_-3> .
+
+<http://qudt.org/vocab/unit/CentiM2> owl:sameAs <http://matonto.org/ontologies/matonto#unit_centimeter> .
+
+<http://qudt.org/vocab/unit/DEG_C> owl:sameAs <http://ontology.dumontierlab.com/degree> .
+
+<http://qudt.org/vocab/unit/EURO-PER-M2> owl:sameAs <http://ontology.dumontierlab.com/unit_meter_-1> .
+
+<http://qudt.org/vocab/unit/GM> owl:sameAs <http://matonto.org/ontologies/matonto#unit_gram_1_milliliter_-1> .
+
+<http://qudt.org/vocab/unit/GM-PER-L> owl:sameAs <http://matonto.org/ontologies/matonto#unit_gram_1_milliliter_-1> .
+
+<http://qudt.org/vocab/unit/GM-PER-M3> owl:sameAs <http://ontology.dumontierlab.com/unit_meter_3> .
+
+<http://qudt.org/vocab/unit/KiloGM> owl:sameAs <http://ontology.dumontierlab.com/unit_joule_1_kilogram_-1_kelvin_-1> .
+
+<http://qudt.org/vocab/unit/KiloGM-PER-L> owl:sameAs <http://ontology.dumontierlab.com/unit_kilogram> .
+
+<http://qudt.org/vocab/unit/KiloGM-PER-M2> owl:sameAs <http://ontology.dumontierlab.com/unit_kilogram> .
+
+<http://qudt.org/vocab/unit/KiloGM-PER-M3> owl:sameAs <http://ontology.dumontierlab.com/unit_meter_3> .
+
+<http://qudt.org/vocab/unit/KiloOHM> owl:sameAs <http://ontology.dumontierlab.com/unit_ohm> .
+
+<http://qudt.org/vocab/unit/L> owl:sameAs <http://matonto.org/ontologies/matonto#unit_milliliter> .
+
+<http://qudt.org/vocab/unit/M> owl:sameAs <http://ontology.dumontierlab.com/unit_meter_1_second_-1> .
+
+<http://qudt.org/vocab/unit/M2> owl:sameAs <http://ontology.dumontierlab.com/unit_coulomb_1_meter_-2> .
+
+<http://qudt.org/vocab/unit/M3> owl:sameAs <http://ontology.dumontierlab.com/unit_meter_3> .
+
+<http://qudt.org/vocab/unit/MegaOHM> owl:sameAs <http://ontology.dumontierlab.com/unit_ohm> .
+
+<http://qudt.org/vocab/unit/MilliL> owl:sameAs <http://matonto.org/ontologies/matonto#unit_milliliter> .
+
+<http://qudt.org/vocab/unit/OHM> owl:sameAs <http://ontology.dumontierlab.com/unit_ohm> .
+
+<http://qudt.org/vocab/unit/SEC> owl:sameAs <http://ontology.dumontierlab.com/unit_meter_1_second_-1> .
+
+<http://w3id.org/CEON/ontology/actor/ActorCVNRole> owl:equivalentClass <http://ontology.dumontierlab.com/hasRole>,
+        <http://ontology.dumontierlab.com/isRoleOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#Role> .
+
+<http://w3id.org/CEON/ontology/actor/ActorCollaborationRole> owl:equivalentClass <http://ontology.dumontierlab.com/hasRole>,
+        <http://ontology.dumontierlab.com/isRoleOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#Role> .
+
+<http://w3id.org/CEON/ontology/actor/ActorProcessRole> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/hasRole>,
+        <http://ontology.dumontierlab.com/isRoleOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#Role>,
+        <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/actor/ActorResourceRole> owl:equivalentClass <http://ontology.dumontierlab.com/hasRole>,
+        <http://ontology.dumontierlab.com/isRoleOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#Role> .
+
+<http://w3id.org/CEON/ontology/actor/OrganisationLocation> rdfs:subClassOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/actor/ProcessParticipation> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/actor/hasOrganisationLocation> rdfs:subClassOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    rdfs:subPropertyOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/actor/hasOrganisationName> rdfs:subClassOf <http://ontology.dumontierlab.com/SystematicName>,
+        <http://ontology.dumontierlab.com/TraditionalName> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasName>,
+        <http://ontology.dumontierlab.com/Name> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasName> .
+
+<http://w3id.org/CEON/ontology/actorODP/ActorType> rdfs:subClassOf <http://matonto.org/ontologies/matonto#StructureType> .
+
+<http://w3id.org/CEON/ontology/actorODP/Role> owl:equivalentClass <http://ontology.dumontierlab.com/hasRole>,
+        <http://ontology.dumontierlab.com/isRoleOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#Role> .
+
+<http://w3id.org/CEON/ontology/actorODP/actorType> rdfs:subClassOf <http://matonto.org/ontologies/matonto#StructureType> .
+
+<http://w3id.org/CEON/ontology/actorODP/capabilityProperty> rdfs:subClassOf <http://matonto.org/ontologies/matonto#ExtensiveProperty>,
+        <http://matonto.org/ontologies/matonto#IntensiveProperty>,
+        <http://matonto.org/ontologies/matonto#hasComponentProperty>,
+        <http://ontology.dumontierlab.com/AtomProperty>,
+        <http://ontology.dumontierlab.com/MeasuredProperty>,
+        <http://ontology.dumontierlab.com/hasAtomicProperty>,
+        qb:ComponentProperty ;
+    rdfs:subPropertyOf <http://matonto.org/ontologies/matonto#hasComponentProperty>,
+        <http://ontology.dumontierlab.com/hasAtomicProperty> .
+
+<http://w3id.org/CEON/ontology/actorODP/participantRole> owl:equivalentClass <http://ontology.dumontierlab.com/hasParticipant>,
+        <http://ontology.dumontierlab.com/hasRole>,
+        <http://ontology.dumontierlab.com/isParticipantIn>,
+        <http://ontology.dumontierlab.com/isRoleOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#Role> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/hasParticipant>,
+        <http://ontology.dumontierlab.com/hasRole>,
+        <http://ontology.dumontierlab.com/isParticipantIn>,
+        <http://ontology.dumontierlab.com/isRoleOf> .
+
+<http://w3id.org/CEON/ontology/actorODP/participatingObject> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/snap#FiatObjectPart>,
+        <http://www.ifomis.org/bfo/1.0/snap#ObjectAggregate>,
+        <http://www.ifomis.org/bfo/1.0/snap#ObjectBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/snap#Object> .
+
+<http://w3id.org/CEON/ontology/actorODP/participationEndTime> owl:equivalentClass <http://ontology.dumontierlab.com/Time> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/ends> .
+
+<http://w3id.org/CEON/ontology/actorODP/participationIn> owl:equivalentClass <http://ontology.dumontierlab.com/isParticipantIn> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/isParticipantIn> .
+
+<http://w3id.org/CEON/ontology/actorODP/participationStartTime> owl:equivalentClass <http://ontology.dumontierlab.com/Time> .
+
+<http://w3id.org/CEON/ontology/actorODP/participationTimePoint> owl:equivalentClass <http://ontology.dumontierlab.com/Time> .
+
+<http://w3id.org/CEON/ontology/cvn/aimsAtValue> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/cvn/createsValue> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/cvn/relatedStrategy> owl:equivalentProperty <http://ontology.dumontierlab.com/isRelatedTo> .
+
+<http://w3id.org/CEON/ontology/energy/Energy> owl:equivalentClass <http://matonto.org/ontologies/matonto#GibbsFreeEnergy>,
+        <http://matonto.org/ontologies/matonto#HelmholtzFreeEnergy>,
+        <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://ontology.dumontierlab.com/Energy>,
+        <http://ontology.dumontierlab.com/EnergyDensity>,
+        <http://ontology.dumontierlab.com/EnergyDensityUnit>,
+        <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/MolarEnergyUnit>,
+        <http://ontology.dumontierlab.com/SpecificEnergy>,
+        <http://ontology.dumontierlab.com/SpecificEnergyUnit> .
+
+<http://w3id.org/CEON/ontology/energy/EnergyComposition> rdfs:subClassOf <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://ontology.dumontierlab.com/EnergyDensityUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/MolarEnergyUnit>,
+        <http://ontology.dumontierlab.com/SpecificEnergyUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy>,
+        <http://ontology.dumontierlab.com/EnergyDensity>,
+        <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/SpecificEnergy> .
+
+<http://w3id.org/CEON/ontology/energy/EnergyConversion> rdfs:subClassOf <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://ontology.dumontierlab.com/EnergyDensity>,
+        <http://ontology.dumontierlab.com/EnergyDensityUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/MolarEnergyUnit>,
+        <http://ontology.dumontierlab.com/SpecificEnergy>,
+        <http://ontology.dumontierlab.com/SpecificEnergyUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy>,
+        <http://ontology.dumontierlab.com/EnergyUnit> .
+
+<http://w3id.org/CEON/ontology/energy/EnergyInfrastructure> rdfs:subClassOf <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://ontology.dumontierlab.com/EnergyUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/energy/EnergySource> rdfs:subClassOf <http://matonto.org/ontologies/matonto#HelmholtzFreeEnergy>,
+        <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://ontology.dumontierlab.com/EnergyDensity>,
+        <http://ontology.dumontierlab.com/EnergyDensityUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/MolarEnergyUnit>,
+        <http://ontology.dumontierlab.com/SpecificEnergy>,
+        <http://ontology.dumontierlab.com/SpecificEnergyUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy>,
+        <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/Source> .
+
+<http://w3id.org/CEON/ontology/energy/GeothermalEnergySource> rdfs:subClassOf <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/Source> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/energy/NaturalGas> rdfs:subClassOf <http://ontology.dumontierlab.com/GasPhase>,
+        <http://ontology.dumontierlab.com/NobleGas> .
+
+<http://w3id.org/CEON/ontology/energy/NonRenewableEnergy> rdfs:subClassOf <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/SpecificEnergy> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/energy/RenewableEnergy> rdfs:subClassOf <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/SpecificEnergy> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/energy/SolarEnergySource> rdfs:subClassOf <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/MolarEnergyUnit>,
+        <http://ontology.dumontierlab.com/Source>,
+        <http://ontology.dumontierlab.com/SpecificEnergy> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/energy/WindEnergySource> rdfs:subClassOf <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/Source>,
+        <http://ontology.dumontierlab.com/SpecificEnergy> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/energy/hasCarbonIntensity> rdfs:subClassOf <http://ontology.dumontierlab.com/AmorphousCarbon>,
+        <http://ontology.dumontierlab.com/CarbonAllotrope>,
+        <http://ontology.dumontierlab.com/CarbonAtom>,
+        <http://ontology.dumontierlab.com/CarbonGroup>,
+        <http://ontology.dumontierlab.com/CarbonGroupElement>,
+        <http://ontology.dumontierlab.com/GlassyCarbon>,
+        <http://ontology.dumontierlab.com/LuminousIntensity>,
+        <http://ontology.dumontierlab.com/LuminousIntensityUnit>,
+        <http://ontology.dumontierlab.com/RadiantIntensity>,
+        <http://ontology.dumontierlab.com/RadiantIntensityUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Carbon> .
+
+<http://w3id.org/CEON/ontology/energy/hasConvertedEnergy> rdfs:subClassOf <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://ontology.dumontierlab.com/EnergyDensity>,
+        <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/MolarEnergyUnit>,
+        <http://ontology.dumontierlab.com/SpecificEnergy>,
+        <http://ontology.dumontierlab.com/SpecificEnergyUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/energy/hasEnergyComponentPercentage> rdfs:subClassOf <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://matonto.org/ontologies/matonto#hasComponentProperty>,
+        <http://ontology.dumontierlab.com/ComponentCount>,
+        <http://ontology.dumontierlab.com/EnergyDensity>,
+        <http://ontology.dumontierlab.com/EnergyDensityUnit>,
+        <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/SpecificEnergy>,
+        <http://ontology.dumontierlab.com/SpecificEnergyUnit>,
+        qb:ComponentProperty ;
+    rdfs:subPropertyOf <http://matonto.org/ontologies/matonto#hasComponentProperty> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/energy/hasEnergySource> rdfs:subClassOf <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/Source>,
+        <http://ontology.dumontierlab.com/SpecificEnergy>,
+        <http://ontology.dumontierlab.com/SpecificEnergyUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/energy/hasOriginalEnergy> rdfs:subClassOf <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://ontology.dumontierlab.com/EnergyDensity>,
+        <http://ontology.dumontierlab.com/EnergyDensityUnit>,
+        <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/MolarEnergyUnit>,
+        <http://ontology.dumontierlab.com/SpecificEnergy>,
+        <http://ontology.dumontierlab.com/SpecificEnergyUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/energy/hasSustainability> rdfs:subClassOf <http://ontology.dumontierlab.com/Source> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/location/Location> owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> .
+
+<http://w3id.org/CEON/ontology/location/hasGlobalLocationNumber> rdfs:subClassOf <http://ontology.dumontierlab.com/hasAtomicNumber>,
+        <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    rdfs:subPropertyOf <http://ontology.dumontierlab.com/hasAtomicNumber>,
+        <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/location/hasLocation> owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/isLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> .
+
+<http://w3id.org/CEON/ontology/material/Boron> owl:equivalentClass <http://ontology.dumontierlab.com/Boron>,
+        <http://ontology.dumontierlab.com/BoronAtom>,
+        <http://ontology.dumontierlab.com/BoronGroupElement> .
+
+<http://w3id.org/CEON/ontology/material/Cerium> owl:equivalentClass <http://ontology.dumontierlab.com/Cerium>,
+        <http://ontology.dumontierlab.com/CeriumAtom> .
+
+<http://w3id.org/CEON/ontology/material/ChemicalElement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#ChemicalFamily>,
+        <http://matonto.org/ontologies/matonto#ChemicalFormula>,
+        <http://matonto.org/ontologies/matonto#hasChemicalSymbol>,
+        <http://ontology.dumontierlab.com/BoronGroupElement>,
+        <http://ontology.dumontierlab.com/CarbonGroupElement>,
+        <http://ontology.dumontierlab.com/ChemicalConformation>,
+        <http://ontology.dumontierlab.com/ChemicalDegradationPathway>,
+        <http://ontology.dumontierlab.com/ChemicalInteraction>,
+        <http://ontology.dumontierlab.com/ChemicalPhase>,
+        <http://ontology.dumontierlab.com/ChemicalQuality>,
+        <http://ontology.dumontierlab.com/ChemicalReactionPathway>,
+        <http://ontology.dumontierlab.com/ChemicalSynthesisPathway>,
+        <http://ontology.dumontierlab.com/CommonChemicalPhase>,
+        <http://ontology.dumontierlab.com/DBlockElement>,
+        <http://ontology.dumontierlab.com/FBlockElement>,
+        <http://ontology.dumontierlab.com/GBlockElement>,
+        <http://ontology.dumontierlab.com/Group10Element>,
+        <http://ontology.dumontierlab.com/Group11Element>,
+        <http://ontology.dumontierlab.com/Group12Element>,
+        <http://ontology.dumontierlab.com/Group1Element>,
+        <http://ontology.dumontierlab.com/Group2Element>,
+        <http://ontology.dumontierlab.com/Group3Element>,
+        <http://ontology.dumontierlab.com/Group4Element>,
+        <http://ontology.dumontierlab.com/Group5Element>,
+        <http://ontology.dumontierlab.com/Group6Element>,
+        <http://ontology.dumontierlab.com/Group7Element>,
+        <http://ontology.dumontierlab.com/Group8Element>,
+        <http://ontology.dumontierlab.com/Group9Element>,
+        <http://ontology.dumontierlab.com/GroupElement>,
+        <http://ontology.dumontierlab.com/NitrogenGroupElement>,
+        <http://ontology.dumontierlab.com/PBlockElement>,
+        <http://ontology.dumontierlab.com/Period1Element>,
+        <http://ontology.dumontierlab.com/Period2Element>,
+        <http://ontology.dumontierlab.com/Period3Element>,
+        <http://ontology.dumontierlab.com/Period4Element>,
+        <http://ontology.dumontierlab.com/Period5Element>,
+        <http://ontology.dumontierlab.com/Period6Element>,
+        <http://ontology.dumontierlab.com/Period7Element>,
+        <http://ontology.dumontierlab.com/PeriodElement>,
+        <http://ontology.dumontierlab.com/SBlockElement>,
+        <http://ontology.dumontierlab.com/SeriesElement>,
+        <http://ontology.dumontierlab.com/UncommonChemicalPhase> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#ChemicalClass>,
+        <http://matonto.org/ontologies/matonto#hasElement>,
+        <http://ontology.dumontierlab.com/ChemicalAgent>,
+        <http://ontology.dumontierlab.com/ChemicalBond>,
+        <http://ontology.dumontierlab.com/ChemicalReaction>,
+        <http://ontology.dumontierlab.com/ChemicalSubstance>,
+        <http://ontology.dumontierlab.com/Element>,
+        <http://ontology.dumontierlab.com/PeriodicTableElement> .
+
+<http://w3id.org/CEON/ontology/material/ChemicalEntity> rdfs:subClassOf <http://matonto.org/ontologies/matonto#ChemicalFormula>,
+        <http://matonto.org/ontologies/matonto#hasChemicalSymbol>,
+        <http://ontology.dumontierlab.com/ChemicalBond>,
+        <http://ontology.dumontierlab.com/ChemicalConformation>,
+        <http://ontology.dumontierlab.com/ChemicalDegradationPathway>,
+        <http://ontology.dumontierlab.com/ChemicalInteraction>,
+        <http://ontology.dumontierlab.com/ChemicalPhase>,
+        <http://ontology.dumontierlab.com/ChemicalReactionPathway>,
+        <http://ontology.dumontierlab.com/ChemicalSynthesisPathway>,
+        <http://ontology.dumontierlab.com/CommonChemicalPhase>,
+        <http://ontology.dumontierlab.com/UncommonChemicalPhase>,
+        <http://www.ifomis.org/bfo/1.0/snap#RealizableEntity>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessualEntity> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#ChemicalClass>,
+        <http://matonto.org/ontologies/matonto#ChemicalFamily>,
+        <http://ontology.dumontierlab.com/ChemicalAgent>,
+        <http://ontology.dumontierlab.com/ChemicalQuality>,
+        <http://ontology.dumontierlab.com/ChemicalReaction>,
+        <http://ontology.dumontierlab.com/ChemicalSubstance>,
+        <http://www.ifomis.org/bfo/1.0#Entity> .
+
+<http://w3id.org/CEON/ontology/material/ChemicalSubstance> rdfs:subClassOf <http://matonto.org/ontologies/matonto#ChemicalFamily>,
+        <http://ontology.dumontierlab.com/AmountOfSubstanceConcentration>,
+        <http://ontology.dumontierlab.com/AmountOfSubstanceConcentrationUnit>,
+        <http://ontology.dumontierlab.com/AmountOfSubstanceUnit>,
+        <http://ontology.dumontierlab.com/ChemicalConformation>,
+        <http://ontology.dumontierlab.com/ChemicalDegradationPathway>,
+        <http://ontology.dumontierlab.com/ChemicalInteraction>,
+        <http://ontology.dumontierlab.com/ChemicalReactionPathway>,
+        <http://ontology.dumontierlab.com/ChemicalSynthesisPathway>,
+        <http://ontology.dumontierlab.com/CommonChemicalPhase>,
+        <http://ontology.dumontierlab.com/UncommonChemicalPhase> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#ChemicalClass>,
+        <http://matonto.org/ontologies/matonto#ChemicalFormula>,
+        <http://matonto.org/ontologies/matonto#hasChemicalSymbol>,
+        <http://ontology.dumontierlab.com/AmountOfSubstance>,
+        <http://ontology.dumontierlab.com/ChemicalAgent>,
+        <http://ontology.dumontierlab.com/ChemicalBond>,
+        <http://ontology.dumontierlab.com/ChemicalPhase>,
+        <http://ontology.dumontierlab.com/ChemicalQuality>,
+        <http://ontology.dumontierlab.com/ChemicalReaction>,
+        <http://ontology.dumontierlab.com/ChemicalSubstance>,
+        <http://ontology.dumontierlab.com/PureSubstance> .
+
+<http://w3id.org/CEON/ontology/material/Chromium> owl:equivalentClass <http://ontology.dumontierlab.com/Chromium>,
+        <http://ontology.dumontierlab.com/ChromiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Copper> owl:equivalentClass <http://ontology.dumontierlab.com/Copper>,
+        <http://ontology.dumontierlab.com/CopperAtom> .
+
+<http://w3id.org/CEON/ontology/material/Dysprosium> owl:equivalentClass <http://ontology.dumontierlab.com/Dysprosium>,
+        <http://ontology.dumontierlab.com/DysprosiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Erbium> owl:equivalentClass <http://ontology.dumontierlab.com/Erbium>,
+        <http://ontology.dumontierlab.com/ErbiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Europium> owl:equivalentClass <http://ontology.dumontierlab.com/Europium>,
+        <http://ontology.dumontierlab.com/EuropiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Gadolinium> owl:equivalentClass <http://ontology.dumontierlab.com/Gadolinium>,
+        <http://ontology.dumontierlab.com/GadoliniumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Holmium> owl:equivalentClass <http://ontology.dumontierlab.com/Holmium>,
+        <http://ontology.dumontierlab.com/HolmiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Iron> owl:equivalentClass <http://ontology.dumontierlab.com/Iron>,
+        <http://ontology.dumontierlab.com/IronAtom> .
+
+<http://w3id.org/CEON/ontology/material/Lanthanum> owl:equivalentClass <http://ontology.dumontierlab.com/Lanthanum>,
+        <http://ontology.dumontierlab.com/LanthanumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Lutetium> owl:equivalentClass <http://ontology.dumontierlab.com/Lutetium>,
+        <http://ontology.dumontierlab.com/LutetiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Magnesium> owl:equivalentClass <http://ontology.dumontierlab.com/Magnesium>,
+        <http://ontology.dumontierlab.com/MagnesiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Manganese> owl:equivalentClass <http://ontology.dumontierlab.com/Manganese>,
+        <http://ontology.dumontierlab.com/ManganeseAtom> .
+
+<http://w3id.org/CEON/ontology/material/Material> owl:equivalentClass <http://matonto.org/ontologies/matonto#CeramicMaterial>,
+        <http://matonto.org/ontologies/matonto#Material>,
+        <http://matonto.org/ontologies/matonto#MaterialCategory>,
+        <http://matonto.org/ontologies/matonto#MaterialQuality> .
+
+<http://w3id.org/CEON/ontology/material/MaterialComponent> rdfs:subClassOf <http://matonto.org/ontologies/matonto#CeramicMaterial>,
+        <http://matonto.org/ontologies/matonto#MaterialQuality>,
+        <http://matonto.org/ontologies/matonto#hasComponentProperty>,
+        <http://ontology.dumontierlab.com/ComponentCount>,
+        <http://ontology.dumontierlab.com/MoleculeComponentCount>,
+        qb:ComponentProperty ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material>,
+        <http://matonto.org/ontologies/matonto#MaterialCategory> .
+
+<http://w3id.org/CEON/ontology/material/MolecularEntity> rdfs:subClassOf <http://matonto.org/ontologies/matonto#MolecularFormula>,
+        <http://ontology.dumontierlab.com/InterMolecularInteraction>,
+        <http://ontology.dumontierlab.com/LinearMolecularGeometry>,
+        <http://ontology.dumontierlab.com/MolecularComplexAssembly>,
+        <http://ontology.dumontierlab.com/MolecularComplexDisassociation>,
+        <http://ontology.dumontierlab.com/MolecularComplexInteraction>,
+        <http://ontology.dumontierlab.com/MolecularFormula>,
+        <http://ontology.dumontierlab.com/MolecularGeometry>,
+        <http://ontology.dumontierlab.com/MolecularMassUnit>,
+        <http://ontology.dumontierlab.com/OctahedralMolecularGeometry>,
+        <http://ontology.dumontierlab.com/SquarePlanarMolecularGeometry>,
+        <http://ontology.dumontierlab.com/SquarePyramidalMolecularGeometry>,
+        <http://ontology.dumontierlab.com/TetrahedralMolecularGeometry>,
+        <http://ontology.dumontierlab.com/TrigonalPlanarMolecularGeometry>,
+        <http://ontology.dumontierlab.com/TrigonalPyramidalMolecularGeometry>,
+        <http://www.ifomis.org/bfo/1.0/snap#RealizableEntity>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessualEntity> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/MolecularCenter>,
+        <http://ontology.dumontierlab.com/MolecularIdentifier>,
+        <http://ontology.dumontierlab.com/MolecularMass>,
+        <http://ontology.dumontierlab.com/MolecularQuality>,
+        <http://www.ifomis.org/bfo/1.0#Entity> .
+
+<http://w3id.org/CEON/ontology/material/Neodymium> owl:equivalentClass <http://ontology.dumontierlab.com/Neodymium>,
+        <http://ontology.dumontierlab.com/NeodymiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Nickel> owl:equivalentClass <http://ontology.dumontierlab.com/Nickel>,
+        <http://ontology.dumontierlab.com/NickelAtom> .
+
+<http://w3id.org/CEON/ontology/material/Niobium> owl:equivalentClass <http://ontology.dumontierlab.com/Niobium>,
+        <http://ontology.dumontierlab.com/NiobiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Praseodymium> owl:equivalentClass <http://ontology.dumontierlab.com/Praseodymium>,
+        <http://ontology.dumontierlab.com/PraseodymiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Promethium> owl:equivalentClass <http://ontology.dumontierlab.com/Promethium>,
+        <http://ontology.dumontierlab.com/PromethiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/RareEarthElement> rdfs:subClassOf <http://ontology.dumontierlab.com/AlkalineEarthMetals>,
+        <http://ontology.dumontierlab.com/CarbonGroupElement>,
+        <http://ontology.dumontierlab.com/DBlockElement>,
+        <http://ontology.dumontierlab.com/FBlockElement>,
+        <http://ontology.dumontierlab.com/GBlockElement>,
+        <http://ontology.dumontierlab.com/Group1Element>,
+        <http://ontology.dumontierlab.com/Group2Element>,
+        <http://ontology.dumontierlab.com/Group3Element>,
+        <http://ontology.dumontierlab.com/Group4Element>,
+        <http://ontology.dumontierlab.com/Group5Element>,
+        <http://ontology.dumontierlab.com/Group6Element>,
+        <http://ontology.dumontierlab.com/Group7Element>,
+        <http://ontology.dumontierlab.com/Group8Element>,
+        <http://ontology.dumontierlab.com/Group9Element>,
+        <http://ontology.dumontierlab.com/GroupElement>,
+        <http://ontology.dumontierlab.com/PBlockElement>,
+        <http://ontology.dumontierlab.com/Period1Element>,
+        <http://ontology.dumontierlab.com/Period2Element>,
+        <http://ontology.dumontierlab.com/Period3Element>,
+        <http://ontology.dumontierlab.com/Period4Element>,
+        <http://ontology.dumontierlab.com/Period5Element>,
+        <http://ontology.dumontierlab.com/Period6Element>,
+        <http://ontology.dumontierlab.com/Period7Element>,
+        <http://ontology.dumontierlab.com/PeriodElement>,
+        <http://ontology.dumontierlab.com/SBlockElement>,
+        <http://ontology.dumontierlab.com/SeriesElement> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasElement>,
+        <http://ontology.dumontierlab.com/Element> .
+
+<http://w3id.org/CEON/ontology/material/Samarium> owl:equivalentClass <http://ontology.dumontierlab.com/Samarium>,
+        <http://ontology.dumontierlab.com/SamariumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Scandium> owl:equivalentClass <http://ontology.dumontierlab.com/Scandium>,
+        <http://ontology.dumontierlab.com/ScandiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Silicon> owl:equivalentClass <http://ontology.dumontierlab.com/Silicon>,
+        <http://ontology.dumontierlab.com/SiliconAtom> .
+
+<http://w3id.org/CEON/ontology/material/Tantalum> owl:equivalentClass <http://ontology.dumontierlab.com/Tantalum>,
+        <http://ontology.dumontierlab.com/TantalumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Terbium> owl:equivalentClass <http://ontology.dumontierlab.com/Terbium>,
+        <http://ontology.dumontierlab.com/TerbiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Thulium> owl:equivalentClass <http://ontology.dumontierlab.com/Thulium>,
+        <http://ontology.dumontierlab.com/ThuliumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Titanium> owl:equivalentClass <http://ontology.dumontierlab.com/Titanium>,
+        <http://ontology.dumontierlab.com/TitaniumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Ytterbium> owl:equivalentClass <http://ontology.dumontierlab.com/Ytterbium>,
+        <http://ontology.dumontierlab.com/YtterbiumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Yttrium> owl:equivalentClass <http://ontology.dumontierlab.com/Yttrium>,
+        <http://ontology.dumontierlab.com/YttriumAtom> .
+
+<http://w3id.org/CEON/ontology/material/Zinc> owl:equivalentClass <http://ontology.dumontierlab.com/Zinc>,
+        <http://ontology.dumontierlab.com/ZincAtom> .
+
+<http://w3id.org/CEON/ontology/material/hasChemicalEntity> rdfs:subClassOf <http://matonto.org/ontologies/matonto#ChemicalClass>,
+        <http://matonto.org/ontologies/matonto#ChemicalFamily>,
+        <http://matonto.org/ontologies/matonto#ChemicalFormula>,
+        <http://ontology.dumontierlab.com/ChemicalConformation>,
+        <http://ontology.dumontierlab.com/ChemicalDegradationPathway>,
+        <http://ontology.dumontierlab.com/ChemicalInteraction>,
+        <http://ontology.dumontierlab.com/ChemicalPhase>,
+        <http://ontology.dumontierlab.com/ChemicalQuality>,
+        <http://ontology.dumontierlab.com/ChemicalReaction>,
+        <http://ontology.dumontierlab.com/ChemicalReactionPathway>,
+        <http://ontology.dumontierlab.com/ChemicalSynthesisPathway>,
+        <http://ontology.dumontierlab.com/CommonChemicalPhase>,
+        <http://ontology.dumontierlab.com/UncommonChemicalPhase>,
+        <http://www.ifomis.org/bfo/1.0/snap#RealizableEntity>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessualEntity> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasChemicalSymbol>,
+        <http://ontology.dumontierlab.com/ChemicalAgent>,
+        <http://ontology.dumontierlab.com/ChemicalBond>,
+        <http://ontology.dumontierlab.com/ChemicalSubstance>,
+        <http://www.ifomis.org/bfo/1.0#Entity> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasChemicalSymbol> .
+
+<http://w3id.org/CEON/ontology/material/hasMaterialComponent> rdfs:subClassOf <http://matonto.org/ontologies/matonto#CeramicMaterial>,
+        <http://matonto.org/ontologies/matonto#MaterialCategory>,
+        <http://matonto.org/ontologies/matonto#MaterialQuality>,
+        <http://ontology.dumontierlab.com/ComponentCount>,
+        <http://ontology.dumontierlab.com/MoleculeComponentCount>,
+        qb:ComponentProperty ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material>,
+        <http://matonto.org/ontologies/matonto#hasComponentProperty> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasComponentProperty> .
+
+<http://w3id.org/CEON/ontology/material/reducedChemicalFormula> rdfs:subPropertyOf <http://matonto.org/ontologies/matonto#hasChemicalSymbol> .
+
+<http://w3id.org/CEON/ontology/process/AssemblingProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/BuyResourceProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/Catalyst> owl:equivalentClass <http://ontology.dumontierlab.com/Catalyst> .
+
+<http://w3id.org/CEON/ontology/process/ChangeResourceProcess> owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/ContactProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/DeconstructionProcess> owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/DisassemblingProcess> owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/DismantleProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/EnsureClaimProcess> owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/IssuingCertificateProcess> owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/ManufacturingProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/OffsetProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/ProductionProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/RecycleProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/RefurbishmentProcess> owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/RemoveProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/RemoveResourceProcess> owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/RepairProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/ResellProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/ReuseProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/SellResourceProcess> owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/ServiceProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/ShareResourceProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/TakeBackProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/process/needsEnergy> rdfs:subClassOf <http://matonto.org/ontologies/matonto#GibbsFreeEnergy>,
+        <http://matonto.org/ontologies/matonto#HelmholtzFreeEnergy>,
+        <http://matonto.org/ontologies/matonto#InternalEnergy>,
+        <http://ontology.dumontierlab.com/EnergyDensity>,
+        <http://ontology.dumontierlab.com/EnergyDensityUnit>,
+        <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/MolarEnergy>,
+        <http://ontology.dumontierlab.com/MolarEnergyUnit>,
+        <http://ontology.dumontierlab.com/SpecificEnergy>,
+        <http://ontology.dumontierlab.com/SpecificEnergyUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/process/usesCatalyst> owl:equivalentClass <http://ontology.dumontierlab.com/Catalyst> .
+
+<http://w3id.org/CEON/ontology/processODP/Process> owl:equivalentClass <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart>,
+        <http://www.ifomis.org/bfo/1.0/span#Process>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessAggregate>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> .
+
+<http://w3id.org/CEON/ontology/processODP/TimeInterval> rdfs:subClassOf <http://ontology.dumontierlab.com/TimeUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Time>,
+        <http://www.ifomis.org/bfo/1.0/span#SpatiotemporalInterval>,
+        <http://www.ifomis.org/bfo/1.0/span#TemporalInterval> .
+
+<http://w3id.org/CEON/ontology/processODP/TransformationProcess> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#ProcessBoundary> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/transformationOf>,
+        <http://www.ifomis.org/bfo/1.0/span#Process> .
+
+<http://w3id.org/CEON/ontology/processODP/Transition> owl:equivalentClass <http://ontology.dumontierlab.com/TransitionMetal> .
+
+<http://w3id.org/CEON/ontology/processODP/affectedObject> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/snap#ObjectAggregate>,
+        <http://www.ifomis.org/bfo/1.0/snap#ObjectBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/snap#Object> .
+
+<http://w3id.org/CEON/ontology/processODP/duringTime> rdfs:subClassOf <http://ontology.dumontierlab.com/TimeUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Time> .
+
+<http://w3id.org/CEON/ontology/processODP/endTime> rdfs:subClassOf <http://ontology.dumontierlab.com/TimeUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Time> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/ends> .
+
+<http://w3id.org/CEON/ontology/processODP/hasPart> owl:equivalentClass <http://ontology.dumontierlab.com/hasImproperPart>,
+        <http://ontology.dumontierlab.com/hasIntegralPart>,
+        <http://ontology.dumontierlab.com/hasPart>,
+        <http://ontology.dumontierlab.com/hasProperPart>,
+        <http://ontology.dumontierlab.com/isImproperPartOf>,
+        <http://ontology.dumontierlab.com/isIntegralPartOf>,
+        <http://ontology.dumontierlab.com/isPartOf>,
+        <http://ontology.dumontierlab.com/isProperPartOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#FiatObjectPart>,
+        <http://www.ifomis.org/bfo/1.0/span#FiatProcessPart> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/hasImproperPart>,
+        <http://ontology.dumontierlab.com/hasIntegralPart>,
+        <http://ontology.dumontierlab.com/hasPart>,
+        <http://ontology.dumontierlab.com/hasProperPart>,
+        <http://ontology.dumontierlab.com/isImproperPartOf>,
+        <http://ontology.dumontierlab.com/isIntegralPartOf>,
+        <http://ontology.dumontierlab.com/isPartOf>,
+        <http://ontology.dumontierlab.com/isProperPartOf> .
+
+<http://w3id.org/CEON/ontology/processODP/occursAtLocation> rdfs:subClassOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    rdfs:subPropertyOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/isLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf> .
+
+<http://w3id.org/CEON/ontology/processODP/occursAtTime> owl:equivalentClass <http://ontology.dumontierlab.com/Time> .
+
+<http://w3id.org/CEON/ontology/processODP/precedesExecution> owl:equivalentClass <http://ontology.dumontierlab.com/immediatelyPrecedes>,
+        <http://ontology.dumontierlab.com/precedes> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/immediatelyPrecedes>,
+        <http://ontology.dumontierlab.com/precedes> .
+
+<http://w3id.org/CEON/ontology/processODP/startTime> rdfs:subClassOf <http://ontology.dumontierlab.com/TimeUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Time> .
+
+<http://w3id.org/CEON/ontology/product/AssemblyLocation> rdfs:subClassOf <http://ontology.dumontierlab.com/MolecularComplexAssembly>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/product/ManufactureLocation> owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/product/MatterComposition> rdfs:subClassOf <http://ontology.dumontierlab.com/StrangeMatterPhase> .
+
+<http://w3id.org/CEON/ontology/product/OriginLocation> rdfs:subClassOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/product/Product> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/product/ProductComposition> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/product/ProductObjectComposition> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/snap#FiatObjectPart> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Product>,
+        <http://www.ifomis.org/bfo/1.0/snap#Object> .
+
+<http://w3id.org/CEON/ontology/product/ProductionLocation> rdfs:subClassOf <http://ontology.dumontierlab.com/isSpatialLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/product/Solution> owl:equivalentClass <http://ontology.dumontierlab.com/Solution> .
+
+<http://w3id.org/CEON/ontology/product/SupplierLocation> rdfs:subClassOf <http://ontology.dumontierlab.com/isSpatialLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/product/associatedWithMatter> rdfs:subClassOf <http://ontology.dumontierlab.com/StrangeMatterPhase> .
+
+<http://w3id.org/CEON/ontology/product/associatedWithProductModel> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/product/associatedWithProductObject> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/snap#FiatObjectPart> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Product>,
+        <http://www.ifomis.org/bfo/1.0/snap#Object> .
+
+<http://w3id.org/CEON/ontology/product/batchOfProduct> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/product/countryOfAssembly> rdfs:subClassOf <http://ontology.dumontierlab.com/MolecularComplexAssembly> .
+
+<http://w3id.org/CEON/ontology/product/hasAssemblyLocation> rdfs:subClassOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    rdfs:subPropertyOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/product/hasManufacturerLocation> rdfs:subClassOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    rdfs:subPropertyOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/product/hasOriginLocation> rdfs:subClassOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    rdfs:subPropertyOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/product/hasProductComponent> rdfs:subClassOf <http://ontology.dumontierlab.com/MoleculeComponentCount> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasComponentProperty>,
+        <http://ontology.dumontierlab.com/ComponentCount>,
+        <http://ontology.dumontierlab.com/Product>,
+        qb:ComponentProperty ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasComponentProperty> .
+
+<http://w3id.org/CEON/ontology/product/hasProductName> rdfs:subClassOf <http://ontology.dumontierlab.com/CASName> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasName>,
+        <http://ontology.dumontierlab.com/Name>,
+        <http://ontology.dumontierlab.com/Product> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasName> .
+
+<http://w3id.org/CEON/ontology/product/hasProductObjectComponent> rdfs:subClassOf <http://ontology.dumontierlab.com/ComponentCount>,
+        qb:ComponentProperty,
+        <http://www.ifomis.org/bfo/1.0/snap#FiatObjectPart> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasComponentProperty>,
+        <http://ontology.dumontierlab.com/Product>,
+        <http://www.ifomis.org/bfo/1.0/snap#Object> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasComponentProperty> .
+
+<http://w3id.org/CEON/ontology/product/productionSite> owl:equivalentClass <http://www.ifomis.org/bfo/1.0/snap#Site> .
+
+<http://w3id.org/CEON/ontology/quantity#QuantityInterval> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#SpatiotemporalInterval>,
+        <http://www.ifomis.org/bfo/1.0/span#TemporalInterval> .
+
+<http://w3id.org/CEON/ontology/quantity/QuantityInterval> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#SpatiotemporalInterval>,
+        <http://www.ifomis.org/bfo/1.0/span#TemporalInterval> .
+
+<http://w3id.org/CEON/ontology/quantity/hasMarketValue> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/quantity/hasMaximalValueIncludedOfInterval> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#TemporalInterval> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/quantity/hasMaximalValueNotIncludedOfInterval> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#TemporalInterval> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/quantity/hasMinimalValueIncludedOfInterval> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#TemporalInterval> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/quantity/hasMinimalValueNotIncludedOfInterval> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#TemporalInterval> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/quantity/numericalMaxValue> rdfs:subPropertyOf <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/quantity/numericalMinValue> rdfs:subPropertyOf <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/quantity/objectValue> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/resourceODP/DigitalObject> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/snap#FiatObjectPart>,
+        <http://www.ifomis.org/bfo/1.0/snap#ObjectBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/snap#Object> .
+
+<http://w3id.org/CEON/ontology/resourceODP/Information> owl:equivalentClass <http://ontology.dumontierlab.com/Information>,
+        <http://ontology.dumontierlab.com/InformationUnit> .
+
+<http://w3id.org/CEON/ontology/resourceODP/Matter> owl:equivalentClass <http://ontology.dumontierlab.com/StrangeMatterPhase> .
+
+<http://w3id.org/CEON/ontology/resourceODP/PhysicalObject> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/snap#FiatObjectPart>,
+        <http://www.ifomis.org/bfo/1.0/snap#ObjectBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/snap#Object> .
+
+<http://w3id.org/CEON/ontology/resourceODP/ResourceProperty> rdfs:subClassOf <http://matonto.org/ontologies/matonto#ExtensiveProperty>,
+        <http://matonto.org/ontologies/matonto#IntensiveProperty>,
+        <http://matonto.org/ontologies/matonto#SpaceGroupProperty>,
+        <http://matonto.org/ontologies/matonto#hasComponentProperty>,
+        <http://ontology.dumontierlab.com/AtomProperty>,
+        <http://ontology.dumontierlab.com/MeasuredProperty>,
+        <http://ontology.dumontierlab.com/hasAtomicProperty>,
+        qb:ComponentProperty .
+
+<http://w3id.org/CEON/ontology/resourceODP/ResourceQuality> rdfs:subClassOf <http://matonto.org/ontologies/matonto#MaterialQuality>,
+        <http://ontology.dumontierlab.com/ChemicalQuality>,
+        <http://ontology.dumontierlab.com/MolecularQuality> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/hasQuality>,
+        <http://ontology.dumontierlab.com/isQualityOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#Quality> .
+
+<http://w3id.org/CEON/ontology/resourceODP/batchSize> rdfs:subClassOf <http://matonto.org/ontologies/matonto#GrainSize> .
+
+<http://w3id.org/CEON/ontology/resourceODP/containsInformation> owl:equivalentClass <http://ontology.dumontierlab.com/Information>,
+        <http://ontology.dumontierlab.com/InformationUnit>,
+        <http://ontology.dumontierlab.com/contains> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/contains> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasMatter> owl:equivalentClass <http://ontology.dumontierlab.com/StrangeMatterPhase> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasPart> owl:equivalentProperty <http://ontology.dumontierlab.com/hasImproperPart>,
+        <http://ontology.dumontierlab.com/hasIntegralPart>,
+        <http://ontology.dumontierlab.com/hasPart>,
+        <http://ontology.dumontierlab.com/hasProperPart>,
+        <http://ontology.dumontierlab.com/isImproperPartOf>,
+        <http://ontology.dumontierlab.com/isIntegralPartOf>,
+        <http://ontology.dumontierlab.com/isPartOf>,
+        <http://ontology.dumontierlab.com/isProperPartOf> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasPhysicalObject> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/snap#FiatObjectPart>,
+        <http://www.ifomis.org/bfo/1.0/snap#ObjectBoundary> ;
+    owl:equivalentClass <http://www.ifomis.org/bfo/1.0/snap#Object> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasResourceLocation> rdfs:subClassOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    rdfs:subPropertyOf <http://ontology.dumontierlab.com/isSpatialLocationOf>,
+        <http://ontology.dumontierlab.com/isSpatioTemporalLocationOf>,
+        <http://ontology.dumontierlab.com/isTemporalLocationOf> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/isLocationOf> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasResourceProperty> rdfs:subClassOf <http://matonto.org/ontologies/matonto#ExtensiveProperty>,
+        <http://matonto.org/ontologies/matonto#SpaceGroupProperty>,
+        <http://ontology.dumontierlab.com/AtomProperty>,
+        <http://ontology.dumontierlab.com/MeasuredProperty>,
+        qb:ComponentProperty ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#IntensiveProperty>,
+        <http://matonto.org/ontologies/matonto#hasComponentProperty>,
+        <http://ontology.dumontierlab.com/hasAtomicProperty> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasComponentProperty>,
+        <http://ontology.dumontierlab.com/hasAtomicProperty> .
+
+<http://w3id.org/CEON/ontology/resourceODP/hasResourceQuality> rdfs:subClassOf <http://matonto.org/ontologies/matonto#MaterialQuality>,
+        <http://ontology.dumontierlab.com/ChemicalQuality>,
+        <http://ontology.dumontierlab.com/MolecularQuality> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/hasQuality>,
+        <http://ontology.dumontierlab.com/isQualityOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#Quality> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/hasQuality>,
+        <http://ontology.dumontierlab.com/isQualityOf> .
+
+<http://w3id.org/CEON/ontology/resourceODP/isRealizationOf> rdfs:subClassOf <http://ontology.dumontierlab.com/isDispositionOf>,
+        <http://ontology.dumontierlab.com/isLocationOf> .
+
+<http://w3id.org/CEON/ontology/statement/DisclosedChemicalSubtanceStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#ChemicalClass>,
+        <http://matonto.org/ontologies/matonto#ChemicalFamily>,
+        <http://matonto.org/ontologies/matonto#ChemicalFormula>,
+        <http://matonto.org/ontologies/matonto#hasChemicalSymbol>,
+        <http://ontology.dumontierlab.com/ChemicalAgent>,
+        <http://ontology.dumontierlab.com/ChemicalBond>,
+        <http://ontology.dumontierlab.com/ChemicalInteraction>,
+        <http://ontology.dumontierlab.com/ChemicalPhase>,
+        <http://ontology.dumontierlab.com/ChemicalQuality>,
+        <http://ontology.dumontierlab.com/ChemicalReaction>,
+        <http://ontology.dumontierlab.com/CommonChemicalPhase> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/ChemicalSubstance> .
+
+<http://w3id.org/CEON/ontology/statement/FractionOfRenewableEnergyAvailabilityStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/EnergyUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/statement/FractionOfRenewableEnergyStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/EnergyUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/statement/HazardousSubstanceDeclarationAvailabiltityStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/AmountOfSubstance>,
+        <http://ontology.dumontierlab.com/AmountOfSubstanceUnit>,
+        <http://ontology.dumontierlab.com/ChemicalSubstance>,
+        <http://ontology.dumontierlab.com/PureSubstance> .
+
+<http://w3id.org/CEON/ontology/statement/HazardousSubstanceStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/AmountOfSubstance>,
+        <http://ontology.dumontierlab.com/AmountOfSubstanceConcentration>,
+        <http://ontology.dumontierlab.com/AmountOfSubstanceUnit>,
+        <http://ontology.dumontierlab.com/ChemicalSubstance> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/PureSubstance> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfDismantlableComponentForReuseRecycledAvailabilityStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#hasComponentProperty>,
+        <http://ontology.dumontierlab.com/ComponentCount> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfDismantlableComponentForReuseRecycledStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#hasComponentProperty>,
+        <http://ontology.dumontierlab.com/ComponentCount> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfPostConsumerRecycledMaterialContentAvailabilityStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#Material> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Mass> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfPostConsumerRecycledMaterialContentStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#Material> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Mass> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfPreConsumerRecycledMaterialContentAvailabilityStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#Material> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Mass> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfPreConsumerRecycledMaterialContentStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#Material> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Mass> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductDesignedCleanlyRemovedFromFixedAssemblyAvailabilityStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductDesignedCleanlyRemovedFromFixedAssemblyStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductDesignedCleanlyRemovedFromProductAssemblyAvailabilittyStatement> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductDesignedCleanlyRemovedFromProductAssemblyStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductRecyclingAtSimilarLevelAvailabilityStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductRecyclingAtSimilarLevelStatement> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductReleasedToEnvironmentAvailablityStatement> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfProductReleasedToEnvironmentStatement> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfRecycledMaterialContentAvailabilityStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#Material> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfRenewableMaterialAvailabilityStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#Material> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass> .
+
+<http://w3id.org/CEON/ontology/statement/MFOfReusedPartAvailabilityStatement> owl:equivalentClass <http://ontology.dumontierlab.com/Mass>,
+        <http://ontology.dumontierlab.com/hasPart>,
+        <http://ontology.dumontierlab.com/isPartOf> .
+
+<http://w3id.org/CEON/ontology/statement/MassFractionOfDisclosedChemicalSubstanceStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#ChemicalClass>,
+        <http://matonto.org/ontologies/matonto#ChemicalFamily>,
+        <http://matonto.org/ontologies/matonto#ChemicalFormula>,
+        <http://ontology.dumontierlab.com/AmountOfSubstanceConcentration>,
+        <http://ontology.dumontierlab.com/AmountOfSubstanceConcentrationUnit>,
+        <http://ontology.dumontierlab.com/AmountOfSubstanceUnit>,
+        <http://ontology.dumontierlab.com/ChemicalAgent>,
+        <http://ontology.dumontierlab.com/ChemicalPhase>,
+        <http://ontology.dumontierlab.com/ChemicalQuality>,
+        <http://ontology.dumontierlab.com/ChemicalReaction>,
+        <http://ontology.dumontierlab.com/MassUnit>,
+        <http://ontology.dumontierlab.com/PureSubstance> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/AmountOfSubstance>,
+        <http://ontology.dumontierlab.com/ChemicalSubstance>,
+        <http://ontology.dumontierlab.com/Mass> .
+
+<http://w3id.org/CEON/ontology/statement/MassFractionOfRecycledMaterialStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material>,
+        <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass> .
+
+<http://w3id.org/CEON/ontology/statement/MassFractionOfRenewableMaterialStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material>,
+        <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass> .
+
+<http://w3id.org/CEON/ontology/statement/MassFractionOfReusedPartStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass>,
+        <http://ontology.dumontierlab.com/hasPart>,
+        <http://ontology.dumontierlab.com/isPartOf> .
+
+<http://w3id.org/CEON/ontology/statement/PCAvailabilityStatement> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/PostConsumerRecycledMaterialCompositionAvailabilityStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#MaterialQuality> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material> .
+
+<http://w3id.org/CEON/ontology/statement/PostConsumerRecycledMaterialCompositionStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#MaterialCategory>,
+        <http://matonto.org/ontologies/matonto#MaterialQuality> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material> .
+
+<http://w3id.org/CEON/ontology/statement/PreConsumerRecycledMaterialCompositionAvailabilityStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#MaterialCategory>,
+        <http://matonto.org/ontologies/matonto#MaterialQuality> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material> .
+
+<http://w3id.org/CEON/ontology/statement/PreConsumerRecycledMaterialCompositionStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#MaterialCategory>,
+        <http://matonto.org/ontologies/matonto#MaterialQuality> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material> .
+
+<http://w3id.org/CEON/ontology/statement/ProductCompositionCertificationStatement> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/ProductCompositionStatement> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/ProductCompositionValidationStatement> owl:equivalentClass <http://ontology.dumontierlab.com/Product> .
+
+<http://w3id.org/CEON/ontology/statement/RecycledMaterialStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#CeramicMaterial>,
+        <http://matonto.org/ontologies/matonto#MaterialCategory>,
+        <http://matonto.org/ontologies/matonto#MaterialQuality> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material> .
+
+<http://w3id.org/CEON/ontology/statement/RenewableEnergyStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/EnergyUnit>,
+        <http://ontology.dumontierlab.com/SpecificEnergy> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/statement/SustainablyProducedRenewableMaterialStatement> rdfs:subClassOf <http://matonto.org/ontologies/matonto#MaterialQuality> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material> .
+
+<http://w3id.org/CEON/ontology/statement/VFOfReductionDirectWaterAvailabilityStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/VolumeUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Volume> .
+
+<http://w3id.org/CEON/ontology/statement/VFOfReductionDirectWaterStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/VolumeUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Volume> .
+
+<http://w3id.org/CEON/ontology/statement/VFOfReusedRecirculatedWaterAvailabilityStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/VolumeUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Volume> .
+
+<http://w3id.org/CEON/ontology/statement/VFOfReusedRecirculatedWaterStatement> rdfs:subClassOf <http://ontology.dumontierlab.com/VolumeUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Volume> .
+
+<http://w3id.org/CEON/ontology/statement/availableEndDate> owl:equivalentProperty <http://ontology.dumontierlab.com/ends> .
+
+<http://w3id.org/CEON/ontology/statement/hasChemicalSubstanceThresholdUsedByManufacturer> rdfs:subClassOf <http://matonto.org/ontologies/matonto#ChemicalFormula>,
+        <http://matonto.org/ontologies/matonto#hasChemicalSymbol>,
+        <http://ontology.dumontierlab.com/AmountOfSubstance>,
+        <http://ontology.dumontierlab.com/ChemicalAgent>,
+        <http://ontology.dumontierlab.com/ChemicalPhase>,
+        <http://ontology.dumontierlab.com/ChemicalQuality>,
+        <http://ontology.dumontierlab.com/ChemicalReaction>,
+        <http://ontology.dumontierlab.com/PureSubstance> ;
+    rdfs:subPropertyOf <http://matonto.org/ontologies/matonto#hasChemicalSymbol> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/ChemicalSubstance> .
+
+<http://w3id.org/CEON/ontology/statement/hasFractionOfRenewableEnergyOutOfTheTotalProductionEnergyMix> rdfs:subClassOf <http://ontology.dumontierlab.com/EnergyUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Energy> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionForDemounting> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit>,
+        <http://ontology.dumontierlab.com/MolarMassUnit> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionForDisassembly> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit>,
+        <http://ontology.dumontierlab.com/MolarMass> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfAllDisclosedChemicalSubstance> rdfs:subClassOf <http://matonto.org/ontologies/matonto#ChemicalFormula>,
+        <http://matonto.org/ontologies/matonto#hasChemicalSymbol>,
+        <http://ontology.dumontierlab.com/AmountOfSubstanceConcentration>,
+        <http://ontology.dumontierlab.com/AmountOfSubstanceUnit>,
+        <http://ontology.dumontierlab.com/ChemicalAgent>,
+        <http://ontology.dumontierlab.com/ChemicalPhase>,
+        <http://ontology.dumontierlab.com/ChemicalReaction>,
+        <http://ontology.dumontierlab.com/MassUnit>,
+        <http://ontology.dumontierlab.com/PureSubstance> ;
+    rdfs:subPropertyOf <http://matonto.org/ontologies/matonto#hasChemicalSymbol> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/AmountOfSubstance>,
+        <http://ontology.dumontierlab.com/ChemicalSubstance>,
+        <http://ontology.dumontierlab.com/Mass> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfDismantableComponentsForReuseAndRecycle> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfPostConsumerRecycledMaterialsOutOfTheTotalProductMass> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit>,
+        <http://ontology.dumontierlab.com/Product> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfPreConsumerRecycledMaterialsOutOfTheTotalProductMass> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit>,
+        <http://ontology.dumontierlab.com/MolarMass>,
+        <http://ontology.dumontierlab.com/Product> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfProductDesignedForRecyclingToOriginalInput> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass>,
+        <http://ontology.dumontierlab.com/Product> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfProductReleasedIntoEnvironment> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass>,
+        <http://ontology.dumontierlab.com/Product> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfRecycledMaterialsOutOfTheTotalProductMass> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit>,
+        <http://ontology.dumontierlab.com/MolarMass>,
+        <http://ontology.dumontierlab.com/Product> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfRenewableMaterialsOutOfTheTotalProductMass> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit>,
+        <http://ontology.dumontierlab.com/MolarMass>,
+        <http://ontology.dumontierlab.com/Product> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasMassFractionOfReusedPartsOutOfTheTotalProduct> rdfs:subClassOf <http://ontology.dumontierlab.com/MassUnit> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#hasMass>,
+        <http://ontology.dumontierlab.com/Mass>,
+        <http://ontology.dumontierlab.com/Product> ;
+    owl:equivalentProperty <http://matonto.org/ontologies/matonto#hasMass> .
+
+<http://w3id.org/CEON/ontology/statement/hasPostConsumerRecycledMaterialCompositionThreshold> rdfs:subClassOf <http://matonto.org/ontologies/matonto#CeramicMaterial>,
+        <http://matonto.org/ontologies/matonto#MaterialCategory>,
+        <http://matonto.org/ontologies/matonto#MaterialQuality> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material> .
+
+<http://w3id.org/CEON/ontology/statement/hasPreConsumerRecycledMaterialCompositionThreshold> rdfs:subClassOf <http://matonto.org/ontologies/matonto#CeramicMaterial>,
+        <http://matonto.org/ontologies/matonto#MaterialCategory>,
+        <http://matonto.org/ontologies/matonto#MaterialQuality> ;
+    owl:equivalentClass <http://matonto.org/ontologies/matonto#Material> .
+
+<http://w3id.org/CEON/ontology/statement/hasQuantityInterval> rdfs:subClassOf <http://www.ifomis.org/bfo/1.0/span#SpatiotemporalInterval>,
+        <http://www.ifomis.org/bfo/1.0/span#TemporalInterval> .
+
+<http://w3id.org/CEON/ontology/statement/hasVolumeFractionOfReductionOfDirectWaterConsumptionUsedInProduction> rdfs:subClassOf <http://ontology.dumontierlab.com/VolumeUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Volume> .
+
+<http://w3id.org/CEON/ontology/statement/hasVolumeFractionOfReusedOrRecirculatedWaterUsedInProduction> rdfs:subClassOf <http://ontology.dumontierlab.com/VolumeUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Volume> .
+
+<http://w3id.org/CEON/ontology/statement/statementValue> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/value/ValueParticipationRole> owl:equivalentClass <http://ontology.dumontierlab.com/hasRole>,
+        <http://ontology.dumontierlab.com/isRoleOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#Role> .
+
+<http://w3id.org/CEON/ontology/value/hasAimedValue> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/value/hasAssociatedValue> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/value/hasVPTargets> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/value/hasValueParticipantRole> owl:equivalentClass <http://ontology.dumontierlab.com/hasParticipant>,
+        <http://ontology.dumontierlab.com/hasRole>,
+        <http://ontology.dumontierlab.com/isParticipantIn>,
+        <http://ontology.dumontierlab.com/isRoleOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#Role> ;
+    owl:equivalentProperty <http://ontology.dumontierlab.com/hasParticipant>,
+        <http://ontology.dumontierlab.com/hasRole>,
+        <http://ontology.dumontierlab.com/hasValue>,
+        <http://ontology.dumontierlab.com/isParticipantIn>,
+        <http://ontology.dumontierlab.com/isRoleOf> .
+
+<http://w3id.org/CEON/ontology/value/onValueParticipation> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+<http://w3id.org/CEON/ontology/value/targettingValueParticipation> owl:equivalentProperty <http://ontology.dumontierlab.com/hasValue> .
+
+geo:Geometry owl:equivalentClass <http://ontology.dumontierlab.com/LinearMolecularGeometry>,
+        <http://ontology.dumontierlab.com/MolecularGeometry>,
+        <http://ontology.dumontierlab.com/OctahedralMolecularGeometry>,
+        <http://ontology.dumontierlab.com/SquarePlanarMolecularGeometry>,
+        <http://ontology.dumontierlab.com/SquarePyramidalMolecularGeometry>,
+        <http://ontology.dumontierlab.com/TetrahedralMolecularGeometry>,
+        <http://ontology.dumontierlab.com/TrigonalBipyramidalMolecularGeometry>,
+        <http://ontology.dumontierlab.com/TrigonalPlanarMolecularGeometry>,
+        <http://ontology.dumontierlab.com/TrigonalPyramidalMolecularGeometry> .
+
+xsd:dateTime rdfs:subClassOf <http://ontology.dumontierlab.com/TimeUnit> ;
+    owl:equivalentClass <http://ontology.dumontierlab.com/Time> .
+
+xsd:nonNegativeInteger rdfs:subClassOf <http://ontology.dumontierlab.com/NegativeCharge> .
+
+prov:Entity owl:equivalentClass <http://www.ifomis.org/bfo/1.0#Entity>,
+        <http://www.ifomis.org/bfo/1.0/snap#RealizableEntity>,
+        <http://www.ifomis.org/bfo/1.0/span#ProcessualEntity> .
+
+prov:Role owl:equivalentClass <http://ontology.dumontierlab.com/hasRole>,
+        <http://ontology.dumontierlab.com/isRoleOf>,
+        <http://www.ifomis.org/bfo/1.0/snap#Role> .
+
+xsd:double owl:equivalentClass <http://ontology.dumontierlab.com/DoubleBond>,
+        <http://ontology.dumontierlab.com/DoubleDisplacementReaction>,
+        <http://ontology.dumontierlab.com/hasDoubleBondWith>,
+        xsd:double .
+
+xsd:string owl:equivalentClass xsd:string .
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://cmt#AcceptedPaper">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Accepted Paper</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cmt#Paper"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cmt#Author">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Author</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cmt#Conference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Conference</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cmt#Reviewer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Reviewer</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cmt#Paper">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Paper</rdfs:label>
+    <skos:altLabel>Submission</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cmt#Review">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Review</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cmt#assignedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>assigned to</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cmt#ProgramCommitteeMember">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Program Committee Member</rdfs:label>
+    <skos:altLabel>PC Member</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cmt#hasReview">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>has review</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cmt#writtenBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>written by</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

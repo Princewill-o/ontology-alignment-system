@@ -1,0 +1,239 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/edas.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/sigkdd.owl
+# Total mappings: 174
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edas#AcceptedPaper> rdfs:subClassOf <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Best_Student_Paper_Award>,
+        <http://sigkdd#Deadline_Paper_Submission> ;
+    owl:equivalentClass <http://sigkdd#Paper> .
+
+<http://edas#AccommodationPlace> owl:equivalentClass <http://sigkdd#Place> .
+
+<http://edas#ActivePaper> rdfs:subClassOf <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Best_Student_Paper_Award>,
+        <http://sigkdd#Best_Student_Paper_Supporter> ;
+    owl:equivalentClass <http://sigkdd#Paper> .
+
+<http://edas#Author> owl:equivalentClass <http://sigkdd#Author>,
+        <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Author_of_paper_student>,
+        <http://sigkdd#Deadline_Author_notification> .
+
+<http://edas#Conference> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://edas#ConferenceChair> rdfs:subClassOf <http://sigkdd#General_Chair>,
+        <http://sigkdd#Program_Chair>,
+        <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference> .
+
+<http://edas#ConferenceDinner> rdfs:subClassOf <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference> .
+
+<http://edas#ConferenceEvent> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://edas#ConferenceSession> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://edas#ConferenceVenuePlace> rdfs:subClassOf <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Place> .
+
+<http://edas#DiningPlace> owl:equivalentClass <http://sigkdd#Place> .
+
+<http://edas#Document> owl:equivalentClass <http://sigkdd#Document> .
+
+<http://edas#FreeTimeBreak> rdfs:subClassOf xsd:dateTime .
+
+<http://edas#MeetingRoomPlace> owl:equivalentClass <http://sigkdd#Place> .
+
+<http://edas#NumericalReviewQuestion> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://edas#Paper> owl:equivalentClass <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Author_of_paper_student>,
+        <http://sigkdd#Best_Applications_Paper_Award>,
+        <http://sigkdd#Best_Paper_Awards_Committee>,
+        <http://sigkdd#Best_Research_Paper_Award>,
+        <http://sigkdd#Best_Student_Paper_Award>,
+        <http://sigkdd#Best_Student_Paper_Supporter>,
+        <http://sigkdd#Deadline_Paper_Submission>,
+        <http://sigkdd#Paper> .
+
+<http://edas#PaperPresentation> owl:equivalentClass <http://sigkdd#Paper>,
+        <http://sigkdd#presentation> .
+
+<http://edas#PendingPaper> rdfs:subClassOf <http://sigkdd#Deadline_Paper_Submission> ;
+    owl:equivalentClass <http://sigkdd#Paper> .
+
+<http://edas#Person> owl:equivalentClass <http://sigkdd#Person> .
+
+<http://edas#PersonalReviewHistory> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://edas#Place> owl:equivalentClass <http://sigkdd#Place> .
+
+<http://edas#PublishedPaper> rdfs:subClassOf <http://sigkdd#Author_of_paper> ;
+    owl:equivalentClass <http://sigkdd#Paper> .
+
+<http://edas#RejectedPaper> owl:equivalentClass <http://sigkdd#Paper> .
+
+<http://edas#Review> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://edas#ReviewForm> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://edas#ReviewQuestion> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://edas#ReviewRating> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://edas#SessionChair> rdfs:subClassOf <http://sigkdd#Program_Chair> ;
+    owl:equivalentClass <http://sigkdd#General_Chair> .
+
+<http://edas#SingleLevelConference> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://edas#TPCMember> rdfs:subClassOf <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee_member>,
+        <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member> .
+
+<http://edas#TextualReviewQuestion> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://edas#TwoLevelConference> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://edas#WithdrawnPaper> rdfs:subClassOf <http://sigkdd#Author_of_paper> ;
+    owl:equivalentClass <http://sigkdd#Paper> .
+
+<http://edas#endDate> rdfs:subClassOf <http://sigkdd#End_of_conference> ;
+    rdfs:subPropertyOf <http://sigkdd#End_of_conference> ;
+    owl:equivalentClass <http://sigkdd#Date>,
+        xsd:dateTime ;
+    owl:equivalentProperty <http://sigkdd#Date> .
+
+<http://edas#hasCity> owl:equivalentClass <http://sigkdd#City_of_conference> ;
+    owl:equivalentProperty <http://sigkdd#City_of_conference> .
+
+<http://edas#hasCostCurrency> owl:equivalentClass <http://sigkdd#Currency> ;
+    owl:equivalentProperty <http://sigkdd#Currency> .
+
+<http://edas#hasEndDateTime> owl:equivalentClass <http://sigkdd#Date>,
+        xsd:dateTime ;
+    owl:equivalentProperty <http://sigkdd#Date> .
+
+<http://edas#hasFirstName> rdfs:subClassOf <http://sigkdd#Name_of_sponsor> ;
+    rdfs:subPropertyOf <http://sigkdd#Name_of_sponsor> ;
+    owl:equivalentClass <http://sigkdd#Name> ;
+    owl:equivalentProperty <http://sigkdd#Name> .
+
+<http://edas#hasLastName> rdfs:subClassOf <http://sigkdd#Name_of_sponsor> ;
+    rdfs:subPropertyOf <http://sigkdd#Name_of_sponsor> ;
+    owl:equivalentClass <http://sigkdd#Name> ;
+    owl:equivalentProperty <http://sigkdd#Name> .
+
+<http://edas#hasMember> owl:equivalentClass <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee_member>,
+        <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member> .
+
+<http://edas#hasName> owl:equivalentClass <http://sigkdd#Name>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Name_of_sponsor> ;
+    owl:equivalentProperty <http://sigkdd#Name>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Name_of_sponsor> .
+
+<http://edas#hasRelatedDocument> owl:equivalentClass <http://sigkdd#Document> .
+
+<http://edas#hasRelatedPaper> rdfs:subClassOf <http://sigkdd#Author_of_paper> ;
+    owl:equivalentClass <http://sigkdd#Paper> .
+
+<http://edas#hasReviewHistory> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://edas#hasStartDateTime> rdfs:subClassOf <http://sigkdd#Start_of_conference> ;
+    rdfs:subPropertyOf <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#Date>,
+        xsd:dateTime ;
+    owl:equivalentProperty <http://sigkdd#Date> .
+
+<http://edas#hasSubmissionDeadline> rdfs:subClassOf <http://sigkdd#Deadline_Author_notification> ;
+    owl:equivalentClass <http://sigkdd#Deadline>,
+        <http://sigkdd#Deadline_Abstract_Submission>,
+        <http://sigkdd#Deadline_Paper_Submission> .
+
+<http://edas#hasSubmissionInstructions> rdfs:subClassOf <http://sigkdd#Deadline_Abstract_Submission>,
+        <http://sigkdd#Deadline_Paper_Submission> .
+
+<http://edas#isMemberOf> owl:equivalentClass <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee_member>,
+        <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member> .
+
+<http://edas#isReviewHistoryOf> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://edas#paperDueOn> rdfs:subClassOf <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Deadline_Paper_Submission> ;
+    owl:equivalentClass <http://sigkdd#Paper> .
+
+<http://edas#registrationDueOn> rdfs:subClassOf <http://sigkdd#Registration_SIGKDD_Member> ;
+    owl:equivalentClass <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGMOD_Member>,
+        <http://sigkdd#Registration_Student>,
+        <http://sigkdd#Registration_fee> .
+
+<http://edas#relatedToPaper> rdfs:subClassOf <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Author_of_paper_student> ;
+    owl:equivalentClass <http://sigkdd#Paper> .
+
+<http://edas#startDate> rdfs:subClassOf <http://sigkdd#Start_of_conference>,
+        xsd:dateTime ;
+    rdfs:subPropertyOf <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#Date> ;
+    owl:equivalentProperty <http://sigkdd#Date> .
+
+xsd:int owl:equivalentClass xsd:int .
+
+xsd:string owl:equivalentClass xsd:string .
+
+xsd:dateTime owl:equivalentClass <http://sigkdd#Date>,
+        xsd:dateTime .
+

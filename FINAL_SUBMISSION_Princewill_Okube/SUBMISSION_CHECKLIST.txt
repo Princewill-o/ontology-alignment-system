@@ -1,0 +1,100 @@
+═══════════════════════════════════════════════════════════════════
+                    SUBMISSION CHECKLIST
+═══════════════════════════════════════════════════════════════════
+
+✅ REQUIRED CONTENT IN README (ALL INCLUDED):
+
+[✓] Name of alignment system: OmniAlign
+[✓] Names of group members: Princewill Okube (Individual)
+[✓] Source code + instructions on how to run
+[✓] All generated alignments listed:
+    - From OA.2: omni_align-princewill-external.ttl
+    - From OA.4: 36 OAEI alignment files
+[✓] SPARQL query + CSV results from OA.3
+[✓] Detailed description of techniques (OA.1):
+    - Basic techniques
+    - Combined techniques
+    - Scalability features
+    - Advanced techniques
+[✓] Discussion of results from OA.2
+[✓] Precision/Recall/F-score + computation times from OA.4
+[✓] Statement about use of Generative AI (OA.5)
+
+───────────────────────────────────────────────────────────────────
+
+✅ ALL 5 SUBTASKS COMPLETED:
+
+[✓] OA.1: Techniques implemented and described
+[✓] OA.2: Part 1 alignment completed (135 mappings)
+[✓] OA.3: SPARQL queries + CSV results
+[✓] OA.4: OAEI evaluation (36 tasks, results documented)
+[✓] OA.5: Generative AI statement included
+
+───────────────────────────────────────────────────────────────────
+
+✅ ALIGNMENTS IN CORRECT FORMAT:
+
+[✓] All alignments in Turtle format (.ttl)
+[✓] Correct predicates used:
+    - owl:equivalentClass
+    - rdfs:subClassOf
+    - owl:equivalentProperty
+    - rdfs:subPropertyOf
+    - owl:sameAs
+[✓] Naming convention: omni_align-onto1-onto2.ttl
+
+───────────────────────────────────────────────────────────────────
+
+✅ FILES INCLUDED IN ZIP:
+
+[✓] Source code (omni_align/ package)
+[✓] Main scripts (run_alignment.py, run_evaluation.py, etc.)
+[✓] Configuration (config.yaml, requirements.txt)
+[✓] README.md with all required information
+[✓] Data files (data/)
+[✓] Generated alignments (alignments/ - 36 files)
+[✓] Results (results/ - CSV files and discussions)
+
+───────────────────────────────────────────────────────────────────
+
+✅ SUBMISSION FILES READY:
+
+[✓] PrincewillOkube_all_resources.zip (2.1 MB) - UPDATED
+[✓] PrincewillOkube_SourceCode.txt (79 KB)
+[✓] PrincewillOkube_link_to_repository.txt (83 bytes)
+
+───────────────────────────────────────────────────────────────────
+
+✅ GITHUB REPOSITORY:
+
+[✓] Repository fully documented
+[✓] README updated with all requirements
+[✓] All code pushed
+[✓] Clean commit history
+[✓] URL: https://github.com/Princewill-o/ontology-alignment-system
+
+───────────────────────────────────────────────────────────────────
+
+✅ FINAL VERIFICATION:
+
+[✓] All 5 subtasks (OA.1–OA.5) complete
+[✓] Alignments in Turtle format with correct predicates
+[✓] SPARQL query + CSV results ready
+[✓] Source code compiled and included
+[✓] Repository fully documented
+[✓] Zip file exported and ready
+[✓] Correct file names (3 files for individual submission)
+[✓] All required content in README
+
+───────────────────────────────────────────────────────────────────
+
+🎯 READY TO SUBMIT!
+
+Upload these 3 files to Moodle:
+1. PrincewillOkube_all_resources.zip
+2. PrincewillOkube_SourceCode.txt
+3. PrincewillOkube_link_to_repository.txt
+
+Deadline: Sunday, 10 May 2026, 5:00 PM
+
+═══════════════════════════════════════════════════════════════════

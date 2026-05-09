@@ -1,0 +1,340 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/iasted.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/sigkdd.owl
+# Total mappings: 249
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://iasted#Activity_after_conference> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://iasted#Activity_before_conference> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://iasted#Author> owl:equivalentClass <http://sigkdd#Author>,
+        <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Author_of_paper_student>,
+        <http://sigkdd#Deadline_Author_notification> .
+
+<http://iasted#Author_attendee_book_registration_fee> rdfs:subClassOf <http://sigkdd#Registration_Student> ;
+    owl:equivalentClass <http://sigkdd#Author>,
+        <http://sigkdd#Fee>,
+        <http://sigkdd#Registration_fee> .
+
+<http://iasted#Author_attendee_cd_registration_fee> rdfs:subClassOf <http://sigkdd#Registration_Student> ;
+    owl:equivalentClass <http://sigkdd#Author>,
+        <http://sigkdd#Fee>,
+        <http://sigkdd#Registration_fee> .
+
+<http://iasted#Author_book_proceedings_included> rdfs:subClassOf <http://sigkdd#Author_of_paper> ;
+    owl:equivalentClass <http://sigkdd#Author> .
+
+<http://iasted#Author_cd_proceedings_included> rdfs:subClassOf <http://sigkdd#Author_of_paper> ;
+    owl:equivalentClass <http://sigkdd#Author> .
+
+<http://iasted#Author_information_form> rdfs:subClassOf <http://sigkdd#Author_of_paper>,
+        <http://sigkdd#Deadline_Author_notification> ;
+    owl:equivalentClass <http://sigkdd#Author> .
+
+<http://iasted#Brief_introduction_for_Session_chair> rdfs:subClassOf <http://sigkdd#General_Chair>,
+        <http://sigkdd#Program_Chair> .
+
+<http://iasted#Camera_ready_manuscript_deadline> rdfs:subClassOf <http://sigkdd#Deadline_Paper_Submission> ;
+    owl:equivalentClass <http://sigkdd#Deadline> .
+
+<http://iasted#City> owl:equivalentClass <http://sigkdd#City_of_conference> .
+
+<http://iasted#Conference_Hiker> rdfs:subClassOf <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#Conference> .
+
+<http://iasted#Conference_activity> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://iasted#Conference_airport> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://iasted#Conference_building> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://iasted#Conference_city> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://iasted#Conference_days> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://iasted#Conference_hall> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://iasted#Conference_hotel> rdfs:subClassOf <http://sigkdd#Start_of_conference> ;
+    owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Hotel>,
+        <http://sigkdd#Name_of_conference> .
+
+<http://iasted#Conference_restaurant> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://iasted#Conference_state> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://iasted#Currency> owl:equivalentClass <http://sigkdd#Currency> .
+
+<http://iasted#Deadline> owl:equivalentClass <http://sigkdd#Deadline>,
+        <http://sigkdd#Deadline_Abstract_Submission>,
+        <http://sigkdd#Deadline_Author_notification>,
+        <http://sigkdd#Deadline_Paper_Submission> .
+
+<http://iasted#Deadline_for_notification_of_acceptance> rdfs:subClassOf <http://sigkdd#Deadline_Abstract_Submission>,
+        <http://sigkdd#Deadline_Paper_Submission>,
+        <http://sigkdd#notification_until> ;
+    owl:equivalentClass <http://sigkdd#Deadline>,
+        <http://sigkdd#Deadline_Author_notification> .
+
+<http://iasted#Deadline_hotel_reservation> rdfs:subClassOf <http://sigkdd#Deadline_Abstract_Submission>,
+        <http://sigkdd#Deadline_Author_notification>,
+        <http://sigkdd#Deadline_Paper_Submission> ;
+    owl:equivalentClass <http://sigkdd#Deadline>,
+        <http://sigkdd#Hotel> .
+
+<http://iasted#Document> owl:equivalentClass <http://sigkdd#Document> .
+
+<http://iasted#Double_hotel_room> owl:equivalentClass <http://sigkdd#Hotel> .
+
+<http://iasted#Fee> owl:equivalentClass <http://sigkdd#Fee>,
+        <http://sigkdd#Registration_fee>,
+        <http://sigkdd#Sponzor_fee> .
+
+<http://iasted#Fee_for_extra_trip> rdfs:subClassOf <http://sigkdd#Registration_fee> ;
+    owl:equivalentClass <http://sigkdd#Fee> .
+
+<http://iasted#Hotel_fee> rdfs:subClassOf <http://sigkdd#Registration_fee> ;
+    owl:equivalentClass <http://sigkdd#Fee>,
+        <http://sigkdd#Hotel> .
+
+<http://iasted#Hotel_presenter> owl:equivalentClass <http://sigkdd#Hotel> .
+
+<http://iasted#Hotel_registration_form> rdfs:subClassOf <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member>,
+        <http://sigkdd#Registration_Student> ;
+    owl:equivalentClass <http://sigkdd#Hotel>,
+        <http://sigkdd#Registration_fee> .
+
+<http://iasted#Hotel_room> owl:equivalentClass <http://sigkdd#Hotel> .
+
+<http://iasted#IASTED_member> rdfs:subClassOf <http://sigkdd#Organizing_Committee_member>,
+        <http://sigkdd#Program_Committee_member>,
+        <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member> .
+
+<http://iasted#IASTED_non_member> owl:equivalentClass <http://sigkdd#Registration_Non-Member> .
+
+<http://iasted#Introduction_of_speaker> rdfs:subClassOf <http://sigkdd#Invited_Speaker> ;
+    owl:equivalentClass <http://sigkdd#Speaker> .
+
+<http://iasted#Listener> owl:equivalentClass <http://sigkdd#Listener> .
+
+<http://iasted#Main_office> owl:equivalentClass <http://sigkdd#Main_office> .
+
+<http://iasted#Memeber_registration_fee> rdfs:subClassOf <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member>,
+        <http://sigkdd#Registration_Student> ;
+    owl:equivalentClass <http://sigkdd#Fee>,
+        <http://sigkdd#Registration_fee> .
+
+<http://iasted#Non_speaker> owl:equivalentClass <http://sigkdd#Invited_Speaker>,
+        <http://sigkdd#Speaker> .
+
+<http://iasted#Nonauthor_registration_fee> rdfs:subClassOf <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member>,
+        <http://sigkdd#Registration_Student> ;
+    owl:equivalentClass <http://sigkdd#Fee>,
+        <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_fee> .
+
+<http://iasted#Nonmember_registration_fee> rdfs:subClassOf <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member>,
+        <http://sigkdd#Registration_Student> ;
+    owl:equivalentClass <http://sigkdd#Fee>,
+        <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_fee> .
+
+<http://iasted#One_conference_day> owl:equivalentClass <http://sigkdd#City_of_conference>,
+        <http://sigkdd#Conference>,
+        <http://sigkdd#Conference_hall>,
+        <http://sigkdd#End_of_conference>,
+        <http://sigkdd#Name_of_conference>,
+        <http://sigkdd#Start_of_conference> .
+
+<http://iasted#Payment_document> owl:equivalentClass <http://sigkdd#Document> .
+
+<http://iasted#Person> owl:equivalentClass <http://sigkdd#Person> .
+
+<http://iasted#Place> owl:equivalentClass <http://sigkdd#Place> .
+
+<http://iasted#Plenary_lecture_speaker> rdfs:subClassOf <http://sigkdd#Invited_Speaker> ;
+    owl:equivalentClass <http://sigkdd#Speaker> .
+
+<http://iasted#PowerPoint_presentation> owl:equivalentClass <http://sigkdd#presentation> .
+
+<http://iasted#Presentation> owl:equivalentClass <http://sigkdd#presentation> .
+
+<http://iasted#Presenter_city> rdfs:subClassOf <http://sigkdd#City_of_conference> .
+
+<http://iasted#Registation_deadline> rdfs:subClassOf <http://sigkdd#Deadline_Abstract_Submission>,
+        <http://sigkdd#Deadline_Author_notification>,
+        <http://sigkdd#Deadline_Paper_Submission> ;
+    owl:equivalentClass <http://sigkdd#Deadline> .
+
+<http://iasted#Registration> owl:equivalentClass <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member>,
+        <http://sigkdd#Registration_Student>,
+        <http://sigkdd#Registration_fee> .
+
+<http://iasted#Registration_fee> rdfs:subClassOf <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Sponzor_fee> ;
+    owl:equivalentClass <http://sigkdd#Fee>,
+        <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGMOD_Member>,
+        <http://sigkdd#Registration_Student>,
+        <http://sigkdd#Registration_fee> .
+
+<http://iasted#Registration_form> owl:equivalentClass <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member>,
+        <http://sigkdd#Registration_Student>,
+        <http://sigkdd#Registration_fee> .
+
+<http://iasted#Research> owl:equivalentClass <http://sigkdd#Best_Research_Paper_Award> .
+
+<http://iasted#Review> owl:equivalentClass <http://sigkdd#Review> .
+
+<http://iasted#Session_chair> rdfs:subClassOf <http://sigkdd#Program_Chair> ;
+    owl:equivalentClass <http://sigkdd#General_Chair> .
+
+<http://iasted#Single_hotel_room> owl:equivalentClass <http://sigkdd#Hotel> .
+
+<http://iasted#Social_program> rdfs:subClassOf <http://sigkdd#Program_Chair>,
+        <http://sigkdd#Program_Committee>,
+        <http://sigkdd#Program_Committee_member> .
+
+<http://iasted#Speaker> owl:equivalentClass <http://sigkdd#Invited_Speaker>,
+        <http://sigkdd#Speaker> .
+
+<http://iasted#Speaker_lecture> rdfs:subClassOf <http://sigkdd#Invited_Speaker> ;
+    owl:equivalentClass <http://sigkdd#Speaker> .
+
+<http://iasted#Sponsor> owl:equivalentClass <http://sigkdd#Name_of_sponsor> .
+
+<http://iasted#Sponsor_city> rdfs:subClassOf <http://sigkdd#City_of_conference> ;
+    owl:equivalentClass <http://sigkdd#Name_of_sponsor> .
+
+<http://iasted#Sponsor_company_house> owl:equivalentClass <http://sigkdd#Name_of_sponsor> .
+
+<http://iasted#Sponsor_state> owl:equivalentClass <http://sigkdd#Name_of_sponsor> .
+
+<http://iasted#Student_lecturer> rdfs:subClassOf <http://sigkdd#Author_of_paper_student>,
+        <http://sigkdd#Best_Student_Paper_Supporter>,
+        <http://sigkdd#Registration_Student> .
+
+<http://iasted#Student_non_speaker> rdfs:subClassOf <http://sigkdd#Author_of_paper_student>,
+        <http://sigkdd#Invited_Speaker> ;
+    owl:equivalentClass <http://sigkdd#Speaker> .
+
+<http://iasted#Student_registration_fee> rdfs:subClassOf <http://sigkdd#Registration_Non-Member>,
+        <http://sigkdd#Registration_SIGKDD_Member>,
+        <http://sigkdd#Registration_SIGMOD_Member> ;
+    owl:equivalentClass <http://sigkdd#Fee>,
+        <http://sigkdd#Registration_Student>,
+        <http://sigkdd#Registration_fee> .
+
+<http://iasted#Submission> owl:equivalentClass <http://sigkdd#Deadline_Abstract_Submission>,
+        <http://sigkdd#Deadline_Paper_Submission> .
+
+<http://iasted#Submissions_deadline> rdfs:subClassOf <http://sigkdd#Deadline_Author_notification> ;
+    owl:equivalentClass <http://sigkdd#Deadline>,
+        <http://sigkdd#Deadline_Abstract_Submission>,
+        <http://sigkdd#Deadline_Paper_Submission> .
+
+<http://iasted#Time> owl:equivalentClass xsd:dateTime .
+
+<http://iasted#Time_zone> owl:equivalentClass xsd:dateTime .
+
+<http://iasted#Trip_city> rdfs:subClassOf <http://sigkdd#City_of_conference> .
+
+<http://iasted#Tutorial_speaker> rdfs:subClassOf <http://sigkdd#Invited_Speaker> ;
+    owl:equivalentClass <http://sigkdd#Speaker> .
+
+<http://iasted#Video_presentation> owl:equivalentClass <http://sigkdd#presentation> .
+
+<http://iasted#Worker_non_speaker> rdfs:subClassOf <http://sigkdd#Invited_Speaker> ;
+    owl:equivalentClass <http://sigkdd#Speaker> .
+
+<http://iasted#is_designed_for> owl:equivalentClass <http://sigkdd#designed_by> ;
+    owl:equivalentProperty <http://sigkdd#designed_by> .
+
+<http://iasted#obtain> owl:equivalentClass <http://sigkdd#obtain> ;
+    owl:equivalentProperty <http://sigkdd#obtain> .
+
+<http://iasted#pay> owl:equivalentClass <http://sigkdd#pay> ;
+    owl:equivalentProperty <http://sigkdd#pay> .
+
+xsd:date owl:equivalentClass <http://sigkdd#Date>,
+        xsd:dateTime .
+
+xsd:int owl:equivalentClass xsd:int .
+
+xsd:dateTime owl:equivalentClass <http://sigkdd#Date>,
+        xsd:dateTime .
+

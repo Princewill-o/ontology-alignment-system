@@ -1,0 +1,65 @@
+entity,label,type
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Gen9Era,9th Generation Era,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Generation9
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Gen9Era,9th Generation Era,http://www.semanticweb.org/videogame-domain/ontology#NinthGeneration
+http://www.semanticweb.org/videogame-domain/ontology#Gen9,9th Generation Era,http://www.semanticweb.org/videogame-domain/ontology#NinthGeneration
+http://www.semanticweb.org/videogame-domain/ontology#Gen9,9th Generation Era,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Generation9
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#BandaiNamco,Bandai Namco Entertainment,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Publisher
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#BandaiNamco,Bandai Namco Entertainment,http://www.semanticweb.org/videogame-domain/ontology#GamePublisher
+http://www.semanticweb.org/videogame-domain/ontology#BandaiNamcoPublishing,Bandai Namco Entertainment,http://www.semanticweb.org/videogame-domain/ontology#GamePublisher
+http://www.semanticweb.org/videogame-domain/ontology#BandaiNamcoPublishing,Bandai Namco Entertainment,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Publisher
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#EldenRing,Elden Ring,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#RPGGame
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#EldenRing,Elden Ring,http://www.semanticweb.org/videogame-domain/ontology#RolePlayingGame
+http://www.semanticweb.org/videogame-domain/ontology#EldenRingGame,Elden Ring,http://www.semanticweb.org/videogame-domain/ontology#RolePlayingGame
+http://www.semanticweb.org/videogame-domain/ontology#EldenRingGame,Elden Ring,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#RPGGame
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#EA,Electronic Arts,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Publisher
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#EA,Electronic Arts,http://www.semanticweb.org/videogame-domain/ontology#GamePublisher
+http://www.semanticweb.org/videogame-domain/ontology#ElectronicArts,Electronic Arts,http://www.semanticweb.org/videogame-domain/ontology#GamePublisher
+http://www.semanticweb.org/videogame-domain/ontology#ElectronicArts,Electronic Arts,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Publisher
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#EuropeRegion,Europe,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Europe
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#EuropeRegion,Europe,http://www.semanticweb.org/videogame-domain/ontology#EuropeanMarket
+http://www.semanticweb.org/videogame-domain/ontology#EuropeTerritory,Europe,http://www.semanticweb.org/videogame-domain/ontology#EuropeanMarket
+http://www.semanticweb.org/videogame-domain/ontology#EuropeTerritory,Europe,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Europe
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#FIFA23,FIFA 23,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#SportsGame
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#FIFA23,FIFA 23,http://www.semanticweb.org/videogame-domain/ontology#SportsVideoGame
+http://www.semanticweb.org/videogame-domain/ontology#FIFA23Game,FIFA 23,http://www.semanticweb.org/videogame-domain/ontology#SportsVideoGame
+http://www.semanticweb.org/videogame-domain/ontology#FIFA23Game,FIFA 23,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#SportsGame
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#FromSoftware,FromSoftware,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Developer
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#FromSoftware,FromSoftware,http://www.semanticweb.org/videogame-domain/ontology#GameDeveloper
+http://www.semanticweb.org/videogame-domain/ontology#FromSoftwareStudio,FromSoftware,http://www.semanticweb.org/videogame-domain/ontology#GameDeveloper
+http://www.semanticweb.org/videogame-domain/ontology#FromSoftwareStudio,FromSoftware,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Developer
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#GodOfWar,God of War Ragnarok,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#ActionGame
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#GodOfWar,God of War Ragnarok,http://www.semanticweb.org/videogame-domain/ontology#ActionVideoGame
+http://www.semanticweb.org/videogame-domain/ontology#GodOfWarRagnarok,God of War Ragnarok,http://www.semanticweb.org/videogame-domain/ontology#ActionVideoGame
+http://www.semanticweb.org/videogame-domain/ontology#GodOfWarRagnarok,God of War Ragnarok,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#ActionGame
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Microsoft,Microsoft,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Manufacturer
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Microsoft,Microsoft,http://www.semanticweb.org/videogame-domain/ontology#HardwareCompany
+http://www.semanticweb.org/videogame-domain/ontology#MicrosoftGaming,Microsoft,http://www.semanticweb.org/videogame-domain/ontology#HardwareCompany
+http://www.semanticweb.org/videogame-domain/ontology#MicrosoftGaming,Microsoft,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Manufacturer
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Nintendo,Nintendo,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Manufacturer
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Nintendo,Nintendo,http://www.semanticweb.org/videogame-domain/ontology#HardwareCompany
+http://www.semanticweb.org/videogame-domain/ontology#NintendoCo,Nintendo,http://www.semanticweb.org/videogame-domain/ontology#HardwareCompany
+http://www.semanticweb.org/videogame-domain/ontology#NintendoCo,Nintendo,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Manufacturer
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#NintendoSwitch,Nintendo Switch,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#HybridConsole
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#NintendoSwitch,Nintendo Switch,http://www.semanticweb.org/videogame-domain/ontology#PortableHybridConsole
+http://www.semanticweb.org/videogame-domain/ontology#NintendoSwitch,Nintendo Switch,http://www.semanticweb.org/videogame-domain/ontology#PortableHybridConsole
+http://www.semanticweb.org/videogame-domain/ontology#NintendoSwitch,Nintendo Switch,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#HybridConsole
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#NorthAmericaRegion,North America,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#NorthAmerica
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#NorthAmericaRegion,North America,http://www.semanticweb.org/videogame-domain/ontology#NorthAmericanMarket
+http://www.semanticweb.org/videogame-domain/ontology#NorthAmericaTerritory,North America,http://www.semanticweb.org/videogame-domain/ontology#NorthAmericanMarket
+http://www.semanticweb.org/videogame-domain/ontology#NorthAmericaTerritory,North America,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#NorthAmerica
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#PS5,PlayStation 5,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#HomeConsole
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#PS5,PlayStation 5,http://www.semanticweb.org/videogame-domain/ontology#HomeGamingConsole
+http://www.semanticweb.org/videogame-domain/ontology#PlayStation5,PlayStation 5,http://www.semanticweb.org/videogame-domain/ontology#HomeGamingConsole
+http://www.semanticweb.org/videogame-domain/ontology#PlayStation5,PlayStation 5,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#HomeConsole
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Sony,Sony Interactive Entertainment,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Manufacturer
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Sony,Sony Interactive Entertainment,http://www.semanticweb.org/videogame-domain/ontology#GamePublisher
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#SonyInteractive,Sony Interactive Entertainment,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Publisher
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#SonyInteractive,Sony Interactive Entertainment,http://www.semanticweb.org/videogame-domain/ontology#GamePublisher
+http://www.semanticweb.org/videogame-domain/ontology#SonyInteractiveEntertainment,Sony Interactive Entertainment,http://www.semanticweb.org/videogame-domain/ontology#HardwareCompany
+http://www.semanticweb.org/videogame-domain/ontology#SonyPublishing,Sony Interactive Entertainment,http://www.semanticweb.org/videogame-domain/ontology#GamePublisher
+http://www.semanticweb.org/videogame-domain/ontology#SonyPublishing,Sony Interactive Entertainment,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Manufacturer
+http://www.semanticweb.org/videogame-domain/ontology#SonyPublishing,Sony Interactive Entertainment,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#Publisher
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#XboxSeriesX,Xbox Series X,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#HomeConsole
+http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#XboxSeriesX,Xbox Series X,http://www.semanticweb.org/videogame-domain/ontology#HomeGamingConsole
+http://www.semanticweb.org/videogame-domain/ontology#XboxSeriesX,Xbox Series X,http://www.semanticweb.org/videogame-domain/ontology#HomeGamingConsole
+http://www.semanticweb.org/videogame-domain/ontology#XboxSeriesX,Xbox Series X,http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#HomeConsole

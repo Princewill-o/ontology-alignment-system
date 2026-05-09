@@ -1,0 +1,22 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://snomed.info/id/13645005> owl:equivalentClass <http://purl.org/sig/fma/COPD> .
+
+<http://snomed.info/id/195967001> owl:equivalentClass <http://purl.org/sig/fma/Asthma> .
+
+<http://snomed.info/id/22298006> owl:equivalentClass <http://purl.org/sig/fma/MI> .
+
+<http://snomed.info/id/230690007> owl:equivalentClass <http://purl.org/sig/fma/CVA> .
+
+<http://snomed.info/id/235856003> owl:equivalentClass <http://purl.org/sig/fma/HepaticDisease> .
+
+<http://snomed.info/id/363346000> owl:equivalentClass <http://purl.org/sig/fma/Cancer> .
+
+<http://snomed.info/id/38341003> owl:equivalentClass <http://purl.org/sig/fma/Hypertension> .
+
+<http://snomed.info/id/40733004> owl:equivalentClass <http://purl.org/sig/fma/Infection> .
+
+<http://snomed.info/id/73211009> owl:equivalentClass <http://purl.org/sig/fma/Diabetes> .
+
+<http://snomed.info/id/90708001> owl:equivalentClass <http://purl.org/sig/fma/RenalDisease> .
+

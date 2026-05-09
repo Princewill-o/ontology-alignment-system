@@ -1,0 +1,286 @@
+@prefix : <http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#> .
+@prefix cw: <http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#> .
+
+<http://www.city.ac.uk/inm713-in3067/2026/princewill_okube#> rdf:type owl:Ontology ;
+    dc:creator "Princewill Okube"^^xsd:string ;
+    owl:versionInfo "1.0"^^xsd:string .
+
+dc:creator rdf:type owl:AnnotationProperty .
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+# Object Properties
+cw:releasedOn rdf:type owl:ObjectProperty ;
+    rdfs:domain cw:VideoGame ; rdfs:range cw:Platform ;
+    rdfs:label "released on"@en .
+
+cw:publishedBy rdf:type owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain cw:VideoGame ; rdfs:range cw:Publisher ;
+    owl:inverseOf cw:publishes ; rdfs:label "published by"@en .
+
+cw:publishes rdf:type owl:ObjectProperty ;
+    rdfs:domain cw:Publisher ; rdfs:range cw:VideoGame ;
+    rdfs:label "publishes"@en .
+
+cw:developedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain cw:VideoGame ; rdfs:range cw:Developer ;
+    owl:inverseOf cw:develops ; rdfs:label "developed by"@en .
+
+cw:develops rdf:type owl:ObjectProperty ;
+    rdfs:domain cw:Developer ; rdfs:range cw:VideoGame ;
+    rdfs:label "develops"@en .
+
+cw:manufacturedBy rdf:type owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain cw:Console ; rdfs:range cw:Manufacturer ;
+    owl:inverseOf cw:manufactures ; rdfs:label "manufactured by"@en .
+
+cw:manufactures rdf:type owl:ObjectProperty ;
+    rdfs:domain cw:Manufacturer ; rdfs:range cw:Console ;
+    rdfs:label "manufactures"@en .
+
+cw:belongsToGeneration rdf:type owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain cw:Console ; rdfs:range cw:ConsoleGeneration ;
+    rdfs:label "belongs to generation"@en .
+
+cw:supports rdf:type owl:ObjectProperty ;
+    rdfs:domain cw:Platform ; rdfs:range cw:TechnicalFeature ;
+    rdfs:label "supports"@en .
+
+cw:hasSalesIn rdf:type owl:ObjectProperty ;
+    rdfs:domain cw:VideoGame ; rdfs:range cw:GeographicRegion ;
+    rdfs:label "has sales in"@en .
+
+cw:competesWithConsole rdf:type owl:ObjectProperty , owl:SymmetricProperty , owl:IrreflexiveProperty ;
+    rdfs:domain cw:Console ; rdfs:range cw:Console ;
+    rdfs:label "competes with console"@en .
+
+cw:succeeds rdf:type owl:ObjectProperty , owl:AsymmetricProperty , owl:IrreflexiveProperty ;
+    rdfs:domain cw:ConsoleGeneration ; rdfs:range cw:ConsoleGeneration ;
+    rdfs:label "succeeds"@en .
+
+# Data Properties
+cw:releaseYear rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain cw:VideoGame ; rdfs:range xsd:gYear ; rdfs:label "release year"@en .
+
+cw:globalSales rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain cw:VideoGame ; rdfs:range xsd:decimal ; rdfs:label "global sales"@en .
+
+cw:criticScore rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain cw:VideoGame ; rdfs:range xsd:integer ; rdfs:label "critic score"@en .
+
+cw:userScore rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain cw:VideoGame ; rdfs:range xsd:float ; rdfs:label "user score"@en .
+
+cw:hasOnlineMultiplayer rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain cw:VideoGame ; rdfs:range xsd:boolean ; rdfs:label "has online multiplayer"@en .
+
+cw:maxResolution rdf:type owl:DatatypeProperty ;
+    rdfs:domain cw:Platform ; rdfs:range xsd:string ; rdfs:label "maximum resolution"@en .
+
+cw:launchPrice rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain cw:Console ; rdfs:range xsd:decimal ; rdfs:label "launch price"@en .
+
+cw:storageCapacity rdf:type owl:DatatypeProperty ;
+    rdfs:domain cw:Console ; rdfs:range xsd:string ; rdfs:label "storage capacity"@en .
+
+# Classes
+cw:DigitalProduct rdf:type owl:Class ;
+    rdfs:label "Digital product"@en ;
+    rdfs:comment "Software-based entertainment content"@en .
+
+cw:VideoGame rdf:type owl:Class ;
+    rdfs:subClassOf cw:DigitalProduct ;
+    rdfs:label "Video game"@en ;
+    rdfs:comment "Interactive entertainment software for gaming systems"@en .
+
+cw:ActionGame rdf:type owl:Class ;
+    rdfs:subClassOf cw:VideoGame ;
+    rdfs:label "Action game"@en ; skos:altLabel "Action title"@en .
+
+cw:RPGGame rdf:type owl:Class ;
+    rdfs:subClassOf cw:VideoGame ;
+    rdfs:label "RPG game"@en ;
+    skos:altLabel "Role-playing game"@en ; skos:altLabel "RPG"@en .
+
+cw:StrategyGame rdf:type owl:Class ;
+    rdfs:subClassOf cw:VideoGame ;
+    rdfs:label "Strategy game"@en .
+
+cw:SportsGame rdf:type owl:Class ;
+    rdfs:subClassOf cw:VideoGame ;
+    rdfs:label "Sports game"@en .
+
+cw:AdventureGame rdf:type owl:Class ;
+    rdfs:subClassOf cw:VideoGame ;
+    rdfs:label "Adventure game"@en .
+
+cw:SimulationGame rdf:type owl:Class ;
+    rdfs:subClassOf cw:VideoGame ;
+    rdfs:label "Simulation game"@en ; skos:altLabel "Sim game"@en .
+
+cw:Platform rdf:type owl:Class ;
+    rdfs:label "Platform"@en ;
+    rdfs:comment "Hardware system for running games"@en .
+
+cw:Console rdf:type owl:Class ;
+    rdfs:subClassOf cw:Platform ;
+    rdfs:label "Console"@en ;
+    rdfs:comment "Dedicated gaming hardware device"@en .
+
+cw:HomeConsole rdf:type owl:Class ;
+    rdfs:subClassOf cw:Console ;
+    rdfs:label "Home console"@en ;
+    skos:altLabel "Stationary console"@en ; skos:altLabel "TV console"@en .
+
+cw:HybridConsole rdf:type owl:Class ;
+    rdfs:subClassOf cw:Console ;
+    rdfs:label "Hybrid console"@en ;
+    skos:altLabel "Portable-home console"@en .
+
+cw:PCPlatform rdf:type owl:Class ;
+    rdfs:subClassOf cw:Platform ;
+    rdfs:label "PC platform"@en ;
+    rdfs:comment "Personal computer gaming environment"@en .
+
+cw:Organization rdf:type owl:Class ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment "Company involved in game industry"@en .
+
+cw:Publisher rdf:type owl:Class ;
+    rdfs:subClassOf cw:Organization ;
+    rdfs:label "Publisher"@en ;
+    rdfs:comment "Company responsible for game distribution and marketing"@en .
+
+cw:Developer rdf:type owl:Class ;
+    rdfs:subClassOf cw:Organization ;
+    rdfs:label "Developer"@en ;
+    rdfs:comment "Studio that creates game software"@en .
+
+cw:Manufacturer rdf:type owl:Class ;
+    rdfs:subClassOf cw:Organization ;
+    rdfs:label "Manufacturer"@en ;
+    rdfs:comment "Company producing console hardware"@en .
+
+cw:ConsoleGeneration rdf:type owl:Class ;
+    rdfs:label "Console generation"@en ;
+    rdfs:comment "Era of console technology development"@en .
+
+cw:Generation9 rdf:type owl:Class ;
+    rdfs:subClassOf cw:ConsoleGeneration ;
+    rdfs:label "Generation 9"@en ;
+    rdfs:comment "Current console generation starting 2020"@en .
+
+cw:GeographicRegion rdf:type owl:Class ;
+    rdfs:label "Geographic region"@en ;
+    rdfs:comment "Market territory for game sales"@en .
+
+cw:NorthAmerica rdf:type owl:Class ;
+    rdfs:subClassOf cw:GeographicRegion ;
+    rdfs:label "North America"@en .
+
+cw:Europe rdf:type owl:Class ;
+    rdfs:subClassOf cw:GeographicRegion ;
+    rdfs:label "Europe"@en .
+
+cw:TechnicalFeature rdf:type owl:Class ;
+    rdfs:label "Technical feature"@en ;
+    rdfs:comment "Advanced capability of gaming platform"@en .
+
+cw:RayTracingSupport rdf:type owl:Class ;
+    rdfs:subClassOf cw:TechnicalFeature ;
+    rdfs:label "Ray tracing support"@en ;
+    skos:altLabel "RT support"@en ; skos:altLabel "Real-time ray tracing"@en .
+
+cw:BackwardCompatibility rdf:type owl:Class ;
+    rdfs:subClassOf cw:TechnicalFeature ;
+    rdfs:label "Backward compatibility"@en ;
+    skos:altLabel "Backwards compatibility"@en ; skos:altLabel "Legacy game support"@en .
+
+# Individuals
+cw:PS5 rdf:type owl:NamedIndividual , cw:HomeConsole ;
+    rdfs:label "PlayStation 5"@en ;
+    cw:launchPrice "499.99"^^xsd:decimal ;
+    cw:storageCapacity "825GB SSD"^^xsd:string .
+
+cw:XboxSeriesX rdf:type owl:NamedIndividual , cw:HomeConsole ;
+    rdfs:label "Xbox Series X"@en ;
+    cw:launchPrice "499.99"^^xsd:decimal ;
+    cw:storageCapacity "1TB SSD"^^xsd:string .
+
+cw:NintendoSwitch rdf:type owl:NamedIndividual , cw:HybridConsole ;
+    rdfs:label "Nintendo Switch"@en ;
+    cw:launchPrice "299.99"^^xsd:decimal ;
+    cw:storageCapacity "32GB"^^xsd:string .
+
+cw:Sony rdf:type owl:NamedIndividual , cw:Manufacturer ;
+    rdfs:label "Sony Interactive Entertainment"@en .
+
+cw:Microsoft rdf:type owl:NamedIndividual , cw:Manufacturer ;
+    rdfs:label "Microsoft"@en .
+
+cw:Nintendo rdf:type owl:NamedIndividual , cw:Manufacturer ;
+    rdfs:label "Nintendo"@en .
+
+cw:EldenRing rdf:type owl:NamedIndividual , cw:RPGGame ;
+    rdfs:label "Elden Ring"@en ;
+    cw:releaseYear "2022"^^xsd:gYear ;
+    cw:globalSales "20.5"^^xsd:decimal ;
+    cw:criticScore "96"^^xsd:integer ;
+    cw:userScore "8.9"^^xsd:float ;
+    cw:hasOnlineMultiplayer "true"^^xsd:boolean .
+
+cw:GodOfWar rdf:type owl:NamedIndividual , cw:ActionGame ;
+    rdfs:label "God of War Ragnarok"@en ;
+    cw:releaseYear "2022"^^xsd:gYear ;
+    cw:globalSales "11.0"^^xsd:decimal ;
+    cw:criticScore "94"^^xsd:integer ;
+    cw:userScore "9.0"^^xsd:float .
+
+cw:FIFA23 rdf:type owl:NamedIndividual , cw:SportsGame ;
+    rdfs:label "FIFA 23"@en ;
+    cw:releaseYear "2022"^^xsd:gYear ;
+    cw:globalSales "10.3"^^xsd:decimal ;
+    cw:criticScore "75"^^xsd:integer .
+
+cw:FromSoftware rdf:type owl:NamedIndividual , cw:Developer ;
+    rdfs:label "FromSoftware"@en .
+
+cw:BandaiNamco rdf:type owl:NamedIndividual , cw:Publisher ;
+    rdfs:label "Bandai Namco Entertainment"@en .
+
+cw:SonyInteractive rdf:type owl:NamedIndividual , cw:Publisher ;
+    rdfs:label "Sony Interactive Entertainment"@en .
+
+cw:EA rdf:type owl:NamedIndividual , cw:Publisher ;
+    rdfs:label "Electronic Arts"@en .
+
+cw:Gen9Era rdf:type owl:NamedIndividual , cw:Generation9 ;
+    rdfs:label "9th Generation Era"@en .
+
+cw:NorthAmericaRegion rdf:type owl:NamedIndividual , cw:NorthAmerica ;
+    rdfs:label "North America"@en .
+
+cw:EuropeRegion rdf:type owl:NamedIndividual , cw:Europe ;
+    rdfs:label "Europe"@en .
+
+# Relationships
+cw:PS5 cw:manufacturedBy cw:Sony .
+cw:XboxSeriesX cw:manufacturedBy cw:Microsoft .
+cw:NintendoSwitch cw:manufacturedBy cw:Nintendo .
+cw:PS5 cw:belongsToGeneration cw:Gen9Era .
+cw:XboxSeriesX cw:belongsToGeneration cw:Gen9Era .
+cw:PS5 cw:competesWithConsole cw:XboxSeriesX .
+cw:EldenRing cw:developedBy cw:FromSoftware .
+cw:EldenRing cw:publishedBy cw:BandaiNamco .
+cw:EldenRing cw:releasedOn cw:PS5 .
+cw:EldenRing cw:hasSalesIn cw:NorthAmericaRegion .
+cw:EldenRing cw:hasSalesIn cw:EuropeRegion .
+cw:GodOfWar cw:publishedBy cw:SonyInteractive .
+cw:GodOfWar cw:releasedOn cw:PS5 .
+cw:FIFA23 cw:publishedBy cw:EA .

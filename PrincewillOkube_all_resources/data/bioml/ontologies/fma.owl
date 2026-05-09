@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/sig/fma/Diabetes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Diabetes mellitus disorder</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/sig/fma/COPD">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Chronic obstructive lung disease</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/sig/fma/Cancer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Malignant tumor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/sig/fma/MI">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Myocardial infarction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/sig/fma/HepaticDisease">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Liver disorder</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/sig/fma/Hypertension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Hypertensive disorder</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/sig/fma/CVA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Stroke</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/sig/fma/RenalDisease">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Kidney disorder</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/sig/fma/Infection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Infectious disorder</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/sig/fma/Asthma">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Asthma disorder</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/sig/fma/Pneumonia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Pneumonia disorder</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

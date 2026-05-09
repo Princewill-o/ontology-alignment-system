@@ -1,0 +1,401 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/cmt.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/edas.owl
+# Total mappings: 329
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://cmt#AssociatedChair> rdfs:subClassOf <http://edas#ConferenceChair> ;
+    owl:equivalentClass <http://edas#SessionChair> .
+
+<http://cmt#Author> owl:equivalentClass <http://edas#Author> .
+
+<http://cmt#AuthorNotReviewer> owl:equivalentClass <http://edas#Author>,
+        <http://edas#Reviewer> .
+
+<http://cmt#Co-author> owl:equivalentClass <http://edas#Author> .
+
+<http://cmt#Conference> owl:equivalentClass <http://edas#Conference>,
+        <http://edas#ConferenceChair>,
+        <http://edas#ConferenceDinner>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#ConferenceSession>,
+        <http://edas#ConferenceVenuePlace>,
+        <http://edas#SingleLevelConference>,
+        <http://edas#TwoLevelConference> .
+
+<http://cmt#ConferenceChair> rdfs:subClassOf <http://edas#SessionChair> ;
+    owl:equivalentClass <http://edas#Conference>,
+        <http://edas#ConferenceChair>,
+        <http://edas#ConferenceDinner>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#ConferenceSession>,
+        <http://edas#ConferenceVenuePlace>,
+        <http://edas#SingleLevelConference>,
+        <http://edas#TwoLevelConference> .
+
+<http://cmt#ConferenceMember> rdfs:subClassOf <http://edas#ConferenceVenuePlace>,
+        <http://edas#TPCMember> ;
+    owl:equivalentClass <http://edas#Conference>,
+        <http://edas#ConferenceChair>,
+        <http://edas#ConferenceDinner>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#ConferenceSession>,
+        <http://edas#SingleLevelConference>,
+        <http://edas#TwoLevelConference>,
+        <http://edas#hasMember>,
+        <http://edas#isMemberOf> .
+
+<http://cmt#Document> owl:equivalentClass <http://edas#Document>,
+        <http://edas#hasRelatedDocument> .
+
+<http://cmt#ExternalReviewer> owl:equivalentClass <http://edas#Reviewer> .
+
+<http://cmt#Meta-Review> rdfs:subClassOf <http://edas#NumericalReviewQuestion>,
+        <http://edas#PersonalReviewHistory>,
+        <http://edas#ReviewForm>,
+        <http://edas#TextualReviewQuestion>,
+        <http://edas#hasReviewHistory>,
+        <http://edas#isReviewHistoryOf> ;
+    owl:equivalentClass <http://edas#Review>,
+        <http://edas#ReviewQuestion>,
+        <http://edas#ReviewRating> .
+
+<http://cmt#Meta-Reviewer> owl:equivalentClass <http://edas#Reviewer> .
+
+<http://cmt#Paper> owl:equivalentClass <http://edas#AcceptedPaper>,
+        <http://edas#ActivePaper>,
+        <http://edas#Paper>,
+        <http://edas#PaperPresentation>,
+        <http://edas#PendingPaper>,
+        <http://edas#PublishedPaper>,
+        <http://edas#RejectedPaper>,
+        <http://edas#WithdrawnPaper>,
+        <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn>,
+        <http://edas#relatedToPaper> .
+
+<http://cmt#PaperAbstract> rdfs:subClassOf <http://edas#AcceptedPaper>,
+        <http://edas#PaperPresentation>,
+        <http://edas#PendingPaper>,
+        <http://edas#PublishedPaper>,
+        <http://edas#RejectedPaper>,
+        <http://edas#WithdrawnPaper>,
+        <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn>,
+        <http://edas#relatedToPaper> ;
+    owl:equivalentClass <http://edas#ActivePaper>,
+        <http://edas#Paper> .
+
+<http://cmt#PaperFullVersion> rdfs:subClassOf <http://edas#AcceptedPaper> ;
+    owl:equivalentClass <http://edas#Paper> .
+
+<http://cmt#Person> owl:equivalentClass <http://edas#Person> .
+
+<http://cmt#ProgramCommitteeChair> rdfs:subClassOf <http://edas#ConferenceChair>,
+        <http://edas#SessionChair> .
+
+<http://cmt#ProgramCommitteeMember> rdfs:subClassOf <http://edas#TPCMember> ;
+    owl:equivalentClass <http://edas#hasMember>,
+        <http://edas#isMemberOf> .
+
+<http://cmt#Review> owl:equivalentClass <http://edas#NumericalReviewQuestion>,
+        <http://edas#PersonalReviewHistory>,
+        <http://edas#Review>,
+        <http://edas#ReviewForm>,
+        <http://edas#ReviewQuestion>,
+        <http://edas#ReviewRating>,
+        <http://edas#TextualReviewQuestion>,
+        <http://edas#hasReviewHistory>,
+        <http://edas#isReviewHistoryOf> .
+
+<http://cmt#Reviewer> owl:equivalentClass <http://edas#Reviewer> .
+
+<http://cmt#acceptPaper> rdfs:subClassOf <http://edas#AcceptRating>,
+        <http://edas#PaperPresentation>,
+        <http://edas#PendingPaper>,
+        <http://edas#PublishedPaper>,
+        <http://edas#RejectedPaper>,
+        <http://edas#WithdrawnPaper>,
+        <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn>,
+        <http://edas#relatedToPaper> ;
+    rdfs:subPropertyOf <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn>,
+        <http://edas#relatedToPaper> ;
+    owl:equivalentClass <http://edas#AcceptedPaper>,
+        <http://edas#ActivePaper>,
+        <http://edas#Paper> .
+
+<http://cmt#acceptedBy> owl:equivalentClass <http://edas#AcceptedPaper> .
+
+<http://cmt#addProgramCommitteeMember> rdfs:subClassOf <http://edas#TPCMember> ;
+    owl:equivalentClass <http://edas#hasMember>,
+        <http://edas#isMemberOf> ;
+    owl:equivalentProperty <http://edas#hasMember>,
+        <http://edas#isMemberOf> .
+
+<http://cmt#assignExternalReviewer> owl:equivalentClass <http://edas#Reviewer> .
+
+<http://cmt#assignReviewer> owl:equivalentClass <http://edas#Reviewer> .
+
+<http://cmt#assignedByReviewer> owl:equivalentClass <http://edas#Reviewer> .
+
+<http://cmt#co-writePaper> rdfs:subClassOf <http://edas#AcceptedPaper>,
+        <http://edas#ActivePaper>,
+        <http://edas#PaperPresentation>,
+        <http://edas#PublishedPaper>,
+        <http://edas#RejectedPaper>,
+        <http://edas#WithdrawnPaper>,
+        <http://edas#relatedToPaper> ;
+    rdfs:subPropertyOf <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn>,
+        <http://edas#relatedToPaper> ;
+    owl:equivalentClass <http://edas#Paper> .
+
+<http://cmt#date> owl:equivalentClass <http://edas#endDate>,
+        <http://edas#hasEndDateTime>,
+        <http://edas#hasStartDateTime>,
+        <http://edas#startDate>,
+        xsd:dateTime ;
+    owl:equivalentProperty <http://edas#endDate>,
+        <http://edas#hasEndDateTime>,
+        <http://edas#hasStartDateTime>,
+        <http://edas#startDate> .
+
+<http://cmt#email> owl:equivalentClass <http://edas#hasEmail> ;
+    owl:equivalentProperty <http://edas#hasEmail> .
+
+<http://cmt#enableVirtualMeeting> rdfs:subClassOf <http://edas#MeetingRoomPlace>,
+        <http://edas#OrganizationalMeeting> .
+
+<http://cmt#endReview> rdfs:subClassOf <http://edas#NumericalReviewQuestion>,
+        <http://edas#PersonalReviewHistory>,
+        <http://edas#TextualReviewQuestion>,
+        <http://edas#endDate>,
+        <http://edas#hasReviewHistory>,
+        <http://edas#isReviewHistoryOf> ;
+    rdfs:subPropertyOf <http://edas#endDate>,
+        <http://edas#hasReviewHistory>,
+        <http://edas#isReviewHistoryOf> ;
+    owl:equivalentClass <http://edas#Review>,
+        <http://edas#ReviewForm>,
+        <http://edas#ReviewQuestion>,
+        <http://edas#ReviewRating> .
+
+<http://cmt#enterConferenceDetails> owl:equivalentClass <http://edas#Conference>,
+        <http://edas#ConferenceChair>,
+        <http://edas#ConferenceDinner>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#ConferenceSession>,
+        <http://edas#ConferenceVenuePlace>,
+        <http://edas#SingleLevelConference>,
+        <http://edas#TwoLevelConference> .
+
+<http://cmt#enterReviewCriteria> rdfs:subClassOf <http://edas#PersonalReviewHistory>,
+        <http://edas#ReviewQuestion>,
+        <http://edas#ReviewRating>,
+        <http://edas#TextualReviewQuestion>,
+        <http://edas#hasReviewHistory>,
+        <http://edas#isReviewHistoryOf> ;
+    rdfs:subPropertyOf <http://edas#hasReviewHistory>,
+        <http://edas#isReviewHistoryOf> ;
+    owl:equivalentClass <http://edas#Review>,
+        <http://edas#ReviewForm> .
+
+<http://cmt#finalizePaperAssignment> rdfs:subClassOf <http://edas#AcceptedPaper>,
+        <http://edas#ActivePaper> ;
+    rdfs:subPropertyOf <http://edas#paperDueOn> ;
+    owl:equivalentClass <http://edas#Paper> .
+
+<http://cmt#hasAuthor> owl:equivalentClass <http://edas#Author> .
+
+<http://cmt#hasCo-author> owl:equivalentClass <http://edas#Author> .
+
+<http://cmt#hasConferenceMember> rdfs:subClassOf <http://edas#ConferenceDinner>,
+        <http://edas#ConferenceVenuePlace>,
+        <http://edas#SingleLevelConference>,
+        <http://edas#TPCMember>,
+        <http://edas#TwoLevelConference> ;
+    owl:equivalentClass <http://edas#Conference>,
+        <http://edas#ConferenceChair>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#ConferenceSession>,
+        <http://edas#hasMember>,
+        <http://edas#isMemberOf> ;
+    owl:equivalentProperty <http://edas#hasMember>,
+        <http://edas#isMemberOf> .
+
+<http://cmt#hasProgramCommitteeMember> rdfs:subClassOf <http://edas#TPCMember> ;
+    owl:equivalentClass <http://edas#hasMember>,
+        <http://edas#isMemberOf> ;
+    owl:equivalentProperty <http://edas#hasMember>,
+        <http://edas#isMemberOf> .
+
+<http://cmt#maxPapers> rdfs:subClassOf <http://edas#CallForPapers> ;
+    owl:equivalentClass <http://edas#RatedPapers> .
+
+<http://cmt#memberOfConference> rdfs:subClassOf <http://edas#ConferenceDinner>,
+        <http://edas#ConferenceVenuePlace>,
+        <http://edas#TPCMember> ;
+    owl:equivalentClass <http://edas#Conference>,
+        <http://edas#ConferenceChair>,
+        <http://edas#ConferenceEvent>,
+        <http://edas#ConferenceSession>,
+        <http://edas#SingleLevelConference>,
+        <http://edas#TwoLevelConference>,
+        <http://edas#hasMember>,
+        <http://edas#isMemberOf> ;
+    owl:equivalentProperty <http://edas#hasMember>,
+        <http://edas#isMemberOf> .
+
+<http://cmt#memberOfProgramCommittee> rdfs:subClassOf <http://edas#TPCMember> ;
+    owl:equivalentClass <http://edas#hasMember>,
+        <http://edas#isMemberOf> ;
+    owl:equivalentProperty <http://edas#hasMember>,
+        <http://edas#isMemberOf> .
+
+<http://cmt#name> owl:equivalentClass <http://edas#hasFirstName>,
+        <http://edas#hasLastName>,
+        <http://edas#hasName> ;
+    owl:equivalentProperty <http://edas#hasFirstName>,
+        <http://edas#hasLastName>,
+        <http://edas#hasName> .
+
+<http://cmt#paperAssignmentFinalizedBy> rdfs:subPropertyOf <http://edas#relatedToPaper> ;
+    owl:equivalentClass <http://edas#Paper> .
+
+<http://cmt#paperAssignmentToolsRunBy> owl:equivalentClass <http://edas#Paper> .
+
+<http://cmt#paperID> rdfs:subClassOf <http://edas#PaperPresentation>,
+        <http://edas#PendingPaper>,
+        <http://edas#RejectedPaper>,
+        <http://edas#WithdrawnPaper>,
+        <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn> ;
+    rdfs:subPropertyOf <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn> ;
+    owl:equivalentClass <http://edas#AcceptedPaper>,
+        <http://edas#ActivePaper>,
+        <http://edas#Paper>,
+        <http://edas#PublishedPaper>,
+        <http://edas#relatedToPaper> ;
+    owl:equivalentProperty <http://edas#relatedToPaper> .
+
+<http://cmt#readByMeta-Reviewer> owl:equivalentClass <http://edas#Reviewer> .
+
+<http://cmt#readByReviewer> owl:equivalentClass <http://edas#Reviewer> .
+
+<http://cmt#readPaper> rdfs:subClassOf <http://edas#AcceptedPaper>,
+        <http://edas#ActivePaper>,
+        <http://edas#PaperPresentation>,
+        <http://edas#PendingPaper>,
+        <http://edas#PublishedPaper>,
+        <http://edas#RejectedPaper>,
+        <http://edas#WithdrawnPaper>,
+        <http://edas#paperDueOn> ;
+    rdfs:subPropertyOf <http://edas#paperDueOn> ;
+    owl:equivalentClass <http://edas#Paper>,
+        <http://edas#hasRelatedPaper>,
+        <http://edas#relatedToPaper> ;
+    owl:equivalentProperty <http://edas#hasRelatedPaper>,
+        <http://edas#relatedToPaper> .
+
+<http://cmt#rejectPaper> rdfs:subClassOf <http://edas#AcceptedPaper>,
+        <http://edas#ActivePaper>,
+        <http://edas#PaperPresentation>,
+        <http://edas#PendingPaper>,
+        <http://edas#PublishedPaper>,
+        <http://edas#WeekRejectRating>,
+        <http://edas#WithdrawnPaper>,
+        <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn>,
+        <http://edas#relatedToPaper> ;
+    rdfs:subPropertyOf <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn>,
+        <http://edas#relatedToPaper> ;
+    owl:equivalentClass <http://edas#Paper>,
+        <http://edas#RejectRating>,
+        <http://edas#RejectedPaper> .
+
+<http://cmt#rejectedBy> owl:equivalentClass <http://edas#RejectedPaper> .
+
+<http://cmt#reviewCriteriaEnteredBy> rdfs:subClassOf <http://edas#ReviewQuestion>,
+        <http://edas#ReviewRating>,
+        <http://edas#hasReviewHistory>,
+        <http://edas#isReviewHistoryOf> ;
+    rdfs:subPropertyOf <http://edas#hasReviewHistory>,
+        <http://edas#isReviewHistoryOf> ;
+    owl:equivalentClass <http://edas#Review>,
+        <http://edas#ReviewForm> .
+
+<http://cmt#reviewerBiddingStartedBy> owl:equivalentClass <http://edas#Reviewer> .
+
+<http://cmt#reviewsPerPaper> rdfs:subClassOf <http://edas#CallForReviews> ;
+    owl:equivalentClass <http://edas#Paper> .
+
+<http://cmt#runPaperAssignmentTools> owl:equivalentClass <http://edas#Paper> .
+
+<http://cmt#setMaxPapers> rdfs:subClassOf <http://edas#CallForPapers>,
+        <http://edas#RatedPapers> .
+
+<http://cmt#startReviewerBidding> owl:equivalentClass <http://edas#Reviewer> .
+
+<http://cmt#submitPaper> rdfs:subClassOf <http://edas#AcceptedPaper>,
+        <http://edas#ActivePaper>,
+        <http://edas#PaperPresentation>,
+        <http://edas#PendingPaper>,
+        <http://edas#PublishedPaper>,
+        <http://edas#RejectedPaper>,
+        <http://edas#WithdrawnPaper>,
+        <http://edas#paperDueOn>,
+        <http://edas#relatedToPaper> ;
+    rdfs:subPropertyOf <http://edas#paperDueOn>,
+        <http://edas#relatedToPaper> ;
+    owl:equivalentClass <http://edas#Paper> .
+
+<http://cmt#virtualMeetingEnabledBy> rdfs:subClassOf <http://edas#MeetingRoomPlace>,
+        <http://edas#OrganizationalMeeting> .
+
+<http://cmt#writePaper> rdfs:subClassOf <http://edas#AcceptedPaper>,
+        <http://edas#PaperPresentation>,
+        <http://edas#PendingPaper>,
+        <http://edas#RejectedPaper>,
+        <http://edas#WithdrawnPaper>,
+        <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn> ;
+    rdfs:subPropertyOf <http://edas#hasRelatedPaper>,
+        <http://edas#paperDueOn> ;
+    owl:equivalentClass <http://edas#ActivePaper>,
+        <http://edas#Paper>,
+        <http://edas#PublishedPaper>,
+        <http://edas#relatedToPaper> ;
+    owl:equivalentProperty <http://edas#relatedToPaper> .
+
+<http://cmt#writeReview> rdfs:subClassOf <http://edas#NumericalReviewQuestion>,
+        <http://edas#PersonalReviewHistory>,
+        <http://edas#TextualReviewQuestion>,
+        <http://edas#hasReviewHistory>,
+        <http://edas#isReviewHistoryOf> ;
+    rdfs:subPropertyOf <http://edas#hasReviewHistory>,
+        <http://edas#isReviewHistoryOf> ;
+    owl:equivalentClass <http://edas#Review>,
+        <http://edas#ReviewForm>,
+        <http://edas#ReviewQuestion>,
+        <http://edas#ReviewRating> .
+
+<http://cmt#writtenBy> owl:equivalentClass <http://edas#isWrittenBy> ;
+    owl:equivalentProperty <http://edas#isWrittenBy> .
+
+xsd:date owl:equivalentClass <http://edas#endDate>,
+        <http://edas#hasEndDateTime>,
+        <http://edas#hasStartDateTime>,
+        <http://edas#startDate>,
+        xsd:dateTime .
+
+xsd:int owl:equivalentClass xsd:int .
+
+xsd:string owl:equivalentClass xsd:string .
+

@@ -1,0 +1,12 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/digital-humanities/ontologies/tadirah.rdf
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/digital-humanities/ontologies/unesco.rdf
+# Total mappings: 2
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+skos:ConceptScheme owl:equivalentClass skos:Concept .
+
+skos:Concept owl:equivalentClass skos:Concept .
+

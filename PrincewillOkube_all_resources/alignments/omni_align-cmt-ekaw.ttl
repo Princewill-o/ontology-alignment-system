@@ -1,0 +1,448 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/cmt.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/ekaw.owl
+# Total mappings: 381
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://cmt#AssociatedChair> rdfs:subClassOf <http://ekaw#Tutorial_Chair>,
+        <http://ekaw#Workshop_Chair> ;
+    owl:equivalentClass <http://ekaw#Demo_Chair>,
+        <http://ekaw#OC_Chair>,
+        <http://ekaw#PC_Chair>,
+        <http://ekaw#Session_Chair> .
+
+<http://cmt#Author> owl:equivalentClass <http://ekaw#Multi-author_Volume>,
+        <http://ekaw#Paper_Author>,
+        <http://ekaw#authorOf> .
+
+<http://cmt#AuthorNotReviewer> rdfs:subClassOf <http://ekaw#Paper_Author>,
+        <http://ekaw#Possible_Reviewer>,
+        <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentClass <http://ekaw#authorOf>,
+        <http://ekaw#hasReviewer> .
+
+<http://cmt#Co-author> rdfs:subClassOf <http://ekaw#Multi-author_Volume> ;
+    owl:equivalentClass <http://ekaw#Paper_Author>,
+        <http://ekaw#authorOf> .
+
+<http://cmt#Conference> owl:equivalentClass <http://ekaw#Conference>,
+        <http://ekaw#Conference_Banquet>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Conference_Participant>,
+        <http://ekaw#Conference_Proceedings>,
+        <http://ekaw#Conference_Session>,
+        <http://ekaw#Conference_Trip> .
+
+<http://cmt#ConferenceChair> rdfs:subClassOf <http://ekaw#Session_Chair>,
+        <http://ekaw#Tutorial_Chair>,
+        <http://ekaw#Workshop_Chair> ;
+    owl:equivalentClass <http://ekaw#Conference>,
+        <http://ekaw#Conference_Banquet>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Conference_Participant>,
+        <http://ekaw#Conference_Proceedings>,
+        <http://ekaw#Conference_Session>,
+        <http://ekaw#Conference_Trip>,
+        <http://ekaw#Demo_Chair>,
+        <http://ekaw#OC_Chair>,
+        <http://ekaw#PC_Chair> .
+
+<http://cmt#ConferenceMember> rdfs:subClassOf <http://ekaw#Agency_Staff_Member> ;
+    owl:equivalentClass <http://ekaw#Conference>,
+        <http://ekaw#Conference_Banquet>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Conference_Participant>,
+        <http://ekaw#Conference_Proceedings>,
+        <http://ekaw#Conference_Session>,
+        <http://ekaw#Conference_Trip>,
+        <http://ekaw#OC_Member>,
+        <http://ekaw#PC_Member>,
+        <http://ekaw#SC_Member> .
+
+<http://cmt#Document> owl:equivalentClass <http://ekaw#Document> .
+
+<http://cmt#ExternalReviewer> rdfs:subClassOf <http://ekaw#Possible_Reviewer>,
+        <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentClass <http://ekaw#hasReviewer> .
+
+<http://cmt#Meta-Review> rdfs:subClassOf <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewWrittenBy> ;
+    owl:equivalentClass <http://ekaw#Negative_Review>,
+        <http://ekaw#Neutral_Review>,
+        <http://ekaw#Positive_Review>,
+        <http://ekaw#Review>,
+        <http://ekaw#hasReview> .
+
+<http://cmt#Meta-Reviewer> rdfs:subClassOf <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentClass <http://ekaw#Possible_Reviewer>,
+        <http://ekaw#hasReviewer> .
+
+<http://cmt#Paper> owl:equivalentClass <http://ekaw#Accepted_Paper>,
+        <http://ekaw#Assigned_Paper>,
+        <http://ekaw#Camera_Ready_Paper>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Demo_Paper>,
+        <http://ekaw#Evaluated_Paper>,
+        <http://ekaw#Industrial_Paper>,
+        <http://ekaw#Paper>,
+        <http://ekaw#Paper_Author>,
+        <http://ekaw#Poster_Paper>,
+        <http://ekaw#Regular_Paper>,
+        <http://ekaw#Rejected_Paper>,
+        <http://ekaw#Submitted_Paper>,
+        <http://ekaw#Workshop_Paper>,
+        <http://ekaw#paperPresentedAs>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewerOfPaper> .
+
+<http://cmt#PaperAbstract> rdfs:subClassOf <http://ekaw#Accepted_Paper>,
+        <http://ekaw#Assigned_Paper>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Demo_Paper>,
+        <http://ekaw#Evaluated_Paper>,
+        <http://ekaw#Industrial_Paper>,
+        <http://ekaw#Paper_Author>,
+        <http://ekaw#Regular_Paper>,
+        <http://ekaw#Rejected_Paper>,
+        <http://ekaw#Submitted_Paper>,
+        <http://ekaw#Workshop_Paper>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewOfPaper> ;
+    owl:equivalentClass <http://ekaw#Abstract>,
+        <http://ekaw#Invited_Talk_Abstract>,
+        <http://ekaw#Paper>,
+        <http://ekaw#Poster_Paper>,
+        <http://ekaw#Tutorial_Abstract> .
+
+<http://cmt#PaperFullVersion> rdfs:subClassOf <http://ekaw#hasUpdatedVersion>,
+        <http://ekaw#updatedVersionOf> ;
+    owl:equivalentClass <http://ekaw#Paper> .
+
+<http://cmt#Person> owl:equivalentClass <http://ekaw#Person> .
+
+<http://cmt#ProgramCommitteeChair> rdfs:subClassOf <http://ekaw#Demo_Chair>,
+        <http://ekaw#PC_Chair>,
+        <http://ekaw#Session_Chair>,
+        <http://ekaw#Tutorial_Chair>,
+        <http://ekaw#Workshop_Chair> ;
+    owl:equivalentClass <http://ekaw#OC_Chair> .
+
+<http://cmt#ProgramCommitteeMember> rdfs:subClassOf <http://ekaw#Agency_Staff_Member>,
+        <http://ekaw#OC_Member> ;
+    owl:equivalentClass <http://ekaw#PC_Member>,
+        <http://ekaw#SC_Member> .
+
+<http://cmt#Review> owl:equivalentClass <http://ekaw#Negative_Review>,
+        <http://ekaw#Neutral_Review>,
+        <http://ekaw#Positive_Review>,
+        <http://ekaw#Review>,
+        <http://ekaw#hasReview>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewWrittenBy> .
+
+<http://cmt#Reviewer> owl:equivalentClass <http://ekaw#Possible_Reviewer>,
+        <http://ekaw#hasReviewer>,
+        <http://ekaw#reviewerOfPaper> .
+
+<http://cmt#acceptPaper> rdfs:subClassOf <http://ekaw#Assigned_Paper>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Demo_Paper>,
+        <http://ekaw#Evaluated_Paper>,
+        <http://ekaw#Industrial_Paper>,
+        <http://ekaw#Paper_Author>,
+        <http://ekaw#Poster_Paper>,
+        <http://ekaw#Regular_Paper>,
+        <http://ekaw#Rejected_Paper>,
+        <http://ekaw#Submitted_Paper>,
+        <http://ekaw#Workshop_Paper>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewerOfPaper> ;
+    rdfs:subPropertyOf <http://ekaw#paperInVolume>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentClass <http://ekaw#Accepted_Paper>,
+        <http://ekaw#Paper> .
+
+<http://cmt#acceptedBy> owl:equivalentClass <http://ekaw#Accepted_Paper> .
+
+<http://cmt#addProgramCommitteeMember> rdfs:subClassOf <http://ekaw#OC_Member>,
+        <http://ekaw#PC_Member>,
+        <http://ekaw#SC_Member> .
+
+<http://cmt#assignExternalReviewer> rdfs:subClassOf <http://ekaw#Possible_Reviewer>,
+        <http://ekaw#reviewerOfPaper> ;
+    rdfs:subPropertyOf <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentClass <http://ekaw#hasReviewer> ;
+    owl:equivalentProperty <http://ekaw#hasReviewer> .
+
+<http://cmt#assignReviewer> owl:equivalentClass <http://ekaw#Possible_Reviewer>,
+        <http://ekaw#hasReviewer>,
+        <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentProperty <http://ekaw#hasReviewer>,
+        <http://ekaw#reviewerOfPaper> .
+
+<http://cmt#assignedByAdministrator> rdfs:subClassOf <http://ekaw#Assigned_Paper> .
+
+<http://cmt#assignedByReviewer> rdfs:subClassOf <http://ekaw#Assigned_Paper>,
+        <http://ekaw#Possible_Reviewer> ;
+    owl:equivalentClass <http://ekaw#hasReviewer>,
+        <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentProperty <http://ekaw#hasReviewer>,
+        <http://ekaw#reviewerOfPaper> .
+
+<http://cmt#assignedTo> owl:equivalentClass <http://ekaw#Assigned_Paper> .
+
+<http://cmt#co-writePaper> rdfs:subPropertyOf <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentClass <http://ekaw#Paper> .
+
+<http://cmt#endReview> rdfs:subClassOf <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewWrittenBy> ;
+    rdfs:subPropertyOf <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewWrittenBy> ;
+    owl:equivalentClass <http://ekaw#Negative_Review>,
+        <http://ekaw#Neutral_Review>,
+        <http://ekaw#Positive_Review>,
+        <http://ekaw#Review>,
+        <http://ekaw#hasReview> ;
+    owl:equivalentProperty <http://ekaw#hasReview> .
+
+<http://cmt#enterConferenceDetails> owl:equivalentClass <http://ekaw#Conference>,
+        <http://ekaw#Conference_Banquet>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Conference_Participant>,
+        <http://ekaw#Conference_Proceedings>,
+        <http://ekaw#Conference_Session>,
+        <http://ekaw#Conference_Trip> .
+
+<http://cmt#enterReviewCriteria> rdfs:subClassOf <http://ekaw#Negative_Review>,
+        <http://ekaw#Neutral_Review>,
+        <http://ekaw#Positive_Review>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewWrittenBy> ;
+    rdfs:subPropertyOf <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewWrittenBy> ;
+    owl:equivalentClass <http://ekaw#Review>,
+        <http://ekaw#hasReview> ;
+    owl:equivalentProperty <http://ekaw#hasReview> .
+
+<http://cmt#finalizePaperAssignment> owl:equivalentClass <http://ekaw#Paper> .
+
+<http://cmt#hasAuthor> rdfs:subClassOf <http://ekaw#hasReviewer> ;
+    owl:equivalentClass <http://ekaw#Multi-author_Volume>,
+        <http://ekaw#Paper_Author>,
+        <http://ekaw#authorOf> ;
+    owl:equivalentProperty <http://ekaw#authorOf> .
+
+<http://cmt#hasBeenAssigned> rdfs:subClassOf <http://ekaw#Assigned_Paper> .
+
+<http://cmt#hasBid> rdfs:subClassOf <http://ekaw#hasReview> .
+
+<http://cmt#hasCo-author> rdfs:subClassOf <http://ekaw#Multi-author_Volume> ;
+    owl:equivalentClass <http://ekaw#Paper_Author>,
+        <http://ekaw#authorOf> ;
+    owl:equivalentProperty <http://ekaw#authorOf> .
+
+<http://cmt#hasConferenceMember> rdfs:subClassOf <http://ekaw#Agency_Staff_Member>,
+        <http://ekaw#Conference_Proceedings>,
+        <http://ekaw#Conference_Trip> ;
+    owl:equivalentClass <http://ekaw#Conference>,
+        <http://ekaw#Conference_Banquet>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Conference_Participant>,
+        <http://ekaw#Conference_Session>,
+        <http://ekaw#OC_Member>,
+        <http://ekaw#PC_Member>,
+        <http://ekaw#SC_Member> .
+
+<http://cmt#hasDecision> rdfs:subClassOf <http://ekaw#hasReview> .
+
+<http://cmt#hasProgramCommitteeMember> rdfs:subClassOf <http://ekaw#Agency_Staff_Member>,
+        <http://ekaw#OC_Member>,
+        <http://ekaw#PC_Member>,
+        <http://ekaw#SC_Member> .
+
+<http://cmt#memberOfConference> rdfs:subClassOf <http://ekaw#Agency_Staff_Member> ;
+    owl:equivalentClass <http://ekaw#Conference>,
+        <http://ekaw#Conference_Banquet>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Conference_Participant>,
+        <http://ekaw#Conference_Proceedings>,
+        <http://ekaw#Conference_Session>,
+        <http://ekaw#Conference_Trip>,
+        <http://ekaw#OC_Member>,
+        <http://ekaw#PC_Member>,
+        <http://ekaw#SC_Member> .
+
+<http://cmt#memberOfProgramCommittee> rdfs:subClassOf <http://ekaw#Agency_Staff_Member>,
+        <http://ekaw#OC_Member>,
+        <http://ekaw#PC_Member> ;
+    owl:equivalentClass <http://ekaw#SC_Member> .
+
+<http://cmt#paperAssignmentFinalizedBy> owl:equivalentClass <http://ekaw#Paper> .
+
+<http://cmt#paperAssignmentToolsRunBy> owl:equivalentClass <http://ekaw#Paper> .
+
+<http://cmt#paperID> rdfs:subClassOf <http://ekaw#Conference_Paper>,
+        <http://ekaw#Evaluated_Paper>,
+        <http://ekaw#Rejected_Paper>,
+        <http://ekaw#Workshop_Paper>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewerOfPaper> ;
+    rdfs:subPropertyOf <http://ekaw#paperInVolume>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentClass <http://ekaw#Accepted_Paper>,
+        <http://ekaw#Assigned_Paper>,
+        <http://ekaw#Demo_Paper>,
+        <http://ekaw#Industrial_Paper>,
+        <http://ekaw#Paper>,
+        <http://ekaw#Paper_Author>,
+        <http://ekaw#Poster_Paper>,
+        <http://ekaw#Regular_Paper>,
+        <http://ekaw#Submitted_Paper> .
+
+<http://cmt#readByMeta-Reviewer> rdfs:subClassOf <http://ekaw#Possible_Reviewer> ;
+    owl:equivalentClass <http://ekaw#hasReviewer>,
+        <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentProperty <http://ekaw#hasReviewer>,
+        <http://ekaw#reviewerOfPaper> .
+
+<http://cmt#readByReviewer> owl:equivalentClass <http://ekaw#Possible_Reviewer>,
+        <http://ekaw#hasReviewer>,
+        <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentProperty <http://ekaw#hasReviewer>,
+        <http://ekaw#reviewerOfPaper> .
+
+<http://cmt#readPaper> rdfs:subClassOf <http://ekaw#Accepted_Paper>,
+        <http://ekaw#Assigned_Paper>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Demo_Paper>,
+        <http://ekaw#Evaluated_Paper>,
+        <http://ekaw#Industrial_Paper>,
+        <http://ekaw#Paper_Author>,
+        <http://ekaw#Poster_Paper>,
+        <http://ekaw#Rejected_Paper>,
+        <http://ekaw#Submitted_Paper>,
+        <http://ekaw#Workshop_Paper>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewerOfPaper> ;
+    rdfs:subPropertyOf <http://ekaw#paperInVolume>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentClass <http://ekaw#Paper>,
+        <http://ekaw#Regular_Paper> .
+
+<http://cmt#rejectPaper> rdfs:subClassOf <http://ekaw#Accepted_Paper>,
+        <http://ekaw#Assigned_Paper>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Demo_Paper>,
+        <http://ekaw#Evaluated_Paper>,
+        <http://ekaw#Industrial_Paper>,
+        <http://ekaw#Paper_Author>,
+        <http://ekaw#Poster_Paper>,
+        <http://ekaw#Regular_Paper>,
+        <http://ekaw#Submitted_Paper>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewerOfPaper> ;
+    rdfs:subPropertyOf <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentClass <http://ekaw#Paper>,
+        <http://ekaw#Rejected_Paper> .
+
+<http://cmt#rejectedBy> owl:equivalentClass <http://ekaw#Rejected_Paper> .
+
+<http://cmt#reviewCriteriaEnteredBy> rdfs:subClassOf <http://ekaw#Neutral_Review>,
+        <http://ekaw#Positive_Review>,
+        <http://ekaw#reviewOfPaper> ;
+    rdfs:subPropertyOf <http://ekaw#reviewOfPaper> ;
+    owl:equivalentClass <http://ekaw#Review>,
+        <http://ekaw#hasReview>,
+        <http://ekaw#reviewWrittenBy> ;
+    owl:equivalentProperty <http://ekaw#hasReview>,
+        <http://ekaw#reviewWrittenBy> .
+
+<http://cmt#reviewerBiddingStartedBy> rdfs:subClassOf <http://ekaw#Possible_Reviewer> ;
+    owl:equivalentClass <http://ekaw#hasReviewer>,
+        <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentProperty <http://ekaw#hasReviewer>,
+        <http://ekaw#reviewerOfPaper> .
+
+<http://cmt#reviewsPerPaper> owl:equivalentClass <http://ekaw#Paper> .
+
+<http://cmt#runPaperAssignmentTools> owl:equivalentClass <http://ekaw#Paper> .
+
+<http://cmt#siteURL> owl:equivalentClass <http://ekaw#Web_Site> .
+
+<http://cmt#startReviewerBidding> rdfs:subClassOf <http://ekaw#Possible_Reviewer>,
+        <http://ekaw#reviewerOfPaper> ;
+    rdfs:subPropertyOf <http://ekaw#reviewerOfPaper> ;
+    owl:equivalentClass <http://ekaw#hasReviewer> ;
+    owl:equivalentProperty <http://ekaw#hasReviewer> .
+
+<http://cmt#submitPaper> rdfs:subClassOf <http://ekaw#Accepted_Paper>,
+        <http://ekaw#Assigned_Paper>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Evaluated_Paper>,
+        <http://ekaw#Industrial_Paper>,
+        <http://ekaw#Paper_Author>,
+        <http://ekaw#Poster_Paper>,
+        <http://ekaw#Regular_Paper>,
+        <http://ekaw#Rejected_Paper>,
+        <http://ekaw#Workshop_Paper>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewOfPaper> ;
+    rdfs:subPropertyOf <http://ekaw#paperInVolume>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewOfPaper> ;
+    owl:equivalentClass <http://ekaw#Demo_Paper>,
+        <http://ekaw#Paper>,
+        <http://ekaw#Submitted_Paper> .
+
+<http://cmt#writePaper> rdfs:subClassOf <http://ekaw#Accepted_Paper>,
+        <http://ekaw#Assigned_Paper>,
+        <http://ekaw#Conference_Paper>,
+        <http://ekaw#Demo_Paper>,
+        <http://ekaw#Evaluated_Paper>,
+        <http://ekaw#Industrial_Paper>,
+        <http://ekaw#Regular_Paper>,
+        <http://ekaw#Rejected_Paper>,
+        <http://ekaw#Workshop_Paper>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewerOfPaper> ;
+    rdfs:subPropertyOf <http://ekaw#paperInVolume>,
+        <http://ekaw#paperPresentedAs>,
+        <http://ekaw#presentationOfPaper>,
+        <http://ekaw#reviewerOfPaper>,
+        <http://ekaw#volumeContainsPaper> ;
+    owl:equivalentClass <http://ekaw#Paper>,
+        <http://ekaw#Paper_Author>,
+        <http://ekaw#Poster_Paper>,
+        <http://ekaw#Submitted_Paper>,
+        <http://ekaw#reviewOfPaper> ;
+    owl:equivalentProperty <http://ekaw#reviewOfPaper> .
+
+<http://cmt#writeReview> rdfs:subClassOf <http://ekaw#Negative_Review>,
+        <http://ekaw#Neutral_Review> ;
+    owl:equivalentClass <http://ekaw#Positive_Review>,
+        <http://ekaw#Review>,
+        <http://ekaw#hasReview>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewWrittenBy> ;
+    owl:equivalentProperty <http://ekaw#hasReview>,
+        <http://ekaw#reviewOfPaper>,
+        <http://ekaw#reviewWrittenBy> .
+
+<http://cmt#writtenBy> owl:equivalentClass <http://ekaw#reviewWrittenBy>,
+        <http://ekaw#writtenBy> ;
+    owl:equivalentProperty <http://ekaw#reviewWrittenBy>,
+        <http://ekaw#writtenBy> .
+

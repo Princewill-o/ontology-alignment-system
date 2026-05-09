@@ -1,0 +1,10 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/digital-humanities/ontologies/defc.rdf
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/digital-humanities/ontologies/pactols.rdf
+# Total mappings: 1
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+skos:Concept owl:equivalentClass skos:Concept .
+

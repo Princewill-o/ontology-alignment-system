@@ -1,0 +1,13 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://conference#Conference> owl:equivalentClass <http://ekaw#Conference> .
+
+<http://conference#Contribution> owl:equivalentClass <http://ekaw#Article> .
+
+<http://conference#Person> rdfs:subClassOf <http://ekaw#Researcher> .
+
+<http://conference#Reviewer> owl:equivalentClass <http://ekaw#Reviewer> .
+
+<http://conference#writtenBy> owl:equivalentProperty <http://ekaw#authoredBy> .
+

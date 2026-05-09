@@ -1,0 +1,30 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# IDE
+.vscode/
+.idea/
+
+# Submission files (not needed in repo)
+PrincewillOkube_SourceCode.pdf
+PrincewillOkube_all_resources.zip
+PrincewillOkube_link_to_repository.txt
+
+# Documentation files (keep only README)
+ENHANCEMENT_COMPLETE.md
+HUMANIZATION_CHANGES.md
+IMPROVEMENTS.md
+QUICK_START_V2.md
+READY_FOR_SUBMISSION.md
+VERSION_2.0_SUMMARY.md

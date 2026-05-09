@@ -1,0 +1,105 @@
+# Alignment produced by OmniAlign
+# Source ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/confOf.owl
+# Target ontology: /Users/princewillokube/Downloads/OAEI-INM713-IN3067/conference/ontologies/iasted.owl
+# Total mappings: 73
+#
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://confOf#Author> owl:equivalentClass <http://iasted#Author>,
+        <http://iasted#Author_attendee_book_registration_fee>,
+        <http://iasted#Author_attendee_cd_registration_fee>,
+        <http://iasted#Author_book_proceedings_included>,
+        <http://iasted#Author_cd_proceedings_included>,
+        <http://iasted#Author_information_form> .
+
+<http://confOf#Banquet> owl:equivalentClass <http://iasted#Dinner_banquet> .
+
+<http://confOf#Camera_Ready_event> owl:equivalentClass <http://iasted#Camera_ready_manuscript_deadline> .
+
+<http://confOf#Chair_PC> owl:equivalentClass <http://iasted#Brief_introduction_for_Session_chair>,
+        <http://iasted#Session_chair> .
+
+<http://confOf#City> owl:equivalentClass <http://iasted#City>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Presenter_city>,
+        <http://iasted#Sponsor_city>,
+        <http://iasted#Trip_city> .
+
+<http://confOf#Company> owl:equivalentClass <http://iasted#Sponsor_company_house> .
+
+<http://confOf#Conference> owl:equivalentClass <http://iasted#Activity_after_conference>,
+        <http://iasted#Activity_before_conference>,
+        <http://iasted#Conference_Hiker>,
+        <http://iasted#Conference_activity>,
+        <http://iasted#Conference_airport>,
+        <http://iasted#Conference_building>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Conference_days>,
+        <http://iasted#Conference_hall>,
+        <http://iasted#Conference_hotel>,
+        <http://iasted#Conference_restaurant>,
+        <http://iasted#Conference_state>,
+        <http://iasted#One_conference_day> .
+
+<http://confOf#Member> owl:equivalentClass <http://iasted#IASTED_member>,
+        <http://iasted#IASTED_non_member> .
+
+<http://confOf#Member_PC> rdfs:subClassOf <http://iasted#IASTED_member>,
+        <http://iasted#IASTED_non_member> .
+
+<http://confOf#Person> owl:equivalentClass <http://iasted#Person> .
+
+<http://confOf#Reception> owl:equivalentClass <http://iasted#Coctail_reception> .
+
+<http://confOf#Registration_of_participants_event> rdfs:subClassOf <http://iasted#Hotel_registration_form>,
+        <http://iasted#Registration_fee> ;
+    owl:equivalentClass <http://iasted#Registration>,
+        <http://iasted#Registration_form> .
+
+<http://confOf#Science_Worker> rdfs:subClassOf <http://iasted#Worker_non_speaker> ;
+    owl:equivalentClass <http://iasted#Worker_lecturer> .
+
+<http://confOf#Social_event> rdfs:subClassOf <http://iasted#Social_program> .
+
+<http://confOf#Student> owl:equivalentClass <http://iasted#Student_lecturer>,
+        <http://iasted#Student_non_speaker>,
+        <http://iasted#Student_registration_fee> .
+
+<http://confOf#Submission_event> owl:equivalentClass <http://iasted#Submission> .
+
+<http://confOf#Trip> owl:equivalentClass <http://iasted#Fee_for_extra_trip>,
+        <http://iasted#Trip_city>,
+        <http://iasted#Trip_day> .
+
+<http://confOf#Tutorial> owl:equivalentClass <http://iasted#Tutorial>,
+        <http://iasted#Tutorial_speaker> .
+
+<http://confOf#University> owl:equivalentClass <http://iasted#Presenter_university> .
+
+<http://confOf#dealsWith> rdfs:subClassOf <http://iasted#is_paid_with> ;
+    rdfs:subPropertyOf <http://iasted#is_paid_with> .
+
+<http://confOf#earlyRegistration> rdfs:subClassOf <http://iasted#Author_attendee_book_registration_fee>,
+        <http://iasted#Author_attendee_cd_registration_fee>,
+        <http://iasted#Memeber_registration_fee>,
+        <http://iasted#Nonauthor_registration_fee>,
+        <http://iasted#Nonmember_registration_fee>,
+        <http://iasted#Student_registration_fee> ;
+    owl:equivalentClass <http://iasted#Hotel_registration_form>,
+        <http://iasted#Registration>,
+        <http://iasted#Registration_fee>,
+        <http://iasted#Registration_form> .
+
+<http://confOf#ends_on> rdfs:subClassOf <http://iasted#is_dated_on> ;
+    rdfs:subPropertyOf <http://iasted#is_dated_on> .
+
+<http://confOf#hasCity> owl:equivalentClass <http://iasted#City>,
+        <http://iasted#Conference_city>,
+        <http://iasted#Presenter_city>,
+        <http://iasted#Sponsor_city>,
+        <http://iasted#Trip_city> .
+
+<http://confOf#starts_on> rdfs:subClassOf <http://iasted#is_dated_on> ;
+    rdfs:subPropertyOf <http://iasted#is_dated_on> .
+

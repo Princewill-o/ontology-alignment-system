@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://snomed.info/id/195967001">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Asthma</rdfs:label>
+    <skos:prefLabel>Asthma</skos:prefLabel>
+    <skos:altLabel>Bronchial asthma</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://snomed.info/id/38341003">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Hypertension</rdfs:label>
+    <skos:prefLabel>Hypertension</skos:prefLabel>
+    <skos:altLabel>High blood pressure</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://snomed.info/id/235856003">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Hepatic disease</rdfs:label>
+    <skos:prefLabel>Hepatic disease</skos:prefLabel>
+    <skos:altLabel>Liver disease</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://snomed.info/id/40733004">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Infectious disease</rdfs:label>
+    <skos:prefLabel>Infectious disease</skos:prefLabel>
+    <skos:altLabel>Infection</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://snomed.info/id/73211009">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Diabetes mellitus</rdfs:label>
+    <skos:prefLabel>Diabetes mellitus</skos:prefLabel>
+    <skos:altLabel>DM</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://snomed.info/id/363346000">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Malignant neoplasm</rdfs:label>
+    <skos:prefLabel>Malignant neoplasm</skos:prefLabel>
+    <skos:altLabel>Cancer</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://snomed.info/id/22298006">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Myocardial infarction</rdfs:label>
+    <skos:prefLabel>Myocardial infarction</skos:prefLabel>
+    <skos:altLabel>Heart attack</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://snomed.info/id/13645005">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Chronic obstructive pulmonary disease</rdfs:label>
+    <skos:prefLabel>Chronic obstructive pulmonary disease</skos:prefLabel>
+    <skos:altLabel>COPD</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://snomed.info/id/230690007">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Cerebrovascular accident</rdfs:label>
+    <skos:prefLabel>Cerebrovascular accident</skos:prefLabel>
+    <skos:altLabel>Stroke</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://snomed.info/id/90708001">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Kidney disease</rdfs:label>
+    <skos:prefLabel>Kidney disease</skos:prefLabel>
+    <skos:altLabel>Renal disease</skos:altLabel>
+  </rdf:Description>
+</rdf:RDF>
